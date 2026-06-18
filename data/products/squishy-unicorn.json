@@ -1,0 +1,13 @@
+{
+  "order": 10,
+  "name": "Squishy Unicorn",
+  "category": "Plushies",
+  "subcategory": "Characters",
+  "price": 150,
+  "sale": 105,
+  "image": "assets/products/squishy-unicorn.jpeg",
+  "desc": "A huggable, made-to-order unicorn in plush chenille — candy-pink hooves, a buttercup horn and a face only a maker could give.",
+  "featured": true,
+  "isNew": false,
+  "image2": "assets/products/squishy-unicorn-2.jpeg"
+}

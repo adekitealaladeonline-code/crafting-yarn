@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank you — Crafting Yarn</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/brand/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Handmade with love in the UAE</span><i>✶</i>
+    <span>Every piece made to order</span><i>✶</i>
+    <span>No two are ever the same</span><i>✶</i>
+    <span>Handmade with love in the UAE</span><i>✶</i>
+    <span>Every piece made to order</span><i>✶</i>
+    <span>No two are ever the same</span><i>✶</i>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header__inner">
+    <span></span>
+    <a href="index.html" class="brand" aria-label="Crafting Yarn home">
+      <img src="assets/brand/logo.png" alt="Crafting Yarn" class="brand__logo" />
+    </a>
+    <div class="header__actions">
+      <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="confirm">
+  <div class="confirm__inner">
+    <p class="confirm__eyebrow">Order received</p>
+    <h1 class="confirm__title">Thank you,<br/>friend.</h1>
+    <p class="confirm__lead">Your order is in — and now the fun part begins. Every piece is
+      crocheted by hand, just for you, so give Freda a little time at the hook.</p>
+    <p class="confirm__note">A confirmation and receipt are on their way to your inbox. We'll
+      message you with your made-to-order timeline. Questions any time:
+      <a href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">@craftingyarn</a>.</p>
+    <a href="index.html" class="btn btn--solid">Continue shopping</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Crafting Yarn</span>
+    <span>Every stitch tells a story</span>
+  </div>
+</footer>
+
+<!-- cart drawer (kept so the shared script stays happy + basket is reachable) -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="cart" id="cart" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart__head"><h3>Your bag</h3><button class="cart__x" id="cartClose" aria-label="Close cart">Close</button></div>
+  <div class="cart__body" id="cartBody"></div>
+  <div class="cart__foot" id="cartFoot">
+    <div class="cart__row"><span>Subtotal</span><strong id="cartTotal">AED 0</strong></div>
+    <p class="cart__hint">Shipping calculated at checkout · Made to order</p>
+    <button class="btn btn--solid btn--block" id="checkoutBtn">Checkout</button>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/catalog.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

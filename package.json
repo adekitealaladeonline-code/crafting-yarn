@@ -1,0 +1,10 @@
+{
+  "name": "crafting-yarn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Crafting Yarn — handmade crochet store (static site + Cloudflare Pages + Stripe Checkout + Sveltia CMS).",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node server.js"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "order": 20,
+  "name": "Sophie Basket",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 120,
+  "sale": 84,
+  "image": "assets/products/sophie-basket.jpg",
+  "desc": "A hand-crocheted market basket in a painterly garden melange. Structured for the day, soft for the beach.",
+  "featured": true,
+  "isNew": false,
+  "image2": "assets/products/sophie-basket-2.jpg"
+}

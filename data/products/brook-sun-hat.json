@@ -1,0 +1,13 @@
+{
+  "order": 320,
+  "name": "Brook sun hat",
+  "category": "Accessories",
+  "subcategory": "Hats",
+  "price": 45,
+  "sale": 31.5,
+  "image": "assets/products/brook-sun-hat.jpg",
+  "desc": "A wide-brim crochet sun hat for slow, bright days.",
+  "featured": false,
+  "isNew": false,
+  "image2": "assets/products/brook-sun-hat-2.jpg"
+}

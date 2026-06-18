@@ -1,0 +1,13 @@
+{
+  "order": 300,
+  "name": "Scallop bandana (blue)",
+  "category": "Accessories",
+  "subcategory": "Bandanas",
+  "price": 35,
+  "sale": 24.5,
+  "image": "assets/products/scallop-bandana.jpg",
+  "desc": "A scalloped-edge bandana in cool blue — a little more drama at the hairline.",
+  "featured": false,
+  "isNew": true,
+  "image2": null
+}

@@ -1,0 +1,13 @@
+{
+  "order": 310,
+  "name": "Mai loaf cat",
+  "category": "Plushies",
+  "subcategory": "Loaf Cats",
+  "price": 65,
+  "sale": 45.5,
+  "image": "assets/products/jumbo-loaf-cat.jpg",
+  "desc": "Mai is the jumbo of the loaf litter — extra squish, extra presence. A statement plushie for grown-up shelves.",
+  "featured": false,
+  "isNew": true,
+  "image2": null
+}

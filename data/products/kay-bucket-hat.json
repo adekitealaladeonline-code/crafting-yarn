@@ -1,0 +1,13 @@
+{
+  "order": 140,
+  "name": "Kay wavy bucket hat",
+  "category": "Accessories",
+  "subcategory": "Hats",
+  "price": 45,
+  "sale": 31.5,
+  "image": "assets/products/kay-bucket-hat.jpg",
+  "desc": "The Kay bucket hat with a wavy, hand-shaped brim. Sun cover with personality.",
+  "featured": true,
+  "isNew": false,
+  "image2": "assets/products/kay-bucket-hat-2.jpg"
+}

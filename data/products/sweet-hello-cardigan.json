@@ -1,0 +1,13 @@
+{
+  "order": 70,
+  "name": "Daisy cardigan",
+  "category": "Clothing",
+  "subcategory": "",
+  "price": 200,
+  "sale": 140,
+  "image": "assets/products/sweet-hello-cardigan.jpg",
+  "desc": "The Daisy cardigan — a soft, daisy-flecked crochet that wears like a hug.",
+  "featured": true,
+  "isNew": false,
+  "image2": "assets/products/sweet-hello-cardigan-2.jpg"
+}

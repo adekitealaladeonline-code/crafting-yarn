@@ -1,0 +1,13 @@
+{
+  "order": 130,
+  "name": "Tao tote",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 80,
+  "sale": 48,
+  "image": "assets/products/tao-tote.jpg",
+  "desc": "A clean-lined everyday tote in our signature stitch. Carries the laptop, the lunch, the whole plan.",
+  "featured": false,
+  "isNew": false,
+  "image2": "assets/products/tao-tote-2.jpg"
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "slug": "squishy-unicorn",
+    "name": "Squishy Unicorn",
+    "image": "static.wixstatic.com/media/f47251_048dd9d05f794522933851a4f6d4e74d~mv2.jpeg",
+    "price": "150.00",
+    "sale": "105.00",
+    "category": "Plushies",
+    "subcategory": "Characters",
+    "ext": "jpeg"
+  },
+  {
+    "slug": "sophie-basket",
+    "name": "Sophie Basket",
+    "image": "static.wixstatic.com/media/f47251_caa21237fb53453abc83840e07220856~mv2.jpg",
+    "price": "120.00",
+    "sale": "84.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "spring-hexagon-jacket-m-l",
+    "name": "Spring Hexagon jacket (M/L)",
+    "image": "static.wixstatic.com/media/f47251_9f252628d7a24cae9314bc150e380884~mv2.jpg",
+    "price": "180.00",
+    "sale": "126.00",
+    "category": "Clothing",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "green-bolero-jacket-m-l",
+    "name": "Green Cropped Jacket (M/L)",
+    "image": "static.wixstatic.com/media/f47251_562fe9fe3e6d4f2fbfb033c09924f51b~mv2.jpg",
+    "price": "150.00",
+    "sale": "105.00",
+    "category": "Clothing",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "teal-velvet",
+    "name": "Teal velvet",
+    "image": "static.wixstatic.com/media/f47251_d79285c08bfd42c8af4a5913732a4c6a~mv2.jpg",
+    "price": "20.00",
+    "sale": "14.00",
+    "category": "Accessories",
+    "subcategory": "Scrunchies",
+    "ext": "jpg"
+  },
+  {
+    "slug": "brown-picot-bandana",
+    "name": "Brown Picot Bandana",
+    "image": "static.wixstatic.com/media/f47251_9b405e6ddc3d4bfb8131e8d467ea6b8f~mv2.jpg",
+    "price": "35.00",
+    "sale": "24.50",
+    "category": "Accessories",
+    "subcategory": "Bandanas",
+    "ext": "jpg"
+  },
+  {
+    "slug": "sweet-hello-cardigan",
+    "name": "Daisy cardigan",
+    "image": "static.wixstatic.com/media/f47251_29a2f08b0a9142bf8891cc0af632c39b~mv2.jpg",
+    "price": "200.00",
+    "sale": "140.00",
+    "category": "Clothing",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "picot-bandana-black",
+    "name": "Picot bandana (Black)",
+    "image": "static.wixstatic.com/media/f47251_e507a76877754579b7b6d03bfb7d0248~mv2.jpg",
+    "price": "35.00",
+    "sale": "24.50",
+    "category": "Accessories",
+    "subcategory": "Bandanas",
+    "ext": "jpg"
+  },
+  {
+    "slug": "blue-daze-cardigan-medium",
+    "name": "Blue daze Cardigan",
+    "image": "static.wixstatic.com/media/f47251_4097b06d7b9945c38ef6629cf029cf75~mv2.jpg",
+    "price": "300.00",
+    "sale": null,
+    "category": "Clothing",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "pink-picot-bandana",
+    "name": "Pink Picot Bandana",
+    "image": "static.wixstatic.com/media/f47251_6473dce6b81b428fb566c3a81bffab8c~mv2.jpg",
+    "price": "35.00",
+    "sale": "24.50",
+    "category": "Accessories",
+    "subcategory": "Bandanas",
+    "ext": "jpg"
+  },
+  {
+    "slug": "dana-tote-bag-multicolour",
+    "name": "Dana tote bag (Multicolour)",
+    "image": "static.wixstatic.com/media/f47251_a2e20fedccd64cdc91009d72e37b00ed~mv2.jpg",
+    "price": "80.00",
+    "sale": "48.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "tao-tote-tropical-night",
+    "name": "Tao tote (tropical night)",
+    "image": "static.wixstatic.com/media/f47251_bc9cd7d870c94a2fbb7824b13acb9bb2~mv2.jpg",
+    "price": "80.00",
+    "sale": "48.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "tao-tote",
+    "name": "Tao tote",
+    "image": "static.wixstatic.com/media/f47251_4095c88a03384aa9ad3d5c0e3167ec80~mv2.jpg",
+    "price": "80.00",
+    "sale": "48.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "kay-bucket-hat",
+    "name": "Kay wavy bucket hat",
+    "image": "static.wixstatic.com/media/f47251_31ea98afe4ec4a47bc48f24696de6ff1~mv2.jpg",
+    "price": "45.00",
+    "sale": "31.50",
+    "category": "Accessories",
+    "subcategory": "Hats",
+    "ext": "jpg"
+  },
+  {
+    "slug": "bandana-sunset",
+    "name": "Picot Bandana (sunset)",
+    "image": "static.wixstatic.com/media/f47251_6ddbf84a28d0423a941584456d96fd72~mv2.jpg",
+    "price": "35.00",
+    "sale": "24.50",
+    "category": "Accessories",
+    "subcategory": "Bandanas",
+    "ext": "jpg"
+  },
+  {
+    "slug": "nae-bag-peach",
+    "name": "Nae bag (peach)",
+    "image": "static.wixstatic.com/media/f47251_b827d938b70f41a090367cc64212f4ff~mv2.jpg",
+    "price": "90.00",
+    "sale": "54.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "bandana-buttercream",
+    "name": "Picot Bandana (buttercream)",
+    "image": "static.wixstatic.com/media/f47251_92f816f2f95d4339b450d7af4c5d1ee0~mv2.jpg",
+    "price": "35.00",
+    "sale": "24.50",
+    "category": "Accessories",
+    "subcategory": "Bandanas",
+    "ext": "jpg"
+  },
+  {
+    "slug": "purple-haze-mesh-small",
+    "name": "Ivy Purple haze mesh (small)",
+    "image": "static.wixstatic.com/media/f47251_cba5cf8a26de4b41bcbf2c64c64dce1f~mv2.jpg",
+    "price": "100.00",
+    "sale": "60.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "ahoy-mesh-small",
+    "name": "Ivy Ahoy mesh (small)",
+    "image": "static.wixstatic.com/media/f47251_8d8f2a3820b8455a8f56e8f05c971e5d~mv2.jpg",
+    "price": "85.00",
+    "sale": "51.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "blossom-loaf-cat",
+    "name": "Blossom loaf cat",
+    "image": "static.wixstatic.com/media/f47251_9e2b790090a84a25af6a4b2cb9d3363e~mv2.jpg",
+    "price": "70.00",
+    "sale": "42.00",
+    "category": "Plushies",
+    "subcategory": "Loaf Cats",
+    "ext": "jpg"
+  },
+  {
+    "slug": "bloom-loaf-cat",
+    "name": "Bloom loaf cat",
+    "image": "static.wixstatic.com/media/f47251_b99e724ac3ed46c9ab6649dcafc1ba67~mv2.jpg",
+    "price": "70.00",
+    "sale": "42.00",
+    "category": "Plushies",
+    "subcategory": "Loaf Cats",
+    "ext": "jpg"
+  },
+  {
+    "slug": "dana-tote-mustard",
+    "name": "Dana tote (mustard)",
+    "image": "static.wixstatic.com/media/f47251_2840b8335c2b4c2d95c080c6cc9364db~mv2.jpg",
+    "price": "80.00",
+    "sale": "48.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "dana-tote-brown",
+    "name": "Dana tote (brown)",
+    "image": "static.wixstatic.com/media/f47251_59476a15141e49ceb8aedf38d988eed3~mv2.jpg",
+    "price": "80.00",
+    "sale": "48.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "dana-tote-bag-black",
+    "name": "Dana tote (black)",
+    "image": "static.wixstatic.com/media/f47251_532b243b155c457484a14735016908c5~mv2.jpg",
+    "price": "80.00",
+    "sale": "48.00",
+    "category": "Bags",
+    "subcategory": "",
+    "ext": "jpg"
+  },
+  {
+    "slug": "burgundy-velvet",
+    "name": "Burgundy velvet",
+    "image": "static.wixstatic.com/media/f47251_2071a960ebbb406b8fa3775bc3113f23~mv2.jpg",
+    "price": "20.00",
+    "sale": "14.00",
+    "category": "Accessories",
+    "subcategory": "Scrunchies",
+    "ext": "jpg"
+  },
+  {
+    "slug": "navy-velvet",
+    "name": "Navy velvet",
+    "image": "static.wixstatic.com/media/f47251_aad26ace06b7428f97edf2d2af60de5d~mv2.jpg",
+    "price": "20.00",
+    "sale": "14.00",
+    "category": "Accessories",
+    "subcategory": "Scrunchies",
+    "ext": "jpg"
+  },
+  {
+    "slug": "white-velvet",
+    "name": "White velvet",
+    "image": "static.wixstatic.com/media/f47251_7b54101e1565481f978ba8ede3d3b020~mv2.jpg",
+    "price": "20.00",
+    "sale": "14.00",
+    "category": "Accessories",
+    "subcategory": "Scrunchies",
+    "ext": "jpg"
+  },
+  {
+    "slug": "brown-velvet",
+    "name": "Brown velvet",
+    "image": "static.wixstatic.com/media/f47251_e472c21420da497f8d2815bfdf0463b1~mv2.jpg",
+    "price": "20.00",
+    "sale": "14.00",
+    "category": "Accessories",
+    "subcategory": "Scrunchies",
+    "ext": "jpg"
+  },
+  {
+    "slug": "grey-mix-velvet",
+    "name": "Grey mix velvet",
+    "image": "static.wixstatic.com/media/f47251_7707893346384f27a729ae795be1058f~mv2.jpg",
+    "price": "20.00",
+    "sale": "14.00",
+    "category": "Accessories",
+    "subcategory": "Scrunchies",
+    "ext": "jpg"
+  },
+  {
+    "slug": "scallop-bandana",
+    "name": "Scallop bandana (blue)",
+    "image": "static.wixstatic.com/media/f47251_d26f6f2d79164af682f4472e65788fd7~mv2.jpg",
+    "price": "35.00",
+    "sale": "24.50",
+    "category": "Accessories",
+    "subcategory": "Bandanas",
+    "ext": "jpg"
+  },
+  {
+    "slug": "jumbo-loaf-cat",
+    "name": "Mai loaf cat",
+    "image": "static.wixstatic.com/media/f47251_63f7cd4747a242a1b51b0a4ba7c532fe~mv2.jpg",
+    "price": "65.00",
+    "sale": "45.50",
+    "category": "Plushies",
+    "subcategory": "Loaf Cats",
+    "ext": "jpg"
+  },
+  {
+    "slug": "brook-sun-hat",
+    "name": "Brook sun hat",
+    "image": "static.wixstatic.com/media/f47251_76030dcf232046a4833284c8fd618f6c~mv2.jpg",
+    "price": "45.00",
+    "sale": "31.50",
+    "category": "Accessories",
+    "subcategory": "Hats",
+    "ext": "jpg"
+  }
+]

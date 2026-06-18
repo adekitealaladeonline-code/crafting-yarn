@@ -1,0 +1,448 @@
+/* =================================================================
+   Crafting Yarn — interactions
+   Renders the live catalogue, handles filtering / sorting, quick-view,
+   a persistent cart drawer, search, mobile nav and scroll reveals.
+   ================================================================= */
+(function () {
+  "use strict";
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const CATALOG = window.CATALOG || [];
+  const money = (n) => "AED " + (Number.isInteger(n) ? n : n.toFixed(2));
+  const byId = (id) => CATALOG.find((p) => p.id === id);
+  const priceOf = (p) => (p.sale != null ? p.sale : p.price);
+  // null-safe event binding (pages other than the homepage omit some elements)
+  const on = (sel, evt, fn, opts) => { const el = typeof sel === "string" ? $(sel) : sel; if (el) el.addEventListener(evt, fn, opts); };
+
+  /* ----------------------------------------------------------------
+     CART (localStorage)
+  ---------------------------------------------------------------- */
+  const CART_KEY = "craftingyarn.cart.v1";
+  let cart = load();
+  function load() { try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; } catch { return {}; } }
+  function save() { localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+
+  /* ----------------------------------------------------------------
+     WISHLIST (localStorage)
+  ---------------------------------------------------------------- */
+  const WISH_KEY = "craftingyarn.wish.v1";
+  let wishlist = new Set(loadWish());
+  function loadWish() { try { return JSON.parse(localStorage.getItem(WISH_KEY)) || []; } catch { return []; } }
+  function saveWish() { localStorage.setItem(WISH_KEY, JSON.stringify([...wishlist])); }
+  function toggleWish(id) {
+    const on = !wishlist.has(id);
+    if (on) wishlist.add(id); else wishlist.delete(id);
+    saveWish();
+    $$(`[data-wish="${id}"]`).forEach((b) => {
+      b.classList.toggle("is-wished", on);
+      b.setAttribute("aria-pressed", on);
+    });
+    const p = byId(id);
+    toast(on ? `Saved <b>${p.name}</b> to your wishlist` : "Removed from wishlist");
+  }
+
+  function addToCart(id, qty = 1) {
+    cart[id] = (cart[id] || 0) + qty;
+    save(); renderCart(); bumpCount();
+    const p = byId(id);
+    toast(`Added <b>${p.name}</b> to your basket`);
+  }
+  function setQty(id, qty) {
+    if (qty <= 0) delete cart[id]; else cart[id] = qty;
+    save(); renderCart();
+  }
+  const cartCount = () => Object.values(cart).reduce((a, b) => a + b, 0);
+  const cartTotal = () =>
+    Object.entries(cart).reduce((sum, [id, q]) => {
+      const p = byId(id); return p ? sum + priceOf(p) * q : sum;
+    }, 0);
+
+  function bumpCount() {
+    const el = $("#cartCount");
+    if (!el) return;
+    const n = cartCount();
+    el.textContent = n;
+    el.style.display = n ? "grid" : "none";
+    el.animate(
+      [{ transform: "scale(1.6)" }, { transform: "scale(1)" }],
+      { duration: 320, easing: "cubic-bezier(.22,.61,.36,1)" }
+    );
+  }
+
+  function renderCart() {
+    const body = $("#cartBody");
+    if (!body) { bumpCount(); return; }
+    const entries = Object.entries(cart).filter(([id]) => byId(id));
+    if (!entries.length) {
+      body.innerHTML = `<p class="cart__empty">Your basket is empty.<br/>Every piece is made just for you.</p>`;
+    } else {
+      body.innerHTML = entries.map(([id, q]) => {
+        const p = byId(id);
+        return `<div class="cart-item">
+          <img src="${p.image}" alt="${p.name}" loading="lazy"/>
+          <div>
+            <div class="cart-item__name">${p.name}</div>
+            <div class="cart-item__price">${money(priceOf(p))}${p.sale != null ? ` · <span style="color:var(--berry)">sale</span>` : ""}</div>
+            <div class="cart-item__qty">
+              <button data-dec="${id}" aria-label="Decrease quantity">−</button>
+              <span>${q}</span>
+              <button data-inc="${id}" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+          <button class="cart-item__rm" data-rm="${id}">Remove</button>
+        </div>`;
+      }).join("");
+    }
+    const total = $("#cartTotal"); if (total) total.textContent = money(cartTotal());
+    const foot = $("#cartFoot"); if (foot) foot.style.display = entries.length ? "block" : "none";
+    bumpCount();
+  }
+
+  /* ----------------------------------------------------------------
+     PRODUCT CARD
+  ---------------------------------------------------------------- */
+  function cardHTML(p) {
+    const off = p.sale != null ? Math.round((1 - p.sale / p.price) * 100) : 0;
+    const badges = [];
+    if (p.sale != null) badges.push(`<span class="tag tag--sale">Sale</span>`);
+    if (p.isNew) badges.push(`<span class="tag tag--new">New</span>`);
+    const price = p.sale != null
+      ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">−${off}%</span>`
+      : `<span class="now">${money(p.price)}</span>`;
+    const sub = p.subcategory ? `${p.category} · ${p.subcategory}` : p.category;
+    const hover = p.image2
+      ? `<img class="card__img card__img--hover" src="${p.image2}" alt="" aria-hidden="true" loading="lazy"/>`
+      : "";
+    const wished = wishlist.has(p.id) ? " is-wished" : "";
+    return `<article class="card${p.image2 ? " has-hover" : ""}" data-id="${p.id}">
+      <div class="card__media">
+        ${badges.length ? `<div class="card__badges">${badges.join("")}</div>` : ""}
+        <button class="card__wish${wished}" data-wish="${p.id}" aria-label="Save ${p.name} to wishlist" aria-pressed="${wishlist.has(p.id)}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.6-9.3-9C1 7.7 2.6 5 5.6 5c1.9 0 3.2 1.1 4.4 2.6C11.2 6.1 12.5 5 14.4 5c3 0 4.6 2.7 2.9 6-2.3 4.4-9.3 9-9.3 9Z"/></svg>
+        </button>
+        <img class="card__img" src="${p.image}" alt="${p.name}" loading="lazy"/>
+        ${hover}
+        <div class="card__actions">
+          <button class="card__quick" data-quick="${p.id}">Quick view</button>
+          <button class="card__addbar" data-add="${p.id}" aria-label="Add ${p.name} to basket">Add +</button>
+        </div>
+      </div>
+      <div class="card__info">
+        <span class="card__cat">${sub}</span>
+        <h3 class="card__name"><a href="product/${p.id}.html">${p.name}</a></h3>
+        <div class="card__price">${price}</div>
+      </div>
+    </article>`;
+  }
+
+  /* ----------------------------------------------------------------
+     SHOP GRID — filter + sort
+  ---------------------------------------------------------------- */
+  let activeFilter = "all";
+  let activeSort = "featured";
+  let searchTerm = "";
+
+  function visibleProducts() {
+    let list = CATALOG.slice();
+    if (activeFilter === "sale") list = list.filter((p) => p.sale != null);
+    else if (activeFilter !== "all") list = list.filter((p) => p.category === activeFilter);
+    if (searchTerm) {
+      const t = searchTerm.toLowerCase();
+      list = list.filter((p) =>
+        (p.name + " " + p.category + " " + p.subcategory + " " + p.desc).toLowerCase().includes(t));
+    }
+    switch (activeSort) {
+      case "price-asc": list.sort((a, b) => priceOf(a) - priceOf(b)); break;
+      case "price-desc": list.sort((a, b) => priceOf(b) - priceOf(a)); break;
+      case "name": list.sort((a, b) => a.name.localeCompare(b.name)); break;
+      default: list.sort((a, b) => (b.featured === true) - (a.featured === true)); break;
+    }
+    return list;
+  }
+
+  function renderGrid() {
+    const grid = $("#grid");
+    if (!grid) return;
+    const list = visibleProducts();
+    grid.innerHTML = list.map(cardHTML).join("");
+    const empty = $("#gridEmpty"); if (empty) empty.hidden = list.length > 0;
+    const count = $("#gridCount");
+    if (count) count.textContent = `${list.length} ${list.length === 1 ? "piece" : "pieces"}`;
+    observeReveals(grid);
+  }
+
+  function setFilter(f) {
+    activeFilter = f;
+    $$("#filters .chip").forEach((c) => {
+      const on = c.dataset.filter === f;
+      c.classList.toggle("is-active", on);
+      c.setAttribute("aria-selected", on);
+    });
+    renderGrid();
+  }
+
+  /* ----------------------------------------------------------------
+     FEATURED RAIL
+  ---------------------------------------------------------------- */
+  function renderRail() {
+    const track = $("#railTrack");
+    if (!track) return;
+    const feat = CATALOG.filter((p) => p.featured);
+    track.innerHTML = feat.map(cardHTML).join("");
+  }
+
+  /* ----------------------------------------------------------------
+     QUICK VIEW MODAL
+  ---------------------------------------------------------------- */
+  let modalId = null;
+  function openModal(id) {
+    const p = byId(id); if (!p) return;
+    if (!$("#modal")) return;
+    modalId = id;
+    const off = p.sale != null ? Math.round((1 - p.sale / p.price) * 100) : 0;
+    $("#modalImg").src = p.image;
+    $("#modalImg").alt = p.name;
+    $("#modalCat").textContent = p.subcategory ? `${p.category} · ${p.subcategory}` : p.category;
+    $("#modalName").textContent = p.name;
+    $("#modalPrice").innerHTML = p.sale != null
+      ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">Save ${off}%</span>`
+      : `<span class="now">${money(p.price)}</span>`;
+    $("#modalDesc").textContent = p.desc;
+    const m = $("#modal");
+    m.classList.add("is-open");
+    m.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    $("#modalClose").focus();
+  }
+  function closeModal() {
+    const m = $("#modal"); if (!m) return;
+    m.classList.remove("is-open");
+    m.setAttribute("aria-hidden", "true");
+    const c = $("#cart");
+    if (!c || !c.classList.contains("is-open")) document.body.style.overflow = "";
+    modalId = null;
+  }
+
+  /* ----------------------------------------------------------------
+     CART / OVERLAY open + close
+  ---------------------------------------------------------------- */
+  function openCart() {
+    const c = $("#cart"); if (!c) return;
+    c.classList.add("is-open");
+    c.setAttribute("aria-hidden", "false");
+    const ov = $("#overlay"); if (ov) ov.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeCart() {
+    const c = $("#cart"); if (!c) return;
+    c.classList.remove("is-open");
+    c.setAttribute("aria-hidden", "true");
+    const m = $("#modal");
+    if (!m || !m.classList.contains("is-open")) {
+      const ov = $("#overlay"); if (ov) ov.hidden = true;
+      document.body.style.overflow = "";
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     TOAST
+  ---------------------------------------------------------------- */
+  let toastTimer;
+  function toast(html) {
+    const t = $("#toast");
+    if (!t) return;
+    t.innerHTML = html;
+    t.classList.add("is-show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove("is-show"), 2600);
+  }
+
+  /* ----------------------------------------------------------------
+     SCROLL REVEALS + thread draw
+  ---------------------------------------------------------------- */
+  let io;
+  function observeReveals(scope = document) {
+    if (!("IntersectionObserver" in window)) {
+      $$(".reveal", scope).forEach((el) => el.classList.add("in-view"));
+      return;
+    }
+    if (!io) {
+      io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }
+    $$(".reveal:not(.in-view), .thread:not(.in-view)", scope).forEach((el) => io.observe(el));
+  }
+
+  /* ----------------------------------------------------------------
+     EVENT WIRING
+  ---------------------------------------------------------------- */
+  function wire() {
+    // delegated clicks across the document (works on every page)
+    document.addEventListener("click", (e) => {
+      const add = e.target.closest("[data-add]");
+      const quick = e.target.closest("[data-quick]");
+      const wish = e.target.closest("[data-wish]");
+      const card = e.target.closest(".card");
+      const filterLink = e.target.closest("[data-filter]");
+      const soon = e.target.closest("[data-soon]");
+
+      if (add) { e.preventDefault(); addToCart(add.dataset.add); return; }
+      if (wish) { e.preventDefault(); toggleWish(wish.dataset.wish); return; }
+      if (quick) { e.preventDefault(); openModal(quick.dataset.quick); return; }
+      if (soon) { e.preventDefault(); toast(soon.dataset.soon || "Coming soon"); return; }
+
+      // nav / footer links that carry a data-filter -> jump to shop + filter (homepage only)
+      if (filterLink && !filterLink.classList.contains("chip")) {
+        const shop = $("#shop");
+        if (shop) {
+          setFilter(filterLink.dataset.filter);
+          closeMobile();
+          shop.scrollIntoView({ behavior: "smooth", block: "start" });
+          e.preventDefault();
+        } // else: not on the homepage — let the link navigate normally
+        return;
+      }
+
+      // clicking the card image (not a button) -> open the product page
+      if (card && !e.target.closest("button") && e.target.closest(".card__media")) {
+        window.location.href = `product/${card.dataset.id}.html`;
+      }
+    });
+
+    on("#filters", "click", (e) => {
+      const chip = e.target.closest(".chip");
+      if (chip) setFilter(chip.dataset.filter);
+    });
+
+    on("#sortSelect", "change", (e) => { activeSort = e.target.value; renderGrid(); });
+
+    on("#cartBody", "click", (e) => {
+      const inc = e.target.closest("[data-inc]");
+      const dec = e.target.closest("[data-dec]");
+      const rm = e.target.closest("[data-rm]");
+      if (inc) setQty(inc.dataset.inc, (cart[inc.dataset.inc] || 0) + 1);
+      if (dec) setQty(dec.dataset.dec, (cart[dec.dataset.dec] || 0) - 1);
+      if (rm) { setQty(rm.dataset.rm, 0); toast("Removed from basket"); }
+    });
+
+    on("#modalAdd", "click", () => { if (modalId) { addToCart(modalId); closeModal(); openCart(); } });
+
+    on("#cartToggle", "click", openCart);
+    on("#cartClose", "click", closeCart);
+    on("#modalClose", "click", closeModal);
+    on("#overlay", "click", () => { closeCart(); });
+    on("#modal", "click", (e) => { if (e.target.id === "modal") closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeModal(); closeCart(); closeSearch(); } });
+
+    on("#checkoutBtn", "click", checkout);
+
+    // header scroll state
+    const header = $("#siteHeader");
+    if (header) {
+      const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 12);
+      onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+    }
+
+    on("#menuToggle", "click", () => {
+      const nav = $("#mobileNav"); if (!nav) return;
+      const open = nav.hidden;
+      nav.hidden = !open;
+      $("#menuToggle").setAttribute("aria-expanded", open);
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+    on("#mobileNav", "click", (e) => { if (e.target.closest("a")) closeMobile(); });
+
+    on("#searchToggle", "click", () => {
+      const bar = $("#searchbar"); if (!bar) return;
+      bar.hidden = !bar.hidden;
+      if (!bar.hidden) $("#searchInput").focus();
+    });
+    on("#searchClose", "click", closeSearch);
+    on("#searchInput", "input", (e) => {
+      searchTerm = e.target.value.trim();
+      if (searchTerm && activeFilter !== "all") setFilter("all"); else renderGrid();
+      const shop = $("#shop");
+      if (searchTerm && shop) shop.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    const track = $("#railTrack");
+    if (track) {
+      const step = () => Math.min(track.clientWidth * 0.8, 640);
+      on("#railNext", "click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+      on("#railPrev", "click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+    }
+
+    on("#newsForm", "submit", (e) => {
+      e.preventDefault();
+      const email = $("#newsEmail").value.trim();
+      const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+      const msg = $("#newsMsg");
+      if (msg) {
+        msg.textContent = ok ? "You're on the list — welcome, friend ♥" : "Hmm, that email doesn't look right.";
+        msg.style.color = ok ? "var(--terra)" : "#c0392b";
+      }
+      if (ok) $("#newsForm").reset();
+    });
+
+    $$("#year").forEach((el) => (el.textContent = new Date().getFullYear()));
+  }
+
+  /* ----------------------------------------------------------------
+     CHECKOUT — hands off to a Stripe Checkout Session created
+     server-side by the Cloudflare Pages Function at /api/checkout.
+     Falls back gracefully on the local static preview.
+  ---------------------------------------------------------------- */
+  async function checkout() {
+    if (!cartCount()) { toast("Your basket is empty"); return; }
+    const btn = $("#checkoutBtn");
+    const original = btn ? btn.textContent : "";
+    if (btn) { btn.disabled = true; btn.textContent = "Taking you to checkout…"; }
+    const items = Object.entries(cart).map(([id, qty]) => ({ id, qty }));
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+      if (!res.ok) throw new Error("checkout unavailable (" + res.status + ")");
+      const data = await res.json();
+      if (data && data.url) { window.location.href = data.url; return; }
+      throw new Error("no checkout url");
+    } catch (err) {
+      toast(`Online checkout opens very soon — to order now, message us <b>@craftingyarn</b> on Instagram ♥`);
+      if (btn) { btn.disabled = false; btn.textContent = original; }
+    }
+  }
+
+  function closeMobile() {
+    const nav = $("#mobileNav"); if (!nav) return;
+    nav.hidden = true;
+    const t = $("#menuToggle"); if (t) t.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+  function closeSearch() {
+    const bar = $("#searchbar"); if (!bar) return;
+    bar.hidden = true;
+    const input = $("#searchInput");
+    if (input && input.value) { input.value = ""; searchTerm = ""; renderGrid(); }
+  }
+
+  /* ----------------------------------------------------------------
+     INIT
+  ---------------------------------------------------------------- */
+  document.addEventListener("DOMContentLoaded", () => {
+    // returning from a successful Stripe Checkout -> empty the basket
+    if (/[?&]paid=1\b/.test(location.search)) { cart = {}; save(); }
+    renderRail();
+    renderGrid();
+    renderCart();
+    wire();
+    // arriving from another page with ?cat=Bags -> preselect that filter
+    const cat = new URLSearchParams(location.search).get("cat");
+    if (cat && $(`#filters .chip[data-filter="${cat}"]`)) setFilter(cat);
+    observeReveals(document);
+  });
+})();

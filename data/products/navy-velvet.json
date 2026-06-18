@@ -1,0 +1,13 @@
+{
+  "order": 260,
+  "name": "Navy velvet",
+  "category": "Accessories",
+  "subcategory": "Scrunchies",
+  "price": 20,
+  "sale": 14,
+  "image": "assets/products/navy-velvet.jpg",
+  "desc": "Velvet-yarn scrunchie in navy — the everyday neutral.",
+  "featured": false,
+  "isNew": false,
+  "image2": "assets/products/navy-velvet-2.jpg"
+}

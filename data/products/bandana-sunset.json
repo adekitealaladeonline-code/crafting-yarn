@@ -1,0 +1,13 @@
+{
+  "order": 150,
+  "name": "Picot Bandana (sunset)",
+  "category": "Accessories",
+  "subcategory": "Bandanas",
+  "price": 35,
+  "sale": 24.5,
+  "image": "assets/products/bandana-sunset.jpg",
+  "desc": "Sunset-striped picot bandana — warm ombré tones for golden hour, all day.",
+  "featured": false,
+  "isNew": false,
+  "image2": "assets/products/bandana-sunset-2.jpg"
+}

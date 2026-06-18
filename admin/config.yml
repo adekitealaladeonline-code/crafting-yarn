@@ -1,0 +1,86 @@
+# Crafting Yarn — admin (Sveltia/Decap CMS) config.
+# Edits the per-product files in data/products/ and uploads photos to assets/products/.
+# A git commit from here triggers a Cloudflare Pages rebuild (npm run build) -> live in ~1 min.
+
+backend:
+  name: github
+  repo: OWNER/REPO            # <-- SET THIS during setup, e.g. elev8media/crafting-yarn
+  branch: main
+  # Login: use "Sign In Using Access Token" with a GitHub fine-grained token — no OAuth setup needed.
+  # (Optional nicer "Sign In with GitHub" button needs an OAuth worker + a base_url here; see SETUP-ADMIN.md.)
+
+# Uploaded photos land here. public_folder uses a leading slash (CMS convention);
+# build.js normalises it back to a site-relative path.
+media_folder: "assets/products"
+public_folder: "/assets/products"
+
+site_url: https://craftingyarn.com
+display_url: https://craftingyarn.com
+publish_mode: simple
+locale: en
+
+collections:
+  - name: products
+    label: "Products"
+    label_singular: "Product"
+    description: "Add, edit, hide or reorder the items in the shop. Changes go live a minute or so after you publish."
+    folder: "data/products"
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"           # filename (= the product's web address) is made from the name
+    identifier_field: name
+    summary: "{{name}} · AED {{sale}}"
+    sortable_fields: [order, name, price]
+    fields:
+      - { name: name, label: "Name", widget: string, hint: "Shown on the card and the product page." }
+      - { name: category, label: "Category", widget: select, options: ["Plushies", "Bags", "Clothing", "Accessories"] }
+      - { name: subcategory, label: "Subcategory", widget: string, required: false }
+      - { name: price, label: "Original price (AED)", widget: number, value_type: float, min: 0, step: 1 }
+      - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Leave blank if the item is not on sale." }
+      - { name: image, label: "Main photo", widget: image, hint: "The photo customers see first. Drag in a JPG/PNG." }
+      - { name: image2, label: "Hover photo", widget: image, required: false, hint: "Optional second photo, shown when you hover the card." }
+      - { name: desc, label: "Description", widget: text }
+      - { name: featured, label: "Feature in 'Looks you'll love'", widget: boolean, default: false }
+      - { name: isNew, label: "Show a 'New' badge", widget: boolean, default: false }
+      - { name: order, label: "Sort order", widget: number, value_type: int, default: 999, hint: "Lower numbers show first. (10, 20, 30 …)" }
+
+  - name: pages
+    label: "Site text"
+    description: "Edit the wording on the About, Shipping, Returns and Contact pages."
+    files:
+      - name: about
+        label: "About / Our story"
+        file: "data/pages/about.md"
+        fields:
+          - { name: eyebrow, label: "Small label above the title", widget: string, required: false }
+          - { name: heading, label: "Title", widget: string }
+          - { name: image, label: "Photo", widget: image, required: false }
+          - { name: body, label: "Story", widget: markdown }
+          - { name: signature, label: "Sign-off (e.g. — Freda)", widget: string, required: false }
+          - { name: description, label: "Search description (for Google)", widget: string, required: false }
+      - name: shipping
+        label: "Shipping page"
+        file: "data/pages/shipping.md"
+        fields:
+          - { name: eyebrow, label: "Small label above the title", widget: string, required: false }
+          - { name: heading, label: "Title", widget: string }
+          - { name: body, label: "Text", widget: markdown }
+          - { name: description, label: "Search description (for Google)", widget: string, required: false }
+      - name: returns
+        label: "Returns page"
+        file: "data/pages/returns.md"
+        fields:
+          - { name: eyebrow, label: "Small label above the title", widget: string, required: false }
+          - { name: heading, label: "Title", widget: string }
+          - { name: body, label: "Text", widget: markdown }
+          - { name: description, label: "Search description (for Google)", widget: string, required: false }
+      - name: contact
+        label: "Contact page"
+        file: "data/pages/contact.md"
+        fields:
+          - { name: eyebrow, label: "Small label above the title", widget: string, required: false }
+          - { name: heading, label: "Title", widget: string }
+          - { name: body, label: "Intro text (the contact form appears below it)", widget: markdown }
+          - { name: form, label: "Show contact form", widget: hidden, default: true }
+          - { name: description, label: "Search description (for Google)", widget: string, required: false }

@@ -1,0 +1,31 @@
+name: Build & deploy to Cloudflare Pages
+
+# Runs whenever the CMS (or you) push to main — i.e. every time Freda hits "Publish"
+# in /admin — and also on demand from the Actions tab.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # No npm dependencies — the build is plain Node. Just run it.
+      - name: Build site (data/products -> dist/)
+        run: npm run build
+
+      # Direct-upload the built dist/ to the existing Pages project (keeps the
+      # domain + STRIPE_SECRET_KEY that already live on that project).
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=crafting-yarn --branch=main

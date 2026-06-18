@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crafting Yarn — Handmade crochet, made with love</title>
+<meta name="description" content="Crafting Yarn by Freda — hand-crocheted plushies, bags, clothing and accessories. Made to order in the UAE, with love. Every stitch tells a story." />
+<meta name="theme-color" content="#E35D40" />
+
+<meta property="og:title" content="Crafting Yarn — Handmade crochet" />
+<meta property="og:description" content="Hand-crocheted plushies, bags, clothing & accessories. Made to order in the UAE." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/brand/hero.jpg" />
+
+<link rel="icon" type="image/png" href="assets/brand/logo.png" />
+<link rel="apple-touch-icon" href="assets/brand/logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ░░░ ANNOUNCEMENT ░░░ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Handmade with love in the UAE</span><i>✶</i>
+    <span>Free UAE delivery over AED 250</span><i>✶</i>
+    <span>Every piece made to order</span><i>✶</i>
+    <span>No two are ever the same</span><i>✶</i>
+    <span>Handmade with love in the UAE</span><i>✶</i>
+    <span>Free UAE delivery over AED 250</span><i>✶</i>
+    <span>Every piece made to order</span><i>✶</i>
+    <span>No two are ever the same</span><i>✶</i>
+  </div>
+</div>
+
+<!-- ░░░ HEADER ░░░ -->
+<header class="site-header" id="siteHeader">
+  <div class="header__inner">
+    <button class="header__menu" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <a href="#top" class="brand" aria-label="Crafting Yarn home">
+      <img src="assets/brand/logo.png" alt="Crafting Yarn" class="brand__logo" />
+    </a>
+
+    <div class="header__actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="searchbar" id="searchbar" hidden>
+    <div class="searchbar__inner">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="searchbar__icon"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <input type="search" id="searchInput" placeholder="Search the shop…" aria-label="Search products" />
+      <button class="searchbar__close" id="searchClose" aria-label="Close search">Close</button>
+    </div>
+  </div>
+</header>
+
+<!-- ░░░ MENU OVERLAY ░░░ -->
+<div class="menu" id="mobileNav" hidden>
+  <nav aria-label="Main">
+    <a href="#shop" data-filter="all"><span>01</span> Shop all</a>
+    <a href="#shop" data-filter="Plushies"><span>02</span> Plushies</a>
+    <a href="#shop" data-filter="Bags"><span>03</span> Bags</a>
+    <a href="#shop" data-filter="Clothing"><span>04</span> Clothing</a>
+    <a href="#shop" data-filter="Accessories"><span>05</span> Accessories</a>
+    <a href="#shop" data-filter="sale"><span>06</span> Sale</a>
+    <a href="#story"><span>07</span> Our story</a>
+  </nav>
+  <a class="menu__ig" href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram @craftingyarn ↗</a>
+</div>
+
+<main id="top">
+
+  <!-- ░░░ HERO BANNER ░░░ -->
+  <section class="banner banner--hero banner--light">
+    <img class="banner__img" src="assets/brand/hero.jpg" alt="Hand-crocheted granny-square hooded jacket" />
+    <div class="banner__inner">
+      <h1 class="banner__title">Crocheted<br/>with love.</h1>
+      <a href="#shop" class="shopnow" data-filter="all">Shop now</a>
+    </div>
+  </section>
+
+  <!-- ░░░ COLLECTION BANNERS ░░░ -->
+  <section class="banner banner--dark">
+    <img class="banner__img" src="assets/products/squishy-unicorn.jpeg" alt="Crocheted unicorn plushie" loading="lazy"/>
+    <div class="banner__inner banner__inner--bl">
+      <p class="banner__eyebrow">The plushies</p>
+      <h2 class="banner__title">Soft<br/>friends.</h2>
+      <a href="#shop" class="shopnow" data-filter="Plushies">Shop now</a>
+    </div>
+  </section>
+
+  <section class="banner banner--light">
+    <img class="banner__img" src="assets/products/sophie-basket.jpg" alt="Multicolour crochet basket bag" loading="lazy"/>
+    <div class="banner__inner banner__inner--bl">
+      <p class="banner__eyebrow">The bags</p>
+      <h2 class="banner__title">Carry<br/>colour.</h2>
+      <a href="#shop" class="shopnow" data-filter="Bags">Shop now</a>
+    </div>
+  </section>
+
+  <section class="banner banner--dark">
+    <img class="banner__img" src="assets/products/green-bolero-jacket-m-l.jpg" alt="Green cropped crochet jacket" loading="lazy"/>
+    <div class="banner__inner banner__inner--bl">
+      <p class="banner__eyebrow">The clothing</p>
+      <h2 class="banner__title">Wear<br/>the craft.</h2>
+      <a href="#shop" class="shopnow" data-filter="Clothing">Shop now</a>
+    </div>
+  </section>
+
+  <!-- ░░░ CAROUSEL ░░░ -->
+  <section class="rail" id="featured">
+    <div class="rail__head">
+      <h2 class="rail__title">Fresh off the hook</h2>
+      <div class="rail__nav">
+        <button class="round-btn" id="railPrev" aria-label="Scroll left">←</button>
+        <button class="round-btn" id="railNext" aria-label="Scroll right">→</button>
+      </div>
+    </div>
+    <div class="rail__track" id="railTrack"><!-- JS injects featured cards --></div>
+  </section>
+
+  <!-- ░░░ SHOP ░░░ -->
+  <section class="shop" id="shop">
+    <div class="shop__bar">
+      <div class="filters" id="filters" role="tablist" aria-label="Filter products">
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="Plushies" role="tab" aria-selected="false">Plushies</button>
+        <button class="chip" data-filter="Bags" role="tab" aria-selected="false">Bags</button>
+        <button class="chip" data-filter="Clothing" role="tab" aria-selected="false">Clothing</button>
+        <button class="chip" data-filter="Accessories" role="tab" aria-selected="false">Accessories</button>
+        <button class="chip chip--sale" data-filter="sale" role="tab" aria-selected="false">Sale</button>
+      </div>
+      <div class="shop__tools">
+        <span class="shop__count" id="gridCount">32 pieces</span>
+        <label for="sortSelect" class="sr-only">Sort products</label>
+        <select id="sortSelect">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price ↑</option>
+          <option value="price-desc">Price ↓</option>
+          <option value="name">A–Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid"><!-- JS injects product cards --></div>
+    <p class="grid__empty" id="gridEmpty" hidden>Nothing here yet — try another category.</p>
+  </section>
+
+  <!-- ░░░ STORY (minimal) ░░░ -->
+  <section class="story" id="story">
+    <figure class="story__media">
+      <img src="assets/products/spring-hexagon-jacket-m-l.jpg" alt="Colourful granny-square crochet jacket" loading="lazy"/>
+    </figure>
+    <div class="story__copy">
+      <p class="story__eyebrow">Hello friend</p>
+      <h2 class="story__title">Made by hand,<br/>by&nbsp;Freda.</h2>
+      <p class="story__line">It started with a scarf for my husband. One hook, a little yarn,
+        and I was hooked. Now I crochet every piece myself, here in the UAE — so no two
+        ever turn out quite the same.</p>
+      <a href="about.html" class="btn">Read my full story</a>
+    </div>
+  </section>
+
+  <!-- ░░░ NEWSLETTER ░░░ -->
+  <section class="news" id="contact">
+    <div class="news__inner">
+      <h2 class="news__title">First dibs</h2>
+      <p class="news__copy">Be the first to see new pieces and restocks. Just yarn news — never spam.</p>
+      <form class="news__form" id="newsForm" novalidate>
+        <input type="email" id="newsEmail" placeholder="Email address" aria-label="Email address" required />
+        <button type="submit" class="btn btn--solid">Join</button>
+      </form>
+      <p class="news__msg" id="newsMsg" role="status"></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ░░░ FOOTER ░░░ -->
+<footer class="site-footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/>
+      <p>Handmade crochet, made with love in the UAE by Freda.</p>
+    </div>
+    <nav class="footer__col" aria-label="Shop">
+      <h4>Shop</h4>
+      <a href="#shop" data-filter="Plushies">Plushies</a>
+      <a href="#shop" data-filter="Bags">Bags</a>
+      <a href="#shop" data-filter="Clothing">Clothing</a>
+      <a href="#shop" data-filter="Accessories">Accessories</a>
+      <a href="#shop" data-filter="sale">Sale</a>
+    </nav>
+    <nav class="footer__col" aria-label="Help">
+      <h4>Help</h4>
+      <a href="shipping.html">Shipping</a>
+      <a href="returns.html">Returns</a>
+      <a href="about.html">Our story</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer__col" aria-label="Social">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram ↗</a>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Crafting Yarn</span>
+    <span>Every stitch tells a story</span>
+  </div>
+</footer>
+
+<!-- ░░░ CART DRAWER ░░░ -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="cart" id="cart" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart__head">
+    <h3>Your bag</h3>
+    <button class="cart__x" id="cartClose" aria-label="Close cart">Close</button>
+  </div>
+  <div class="cart__body" id="cartBody"></div>
+  <div class="cart__foot" id="cartFoot">
+    <div class="cart__row"><span>Subtotal</span><strong id="cartTotal">AED 0</strong></div>
+    <p class="cart__hint">Shipping calculated at checkout · Made to order</p>
+    <button class="btn btn--solid btn--block" id="checkoutBtn">Checkout</button>
+  </div>
+</aside>
+
+<!-- ░░░ QUICK VIEW MODAL ░░░ -->
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal__panel">
+    <button class="modal__close" id="modalClose" aria-label="Close">Close</button>
+    <div class="modal__media"><img id="modalImg" alt="" /></div>
+    <div class="modal__info">
+      <p class="modal__cat" id="modalCat"></p>
+      <h3 class="modal__name" id="modalName"></h3>
+      <div class="modal__price" id="modalPrice"></div>
+      <p class="modal__desc" id="modalDesc"></p>
+      <ul class="modal__meta">
+        <li>Made to order, just for you</li>
+        <li>Hand-crocheted — no two identical</li>
+        <li>Ships from the UAE</li>
+      </ul>
+      <button class="btn btn--solid btn--block" id="modalAdd">Add to bag</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/catalog.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

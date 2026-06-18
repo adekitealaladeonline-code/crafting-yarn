@@ -1,0 +1,13 @@
+{
+  "order": 60,
+  "name": "Brown Picot Bandana",
+  "category": "Accessories",
+  "subcategory": "Bandanas",
+  "price": 35,
+  "sale": 24.5,
+  "image": "assets/products/brown-picot-bandana.jpg",
+  "desc": "A picot-edged hair bandana in cocoa brown. Ties at the nape, finishes any look.",
+  "featured": false,
+  "isNew": false,
+  "image2": "assets/products/brown-picot-bandana-2.jpg"
+}

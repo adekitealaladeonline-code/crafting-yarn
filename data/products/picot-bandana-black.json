@@ -1,0 +1,13 @@
+{
+  "order": 80,
+  "name": "Picot bandana (Black)",
+  "category": "Accessories",
+  "subcategory": "Bandanas",
+  "price": 35,
+  "sale": 24.5,
+  "image": "assets/products/picot-bandana-black.jpg",
+  "desc": "The picot bandana in black — the most-worn thing you'll own.",
+  "featured": false,
+  "isNew": false,
+  "image2": "assets/products/picot-bandana-black-2.jpg"
+}
