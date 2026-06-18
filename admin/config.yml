@@ -4,7 +4,7 @@
 
 backend:
   name: github
-  repo: OWNER/REPO            # <-- SET THIS during setup, e.g. elev8media/crafting-yarn
+  repo: adekitealaladeonline-code/crafting-yarn
   branch: main
   # Login: use "Sign In Using Access Token" with a GitHub fine-grained token — no OAuth setup needed.
   # (Optional nicer "Sign In with GitHub" button needs an OAuth worker + a base_url here; see SETUP-ADMIN.md.)
@@ -16,6 +16,7 @@ public_folder: "/assets/products"
 
 site_url: https://craftingyarn.com
 display_url: https://craftingyarn.com
+logo_url: /assets/brand/logo.png
 publish_mode: simple
 locale: en
 
@@ -24,6 +25,7 @@ collections:
     label: "Products"
     label_singular: "Product"
     description: "Add, edit, hide or reorder the items in the shop. Changes go live a minute or so after you publish."
+    editor: { preview: false }
     folder: "data/products"
     extension: json
     format: json
@@ -48,6 +50,7 @@ collections:
   - name: pages
     label: "Site text"
     description: "Edit the wording on the About, Shipping, Returns and Contact pages."
+    editor: { preview: false }
     files:
       - name: about
         label: "About / Our story"
