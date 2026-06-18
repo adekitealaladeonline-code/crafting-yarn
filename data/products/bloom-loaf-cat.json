@@ -1,13 +1,13 @@
 {
-  "order": 210,
-  "name": "Bloom loaf cat",
+  "name": "BLOOM loaf cat",
   "category": "Plushies",
   "subcategory": "Loaf Cats",
   "price": 70,
   "sale": 42,
   "image": "assets/products/bloom-loaf-cat.jpg",
+  "image2": null,
   "desc": "The Bloom colourway of our cult loaf cat — a plump, palm-sized companion stitched to slouch like the real thing.",
   "featured": false,
   "isNew": false,
-  "image2": null
+  "order": 210
 }
