@@ -1,13 +1,13 @@
 {
-  "order": 220,
   "name": "Dana tote (mustard)",
   "category": "Bags",
   "subcategory": "",
   "price": 80,
   "sale": 48,
   "image": "assets/products/dana-tote-mustard.jpg",
-  "desc": "The Dana in warm mustard — a single-tone take on our roomiest carry.",
+  "image2": "assets/products/dana-tote-mustard-2.jpg",
+  "desc": "The Dana in warm mustard — a single-tone take on our roomiest carry.\n\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/dana-tote-mustard-2.jpg"
+  "order": 220
 }
