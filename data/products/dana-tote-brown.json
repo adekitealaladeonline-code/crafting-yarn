@@ -1,13 +1,13 @@
 {
-  "order": 230,
   "name": "Dana tote (brown)",
   "category": "Bags",
   "subcategory": "",
   "price": 80,
   "sale": 48,
   "image": "assets/products/dana-tote-brown.jpg",
-  "desc": "The Dana in toasted brown. Neutral, hardwearing, quietly perfect.",
+  "image2": "assets/products/dana-tote-brown-2.jpg",
+  "desc": "The Dana in toasted brown. Neutral, handmade, and  quietly perfect.\n\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/dana-tote-brown-2.jpg"
+  "order": 230
 }
