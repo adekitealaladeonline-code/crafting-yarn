@@ -1,13 +1,13 @@
 {
-  "order": 20,
   "name": "Sophie Basket",
   "category": "Bags",
   "subcategory": "",
   "price": 120,
-  "sale": 84,
+  "sale": null,
   "image": "assets/products/sophie-basket.jpg",
-  "desc": "A hand-crocheted market basket in a painterly garden melange. Structured for the day, soft for the beach.",
+  "image2": "assets/products/sophie-basket-2.jpg",
+  "desc": "A hand-crocheted multipurpose basket in a painterly garden melange. \n100% cotton \nWidth- 16”\nBase- 9”\nDepth- 9”",
   "featured": true,
   "isNew": false,
-  "image2": "assets/products/sophie-basket-2.jpg"
+  "order": 20
 }
