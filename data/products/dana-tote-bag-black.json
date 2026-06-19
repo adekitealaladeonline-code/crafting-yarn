@@ -1,13 +1,13 @@
 {
-  "order": 240,
   "name": "Dana tote (black)",
   "category": "Bags",
   "subcategory": "",
   "price": 80,
-  "sale": 48,
+  "sale": null,
   "image": "assets/products/dana-tote-bag-black.jpg",
-  "desc": "The Dana in true black — the handmade tote that goes with everything you own.",
+  "image2": "assets/products/dana-tote-bag-black-2.jpg",
+  "desc": "The Dana in true black — the handmade tote that goes with everything you own.\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/dana-tote-bag-black-2.jpg"
+  "order": 240
 }
