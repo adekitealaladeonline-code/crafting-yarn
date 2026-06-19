@@ -1,13 +1,13 @@
 {
-  "order": 130,
   "name": "Tao tote",
   "category": "Bags",
   "subcategory": "",
   "price": 80,
-  "sale": 48,
+  "sale": null,
   "image": "assets/products/tao-tote.jpg",
-  "desc": "A clean-lined everyday tote in our signature stitch. Carries the laptop, the lunch, the whole plan.",
+  "image2": "assets/products/tao-tote-2.jpg",
+  "desc": "A clean everyday tote. Carries the laptop, the lunch, the whole plan.\n100% cotton \n11” wide - does stretch\n8” deep - does stretch",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/tao-tote-2.jpg"
+  "order": 130
 }
