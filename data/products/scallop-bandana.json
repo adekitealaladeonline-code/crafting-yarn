@@ -1,13 +1,13 @@
 {
-  "order": 300,
   "name": "Scallop bandana (blue)",
   "category": "Accessories",
   "subcategory": "Bandanas",
   "price": 35,
-  "sale": 24.5,
+  "sale": null,
   "image": "assets/products/scallop-bandana.jpg",
-  "desc": "A scalloped-edge bandana in cool blue — a little more drama at the hairline.",
+  "image2": null,
+  "desc": "A scalloped-edge bandana in cool blue — a little more drama at the hairline.\n\n100% cotton\n14” wide\n9” long",
   "featured": false,
   "isNew": true,
-  "image2": null
+  "order": 300
 }
