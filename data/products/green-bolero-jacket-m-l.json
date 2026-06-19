@@ -1,13 +1,13 @@
 {
-  "order": 40,
   "name": "Green Cropped Jacket (M/L)",
   "category": "Clothing",
   "subcategory": "",
   "price": 150,
   "sale": 105,
   "image": "assets/products/green-bolero-jacket-m-l.jpg",
-  "desc": "A cropped, open-front jacket in mossy greens — the throw-on layer for cool evenings.",
+  "image2": "assets/products/green-bolero-jacket-m-l-2.jpg",
+  "desc": "A cropped, open-front jacket in mossy greens — the throw-on layer for cool evenings.\nHandmade using 100% cotton yarn and a lot of love.",
   "featured": true,
   "isNew": false,
-  "image2": "assets/products/green-bolero-jacket-m-l-2.jpg"
+  "order": 40
 }
