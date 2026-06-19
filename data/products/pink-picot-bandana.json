@@ -1,13 +1,13 @@
 {
-  "order": 100,
   "name": "Pink Picot Bandana",
   "category": "Accessories",
   "subcategory": "Bandanas",
   "price": 35,
-  "sale": 24.5,
+  "sale": null,
   "image": "assets/products/pink-picot-bandana.jpg",
-  "desc": "A sweet picot bandana in candy pink, scalloped by hand.",
+  "image2": "assets/products/pink-picot-bandana-2.jpg",
+  "desc": "A sweet handmade  bandana in candy pink.\n100% cotton- \n13.5” wide\n8.5” long",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/pink-picot-bandana-2.jpg"
+  "order": 100
 }
