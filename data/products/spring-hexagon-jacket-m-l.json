@@ -1,13 +1,13 @@
 {
-  "order": 30,
   "name": "Spring Hexagon jacket (M/L)",
   "category": "Clothing",
   "subcategory": "",
-  "price": 180,
-  "sale": 126,
+  "price": 150,
+  "sale": null,
   "image": "assets/products/spring-hexagon-jacket-m-l.jpg",
-  "desc": "A hooded granny-square jacket built from spring-bright hexagons. Heirloom energy, made to order.",
+  "image2": "assets/products/spring-hexagon-jacket-m-l-2.jpg",
+  "desc": "A granny-square jacket built from spring-bright hexagons. Heirloom energy to complete your look.",
   "featured": true,
   "isNew": false,
-  "image2": "assets/products/spring-hexagon-jacket-m-l-2.jpg"
+  "order": 30
 }
