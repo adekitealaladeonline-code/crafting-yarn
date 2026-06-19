@@ -1,13 +1,13 @@
 {
-  "order": 280,
   "name": "Brown velvet",
   "category": "Accessories",
   "subcategory": "Scrunchies",
   "price": 20,
-  "sale": 14,
+  "sale": null,
   "image": "assets/products/brown-velvet.jpg",
+  "image2": "assets/products/brown-velvet-2.jpg",
   "desc": "Velvet-yarn scrunchie in chocolate brown.",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/brown-velvet-2.jpg"
+  "order": 280
 }
