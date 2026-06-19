@@ -1,13 +1,13 @@
 {
-  "order": 70,
   "name": "Daisy cardigan",
   "category": "Clothing",
   "subcategory": "",
   "price": 200,
   "sale": 140,
   "image": "assets/products/sweet-hello-cardigan.jpg",
-  "desc": "The Daisy cardigan — a soft, daisy-flecked crochet that wears like a hug.",
+  "image2": "/assets/products/Screenshot 2026-06-19 at 06.02.05.png",
+  "desc": "The Daisy cardigan — a soft, daisy coloured crochet that wears like a hug.\n\n55% Cotton, 45% Acrylic\nSize medium - (see picture for guide)\nMeasurements- A- 16.5”, B- 22”, C- 9”, D- 19”",
   "featured": true,
   "isNew": false,
-  "image2": "assets/products/sweet-hello-cardigan-2.jpg"
+  "order": 70
 }
