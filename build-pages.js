@@ -121,8 +121,9 @@ for (const p of CATALOG) {
   const priceHTML = p.sale != null
     ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">−${off}%</span>`
     : `<span class="now">${money(p.price)}</span>`;
-  const gallery = [p.image, p.image2].filter(Boolean)
-    .map((src, i) => `<figure><img src="${px}${src}" alt="${esc(p.name)}${i ? " — detail" : ""}" ${i ? 'loading="lazy"' : ""}/></figure>`).join("\n        ");
+  const imgs = (p.images && p.images.length ? p.images : [p.image, p.image2].filter(Boolean));
+  const gallery = imgs
+    .map((src, i) => `<figure><img src="${px}${src}" alt="${esc(p.name)}${i ? " — view " + (i + 1) : ""}" ${i ? 'loading="lazy"' : ""}/></figure>`).join("\n        ");
 
   const ld = {
     "@context": "https://schema.org/", "@type": "Product",

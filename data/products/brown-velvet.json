@@ -4,10 +4,12 @@
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": null,
-  "image": "assets/products/brown-velvet.jpg",
-  "image2": "assets/products/brown-velvet-2.jpg",
   "desc": "Velvet-yarn scrunchie in chocolate brown.",
   "featured": false,
   "isNew": false,
-  "order": 280
+  "order": 280,
+  "images": [
+    "assets/products/brown-velvet.jpg",
+    "assets/products/brown-velvet-2.jpg"
+  ]
 }

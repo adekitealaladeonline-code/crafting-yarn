@@ -4,10 +4,12 @@
   "subcategory": "Hats",
   "price": 45,
   "sale": null,
-  "image": "assets/products/kay-bucket-hat.jpg",
-  "image2": "assets/products/kay-bucket-hat-2.jpg",
   "desc": "The Kay bucket hat with a wavy, hand-shaped brim. Sun cover with personality. 100% cotton with a 22\" ciruumference fit.",
   "featured": true,
   "isNew": false,
-  "order": 140
+  "order": 140,
+  "images": [
+    "assets/products/kay-bucket-hat.jpg",
+    "assets/products/kay-bucket-hat-2.jpg"
+  ]
 }

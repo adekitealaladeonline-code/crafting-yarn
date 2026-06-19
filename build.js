@@ -27,8 +27,12 @@ const products = fs
   .filter((f) => f.endsWith(".json"))
   .map((f) => {
     const data = JSON.parse(fs.readFileSync(path.join(PRODUCTS_DIR, f), "utf8"));
-    data.image = stripSlash(data.image);
-    data.image2 = stripSlash(data.image2);
+    // photos: prefer the images[] list; fall back to legacy image/image2
+    let imgs = Array.isArray(data.images) ? data.images : [data.image, data.image2];
+    imgs = imgs.filter(Boolean).map(stripSlash);
+    data.images = imgs;
+    data.image = imgs[0] || "";       // card + cart + Stripe + first gallery photo
+    data.image2 = imgs[1] || null;    // card hover
     return { id: f.replace(/\.json$/, ""), ...data };
   })
   .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));

@@ -4,10 +4,12 @@
   "subcategory": "",
   "price": 70,
   "sale": null,
-  "image": "assets/products/dana-tote-mustard.jpg",
-  "image2": "assets/products/dana-tote-mustard-2.jpg",
   "desc": "The Dana in warm mustard — a single-tone take on our roomiest carry.\n\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "order": 220
+  "order": 220,
+  "images": [
+    "assets/products/dana-tote-mustard.jpg",
+    "assets/products/dana-tote-mustard-2.jpg"
+  ]
 }

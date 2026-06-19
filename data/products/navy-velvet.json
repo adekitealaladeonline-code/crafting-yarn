@@ -4,10 +4,12 @@
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": null,
-  "image": "assets/products/navy-velvet.jpg",
-  "image2": "assets/products/navy-velvet-2.jpg",
   "desc": "Velvet-yarn scrunchie in navy — the everyday neutral.",
   "featured": false,
   "isNew": false,
-  "order": 260
+  "order": 260,
+  "images": [
+    "assets/products/navy-velvet.jpg",
+    "assets/products/navy-velvet-2.jpg"
+  ]
 }

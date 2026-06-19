@@ -4,10 +4,12 @@
   "subcategory": "",
   "price": 75,
   "sale": null,
-  "image": "assets/products/nae-bag-peach.jpg",
-  "image2": "assets/products/nae-bag-peach-2.jpg",
   "desc": "A little peach crescent bag with a hand-stitched grip. This cute bag that finishes everything.\n\n12” wide - does stretch\n15” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "order": 160
+  "order": 160,
+  "images": [
+    "assets/products/nae-bag-peach.jpg",
+    "assets/products/nae-bag-peach-2.jpg"
+  ]
 }

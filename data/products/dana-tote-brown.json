@@ -4,10 +4,12 @@
   "subcategory": "",
   "price": 70,
   "sale": null,
-  "image": "assets/products/dana-tote-brown.jpg",
-  "image2": "assets/products/dana-tote-brown-2.jpg",
   "desc": "The Dana in toasted brown. Neutral, handmade, and  quietly perfect.\n\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "order": 230
+  "order": 230,
+  "images": [
+    "assets/products/dana-tote-brown.jpg",
+    "assets/products/dana-tote-brown-2.jpg"
+  ]
 }

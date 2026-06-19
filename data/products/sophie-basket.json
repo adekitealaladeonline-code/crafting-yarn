@@ -4,10 +4,12 @@
   "subcategory": "",
   "price": 120,
   "sale": null,
-  "image": "assets/products/sophie-basket.jpg",
-  "image2": "assets/products/sophie-basket-2.jpg",
   "desc": "A hand-crocheted multipurpose basket in a painterly garden melange. \n100% cotton \nWidth- 16”\nBase- 9”\nDepth- 9”",
   "featured": true,
   "isNew": false,
-  "order": 20
+  "order": 20,
+  "images": [
+    "assets/products/sophie-basket.jpg",
+    "assets/products/sophie-basket-2.jpg"
+  ]
 }

@@ -4,10 +4,12 @@
   "subcategory": "",
   "price": 70,
   "sale": null,
-  "image": "assets/products/dana-tote-bag-multicolour.jpg",
-  "image2": "assets/products/dana-tote-bag-multicolour-2.jpg",
   "desc": "The Dana tote in a full-spectrum multicolour — roomy, slouchy and impossible to buy twice the same.\n\n12.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
   "featured": true,
   "isNew": false,
-  "order": 110
+  "order": 110,
+  "images": [
+    "assets/products/dana-tote-bag-multicolour.jpg",
+    "assets/products/dana-tote-bag-multicolour-2.jpg"
+  ]
 }

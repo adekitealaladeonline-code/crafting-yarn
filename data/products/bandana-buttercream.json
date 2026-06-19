@@ -4,10 +4,11 @@
   "subcategory": "Bandanas",
   "price": 35,
   "sale": null,
-  "image": "assets/products/bandana-buttercream.jpg",
-  "image2": null,
   "desc": "Handmade buttercream coloured bandana with a picot trim, made with a 100% cotton yarn.\n13.5” wide\n9” long",
   "featured": false,
   "isNew": false,
-  "order": 170
+  "order": 170,
+  "images": [
+    "assets/products/bandana-buttercream.jpg"
+  ]
 }
