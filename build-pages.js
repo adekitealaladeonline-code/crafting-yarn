@@ -49,6 +49,7 @@ const menu = (px) => `<div class="menu" id="mobileNav" hidden>
     <a href="${px}contact.html"><span>08</span> Contact</a>
   </nav>
   <a class="menu__ig" href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram @craftingyarn ↗</a>
+  <a class="menu__ig" href="https://www.tiktok.com/@craftingyarn" target="_blank" rel="noopener">TikTok @craftingyarn ↗</a>
 </div>`;
 
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
@@ -61,6 +62,7 @@ const footer = (px) => `<footer class="site-footer"><div class="footer__top">
   </nav>
   <nav class="footer__col" aria-label="Social"><h4>Follow</h4>
     <a href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram ↗</a>
+    <a href="https://www.tiktok.com/@craftingyarn" target="_blank" rel="noopener">TikTok ↗</a>
   </nav>
 </div><div class="footer__bottom"><span>© <span id="year"></span> Crafting Yarn</span><span>Every stitch tells a story</span></div></footer>`;
 
