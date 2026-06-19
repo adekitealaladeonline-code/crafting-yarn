@@ -1,13 +1,13 @@
 {
-  "order": 190,
   "name": "Ivy Ahoy mesh (small)",
   "category": "Bags",
   "subcategory": "",
   "price": 85,
-  "sale": 51,
+  "sale": null,
   "image": "assets/products/ahoy-mesh-small.jpg",
-  "desc": "An airy open-weave mesh bag — beach-ready, market-ready, throw-everything-in ready.",
+  "image2": "assets/products/ahoy-mesh-small-2.jpg",
+  "desc": "An airy open-weave mesh bag — beach-ready, market-ready, throw-everything-in ready.\n\n16.5” wide - does stretch\n10.5” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/ahoy-mesh-small-2.jpg"
+  "order": 190
 }
