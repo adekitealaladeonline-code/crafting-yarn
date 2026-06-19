@@ -1,13 +1,13 @@
 {
-  "order": 110,
   "name": "Dana tote bag (Multicolour)",
   "category": "Bags",
   "subcategory": "",
   "price": 80,
   "sale": 48,
   "image": "assets/products/dana-tote-bag-multicolour.jpg",
-  "desc": "The Dana tote in a full-spectrum multicolour — roomy, slouchy and impossible to buy twice the same.",
+  "image2": "assets/products/dana-tote-bag-multicolour-2.jpg",
+  "desc": "The Dana tote in a full-spectrum multicolour — roomy, slouchy and impossible to buy twice the same.\n\n12.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
   "featured": true,
   "isNew": false,
-  "image2": "assets/products/dana-tote-bag-multicolour-2.jpg"
+  "order": 110
 }
