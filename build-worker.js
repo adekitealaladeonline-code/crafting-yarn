@@ -81,15 +81,16 @@ async function handleCheckout(request, env) {
   params.set("success_url", origin + "/success.html?paid=1&session_id={CHECKOUT_SESSION_ID}");
   params.set("cancel_url", origin + "/?checkout=cancelled");
   params.set("phone_number_collection[enabled]", "true");
-  ["AE", "SA", "OM", "BH", "KW", "QA", "GB", "US"].forEach((c, i) =>
-    params.set("shipping_address_collection[allowed_countries][" + i + "]", c));
+  // UAE-only online checkout (international orders are arranged by DM, per the shipping page).
+  params.set("shipping_address_collection[allowed_countries][0]", "AE");
 
   const meta = [];
-  let line = 0;
+  let line = 0, subtotal = 0;
   for (const it of items) {
     const p = PRODUCTS[it.id];
     if (!p) continue;
     const quantity = Math.max(1, Math.min(99, parseInt(it.qty, 10) || 1));
+    subtotal += p.amount * quantity;
     params.set("line_items[" + line + "][quantity]", String(quantity));
     params.set("line_items[" + line + "][price_data][currency]", "aed");
     params.set("line_items[" + line + "][price_data][unit_amount]", String(p.amount));
@@ -100,6 +101,13 @@ async function handleCheckout(request, env) {
   }
   if (line === 0) return J({ error: "No valid items in basket." }, 400);
   params.set("metadata[items]", meta.join(",").slice(0, 480));
+
+  // Delivery: flat AED 20 under AED 250, free at/above AED 250.
+  const freeShip = subtotal >= 25000;
+  params.set("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
+  params.set("shipping_options[0][shipping_rate_data][fixed_amount][amount]", freeShip ? "0" : "2000");
+  params.set("shipping_options[0][shipping_rate_data][fixed_amount][currency]", "aed");
+  params.set("shipping_options[0][shipping_rate_data][display_name]", freeShip ? "Free UAE delivery" : "UAE delivery");
 
   const res = await fetch("https://api.stripe.com/v1/checkout/sessions", {
     method: "POST",
