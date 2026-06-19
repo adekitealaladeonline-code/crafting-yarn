@@ -1,13 +1,13 @@
 {
-  "order": 170,
   "name": "Picot Bandana (buttercream)",
   "category": "Accessories",
   "subcategory": "Bandanas",
   "price": 35,
-  "sale": 24.5,
+  "sale": null,
   "image": "assets/products/bandana-buttercream.jpg",
-  "desc": "A soft buttercream bandana with a delicate picot trim.",
+  "image2": null,
+  "desc": "Handmade buttercream coloured bandana with a picot trim, made with a 100% cotton yarn.\n13.5” wide\n9” long",
   "featured": false,
   "isNew": false,
-  "image2": null
+  "order": 170
 }
