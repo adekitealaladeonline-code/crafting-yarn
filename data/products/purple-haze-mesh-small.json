@@ -1,13 +1,13 @@
 {
-  "order": 180,
   "name": "Ivy Purple haze mesh (small)",
   "category": "Bags",
   "subcategory": "",
   "price": 100,
-  "sale": 60,
+  "sale": null,
   "image": "assets/products/purple-haze-mesh-small.jpg",
-  "desc": "Purple-haze mesh in the small size — see-through, summer-bright and endlessly packable.",
+  "image2": "assets/products/purple-haze-mesh-small-2.jpg",
+  "desc": "The perfect beach/market bag.  Purple, summer-bright and endlessly packable.\n\n16.5” wide - does stretch\n10.5” deep - does stretch\n100% Cotton",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/purple-haze-mesh-small-2.jpg"
+  "order": 180
 }
