@@ -40,6 +40,7 @@ collections:
       - { name: subcategory, label: "Subcategory", widget: string, required: false }
       - { name: price, label: "Original price (AED)", widget: number, value_type: float, min: 0, step: 1 }
       - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Leave blank if the item is not on sale." }
+      - { name: stock, label: "Stock", widget: number, value_type: int, min: 0, step: 1, required: false, hint: "How many finished pieces you have. It counts down automatically as orders are paid, and shows 'Sold out' at zero. Leave blank for made-to-order (always available)." }
       - { name: image, label: "Main photo", widget: image, hint: "The photo customers see first. Drag in a JPG/PNG." }
       - { name: image2, label: "Hover photo", widget: image, required: false, hint: "Optional second photo, shown when you hover the card." }
       - { name: desc, label: "Description", widget: text }

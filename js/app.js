@@ -11,6 +11,10 @@
   const money = (n) => "AED " + (Number.isInteger(n) ? n : n.toFixed(2));
   const byId = (id) => CATALOG.find((p) => p.id === id);
   const priceOf = (p) => (p.sale != null ? p.sale : p.price);
+  // live inventory: SOLD is filled from /api/stock. Untracked items (stock null) are always available.
+  let SOLD = {};
+  const availOf = (p) => (p && p.stock != null ? p.stock - (SOLD[p.id] || 0) : Infinity);
+  const soldOut = (p) => availOf(p) <= 0;
   // null-safe event binding (pages other than the homepage omit some elements)
   const on = (sel, evt, fn, opts) => { const el = typeof sel === "string" ? $(sel) : sel; if (el) el.addEventListener(evt, fn, opts); };
 
@@ -42,9 +46,17 @@
   }
 
   function addToCart(id, qty = 1) {
+    const p = byId(id);
+    if (!p) return;
+    if (soldOut(p)) { toast(`Sorry, <b>${p.name}</b> is sold out`); return; }
+    const max = availOf(p);
+    if ((cart[id] || 0) + qty > max) {
+      cart[id] = max; save(); renderCart(); bumpCount();
+      toast(`Only ${max} of <b>${p.name}</b> available`);
+      return;
+    }
     cart[id] = (cart[id] || 0) + qty;
     save(); renderCart(); bumpCount();
-    const p = byId(id);
     toast(`Added <b>${p.name}</b> to your basket`);
   }
   function setQty(id, qty) {
@@ -165,6 +177,7 @@
     if (!grid) return;
     const list = visibleProducts();
     grid.innerHTML = list.map(cardHTML).join("");
+    patchCards(grid);
     const empty = $("#gridEmpty"); if (empty) empty.hidden = list.length > 0;
     const count = $("#gridCount");
     if (count) count.textContent = `${list.length} ${list.length === 1 ? "piece" : "pieces"}`;
@@ -189,6 +202,58 @@
     if (!track) return;
     const feat = CATALOG.filter((p) => p.featured);
     track.innerHTML = feat.map(cardHTML).join("");
+    patchCards(track);
+  }
+
+  /* ----------------------------------------------------------------
+     LIVE STOCK — patch sold-out / low-stock UI from /api/stock
+  ---------------------------------------------------------------- */
+  function patchCards(scope = document) {
+    $$(".card[data-id]", scope).forEach((el) => {
+      const p = byId(el.dataset.id);
+      if (!p || p.stock == null) return;
+      const avail = availOf(p), out = avail <= 0;
+      el.classList.toggle("is-soldout", out);
+      const old = el.querySelector(".tag--out, .tag--low"); if (old) old.remove();
+      let bc = el.querySelector(".card__badges");
+      const media = el.querySelector(".card__media");
+      if (!bc && media) { bc = document.createElement("div"); bc.className = "card__badges"; media.prepend(bc); }
+      if (bc) {
+        if (out) bc.insertAdjacentHTML("afterbegin", `<span class="tag tag--out">Sold out</span>`);
+        else if (avail <= 5) bc.insertAdjacentHTML("afterbegin", `<span class="tag tag--low">Only ${avail} left</span>`);
+      }
+      const addbar = el.querySelector(".card__addbar");
+      if (addbar && out) { addbar.disabled = true; addbar.removeAttribute("data-add"); addbar.textContent = "Sold out"; }
+    });
+  }
+
+  function patchStandalone() {
+    $$("[data-add]").forEach((btn) => {
+      if (btn.closest(".card")) return;
+      const p = byId(btn.dataset.add);
+      if (p && soldOut(p)) { btn.disabled = true; btn.setAttribute("aria-disabled", "true"); btn.textContent = "Sold out"; }
+    });
+  }
+
+  function reconcileCart() {
+    let changed = false;
+    for (const id of Object.keys(cart)) {
+      const p = byId(id);
+      if (!p || p.stock == null) continue;
+      const max = Math.max(0, availOf(p));
+      if (cart[id] > max) { if (max === 0) delete cart[id]; else cart[id] = max; changed = true; }
+    }
+    if (changed) { save(); renderCart(); bumpCount(); toast("Updated your basket for what's left in stock"); }
+  }
+
+  async function loadStock() {
+    try {
+      const res = await fetch("/api/stock", { cache: "no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+      SOLD = (data && data.sold) || {};
+      patchCards(document); patchStandalone(); reconcileCart();
+    } catch {}
   }
 
   /* ----------------------------------------------------------------
@@ -323,7 +388,10 @@
       const inc = e.target.closest("[data-inc]");
       const dec = e.target.closest("[data-dec]");
       const rm = e.target.closest("[data-rm]");
-      if (inc) setQty(inc.dataset.inc, (cart[inc.dataset.inc] || 0) + 1);
+      if (inc) {
+        const p = byId(inc.dataset.inc); const next = (cart[inc.dataset.inc] || 0) + 1;
+        if (next > availOf(p)) toast(`Only ${availOf(p)} in stock`); else setQty(inc.dataset.inc, next);
+      }
       if (dec) setQty(dec.dataset.dec, (cart[dec.dataset.dec] || 0) - 1);
       if (rm) { setQty(rm.dataset.rm, 0); toast("Removed from basket"); }
     });
@@ -407,10 +475,15 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items }),
       });
-      if (!res.ok) throw new Error("checkout unavailable (" + res.status + ")");
-      const data = await res.json();
-      if (data && data.url) { window.location.href = data.url; return; }
-      throw new Error("no checkout url");
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data && data.url) { window.location.href = data.url; return; }
+      if (res.status === 409) { // an item sold out (or not enough left) while browsing
+        toast(data.error || "Some items just sold out — your basket was updated");
+        loadStock();
+        if (btn) { btn.disabled = false; btn.textContent = original; }
+        return;
+      }
+      throw new Error("checkout unavailable (" + res.status + ")");
     } catch (err) {
       toast(`Online checkout opens very soon — to order now, message us <b>@craftingyarn</b> on Instagram ♥`);
       if (btn) { btn.disabled = false; btn.textContent = original; }
@@ -440,6 +513,7 @@
     renderGrid();
     renderCart();
     wire();
+    loadStock();
     // arriving from another page with ?cat=Bags -> preselect that filter
     const cat = new URLSearchParams(location.search).get("cat");
     if (cat && $(`#filters .chip[data-filter="${cat}"]`)) setFilter(cat);

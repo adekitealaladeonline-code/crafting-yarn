@@ -148,6 +148,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   padding:.45em .65em;border-radius:2px}
 .tag--sale{background:var(--terra);color:#fff}
 .tag--new{background:var(--ink);color:#fff}
+.tag--out{background:#5b5b5b;color:#fff}
+.tag--low{background:var(--brown);color:#fff}
 .card__wish{position:absolute;top:10px;right:10px;z-index:3;width:36px;height:36px;display:grid;place-items:center;border-radius:50%}
 .card__wish svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.5;transition:.3s var(--ease);
   filter:drop-shadow(0 1px 2px rgba(255,255,255,.7))}
@@ -162,6 +164,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .card__quick:hover{background:#fff;color:var(--terra)}
 .card__addbar{background:var(--terra);color:#fff}
 .card__addbar:hover{background:var(--brown)}
+.card__addbar[disabled],.card__addbar:disabled{background:#9a9a9a;cursor:not-allowed}
+.card.is-soldout .card__img,.card.is-soldout .card__img--hover{opacity:.5;filter:grayscale(.5)}
 .card__info{padding:.9rem .15rem 0}
 .card__cat{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .card__name{font-weight:600;font-size:1.04rem;line-height:1.2;margin:.3em 0 .35em;letter-spacing:-.01em}
