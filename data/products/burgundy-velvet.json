@@ -1,13 +1,13 @@
 {
-  "order": 250,
   "name": "Burgundy velvet",
   "category": "Accessories",
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": 14,
   "image": "assets/products/burgundy-velvet.jpg",
-  "desc": "Velvet-yarn scrunchie in rich burgundy.",
+  "image2": "assets/products/burgundy-velvet-2.jpg",
+  "desc": "Velvet scrunchie in rich burgundy.",
   "featured": false,
   "isNew": false,
-  "image2": "assets/products/burgundy-velvet-2.jpg"
+  "order": 250
 }
