@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Orders — Crafting Yarn</title>
+<link rel="icon" type="image/png" href="../assets/brand/logo.png" />
+<link rel="stylesheet" href="../css/styles.css" />
+<style>
+  .ow{max-width:920px;margin:0 auto;padding:2rem 1.2rem 4rem}
+  .oh{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap}
+  .oh img{height:52px}
+  .oh .obtns{display:flex;gap:.5rem}
+  .obtn{background:#E35D40;color:#fff;border:none;padding:.6em 1.2em;border-radius:8px;font-weight:600;cursor:pointer;font-size:.9rem}
+  .obtn.sec{background:#9a9a9a}
+  .ologin{max-width:340px;margin:3rem auto;text-align:center}
+  .ologin input{width:100%;padding:.8em 1em;border:1px solid #d8c7ad;border-radius:8px;font-size:1rem;margin:.7rem 0}
+  .ocard{border:1px solid #e7d7be;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem;background:#fff}
+  .ocard h3{margin:0 0 .35rem;font-size:1.05rem;color:#5E2816}
+  .orow{font-size:.92rem;color:#5e4636;margin:.18rem 0;line-height:1.5}
+  .orow b{color:#5E2816;font-weight:600}
+  .ototal{float:right;font-weight:700;color:#5E2816;font-size:1.05rem}
+  .omuted{color:#a98b72;font-size:.82rem}
+  .oempty{text-align:center;color:#8a6f58;margin:3rem 0;font-size:1.05rem}
+  .oerr{color:#c0392b;font-size:.9rem;min-height:1.2em}
+</style>
+</head>
+<body>
+<div class="ow">
+  <div class="oh">
+    <img src="../assets/brand/logo.png" alt="Crafting Yarn" />
+    <div class="obtns">
+      <button class="obtn" id="refresh" hidden>Refresh</button>
+      <button class="obtn sec" id="logout" hidden>Lock</button>
+    </div>
+  </div>
+
+  <div id="login" class="ologin">
+    <h2 style="color:#5E2816">Your orders</h2>
+    <p class="omuted">Enter your orders password.</p>
+    <input type="password" id="pw" placeholder="Password" autocomplete="current-password" />
+    <div id="err" class="oerr"></div>
+    <button class="obtn" id="enter">View orders</button>
+  </div>
+
+  <div id="list" hidden></div>
+</div>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var KEY = "craftingyarn.orderskey";
+  var money = function (a, c) { return c + " " + (a / 100).toFixed(2); };
+  var when = function (t) { return new Date(t * 1000).toLocaleString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }); };
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); };
+
+  function show(authed) {
+    $("#login").hidden = authed; $("#list").hidden = !authed;
+    $("#refresh").hidden = !authed; $("#logout").hidden = !authed;
+  }
+  function render(orders) {
+    if (!orders.length) { $("#list").innerHTML = '<p class="oempty">No orders yet — they\'ll appear here the moment someone buys.</p>'; return; }
+    $("#list").innerHTML = orders.map(function (o) {
+      return '<div class="ocard">' +
+        '<span class="ototal">' + esc(money(o.amount, o.currency)) + '</span>' +
+        '<h3>' + (esc(o.name) || "Customer") + '</h3>' +
+        '<div class="orow"><b>Items:</b> ' + (esc(o.items) || "—") + '</div>' +
+        '<div class="orow"><b>Ship to:</b> ' + (esc(o.address) || "—") + '</div>' +
+        '<div class="orow"><b>Email:</b> ' + (esc(o.email) || "—") + ' &nbsp; <b>Phone:</b> ' + (esc(o.phone) || "—") + '</div>' +
+        '<div class="orow omuted">' + esc(when(o.created)) + '</div>' +
+      '</div>';
+    }).join("");
+  }
+  async function load(pw) {
+    if (!pw) return false;
+    var res, data;
+    try { res = await fetch("/api/orders", { headers: { "x-admin-key": pw } }); data = await res.json(); }
+    catch (e) { $("#err").textContent = "Network error — try again."; return false; }
+    if (res.status === 200) { localStorage.setItem(KEY, pw); $("#err").textContent = ""; show(true); render(data.orders || []); return true; }
+    if (res.status === 401) { $("#err").textContent = "Wrong password."; localStorage.removeItem(KEY); show(false); return false; }
+    $("#err").textContent = (data && data.error) || ("Error " + res.status); show(false); return false;
+  }
+  $("#enter").addEventListener("click", function () { load($("#pw").value.trim()); });
+  $("#pw").addEventListener("keydown", function (e) { if (e.key === "Enter") load($("#pw").value.trim()); });
+  $("#refresh").addEventListener("click", function () { load(localStorage.getItem(KEY) || ""); });
+  $("#logout").addEventListener("click", function () { localStorage.removeItem(KEY); $("#pw").value = ""; show(false); });
+  var saved = localStorage.getItem(KEY);
+  if (saved) load(saved);
+})();
+</script>
+</body>
+</html>

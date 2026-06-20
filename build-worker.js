@@ -34,6 +34,8 @@ export default {
       return handleStock(env);
     if (url.pathname === "/api/stripe-webhook")
       return request.method === "POST" ? handleWebhook(request, env) : new Response("Method not allowed", { status: 405 });
+    if (url.pathname === "/api/orders")
+      return handleOrders(request, env);
     return env.ASSETS.fetch(request);
   },
 };
@@ -54,6 +56,46 @@ async function soldMap(env) {
 
 async function handleStock(env) {
   return J({ sold: await soldMap(env) });
+}
+
+function constEq(a, b) {
+  if (typeof a !== "string" || typeof b !== "string" || a.length !== b.length) return false;
+  let d = 0;
+  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
+}
+
+// Orders for the admin screen — read live from Stripe, gated by ADMIN_PASSWORD.
+async function handleOrders(request, env) {
+  if (!env.ADMIN_PASSWORD) return J({ error: "Orders aren't set up yet (missing ADMIN_PASSWORD)." }, 503);
+  if (!constEq(request.headers.get("x-admin-key") || "", env.ADMIN_PASSWORD)) return J({ error: "Wrong password." }, 401);
+  if (!env.STRIPE_SECRET_KEY) return J({ error: "Stripe is not configured." }, 500);
+
+  const res = await fetch("https://api.stripe.com/v1/checkout/sessions?limit=25", {
+    headers: { Authorization: "Bearer " + env.STRIPE_SECRET_KEY },
+  });
+  const data = await res.json();
+  if (!res.ok) return J({ error: (data.error && data.error.message) || "Could not load orders." }, 502);
+
+  const orders = (data.data || [])
+    .filter((s) => s.payment_status === "paid")
+    .map((s) => {
+      const cd = s.customer_details || {};
+      const sd = s.shipping_details || (s.collected_information && s.collected_information.shipping_details) || {};
+      const a = sd.address || cd.address || {};
+      const items = ((s.metadata && s.metadata.items) || "").split(",").filter(Boolean).map((part) => {
+        const [id, q] = part.split(":");
+        const p = PRODUCTS[id];
+        return (p ? p.name : id) + " ×" + (q || 1);
+      }).join(", ");
+      return {
+        id: s.id, created: s.created,
+        name: sd.name || cd.name || "", email: cd.email || "", phone: cd.phone || "",
+        address: [a.line1, a.line2, a.city, a.state, a.postal_code, a.country].filter(Boolean).join(", "),
+        items, amount: s.amount_total || 0, currency: (s.currency || "aed").toUpperCase(),
+      };
+    });
+  return J({ orders });
 }
 
 async function handleCheckout(request, env) {
