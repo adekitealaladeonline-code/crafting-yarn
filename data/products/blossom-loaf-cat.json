@@ -4,11 +4,12 @@
   "subcategory": "Loaf Cats",
   "price": 70,
   "sale": null,
+  "stock": 0,
+  "images": [
+    "assets/products/blossom-loaf-cat.jpg"
+  ],
   "desc": "A loaf-shaped cat whose only job is to sit and be adored. Crocheted in soft yarn for your shelf.\n She stands at 5\" tall and 6\" across. Blossom has safety eyes which makes her unsuitable for babies and small children under 3 years old.",
   "featured": true,
   "isNew": false,
-  "order": 200,
-  "images": [
-    "assets/products/blossom-loaf-cat.jpg"
-  ]
+  "order": 200
 }
