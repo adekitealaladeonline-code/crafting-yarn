@@ -3,8 +3,8 @@
   "category": "Accessories",
   "subcategory": "Scrunchies",
   "price": 20,
-  "sale": 3,
-  "stock": null,
+  "sale": null,
+  "stock": 3,
   "images": [
     "assets/products/burgundy-velvet.jpg",
     "assets/products/burgundy-velvet-2.jpg"
