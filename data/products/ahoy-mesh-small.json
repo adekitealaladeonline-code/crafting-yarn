@@ -4,12 +4,13 @@
   "subcategory": "",
   "price": 85,
   "sale": null,
-  "desc": "An airy open-weave mesh bag — beach-ready, market-ready, throw-everything-in ready.\n\n16.5” wide - does stretch\n10.5” deep - does stretch\n100% Cotton",
-  "featured": false,
-  "isNew": false,
-  "order": 190,
+  "stock": 1,
   "images": [
     "assets/products/ahoy-mesh-small.jpg",
     "assets/products/ahoy-mesh-small-2.jpg"
-  ]
+  ],
+  "desc": "An airy open-weave mesh bag — beach-ready, market-ready, throw-everything-in ready.\n\n16.5” wide - does stretch\n10.5” deep - does stretch\n100% Cotton",
+  "featured": false,
+  "isNew": false,
+  "order": 190
 }
