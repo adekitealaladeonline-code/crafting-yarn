@@ -4,12 +4,13 @@
   "subcategory": "Bandanas",
   "price": 35,
   "sale": null,
-  "desc": "The picot bandana in black — the most-worn thing you'll own.\nHandmade-100% cotton\n14” wide\n9” long",
-  "featured": false,
-  "isNew": false,
-  "order": 80,
+  "stock": 1,
   "images": [
     "assets/products/picot-bandana-black.jpg",
     "assets/products/picot-bandana-black-2.jpg"
-  ]
+  ],
+  "desc": "The picot bandana in black — the most-worn thing you'll own.\nHandmade-100% cotton\n14” wide\n9” long",
+  "featured": false,
+  "isNew": false,
+  "order": 80
 }
