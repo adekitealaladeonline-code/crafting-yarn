@@ -4,12 +4,13 @@
   "subcategory": "Bandanas",
   "price": 35,
   "sale": null,
-  "desc": "Sunset-striped bandana — warm ombré tones for golden hour, all day.\n100% acrylic yarn\n14” wide\n9” long",
-  "featured": false,
-  "isNew": false,
-  "order": 150,
+  "stock": 1,
   "images": [
     "assets/products/bandana-sunset.jpg",
     "assets/products/bandana-sunset-2.jpg"
-  ]
+  ],
+  "desc": "Sunset-striped bandana — warm ombré tones for golden hour, all day.\n100% acrylic yarn\n14” wide\n9” long",
+  "featured": false,
+  "isNew": false,
+  "order": 150
 }
