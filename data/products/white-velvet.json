@@ -4,12 +4,13 @@
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": null,
-  "desc": "Velvet-yarn scrunchie in soft white.",
-  "featured": false,
-  "isNew": false,
-  "order": 270,
+  "stock": 3,
   "images": [
     "assets/products/white-velvet.jpg",
     "assets/products/white-velvet-2.jpg"
-  ]
+  ],
+  "desc": "Velvet-yarn scrunchie in soft white.",
+  "featured": false,
+  "isNew": false,
+  "order": 270
 }
