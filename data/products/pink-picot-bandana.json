@@ -4,12 +4,13 @@
   "subcategory": "Bandanas",
   "price": 35,
   "sale": null,
-  "desc": "A sweet handmade  bandana in candy pink.\n100% cotton- \n13.5” wide\n8.5” long",
-  "featured": false,
-  "isNew": false,
-  "order": 100,
+  "stock": 1,
   "images": [
     "assets/products/pink-picot-bandana.jpg",
     "assets/products/pink-picot-bandana-2.jpg"
-  ]
+  ],
+  "desc": "A sweet handmade  bandana in candy pink.\n100% cotton- \n13.5” wide\n8.5” long",
+  "featured": false,
+  "isNew": false,
+  "order": 100
 }
