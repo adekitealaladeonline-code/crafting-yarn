@@ -4,12 +4,13 @@
   "subcategory": "",
   "price": 150,
   "sale": null,
-  "desc": "A granny-square jacket built from spring-bright hexagons. Heirloom energy to complete your look.",
-  "featured": true,
-  "isNew": false,
-  "order": 30,
+  "stock": 1,
   "images": [
     "assets/products/spring-hexagon-jacket-m-l.jpg",
     "assets/products/spring-hexagon-jacket-m-l-2.jpg"
-  ]
+  ],
+  "desc": "A granny-square jacket built from spring-bright hexagons. Heirloom energy to complete your look.",
+  "featured": true,
+  "isNew": false,
+  "order": 30
 }
