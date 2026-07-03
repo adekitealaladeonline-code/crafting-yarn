@@ -4,12 +4,13 @@
   "subcategory": "Hats",
   "price": 45,
   "sale": null,
-  "desc": "A wide-brim cotton sun hat for slow, bright days. suitable for 22\" circumference fit.",
-  "featured": false,
-  "isNew": false,
-  "order": 320,
+  "stock": 1,
   "images": [
     "assets/products/brook-sun-hat.jpg",
     "assets/products/brook-sun-hat-2.jpg"
-  ]
+  ],
+  "desc": "A wide-brim cotton sun hat for slow, bright days. suitable for 22\" circumference fit.",
+  "featured": false,
+  "isNew": false,
+  "order": 320
 }
