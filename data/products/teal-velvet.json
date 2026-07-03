@@ -4,12 +4,13 @@
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": null,
-  "desc": "A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.",
-  "featured": false,
-  "isNew": false,
-  "order": 50,
+  "stock": 3,
   "images": [
     "assets/products/teal-velvet.jpg",
     "assets/products/teal-velvet-2.jpg"
-  ]
+  ],
+  "desc": "A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.",
+  "featured": false,
+  "isNew": false,
+  "order": 50
 }
