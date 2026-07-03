@@ -3,13 +3,14 @@
   "category": "Accessories",
   "subcategory": "Bandanas",
   "price": 35,
-  "sale": null,
-  "desc": "A picot-edged hair bandana in cocoa brown. Ties at the nape, finishes any look. \nMade with cotton yarn. It measures 14\" x 9\".",
-  "featured": false,
-  "isNew": false,
-  "order": 60,
+  "sale": 1,
+  "stock": null,
   "images": [
     "assets/products/brown-picot-bandana.jpg",
     "assets/products/brown-picot-bandana-2.jpg"
-  ]
+  ],
+  "desc": "A picot-edged hair bandana in cocoa brown. Ties at the nape, finishes any look. \nMade with cotton yarn. It measures 14\" x 9\".",
+  "featured": false,
+  "isNew": false,
+  "order": 60
 }
