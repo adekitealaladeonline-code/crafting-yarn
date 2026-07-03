@@ -4,12 +4,13 @@
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": null,
-  "desc": "Velvet-yarn scrunchie in a heathered grey mix.",
-  "featured": false,
-  "isNew": false,
-  "order": 290,
+  "stock": 3,
   "images": [
     "assets/products/grey-mix-velvet.jpg",
     "assets/products/grey-mix-velvet-2.jpg"
-  ]
+  ],
+  "desc": "Velvet-yarn scrunchie in a heathered grey mix.",
+  "featured": false,
+  "isNew": false,
+  "order": 290
 }
