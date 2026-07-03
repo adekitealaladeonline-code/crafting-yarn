@@ -3,8 +3,8 @@
   "category": "Accessories",
   "subcategory": "Bandanas",
   "price": 35,
-  "sale": 1,
-  "stock": null,
+  "sale": null,
+  "stock": 1,
   "images": [
     "assets/products/brown-picot-bandana.jpg",
     "assets/products/brown-picot-bandana-2.jpg"
