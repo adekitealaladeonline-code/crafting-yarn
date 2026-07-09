@@ -55,7 +55,15 @@ async function soldMap(env) {
 }
 
 async function handleStock(env) {
-  return J({ sold: await soldMap(env) });
+  let sold = {}, ready = false;
+  if (env.DB) {
+    try {
+      const { results } = await env.DB.prepare("SELECT product_id, sold FROM sales").all();
+      for (const r of results || []) sold[r.product_id] = r.sold;
+      ready = true;
+    } catch (e) {}
+  }
+  return J({ sold, db: !!env.DB, ready });
 }
 
 function constEq(a, b) {
