@@ -113,8 +113,8 @@ async function handleCheckout(request, env) {
     if (!p || p.stock == null) continue;
     const want = Math.max(1, parseInt(it.qty, 10) || 1);
     const avail = p.stock - (sold[it.id] || 0);
-    if (avail <= 0) return J({ error: '"' + p.name + '" just sold out.', soldOut: it.id }, 409);
-    if (want > avail) return J({ error: "Only " + avail + ' of "' + p.name + '" left.', max: avail, id: it.id }, 409);
+    if (avail <= 0) return J({ error: '"' + p.name + '" is not available right now.', soldOut: it.id }, 409);
+    if (want > avail) return J({ error: 'We do not have that many of "' + p.name + '" right now.', max: avail, id: it.id }, 409);
   }
 
   const origin = new URL(request.url).origin;

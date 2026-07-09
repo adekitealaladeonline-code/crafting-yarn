@@ -48,11 +48,11 @@
   function addToCart(id, qty = 1) {
     const p = byId(id);
     if (!p) return;
-    if (soldOut(p)) { toast(`Sorry, <b>${p.name}</b> is sold out`); return; }
+    if (soldOut(p)) { toast(`Sorry, <b>${p.name}</b> isn’t available right now`); return; }
     const max = availOf(p);
     if ((cart[id] || 0) + qty > max) {
       cart[id] = max; save(); renderCart(); bumpCount();
-      toast(`Only ${max} of <b>${p.name}</b> available`);
+      toast(`That’s all we have of <b>${p.name}</b> right now`);
       return;
     }
     cart[id] = (cart[id] || 0) + qty;
@@ -177,7 +177,6 @@
     if (!grid) return;
     const list = visibleProducts();
     grid.innerHTML = list.map(cardHTML).join("");
-    patchCards(grid);
     const empty = $("#gridEmpty"); if (empty) empty.hidden = list.length > 0;
     const count = $("#gridCount");
     if (count) count.textContent = `${list.length} ${list.length === 1 ? "piece" : "pieces"}`;
@@ -202,39 +201,13 @@
     if (!track) return;
     const feat = CATALOG.filter((p) => p.featured);
     track.innerHTML = feat.map(cardHTML).join("");
-    patchCards(track);
   }
 
   /* ----------------------------------------------------------------
-     LIVE STOCK — patch sold-out / low-stock UI from /api/stock
+     LIVE STOCK — invisible. No storefront badges; this only quietly
+     keeps the basket within what's actually available (the server-side
+     checkout guard is the real source of truth).
   ---------------------------------------------------------------- */
-  function patchCards(scope = document) {
-    $$(".card[data-id]", scope).forEach((el) => {
-      const p = byId(el.dataset.id);
-      if (!p || p.stock == null) return;
-      const avail = availOf(p), out = avail <= 0;
-      el.classList.toggle("is-soldout", out);
-      const old = el.querySelector(".tag--out, .tag--low"); if (old) old.remove();
-      let bc = el.querySelector(".card__badges");
-      const media = el.querySelector(".card__media");
-      if (!bc && media) { bc = document.createElement("div"); bc.className = "card__badges"; media.prepend(bc); }
-      if (bc) {
-        if (out) bc.insertAdjacentHTML("afterbegin", `<span class="tag tag--out">Sold out</span>`);
-        else if (avail <= 5) bc.insertAdjacentHTML("afterbegin", `<span class="tag tag--low">Only ${avail} left</span>`);
-      }
-      const addbar = el.querySelector(".card__addbar");
-      if (addbar && out) { addbar.disabled = true; addbar.removeAttribute("data-add"); addbar.textContent = "Sold out"; }
-    });
-  }
-
-  function patchStandalone() {
-    $$("[data-add]").forEach((btn) => {
-      if (btn.closest(".card")) return;
-      const p = byId(btn.dataset.add);
-      if (p && soldOut(p)) { btn.disabled = true; btn.setAttribute("aria-disabled", "true"); btn.textContent = "Sold out"; }
-    });
-  }
-
   function reconcileCart() {
     let changed = false;
     for (const id of Object.keys(cart)) {
@@ -243,7 +216,7 @@
       const max = Math.max(0, availOf(p));
       if (cart[id] > max) { if (max === 0) delete cart[id]; else cart[id] = max; changed = true; }
     }
-    if (changed) { save(); renderCart(); bumpCount(); toast("Updated your basket for what's left in stock"); }
+    if (changed) { save(); renderCart(); bumpCount(); toast("Your basket was updated"); }
   }
 
   async function loadStock() {
@@ -252,7 +225,7 @@
       if (!res.ok) return;
       const data = await res.json();
       SOLD = (data && data.sold) || {};
-      patchCards(document); patchStandalone(); reconcileCart();
+      reconcileCart();
     } catch {}
   }
 
@@ -390,7 +363,7 @@
       const rm = e.target.closest("[data-rm]");
       if (inc) {
         const p = byId(inc.dataset.inc); const next = (cart[inc.dataset.inc] || 0) + 1;
-        if (next > availOf(p)) toast(`Only ${availOf(p)} in stock`); else setQty(inc.dataset.inc, next);
+        if (p && next > availOf(p)) toast(`That’s all we have of <b>${p.name}</b> right now`); else setQty(inc.dataset.inc, next);
       }
       if (dec) setQty(dec.dataset.dec, (cart[dec.dataset.dec] || 0) - 1);
       if (rm) { setQty(rm.dataset.rm, 0); toast("Removed from basket"); }
