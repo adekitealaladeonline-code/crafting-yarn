@@ -155,7 +155,7 @@
   let searchTerm = "";
 
   function visibleProducts() {
-    let list = CATALOG.slice();
+    let list = CATALOG.filter((p) => !soldOut(p)); // out-of-stock items drop out of the shop entirely
     if (activeFilter === "sale") list = list.filter((p) => p.sale != null);
     else if (activeFilter !== "all") list = list.filter((p) => p.category === activeFilter);
     if (searchTerm) {
@@ -199,7 +199,7 @@
   function renderRail() {
     const track = $("#railTrack");
     if (!track) return;
-    const feat = CATALOG.filter((p) => p.featured);
+    const feat = CATALOG.filter((p) => p.featured && !soldOut(p));
     track.innerHTML = feat.map(cardHTML).join("");
   }
 
@@ -225,7 +225,15 @@
       if (!res.ok) return;
       const data = await res.json();
       SOLD = (data && data.sold) || {};
+      renderGrid();   // re-filter the shop now that we know what's actually available
+      renderRail();
       reconcileCart();
+      // a sold-out product reached by a direct link: disable its add button
+      $$("[data-add]").forEach((btn) => {
+        if (btn.closest(".card")) return;
+        const p = byId(btn.dataset.add);
+        if (p && soldOut(p)) { btn.disabled = true; btn.setAttribute("aria-disabled", "true"); btn.textContent = "Sold out"; }
+      });
     } catch {}
   }
 
