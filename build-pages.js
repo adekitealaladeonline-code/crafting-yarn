@@ -25,8 +25,8 @@ const FONT = `<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />`;
 
 const ticker = `<div class="ticker" aria-hidden="true"><div class="ticker__track">
-  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Every piece made to order</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
-  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Every piece made to order</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
+  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Handmade, ready to ship</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
+  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Handmade, ready to ship</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
 </div></div>`;
 
 const header = (px) => `<header class="site-header" id="siteHeader"><div class="header__inner">
@@ -72,7 +72,7 @@ const cartDrawer = `<div class="overlay" id="overlay" hidden></div>
   <div class="cart__body" id="cartBody"></div>
   <div class="cart__foot" id="cartFoot">
     <div class="cart__row"><span>Subtotal</span><strong id="cartTotal">AED 0</strong></div>
-    <p class="cart__hint">Shipping calculated at checkout · Made to order</p>
+    <p class="cart__hint">Shipping calculated at checkout · Ready to ship</p>
     <button class="btn btn--solid btn--block" id="checkoutBtn">Checkout</button>
   </div>
 </aside>
@@ -145,7 +145,7 @@ for (const p of CATALOG) {
         <div class="pdp__price">${priceHTML}</div>
         <p class="pdp__desc">${esc(p.desc)}</p>
         <ul class="pdp__meta">
-          <li>Made to order, crocheted just for you</li>
+          <li>Crocheted by hand, ready to ship</li>
           <li>Hand-crocheted — no two are ever identical</li>
           <li>Ships from the UAE · free local delivery over AED 250</li>
         </ul>

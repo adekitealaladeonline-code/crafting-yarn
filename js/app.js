@@ -86,7 +86,7 @@
     if (!body) { bumpCount(); return; }
     const entries = Object.entries(cart).filter(([id]) => byId(id));
     if (!entries.length) {
-      body.innerHTML = `<p class="cart__empty">Your basket is empty.<br/>Every piece is made just for you.</p>`;
+      body.innerHTML = `<p class="cart__empty">Your basket is empty.<br/>Every piece is handmade with love.</p>`;
     } else {
       body.innerHTML = entries.map(([id, q]) => {
         const p = byId(id);
