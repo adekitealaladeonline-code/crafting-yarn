@@ -178,9 +178,10 @@ function tiktokSection() {
   const t = HOME.tiktok || {};
   const uid = TT_HANDLE.replace(/^@/, "");
   if (t.enabled === false || !uid) return "";
+  const heading = String(t.heading || "").trim();
+  const h2 = heading ? `\n    <h2 class="tiktok__title">${esc(heading)}</h2>` : ""; // blank = no headline
   return `  <!-- TIKTOK -->
-  <section class="tiktok" id="tiktok">
-    <h2 class="tiktok__title">${esc(t.heading || "Latest from TikTok")}</h2>
+  <section class="tiktok${heading ? "" : " tiktok--bare"}" id="tiktok">${h2}
     <div class="tiktok__embed">
       <blockquote class="tiktok-embed" cite="${esc(TT_URL)}" data-unique-id="${esc(uid)}" data-embed-type="creator" style="max-width:780px; min-width:288px;">
         <section><a target="_blank" rel="noopener" href="${esc(TT_URL)}?refer=creator_embed">${esc(TT_HANDLE)}</a></section>

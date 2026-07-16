@@ -167,7 +167,7 @@ collections:
             widget: object
             fields:
               - { name: enabled, label: "Show my latest TikToks on the homepage", widget: boolean, default: true }
-              - { name: heading, label: "Heading", widget: string, default: "Watch it come to life" }
+              - { name: heading, label: "Heading (optional)", widget: string, required: false, hint: "Leave empty for no heading — just the videos." }
             hint: "Shows your newest TikTok posts automatically — nothing to update, it follows your account. (Your TikTok link lives in Site settings.)"
           - name: story
             label: "Story block (near the bottom)"

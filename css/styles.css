@@ -214,6 +214,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
    NEWSLETTER
    ================================================================= */
 .tiktok{text-align:center;padding:clamp(48px,7vw,100px) var(--gut);background:var(--paper)}
+.tiktok--bare{padding-top:clamp(36px,5vw,72px)}
 .tiktok__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:1.8rem}
 .tiktok__embed{display:flex;justify-content:center;min-height:320px}
 .tiktok__embed .tiktok-embed{margin:0 auto!important}
