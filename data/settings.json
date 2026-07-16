@@ -1,0 +1,19 @@
+{
+  "ticker": [
+    { "text": "Handmade with love in the UAE" },
+    { "text": "Free UAE delivery over AED 250" },
+    { "text": "Handmade, ready to ship" },
+    { "text": "No two are ever the same" }
+  ],
+  "instagram": "https://www.instagram.com/craftingyarn/",
+  "tiktok": "https://www.tiktok.com/@craftingyarn",
+  "footerBlurb": "Handmade crochet, made with love in the UAE by Freda.",
+  "footerTagline": "Every stitch tells a story",
+  "cartHint": "Shipping calculated at checkout · Ready to ship",
+  "productMeta": [
+    { "text": "Crocheted by hand, ready to ship" },
+    { "text": "Hand-crocheted — no two are ever identical" },
+    { "text": "Ships from the UAE · free local delivery over AED 250" }
+  ],
+  "formspree": "your-form-id"
+}

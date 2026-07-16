@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "image": "assets/brand/hero.jpg",
+    "title": "Crocheted\nwith love.",
+    "button": "Shop now",
+    "style": "light"
+  },
+  "banners": [
+    {
+      "image": "assets/products/squishy-unicorn.jpeg",
+      "eyebrow": "The plushies",
+      "title": "Soft\nfriends.",
+      "category": "Plushies",
+      "button": "Shop now",
+      "style": "dark"
+    },
+    {
+      "image": "assets/products/sophie-basket.jpg",
+      "eyebrow": "The bags",
+      "title": "Carry\ncolour.",
+      "category": "Bags",
+      "button": "Shop now",
+      "style": "light"
+    },
+    {
+      "image": "assets/products/green-bolero-jacket-m-l.jpg",
+      "eyebrow": "The clothing",
+      "title": "Wear\nthe craft.",
+      "category": "Clothing",
+      "button": "Shop now",
+      "style": "dark"
+    }
+  ],
+  "featuredHeading": "Fresh off the hook",
+  "story": {
+    "image": "assets/products/spring-hexagon-jacket-m-l.jpg",
+    "eyebrow": "Hello friend",
+    "title": "Made by hand,\nby Freda.",
+    "text": "It started with a scarf for my husband. One hook, a little yarn, and I was hooked. Now I crochet every piece myself, here in the UAE — so no two ever turn out quite the same.",
+    "button": "Read my full story"
+  },
+  "newsletter": {
+    "title": "First dibs",
+    "text": "Be the first to see new pieces and restocks. Just yarn news — never spam.",
+    "button": "Join"
+  },
+  "seo": {
+    "description": "Crafting Yarn by Freda — hand-crocheted plushies, bags, clothing and accessories. Handmade in the UAE, with love. Every stitch tells a story."
+  }
+}

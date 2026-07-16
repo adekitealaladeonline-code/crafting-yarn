@@ -92,3 +92,116 @@ collections:
           - { name: body, label: "Intro text (the contact form appears below it)", widget: markdown }
           - { name: form, label: "Show contact form", widget: hidden, default: true }
           - { name: description, label: "Search description (for Google)", widget: string, required: false }
+      - name: success
+        label: "Thank-you page (after checkout)"
+        file: "data/pages/success.json"
+        fields:
+          - { name: eyebrow, label: "Small label above the title", widget: string, default: "Order received" }
+          - { name: title, label: "Big title", widget: text, hint: "Press Return to split it onto two lines." }
+          - { name: lead, label: "Main message", widget: text }
+          - { name: note, label: "Small note underneath", widget: text, hint: "Your Instagram link is added at the end automatically." }
+          - { name: button, label: "Button text", widget: string, default: "Continue shopping" }
+
+  - name: homepage
+    label: "Homepage"
+    description: "The landing page — change the big photos, headlines and buttons. Changes go live a minute after you publish."
+    editor: { preview: false }
+    files:
+      - name: homepage
+        label: "Homepage"
+        file: "data/homepage.json"
+        fields:
+          - name: hero
+            label: "Top banner (first thing visitors see)"
+            widget: object
+            fields:
+              - { name: image, label: "Photo", widget: image }
+              - { name: title, label: "Headline", widget: text, hint: "Press Return to split it onto two lines." }
+              - { name: button, label: "Button text", widget: string, default: "Shop now" }
+              - name: style
+                label: "Text colour"
+                widget: select
+                default: "light"
+                options:
+                  - { label: "Dark text (best on pale photos)", value: "light" }
+                  - { label: "White text (best on darker photos)", value: "dark" }
+          - name: banners
+            label: "Collection banners"
+            label_singular: "banner"
+            widget: list
+            hint: "The big photo panels down the homepage. Add, remove or drag to reorder."
+            fields:
+              - { name: image, label: "Photo", widget: image }
+              - { name: eyebrow, label: "Small label (e.g. The plushies)", widget: string, required: false }
+              - { name: title, label: "Headline", widget: text, hint: "Press Return to split it onto two lines." }
+              - name: category
+                label: "Shop section it opens"
+                widget: select
+                default: "all"
+                options:
+                  - { label: "Everything", value: "all" }
+                  - { label: "Plushies", value: "Plushies" }
+                  - { label: "Bags", value: "Bags" }
+                  - { label: "Clothing", value: "Clothing" }
+                  - { label: "Accessories", value: "Accessories" }
+                  - { label: "Sale items", value: "sale" }
+              - { name: button, label: "Button text", widget: string, default: "Shop now" }
+              - name: style
+                label: "Text colour"
+                widget: select
+                default: "dark"
+                options:
+                  - { label: "White text (best on darker photos)", value: "dark" }
+                  - { label: "Dark text (best on pale photos)", value: "light" }
+          - { name: featuredHeading, label: "Featured carousel heading", widget: string, default: "Fresh off the hook" }
+          - name: story
+            label: "Story block (near the bottom)"
+            widget: object
+            fields:
+              - { name: image, label: "Photo", widget: image }
+              - { name: eyebrow, label: "Small label", widget: string, default: "Hello friend" }
+              - { name: title, label: "Heading", widget: text, hint: "Press Return to split it onto two lines." }
+              - { name: text, label: "Short intro (the full story lives on the About page)", widget: text }
+              - { name: button, label: "Button text", widget: string, default: "Read my full story" }
+          - name: newsletter
+            label: "Email sign-up box"
+            widget: object
+            fields:
+              - { name: title, label: "Heading", widget: string, default: "First dibs" }
+              - { name: text, label: "Text", widget: text }
+              - { name: button, label: "Button text", widget: string, default: "Join" }
+          - name: seo
+            label: "Google & social sharing"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: description, label: "Site description (shows under your link on Google/WhatsApp)", widget: text, required: false }
+
+  - name: settings
+    label: "Site settings"
+    description: "Things that appear on every page — the scrolling announcement bar, social links and footer."
+    editor: { preview: false }
+    files:
+      - name: settings
+        label: "Site settings"
+        file: "data/settings.json"
+        fields:
+          - name: ticker
+            label: "Announcement bar messages (the scrolling strip at the top)"
+            label_singular: "message"
+            widget: list
+            fields:
+              - { name: text, label: "Message", widget: string }
+          - { name: instagram, label: "Instagram link", widget: string }
+          - { name: tiktok, label: "TikTok link", widget: string }
+          - { name: footerBlurb, label: "Footer — short line about the shop", widget: text }
+          - { name: footerTagline, label: "Footer — little sign-off line", widget: string, default: "Every stitch tells a story" }
+          - { name: cartHint, label: "Basket note (small line above the Checkout button)", widget: string }
+          - name: productMeta
+            label: "Product page bullet points"
+            label_singular: "bullet point"
+            widget: list
+            hint: "The three little reassurance lines shown on every product page."
+            fields:
+              - { name: text, label: "Line", widget: string }
+          - { name: formspree, label: "Contact form ID (from formspree.io — ask your developer)", widget: string, required: false }

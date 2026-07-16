@@ -1,10 +1,18 @@
 /* =================================================================
    Crafting Yarn — static page generator (dev tool)
-   Generates per-product pages + the About/Contact/Shipping/Returns
-   pages from the single source of truth (js/catalog.js), so they all
-   share one header/footer/cart and never drift out of sync.
+   Generates the homepage, per-product pages, the About/Contact/
+   Shipping/Returns pages and the thank-you page from the editable
+   sources in data/ (all managed by the CMS at /admin), so every page
+   shares one header/footer/cart and never drifts out of sync.
 
-   Run:  node build-pages.js
+   Editable sources:
+     data/products/*.json   products (name, price, photos, stock…)
+     data/homepage.json     hero, collection banners, story, newsletter
+     data/settings.json     ticker, socials, footer, cart note, form id
+     data/pages/*.md        About / Shipping / Returns / Contact copy
+     data/pages/success.json  thank-you page copy
+
+   Run:  node build-pages.js   (normally via `npm run build`)
    ================================================================= */
 const fs = require("fs");
 const path = require("path");
@@ -18,16 +26,49 @@ const SITE = "https://craftingyarn.com";
 const money = (n) => "AED " + (Number.isInteger(n) ? n : n.toFixed(2));
 const priceOf = (p) => (p.sale != null ? p.sale : p.price);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+// editable multi-line headline -> safe HTML with <br/>
+const lines = (s) => esc(String(s || "").trim()).replace(/\r?\n/g, "<br/>");
+const readJSON = (rel, fallback = {}) => {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8")); } catch { return fallback; }
+};
+// settings lists are stored as [{text:"…"}] (CMS-friendly); accept plain strings too
+const texts = (arr, fallback) => {
+  const out = (Array.isArray(arr) ? arr : []).map((t) => (typeof t === "string" ? t : t && t.text)).filter(Boolean);
+  return out.length ? out : fallback;
+};
+
+/* ---------- editable site data ---------- */
+const S = readJSON("data/settings.json");
+const HOME = readJSON("data/homepage.json");
+const TICKER_MSGS = texts(S.ticker, ["Handmade with love in the UAE"]);
+const IG_URL = S.instagram || "https://www.instagram.com/craftingyarn/";
+const TT_URL = S.tiktok || "https://www.tiktok.com/@craftingyarn";
+const handleOf = (url) => {
+  const seg = String(url).replace(/\/+$/, "").split("/").pop() || "";
+  const h = seg.split("?")[0];
+  return h ? (h.startsWith("@") ? h : "@" + h) : "";
+};
+const IG_HANDLE = handleOf(IG_URL);
+const TT_HANDLE = handleOf(TT_URL);
+const FOOTER_BLURB = S.footerBlurb || "Handmade crochet, made with love in the UAE by Freda.";
+const FOOTER_TAGLINE = S.footerTagline || "Every stitch tells a story";
+const CART_HINT = S.cartHint || "Shipping calculated at checkout";
+const PRODUCT_META = texts(S.productMeta, ["Crocheted by hand", "No two are ever identical", "Ships from the UAE"]);
+const FORM_ID = S.formspree || "your-form-id";
 
 /* ---------- shared chrome (prefix = "" for root, "../" for /product/) ---------- */
 const FONT = `<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />`;
 
+const tickerRow = TICKER_MSGS.map((t) => `<span>${esc(t)}</span><i>✶</i>`).join("");
 const ticker = `<div class="ticker" aria-hidden="true"><div class="ticker__track">
-  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Handmade, ready to ship</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
-  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Handmade, ready to ship</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
+  ${tickerRow}
+  ${tickerRow}
 </div></div>`;
+
+const socialMenuLinks = `<a class="menu__ig" href="${esc(IG_URL)}" target="_blank" rel="noopener">Instagram ${esc(IG_HANDLE)} ↗</a>
+  <a class="menu__ig" href="${esc(TT_URL)}" target="_blank" rel="noopener">TikTok ${esc(TT_HANDLE)} ↗</a>`;
 
 const header = (px) => `<header class="site-header" id="siteHeader"><div class="header__inner">
   <button class="header__menu" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
@@ -48,12 +89,11 @@ const menu = (px) => `<div class="menu" id="mobileNav" hidden>
     <a href="${px}about.html"><span>07</span> Our story</a>
     <a href="${px}contact.html"><span>08</span> Contact</a>
   </nav>
-  <a class="menu__ig" href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram @craftingyarn ↗</a>
-  <a class="menu__ig" href="https://www.tiktok.com/@craftingyarn" target="_blank" rel="noopener">TikTok @craftingyarn ↗</a>
+  ${socialMenuLinks}
 </div>`;
 
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
-  <div class="footer__brand"><img src="${px}assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/><p>Handmade crochet, made with love in the UAE by Freda.</p></div>
+  <div class="footer__brand"><img src="${px}assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/><p>${esc(FOOTER_BLURB)}</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
     <a href="${px}index.html?cat=Plushies#shop">Plushies</a><a href="${px}index.html?cat=Bags#shop">Bags</a><a href="${px}index.html?cat=Clothing#shop">Clothing</a><a href="${px}index.html?cat=Accessories#shop">Accessories</a><a href="${px}index.html?cat=sale#shop">Sale</a>
   </nav>
@@ -61,10 +101,10 @@ const footer = (px) => `<footer class="site-footer"><div class="footer__top">
     <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
   </nav>
   <nav class="footer__col" aria-label="Social"><h4>Follow</h4>
-    <a href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram ↗</a>
-    <a href="https://www.tiktok.com/@craftingyarn" target="_blank" rel="noopener">TikTok ↗</a>
+    <a href="${esc(IG_URL)}" target="_blank" rel="noopener">Instagram ↗</a>
+    <a href="${esc(TT_URL)}" target="_blank" rel="noopener">TikTok ↗</a>
   </nav>
-</div><div class="footer__bottom"><span>© <span id="year"></span> Crafting Yarn</span><span>Every stitch tells a story</span></div></footer>`;
+</div><div class="footer__bottom"><span>© <span id="year"></span> Crafting Yarn</span><span>${esc(FOOTER_TAGLINE)}</span></div></footer>`;
 
 const cartDrawer = `<div class="overlay" id="overlay" hidden></div>
 <aside class="cart" id="cart" aria-label="Shopping cart" aria-hidden="true">
@@ -72,7 +112,7 @@ const cartDrawer = `<div class="overlay" id="overlay" hidden></div>
   <div class="cart__body" id="cartBody"></div>
   <div class="cart__foot" id="cartFoot">
     <div class="cart__row"><span>Subtotal</span><strong id="cartTotal">AED 0</strong></div>
-    <p class="cart__hint">Shipping calculated at checkout · Ready to ship</p>
+    <p class="cart__hint">${esc(CART_HINT)}</p>
     <button class="btn btn--solid btn--block" id="checkoutBtn">Checkout</button>
   </div>
 </aside>
@@ -111,9 +151,274 @@ ${scripts(px)}
 `;
 }
 
+/* =================================================================
+   HOMEPAGE (index.html) — fully driven by data/homepage.json
+   ================================================================= */
+function bannerSection(b, { hero = false } = {}) {
+  const tone = b.style === "light" ? "banner--light" : "banner--dark";
+  const heroCls = hero ? " banner--hero" : "";
+  const inner = hero ? "banner__inner" : "banner__inner banner__inner--bl";
+  const titleTag = hero ? "h1" : "h2";
+  const alt = esc(b.eyebrow || String(b.title || "Crafting Yarn").split(/\r?\n/)[0]);
+  const eyebrow = b.eyebrow ? `\n      <p class="banner__eyebrow">${esc(b.eyebrow)}</p>` : "";
+  const filter = b.category || "all";
+  return `  <section class="banner${heroCls} ${tone}">
+    <img class="banner__img" src="${esc(b.image)}" alt="${alt}" ${hero ? "" : 'loading="lazy"'}/>
+    <div class="${inner}">${eyebrow}
+      <${titleTag} class="banner__title">${lines(b.title)}</${titleTag}>
+      <a href="#shop" class="shopnow" data-filter="${esc(filter)}">${esc(b.button || "Shop now")}</a>
+    </div>
+  </section>`;
+}
+
+function buildHomepage() {
+  const hero = HOME.hero || {};
+  const story = HOME.story || {};
+  const news = HOME.newsletter || {};
+  const seoDesc = (HOME.seo && HOME.seo.description) || FOOTER_BLURB;
+  const banners = (HOME.banners || []).map((b) => bannerSection(b)).join("\n\n");
+  const modalMeta = PRODUCT_META.map((t) => `<li>${esc(t)}</li>`).join("\n        ");
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crafting Yarn — Handmade crochet, made with love</title>
+<meta name="description" content="${esc(seoDesc)}" />
+<meta name="theme-color" content="#E35D40" />
+<link rel="canonical" href="${SITE}/" />
+
+<meta property="og:title" content="Crafting Yarn — Handmade crochet" />
+<meta property="og:description" content="${esc(seoDesc)}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="${SITE}/${esc(hero.image || "assets/brand/hero.jpg")}" />
+
+<link rel="icon" type="image/png" href="assets/brand/logo.png" />
+<link rel="apple-touch-icon" href="assets/brand/logo.png" />
+
+${FONT}
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+${ticker}
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header__inner">
+    <button class="header__menu" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <a href="#top" class="brand" aria-label="Crafting Yarn home">
+      <img src="assets/brand/logo.png" alt="Crafting Yarn" class="brand__logo" />
+    </a>
+
+    <div class="header__actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="searchbar" id="searchbar" hidden>
+    <div class="searchbar__inner">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="searchbar__icon"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <input type="search" id="searchInput" placeholder="Search the shop…" aria-label="Search products" />
+      <button class="searchbar__close" id="searchClose" aria-label="Close search">Close</button>
+    </div>
+  </div>
+</header>
+
+<!-- MENU OVERLAY -->
+<div class="menu" id="mobileNav" hidden>
+  <nav aria-label="Main">
+    <a href="#shop" data-filter="all"><span>01</span> Shop all</a>
+    <a href="#shop" data-filter="Plushies"><span>02</span> Plushies</a>
+    <a href="#shop" data-filter="Bags"><span>03</span> Bags</a>
+    <a href="#shop" data-filter="Clothing"><span>04</span> Clothing</a>
+    <a href="#shop" data-filter="Accessories"><span>05</span> Accessories</a>
+    <a href="#shop" data-filter="sale"><span>06</span> Sale</a>
+    <a href="#story"><span>07</span> Our story</a>
+  </nav>
+  ${socialMenuLinks}
+</div>
+
+<main id="top">
+
+<!-- HERO BANNER -->
+${bannerSection(hero, { hero: true })}
+
+<!-- COLLECTION BANNERS -->
+${banners}
+
+  <!-- CAROUSEL -->
+  <section class="rail" id="featured">
+    <div class="rail__head">
+      <h2 class="rail__title">${esc(HOME.featuredHeading || "Fresh off the hook")}</h2>
+      <div class="rail__nav">
+        <button class="round-btn" id="railPrev" aria-label="Scroll left">←</button>
+        <button class="round-btn" id="railNext" aria-label="Scroll right">→</button>
+      </div>
+    </div>
+    <div class="rail__track" id="railTrack"><!-- JS injects featured cards --></div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop" id="shop">
+    <div class="shop__bar">
+      <div class="filters" id="filters" role="tablist" aria-label="Filter products">
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="Plushies" role="tab" aria-selected="false">Plushies</button>
+        <button class="chip" data-filter="Bags" role="tab" aria-selected="false">Bags</button>
+        <button class="chip" data-filter="Clothing" role="tab" aria-selected="false">Clothing</button>
+        <button class="chip" data-filter="Accessories" role="tab" aria-selected="false">Accessories</button>
+        <button class="chip chip--sale" data-filter="sale" role="tab" aria-selected="false">Sale</button>
+      </div>
+      <div class="shop__tools">
+        <span class="shop__count" id="gridCount">${CATALOG.length} pieces</span>
+        <label for="sortSelect" class="sr-only">Sort products</label>
+        <select id="sortSelect">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price ↑</option>
+          <option value="price-desc">Price ↓</option>
+          <option value="name">A–Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid"><!-- JS injects product cards --></div>
+    <p class="grid__empty" id="gridEmpty" hidden>Nothing here yet — try another category.</p>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <figure class="story__media">
+      <img src="${esc(story.image || "assets/brand/hero.jpg")}" alt="${esc(story.eyebrow || "Crafting Yarn")}" loading="lazy"/>
+    </figure>
+    <div class="story__copy">
+      <p class="story__eyebrow">${esc(story.eyebrow || "Hello friend")}</p>
+      <h2 class="story__title">${lines(story.title || "Made by hand.")}</h2>
+      <p class="story__line">${esc(story.text || "")}</p>
+      <a href="about.html" class="btn">${esc(story.button || "Read my full story")}</a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="news" id="contact">
+    <div class="news__inner">
+      <h2 class="news__title">${esc(news.title || "First dibs")}</h2>
+      <p class="news__copy">${esc(news.text || "")}</p>
+      <form class="news__form" id="newsForm" novalidate>
+        <input type="email" id="newsEmail" placeholder="Email address" aria-label="Email address" required />
+        <button type="submit" class="btn btn--solid">${esc(news.button || "Join")}</button>
+      </form>
+      <p class="news__msg" id="newsMsg" role="status"></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/>
+      <p>${esc(FOOTER_BLURB)}</p>
+    </div>
+    <nav class="footer__col" aria-label="Shop">
+      <h4>Shop</h4>
+      <a href="#shop" data-filter="Plushies">Plushies</a>
+      <a href="#shop" data-filter="Bags">Bags</a>
+      <a href="#shop" data-filter="Clothing">Clothing</a>
+      <a href="#shop" data-filter="Accessories">Accessories</a>
+      <a href="#shop" data-filter="sale">Sale</a>
+    </nav>
+    <nav class="footer__col" aria-label="Help">
+      <h4>Help</h4>
+      <a href="shipping.html">Shipping</a>
+      <a href="returns.html">Returns</a>
+      <a href="about.html">Our story</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer__col" aria-label="Social">
+      <h4>Follow</h4>
+      <a href="${esc(IG_URL)}" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="${esc(TT_URL)}" target="_blank" rel="noopener">TikTok ↗</a>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Crafting Yarn</span>
+    <span>${esc(FOOTER_TAGLINE)}</span>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+${cartDrawer}
+
+<!-- QUICK VIEW MODAL -->
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal__panel">
+    <button class="modal__close" id="modalClose" aria-label="Close">Close</button>
+    <div class="modal__media"><img id="modalImg" alt="" /></div>
+    <div class="modal__info">
+      <p class="modal__cat" id="modalCat"></p>
+      <h3 class="modal__name" id="modalName"></h3>
+      <div class="modal__price" id="modalPrice"></div>
+      <p class="modal__desc" id="modalDesc"></p>
+      <ul class="modal__meta">
+        ${modalMeta}
+      </ul>
+      <button class="btn btn--solid btn--block" id="modalAdd">Add to bag</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/catalog.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+`;
+  fs.writeFileSync(path.join(ROOT, "index.html"), html);
+}
+buildHomepage();
+
+/* =================================================================
+   THANK-YOU PAGE (success.html) — from data/pages/success.json
+   ================================================================= */
+function buildSuccess() {
+  const d = readJSON("data/pages/success.json");
+  const main = `<main class="confirm">
+  <div class="confirm__inner">
+    <p class="confirm__eyebrow">${esc(d.eyebrow || "Order received")}</p>
+    <h1 class="confirm__title">${lines(d.title || "Thank you.")}</h1>
+    <p class="confirm__lead">${esc(d.lead || "")}</p>
+    <p class="confirm__note">${esc(d.note || "")} Questions any time:
+      <a href="${esc(IG_URL)}" target="_blank" rel="noopener">${esc(IG_HANDLE)}</a>.</p>
+    <a href="index.html" class="btn btn--solid">${esc(d.button || "Continue shopping")}</a>
+  </div>
+</main>`;
+  fs.writeFileSync(path.join(ROOT, "success.html"), shell({
+    px: "", title: "Thank you — Crafting Yarn",
+    description: "Order received — thank you for shopping handmade with Crafting Yarn.",
+    canonical: `${SITE}/success.html`,
+    headExtra: `<meta name="robots" content="noindex" />`,
+    main,
+  }));
+}
+buildSuccess();
+
 /* ---------- product pages ---------- */
+fs.rmSync(path.join(ROOT, "product"), { recursive: true, force: true }); // clear old pages so deleted products don't leave orphan URLs
 fs.mkdirSync(path.join(ROOT, "product"), { recursive: true });
 let count = 0;
+const metaBullets = PRODUCT_META.map((t) => `<li>${esc(t)}</li>`).join("\n          ");
 for (const p of CATALOG) {
   const px = "../";
   const sub = p.subcategory ? `${p.category} · ${p.subcategory}` : p.category;
@@ -145,9 +450,7 @@ for (const p of CATALOG) {
         <div class="pdp__price">${priceHTML}</div>
         <p class="pdp__desc">${esc(p.desc)}</p>
         <ul class="pdp__meta">
-          <li>Crocheted by hand, ready to ship</li>
-          <li>Hand-crocheted — no two are ever identical</li>
-          <li>Ships from the UAE · free local delivery over AED 250</li>
+          ${metaBullets}
         </ul>
         <button class="btn btn--solid pdp__add" data-add="${p.id}" aria-label="Add ${esc(p.name)} to bag">Add to bag — ${money(priceOf(p))}</button>
       </div>
@@ -204,7 +507,7 @@ function markdownLite(md) {
     .join("\n    ");
 }
 
-const CONTACT_FORM = `<form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+const CONTACT_FORM = `<form class="contact-form" action="https://formspree.io/f/${esc(FORM_ID)}" method="POST">
       <input type="text" name="name" placeholder="Your name" required />
       <input type="email" name="email" placeholder="Your email" required />
       <textarea name="message" placeholder="Your message" required></textarea>
@@ -229,4 +532,4 @@ for (const fileName of fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md")
   }));
 }
 
-console.log(`Generated ${count} product pages + about/shipping/returns/contact.`);
+console.log(`Generated homepage + thank-you + ${count} product pages + about/shipping/returns/contact.`);
