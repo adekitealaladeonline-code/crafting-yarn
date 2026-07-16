@@ -213,6 +213,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 /* =================================================================
    NEWSLETTER
    ================================================================= */
+.tiktok{text-align:center;padding:clamp(48px,7vw,100px) var(--gut);background:var(--paper)}
+.tiktok__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:1.8rem}
+.tiktok__embed{display:flex;justify-content:center;min-height:320px}
+.tiktok__embed .tiktok-embed{margin:0 auto!important}
+
 .news{text-align:center;padding:clamp(60px,9vw,140px) var(--gut)}
 .news__inner{max-width:620px;margin:0 auto}
 .news__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:.8rem}

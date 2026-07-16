@@ -171,6 +171,25 @@ function bannerSection(b, { hero = false } = {}) {
   </section>`;
 }
 
+// TikTok creator embed — TikTok's official widget; auto-shows her latest posts.
+// Only rendered when switched on in the CMS, so the third-party script never
+// loads if she turns it off.
+function tiktokSection() {
+  const t = HOME.tiktok || {};
+  const uid = TT_HANDLE.replace(/^@/, "");
+  if (t.enabled === false || !uid) return "";
+  return `  <!-- TIKTOK -->
+  <section class="tiktok" id="tiktok">
+    <h2 class="tiktok__title">${esc(t.heading || "Latest from TikTok")}</h2>
+    <div class="tiktok__embed">
+      <blockquote class="tiktok-embed" cite="${esc(TT_URL)}" data-unique-id="${esc(uid)}" data-embed-type="creator" style="max-width:780px; min-width:288px;">
+        <section><a target="_blank" rel="noopener" href="${esc(TT_URL)}?refer=creator_embed">${esc(TT_HANDLE)}</a></section>
+      </blockquote>
+    </div>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+  </section>`;
+}
+
 function buildHomepage() {
   const hero = HOME.hero || {};
   const story = HOME.story || {};
@@ -309,6 +328,8 @@ ${banners}
       <a href="about.html" class="btn">${esc(story.button || "Read my full story")}</a>
     </div>
   </section>
+
+${tiktokSection()}
 
   <!-- NEWSLETTER -->
   <section class="news" id="contact">

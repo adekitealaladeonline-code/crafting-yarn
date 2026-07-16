@@ -32,6 +32,10 @@
     }
   ],
   "featuredHeading": "Fresh off the hook",
+  "tiktok": {
+    "enabled": true,
+    "heading": "Watch it come to life"
+  },
   "story": {
     "image": "assets/products/spring-hexagon-jacket-m-l.jpg",
     "eyebrow": "Hello friend",

@@ -162,6 +162,13 @@ collections:
                   - { label: "White text (best on darker photos)", value: "dark" }
                   - { label: "Dark text (best on pale photos)", value: "light" }
           - { name: featuredHeading, label: "Featured carousel heading", widget: string, default: "Fresh off the hook" }
+          - name: tiktok
+            label: "TikTok videos block"
+            widget: object
+            fields:
+              - { name: enabled, label: "Show my latest TikToks on the homepage", widget: boolean, default: true }
+              - { name: heading, label: "Heading", widget: string, default: "Watch it come to life" }
+            hint: "Shows your newest TikTok posts automatically — nothing to update, it follows your account. (Your TikTok link lives in Site settings.)"
           - name: story
             label: "Story block (near the bottom)"
             widget: object
