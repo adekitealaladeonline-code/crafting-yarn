@@ -51,7 +51,9 @@ execSync("node build-pages.js", { cwd: ROOT, stdio: "inherit" });
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
 
-const files = ["index.html", "success.html", "about.html", "contact.html", "returns.html", "shipping.html"];
+// every generated top-level page (index, success, about, care, …) — dynamic so new
+// data/pages/*.md entries ship automatically
+const files = fs.readdirSync(ROOT).filter((f) => f.endsWith(".html"));
 const dirs = ["css", "js", "assets", "product", "admin"]; // admin copied only if present
 
 for (const f of files) {

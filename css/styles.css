@@ -13,6 +13,8 @@
   --terra:#E35D40;         /* signature terracotta */
   --terra-d:#C8472C;
   --brown:#5E2816;         /* deep brown for display headings */
+  --logo-pink:#C01860;     /* raspberry from the Crafting Yarn logo script */
+  --logo-green:#90D878;    /* leaf green from the logo yarn ball */
   --line:rgba(23,21,19,.14);
   --line-2:rgba(23,21,19,.07);
 
@@ -80,8 +82,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .header__menu[aria-expanded="true"] span:first-child{transform:translateY(8px) rotate(45deg)}
 .header__menu[aria-expanded="true"] span:last-child{transform:translateY(-8px) rotate(-45deg)}
 .brand{justify-self:center}
-.brand__logo{height:clamp(76px,10vw,112px);width:auto;transition:height .3s}
-.is-scrolled .brand__logo{height:clamp(58px,7vw,80px)}
+.brand__logo{height:clamp(96px,13vw,148px);width:auto;transition:height .3s;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6))}
+.is-scrolled .brand__logo{height:clamp(64px,8vw,92px)}
 .header__actions{justify-self:end;display:flex;align-items:center;gap:.3rem}
 .cart-btn{position:relative}
 .cart-count{position:absolute;top:1px;right:1px;background:var(--terra);color:#fff;font-size:.6rem;font-weight:700;
@@ -126,7 +128,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
    ================================================================= */
 .rail{max-width:var(--maxw);margin:0 auto;padding:clamp(48px,7vw,100px) 0 clamp(30px,4vw,56px)}
 .rail__head{padding:0 var(--gut);display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:2rem}
-.rail__title{color:var(--brown);font-weight:700;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-.02em;line-height:1}
+.rail__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-.02em;line-height:1}
 .rail__nav{display:flex;gap:.7rem;flex-shrink:0}
 .rail__track{display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;
   padding:4px var(--gut) 22px;scrollbar-width:none}

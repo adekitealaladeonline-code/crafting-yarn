@@ -98,7 +98,7 @@ const footer = (px) => `<footer class="site-footer"><div class="footer__top">
     <a href="${px}index.html?cat=Plushies#shop">Plushies</a><a href="${px}index.html?cat=Bags#shop">Bags</a><a href="${px}index.html?cat=Clothing#shop">Clothing</a><a href="${px}index.html?cat=Accessories#shop">Accessories</a><a href="${px}index.html?cat=sale#shop">Sale</a>
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
-    <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
+    <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
   </nav>
   <nav class="footer__col" aria-label="Social"><h4>Follow</h4>
     <a href="${esc(IG_URL)}" target="_blank" rel="noopener">Instagram ↗</a>
@@ -344,6 +344,7 @@ ${banners}
       <h4>Help</h4>
       <a href="shipping.html">Shipping</a>
       <a href="returns.html">Returns</a>
+      <a href="care.html">Care guide</a>
       <a href="about.html">Our story</a>
       <a href="contact.html">Contact</a>
     </nav>

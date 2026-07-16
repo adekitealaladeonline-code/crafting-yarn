@@ -54,9 +54,17 @@ collections:
 
   - name: pages
     label: "Site text"
-    description: "Edit the wording on the About, Shipping, Returns and Contact pages."
+    description: "Edit the wording on the About, Shipping, Returns, Care and Contact pages."
     editor: { preview: false }
     files:
+      - name: care
+        label: "Care guide"
+        file: "data/pages/care.md"
+        fields:
+          - { name: eyebrow, label: "Small label above the title", widget: string, required: false }
+          - { name: heading, label: "Title", widget: string }
+          - { name: body, label: "Text", widget: markdown }
+          - { name: description, label: "Search description (for Google)", widget: string, required: false }
       - name: about
         label: "About / Our story"
         file: "data/pages/about.md"
