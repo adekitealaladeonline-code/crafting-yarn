@@ -32,6 +32,10 @@
     }
   ],
   "featuredHeading": "Fresh off the hook",
+  "tiktok": {
+    "enabled": true,
+    "heading": ""
+  },
   "story": {
     "image": "",
     "eyebrow": "Hello friend",
