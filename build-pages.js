@@ -191,10 +191,36 @@ function tiktokSection() {
   </section>`;
 }
 
+// Email sign-up box — off unless switched on in the CMS.
+function newsletterSection(news) {
+  if (news.enabled === false) return "";
+  return `
+  <!-- NEWSLETTER -->
+  <section class="news" id="contact">
+    <div class="news__inner">
+      <h2 class="news__title">${esc(news.title || "First dibs")}</h2>
+      <p class="news__copy">${esc(news.text || "")}</p>
+      <form class="news__form" id="newsForm" novalidate>
+        <input type="email" id="newsEmail" placeholder="Email address" aria-label="Email address" required />
+        <button type="submit" class="btn btn--solid">${esc(news.button || "Join")}</button>
+      </form>
+      <p class="news__msg" id="newsMsg" role="status"></p>
+    </div>
+  </section>`;
+}
+
 function buildHomepage() {
   const hero = HOME.hero || {};
   const story = HOME.story || {};
   const news = HOME.newsletter || {};
+  // story photo is optional — blank means text only, sitting on the left
+  const storyImg = String(story.image || "").trim();
+  const storyFigure = storyImg
+    ? `
+    <figure class="story__media">
+      <img src="${esc(storyImg)}" alt="${esc(story.eyebrow || "Crafting Yarn")}" loading="lazy"/>
+    </figure>`
+    : "";
   const seoDesc = (HOME.seo && HOME.seo.description) || FOOTER_BLURB;
   const banners = (HOME.banners || []).map((b) => bannerSection(b)).join("\n\n");
   const modalMeta = PRODUCT_META.map((t) => `<li>${esc(t)}</li>`).join("\n        ");
@@ -318,10 +344,7 @@ ${banners}
   </section>
 
   <!-- STORY -->
-  <section class="story" id="story">
-    <figure class="story__media">
-      <img src="${esc(story.image || "assets/brand/hero.jpg")}" alt="${esc(story.eyebrow || "Crafting Yarn")}" loading="lazy"/>
-    </figure>
+  <section class="story${storyImg ? "" : " story--noimg"}" id="story">${storyFigure}
     <div class="story__copy">
       <p class="story__eyebrow">${esc(story.eyebrow || "Hello friend")}</p>
       <h2 class="story__title">${lines(story.title || "Made by hand.")}</h2>
@@ -331,19 +354,7 @@ ${banners}
   </section>
 
 ${tiktokSection()}
-
-  <!-- NEWSLETTER -->
-  <section class="news" id="contact">
-    <div class="news__inner">
-      <h2 class="news__title">${esc(news.title || "First dibs")}</h2>
-      <p class="news__copy">${esc(news.text || "")}</p>
-      <form class="news__form" id="newsForm" novalidate>
-        <input type="email" id="newsEmail" placeholder="Email address" aria-label="Email address" required />
-        <button type="submit" class="btn btn--solid">${esc(news.button || "Join")}</button>
-      </form>
-      <p class="news__msg" id="newsMsg" role="status"></p>
-    </div>
-  </section>
+${newsletterSection(news)}
 
 </main>
 

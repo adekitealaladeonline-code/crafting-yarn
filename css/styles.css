@@ -203,6 +203,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
    STORY (minimal)
    ================================================================= */
 .story{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg)}
+.story--noimg{grid-template-columns:1fr}   /* no photo -> copy sits on the left */
 .story__media{overflow:hidden}
 .story__media img{width:100%;height:100%;object-fit:cover;min-height:420px}
 .story__copy{padding:clamp(40px,7vw,110px) var(--gut);display:flex;flex-direction:column;justify-content:center;max-width:600px}

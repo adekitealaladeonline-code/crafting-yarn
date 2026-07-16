@@ -173,7 +173,7 @@ collections:
             label: "Story block (near the bottom)"
             widget: object
             fields:
-              - { name: image, label: "Photo", widget: image }
+              - { name: image, label: "Photo (optional)", widget: image, required: false, hint: "Leave empty to show just the writing, on the left." }
               - { name: eyebrow, label: "Small label", widget: string, default: "Hello friend" }
               - { name: title, label: "Heading", widget: text, hint: "Press Return to split it onto two lines." }
               - { name: text, label: "Short intro (the full story lives on the About page)", widget: text }
@@ -181,7 +181,9 @@ collections:
           - name: newsletter
             label: "Email sign-up box"
             widget: object
+            collapsed: true
             fields:
+              - { name: enabled, label: "Show the email sign-up box", widget: boolean, default: false, hint: "Currently off. Switch on if you ever start a mailing list." }
               - { name: title, label: "Heading", widget: string, default: "First dibs" }
               - { name: text, label: "Text", widget: text }
               - { name: button, label: "Button text", widget: string, default: "Join" }

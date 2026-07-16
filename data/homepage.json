@@ -33,13 +33,14 @@
   ],
   "featuredHeading": "Fresh off the hook",
   "story": {
-    "image": "assets/products/spring-hexagon-jacket-m-l.jpg",
+    "image": "",
     "eyebrow": "Hello friend",
     "title": "Handmade by Freda",
     "text": "It started with a scarf for my husband. One hook, a little yarn, and I was hooked. Now I crochet every piece myself, here in the UAE — so no two ever turn out quite the same.",
     "button": "Read my full story"
   },
   "newsletter": {
+    "enabled": false,
     "title": "First dibs",
     "text": "Be the first to see new pieces and restocks. Just yarn news — never spam.",
     "button": "Join"
