@@ -70,6 +70,22 @@ On push to `main`, the Action builds and deploys. Visit `craftingyarn.com/admin`
 
 ---
 
+## What Freda can edit (the four sections in /admin)
+
+- **Products** — add/edit/delete items, prices, sale prices, stock, photos (as many per
+  product as she likes), descriptions, featured flag, sort order.
+- **Homepage** — the landing page: hero photo + headline + button, the big collection
+  banners (add/remove/reorder, each with photo/label/headline/button/target category and a
+  white-or-dark text setting), the featured-carousel heading, the story block (photo + text),
+  the email sign-up box wording, and the Google/social description.
+- **Site text** — the About story, Shipping, Returns and Contact pages, plus the
+  **thank-you page** shown after checkout.
+- **Site settings** — the scrolling announcement bar messages, Instagram/TikTok links,
+  footer wording, the basket note, the product-page bullet points, and the contact-form ID.
+
+`index.html` and `success.html` are **generated** by the build — edit the data files (or use
+/admin), never those HTML files directly.
+
 ## How Freda uses it
 - **Edit a product:** Products → click one → change price/photo/text → **Publish**.
 - **Add a product:** Products → **New Product** → fill in, drag a photo → **Publish**.
