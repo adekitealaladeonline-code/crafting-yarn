@@ -6,7 +6,7 @@ description: How Crafting Yarn ships handmade, made-to-order crochet across the 
 
 ## Made to order
 
-Every piece we make is crocheted by hand just for you — so each order has a short turn around time (2-5 business days)  before it ships. We'll confirm your estimated timeframe by message after you order, and keep you posted along the way.
+Every piece we make is crocheted by hand just for you — Please allow a short turn around time (2-5 business days)  before it ships. 
 
 ## Delivery in the UAE
 
