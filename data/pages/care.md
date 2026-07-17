@@ -8,7 +8,15 @@ Handmade crochet is sturdier than it looks — with a little gentle care, your p
 
 ## Cleaning
 
-Hand wash is recommended in cold water. Gently clean and rinse thoroughly. Do not soak, wring, scrub harshly or twist as it may affect the shape and texture or your unique product.  If you have to machine wash, use delicate mode, mild detergent, low temp and place in a laundry bag. Pat dry with a towel to remove excess water, reshape and dry flat away from direct heat or sunlight. 
+Hand wash is recommended in cold water. 
+
+Gently clean and rinse thoroughly.
+
+ Do not soak, wring, scrub harshly or twist as it may affect the shape and texture or your unique product.  
+
+If you have to machine wash, use delicate mode, mild detergent, low temp and place in a laundry bag. 
+
+Pat dry with a towel to remove excess water, reshape and dry flat away from direct heat or sunlight. 
 
 Our plushies prefer spot cleaning — with a damp cloth and  mild soap on the spot, then air dry. 
 
