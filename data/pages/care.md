@@ -1,26 +1,19 @@
 ---
 eyebrow: Good to know
 heading: Caring for your crochet
-description: How to wash, dry and store your handmade Crafting Yarn pieces so they stay beautiful for years.
+description: How to wash, dry and store your handmade crochet pieces.
 ---
+
 Handmade crochet is sturdier than it looks — with a little gentle care, your piece will stay soft, bright and beautiful for years.
 
-## Washing
+## Cleaning
 
-Hand wash in **cool water** with a small amount of mild detergent. Gently squeeze the suds through — **never wring or twist**, as this can stretch the stitches out of shape. Rinse in cool water, then press the water out between two towels.
+Hand wash is recommended in cold water. Gently clean and rinse thoroughly. Do not soak, wring, scrub harshly or twist as it may affect the shape and texture or your unique product.  If you have to machine wash, use delicate mode, mild detergent, low temp and place in a laundry bag. Pat dry with a towel to remove excess water, reshape and dry flat away from direct heat or sunlight. 
 
-## Drying
+Our plushies prefer spot cleaning — with a damp cloth and  mild soap on the spot, then air dry. 
 
-**Dry flat** on a towel, gently reshaped to its original form. Please don't hang it (the weight of the water stretches crochet) and keep it out of the tumble dryer and direct sunlight.
-
-## Plushies
-
-Our plushies prefer **spot cleaning** — a damp cloth with a little mild soap on the spot, then air dry. A full soak can affect their stuffing and shape.
-
-## Bobbles & fuzz
-
-A little pilling is natural with love and wear. A gentle **fabric comb or shaver**, used lightly, will freshen the surface right up.
+A full soak will affect their stuffing and shape.
 
 ## Storage
 
-Store your pieces **folded**, not on hangers, somewhere dry and away from direct sun. If a loose thread ever appears, please **don't pull it** — message us at [@craftingyarn](https://www.instagram.com/craftingyarn/) and we'll tell you exactly how to fix it.
+Store your pieces folded, not on hangers, somewhere dry and away from direct sun.
