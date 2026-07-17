@@ -4,7 +4,7 @@ heading: Returns & exchanges
 description: Returns and exchanges for handmade, made-to-order crochet from Crafting Yarn.
 ---
 
-Every piece is crocheted by hand and **made especially for you**, each one is  one-of-a-kind —because of this process, we don't accept returns or exchanges. 
+Every piece is crocheted by hand and **made especially for you**, each is  one-of-a-kind —because of this process, we don't accept returns or exchanges. 
 
 ## If something's not right
 
