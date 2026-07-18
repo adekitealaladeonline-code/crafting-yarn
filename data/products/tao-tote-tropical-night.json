@@ -6,12 +6,11 @@
   "sale": null,
   "stock": 1,
   "images": [
-    "assets/products/tao-tote-tropical-night.jpg",
+    "/assets/products/Photoroom_20260718_132617.jpeg",
     "assets/products/tao-tote-tropical-night-2.jpg"
   ],
   "desc": "The Tao tote after dark — deep tropical tones woven through a generous, shoulder-friendly silhouette.\n100% cotton\n11” wide - does stretch\n8” deep - does stretch",
   "featured": false,
   "isNew": false,
-  "order": 120,
-  "created": "2026-06-18T18:50:38+01:00"
+  "order": 120
 }
