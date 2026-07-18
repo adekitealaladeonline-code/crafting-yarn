@@ -1,0 +1,15 @@
+{
+  "name": "Lovey bag",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 100,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260718_101448.jpeg"
+  ],
+  "desc": "Stylish bag to add that pop of colour to your outfit. \nSize: 24cm L, 6.5cm W, 13.5cm H",
+  "featured": false,
+  "isNew": true,
+  "order": 999
+}
