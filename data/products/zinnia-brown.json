@@ -1,5 +1,5 @@
 {
-  "name": "Zinnia Camo",
+  "name": "Zuri Camo",
   "category": "Bags",
   "subcategory": "",
   "price": 100,
@@ -11,6 +11,5 @@
   "desc": "Soft, durable and stylish\nSize: 23cm Length, 5cm Width, 15cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
   "featured": false,
   "isNew": true,
-  "order": 999,
-  "created": "2026-07-18T09:48:26+01:00"
+  "order": 999
 }
