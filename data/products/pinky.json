@@ -1,0 +1,15 @@
+{
+  "name": "Pinky",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 75,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260718_110314.jpeg"
+  ],
+  "desc": "Cute and stylish. 22cm Length, 3cm Width, 11 Height",
+  "featured": false,
+  "isNew": true,
+  "order": 999
+}
