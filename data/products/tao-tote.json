@@ -6,12 +6,11 @@
   "sale": null,
   "stock": 1,
   "images": [
-    "assets/products/tao-tote.jpg",
-    "assets/products/tao-tote-2.jpg"
+    "/assets/products/Photoroom_20260718_132647.jpeg",
+    "/assets/products/tao-tote.jpg"
   ],
   "desc": "A clean everyday tote. Carries the laptop, the lunch, the whole plan.\n100% cotton \n11” wide - does stretch\n8” deep - does stretch",
   "featured": false,
   "isNew": false,
-  "order": 130,
-  "created": "2026-06-18T18:50:38+01:00"
+  "order": 130
 }
