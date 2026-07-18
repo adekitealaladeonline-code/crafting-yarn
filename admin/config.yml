@@ -48,9 +48,10 @@ collections:
         min: 1
         hint: "Add as many photos as you like — drag to reorder. The first is the main photo; the second shows when someone hovers the card."
       - { name: desc, label: "Description", widget: text }
-      - { name: featured, label: "Feature in 'Looks you'll love'", widget: boolean, default: false }
+      - { name: featured, label: "Highlight in the shop", widget: boolean, default: false, hint: "Bumps this item toward the top of the shop's default 'Featured' view." }
       - { name: isNew, label: "Show a 'New' badge", widget: boolean, default: false }
       - { name: order, label: "Sort order", widget: number, value_type: int, default: 999, hint: "Lower numbers show first. (10, 20, 30 …)" }
+      - { name: created, label: "Date added", widget: datetime, default: "{{now}}", required: false, hint: "Set automatically when you add a product. This controls the 'Fresh off the hook' carousel — newest first. You can back-date it to push something down." }
 
   - name: pages
     label: "Site text"

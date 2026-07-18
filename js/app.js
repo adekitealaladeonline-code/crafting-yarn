@@ -199,7 +199,11 @@
   function renderRail() {
     const track = $("#railTrack");
     if (!track) return;
-    const feat = CATALOG.filter((p) => p.featured && !soldOut(p));
+    // "Fresh off the hook" = the newest products (by date added), in stock. Auto-updates.
+    const feat = CATALOG.filter((p) => !soldOut(p))
+      .slice()
+      .sort((a, b) => String(b.created || "9999").localeCompare(String(a.created || "9999")))
+      .slice(0, 10);
     track.innerHTML = feat.map(cardHTML).join("");
   }
 
