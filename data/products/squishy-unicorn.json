@@ -4,7 +4,7 @@
   "subcategory": "Characters",
   "price": 125,
   "sale": null,
-  "stock": null,
+  "stock": 0,
   "images": [
     "assets/products/squishy-unicorn.jpeg",
     "assets/products/squishy-unicorn-2.jpeg"
