@@ -1,0 +1,15 @@
+{
+  "name": "Zuri bright",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 100,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260718_112937.jpeg"
+  ],
+  "desc": "Soft, durable and stylish\nSize: 25cm Length, 7cm Width, 15cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
+  "featured": false,
+  "isNew": true,
+  "order": 999
+}
