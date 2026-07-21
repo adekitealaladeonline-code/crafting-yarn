@@ -450,8 +450,6 @@ for (const cat of CATEGORIES) {
         <option value="featured">Featured</option>
         <option value="oldest">Old to new</option>
         <option value="newest">New to old</option>
-        <option value="price-asc">Price ↑</option>
-        <option value="price-desc">Price ↓</option>
       </select>
     </div>
     <div class="grid" id="grid" data-category="${esc(cat)}"><!-- app.js injects this category's cards --></div>
