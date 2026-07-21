@@ -56,6 +56,15 @@ const CART_HINT = S.cartHint || "Shipping calculated at checkout";
 const PRODUCT_META = texts(S.productMeta, ["Crocheted by hand", "No two are ever identical", "Ships from the UAE"]);
 const FORM_ID = S.formspree || "your-form-id";
 
+/* ---------- categories (each gets its own page; no all-products page) ---------- */
+const CATEGORIES = ["Bags", "Clothing", "Accessories"];
+const catSlug = (c) => String(c).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const catHref = (px, c) => (CATEGORIES.includes(c) ? `${px}${catSlug(c)}.html` : `${px}index.html#featured`);
+const catNav = (px, active) =>
+  `<nav class="catnav" aria-label="Shop categories">${CATEGORIES.map(
+    (c) => `<a href="${px}${catSlug(c)}.html" class="chip${c === active ? " is-active" : ""}">${esc(c)}</a>`
+  ).join("")}</nav>`;
+
 /* ---------- shared chrome (prefix = "" for root, "../" for /product/) ---------- */
 const FONT = `<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -81,13 +90,11 @@ const header = (px) => `<header class="site-header" id="siteHeader"><div class="
 const menu = (px) => `<div class="menu" id="mobileNav" hidden>
   <nav aria-label="Main">
     <a href="${px}index.html"><span>01</span> Home</a>
-    <a href="${px}index.html#shop"><span>02</span> Shop all</a>
-    <a href="${px}index.html?cat=Plushies#shop"><span>03</span> Plushies</a>
-    <a href="${px}index.html?cat=Bags#shop"><span>04</span> Bags</a>
-    <a href="${px}index.html?cat=Clothing#shop"><span>05</span> Clothing</a>
-    <a href="${px}index.html?cat=Accessories#shop"><span>06</span> Accessories</a>
-    <a href="${px}about.html"><span>07</span> Our story</a>
-    <a href="${px}contact.html"><span>08</span> Contact</a>
+    <a href="${px}bags.html"><span>02</span> Bags</a>
+    <a href="${px}clothing.html"><span>03</span> Clothing</a>
+    <a href="${px}accessories.html"><span>04</span> Accessories</a>
+    <a href="${px}about.html"><span>05</span> Our story</a>
+    <a href="${px}contact.html"><span>06</span> Contact</a>
   </nav>
   ${socialMenuLinks}
 </div>`;
@@ -95,7 +102,7 @@ const menu = (px) => `<div class="menu" id="mobileNav" hidden>
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
   <div class="footer__brand"><img src="${px}assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/><p>${esc(FOOTER_BLURB)}</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
-    <a href="${px}index.html?cat=Plushies#shop">Plushies</a><a href="${px}index.html?cat=Bags#shop">Bags</a><a href="${px}index.html?cat=Clothing#shop">Clothing</a><a href="${px}index.html?cat=Accessories#shop">Accessories</a><a href="${px}index.html?cat=sale#shop">Sale</a>
+    <a href="${px}bags.html">Bags</a><a href="${px}clothing.html">Clothing</a><a href="${px}accessories.html">Accessories</a>
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
     <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
@@ -161,12 +168,12 @@ function bannerSection(b, { hero = false } = {}) {
   const titleTag = hero ? "h1" : "h2";
   const alt = esc(b.eyebrow || String(b.title || "Crafting Yarn").split(/\r?\n/)[0]);
   const eyebrow = b.eyebrow ? `\n      <p class="banner__eyebrow">${esc(b.eyebrow)}</p>` : "";
-  const filter = b.category || "all";
+  const href = hero ? "#featured" : catHref("", b.category); // hero -> newest carousel; banners -> their category page
   return `  <section class="banner${heroCls} ${tone}">
     <img class="banner__img" src="${esc(b.image)}" alt="${alt}" ${hero ? "" : 'loading="lazy"'}/>
     <div class="${inner}">${eyebrow}
       <${titleTag} class="banner__title">${lines(b.title)}</${titleTag}>
-      <a href="#shop" class="shopnow" data-filter="${esc(filter)}">${esc(b.button || "Shop now")}</a>
+      <a href="${href}" class="shopnow">${esc(b.button || "Shop now")}</a>
     </div>
   </section>`;
 }
@@ -264,21 +271,10 @@ ${ticker}
     </a>
 
     <div class="header__actions">
-      <button class="icon-btn" id="searchToggle" aria-label="Search">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-      </button>
       <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
         <span class="cart-count" id="cartCount">0</span>
       </button>
-    </div>
-  </div>
-
-  <div class="searchbar" id="searchbar" hidden>
-    <div class="searchbar__inner">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="searchbar__icon"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-      <input type="search" id="searchInput" placeholder="Search the shop…" aria-label="Search products" />
-      <button class="searchbar__close" id="searchClose" aria-label="Close search">Close</button>
     </div>
   </div>
 </header>
@@ -286,13 +282,12 @@ ${ticker}
 <!-- MENU OVERLAY -->
 <div class="menu" id="mobileNav" hidden>
   <nav aria-label="Main">
-    <a href="#shop" data-filter="all"><span>01</span> Shop all</a>
-    <a href="#shop" data-filter="Plushies"><span>02</span> Plushies</a>
-    <a href="#shop" data-filter="Bags"><span>03</span> Bags</a>
-    <a href="#shop" data-filter="Clothing"><span>04</span> Clothing</a>
-    <a href="#shop" data-filter="Accessories"><span>05</span> Accessories</a>
-    <a href="#shop" data-filter="sale"><span>06</span> Sale</a>
-    <a href="#story"><span>07</span> Our story</a>
+    <a href="index.html"><span>01</span> Home</a>
+    <a href="bags.html"><span>02</span> Bags</a>
+    <a href="clothing.html"><span>03</span> Clothing</a>
+    <a href="accessories.html"><span>04</span> Accessories</a>
+    <a href="about.html"><span>05</span> Our story</a>
+    <a href="contact.html"><span>06</span> Contact</a>
   </nav>
   ${socialMenuLinks}
 </div>
@@ -315,32 +310,6 @@ ${banners}
       </div>
     </div>
     <div class="rail__track" id="railTrack"><!-- JS injects featured cards --></div>
-  </section>
-
-  <!-- SHOP -->
-  <section class="shop" id="shop">
-    <div class="shop__bar">
-      <div class="filters" id="filters" role="tablist" aria-label="Filter products">
-        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="chip" data-filter="Plushies" role="tab" aria-selected="false">Plushies</button>
-        <button class="chip" data-filter="Bags" role="tab" aria-selected="false">Bags</button>
-        <button class="chip" data-filter="Clothing" role="tab" aria-selected="false">Clothing</button>
-        <button class="chip" data-filter="Accessories" role="tab" aria-selected="false">Accessories</button>
-        <button class="chip chip--sale" data-filter="sale" role="tab" aria-selected="false">Sale</button>
-      </div>
-      <div class="shop__tools">
-        <span class="shop__count" id="gridCount">${CATALOG.length} pieces</span>
-        <label for="sortSelect" class="sr-only">Sort products</label>
-        <select id="sortSelect">
-          <option value="featured">Featured</option>
-          <option value="price-asc">Price ↑</option>
-          <option value="price-desc">Price ↓</option>
-          <option value="name">A–Z</option>
-        </select>
-      </div>
-    </div>
-    <div class="grid" id="grid"><!-- JS injects product cards --></div>
-    <p class="grid__empty" id="gridEmpty" hidden>Nothing here yet — try another category.</p>
   </section>
 
   <!-- STORY -->
@@ -367,11 +336,9 @@ ${newsletterSection(news)}
     </div>
     <nav class="footer__col" aria-label="Shop">
       <h4>Shop</h4>
-      <a href="#shop" data-filter="Plushies">Plushies</a>
-      <a href="#shop" data-filter="Bags">Bags</a>
-      <a href="#shop" data-filter="Clothing">Clothing</a>
-      <a href="#shop" data-filter="Accessories">Accessories</a>
-      <a href="#shop" data-filter="sale">Sale</a>
+      <a href="bags.html">Bags</a>
+      <a href="clothing.html">Clothing</a>
+      <a href="accessories.html">Accessories</a>
     </nav>
     <nav class="footer__col" aria-label="Help">
       <h4>Help</h4>
@@ -447,6 +414,38 @@ function buildSuccess() {
   }));
 }
 buildSuccess();
+
+/* =================================================================
+   CATEGORY PAGES (bags.html, clothing.html, accessories.html)
+   Each shows only its own products; the grid is filled by app.js
+   (which reads #grid[data-category]). No all-products page.
+   ================================================================= */
+for (const cat of CATEGORIES) {
+  const n = CATALOG.filter((p) => p.category === cat).length;
+  const main = `<main class="shop shop--cat" id="shop">
+    <div class="cat-head">
+      <h1 class="cat-title">${esc(cat)}</h1>
+      ${catNav("", cat)}
+    </div>
+    <div class="shop__bar shop__bar--cat">
+      <span class="shop__count" id="gridCount">${n} ${n === 1 ? "piece" : "pieces"}</span>
+      <label for="sortSelect" class="sr-only">Sort products</label>
+      <select id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price ↑</option>
+        <option value="price-desc">Price ↓</option>
+        <option value="name">A–Z</option>
+      </select>
+    </div>
+    <div class="grid" id="grid" data-category="${esc(cat)}"><!-- app.js injects this category's cards --></div>
+    <p class="grid__empty" id="gridEmpty" hidden>Nothing here right now — check back soon.</p>
+  </main>`;
+  fs.writeFileSync(path.join(ROOT, `${catSlug(cat)}.html`), shell({
+    px: "", title: `${cat} — Crafting Yarn`,
+    description: `Handmade crochet ${cat.toLowerCase()} by Crafting Yarn — made with love in the UAE.`,
+    canonical: `${SITE}/${catSlug(cat)}.html`, main,
+  }));
+}
 
 /* ---------- product pages ---------- */
 fs.rmSync(path.join(ROOT, "product"), { recursive: true, force: true }); // clear old pages so deleted products don't leave orphan URLs

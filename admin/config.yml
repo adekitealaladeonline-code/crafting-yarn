@@ -36,7 +36,7 @@ collections:
     sortable_fields: [order, name, price]
     fields:
       - { name: name, label: "Name", widget: string, hint: "Shown on the card and the product page." }
-      - { name: category, label: "Category", widget: select, options: ["Plushies", "Bags", "Clothing", "Accessories"] }
+      - { name: category, label: "Category", widget: select, options: ["Bags", "Clothing", "Accessories"] }
       - { name: subcategory, label: "Subcategory", widget: string, required: false }
       - { name: price, label: "Original price (AED)", widget: number, value_type: float, min: 0, step: 1 }
       - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Leave blank if the item is not on sale." }
@@ -141,19 +141,17 @@ collections:
             hint: "The big photo panels down the homepage. Add, remove or drag to reorder."
             fields:
               - { name: image, label: "Photo", widget: image }
-              - { name: eyebrow, label: "Small label (e.g. The plushies)", widget: string, required: false }
+              - { name: eyebrow, label: "Small label (e.g. The bags)", widget: string, required: false }
               - { name: title, label: "Headline", widget: text, hint: "Press Return to split it onto two lines." }
               - name: category
-                label: "Shop section it opens"
+                label: "Category page it opens"
                 widget: select
-                default: "all"
+                default: "Bags"
                 options:
-                  - { label: "Everything", value: "all" }
-                  - { label: "Plushies", value: "Plushies" }
                   - { label: "Bags", value: "Bags" }
                   - { label: "Clothing", value: "Clothing" }
                   - { label: "Accessories", value: "Accessories" }
-                  - { label: "Sale items", value: "sale" }
+                  - { label: "Newest carousel", value: "all" }
               - { name: button, label: "Button text", widget: string, default: "Shop now" }
               - name: style
                 label: "Text colour"

@@ -494,6 +494,9 @@
   document.addEventListener("DOMContentLoaded", () => {
     // returning from a successful Stripe Checkout -> empty the basket
     if (/[?&]paid=1\b/.test(location.search)) { cart = {}; save(); }
+    // category page (bags/clothing/accessories) -> lock the grid to that category
+    const gridEl = $("#grid");
+    if (gridEl && gridEl.dataset.category) activeFilter = gridEl.dataset.category;
     renderRail();
     renderGrid();
     renderCart();

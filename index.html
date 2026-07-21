@@ -26,8 +26,8 @@
 
 <!-- ANNOUNCEMENT -->
 <div class="ticker" aria-hidden="true"><div class="ticker__track">
-  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Ready to ship</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
-  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Ready to ship</span><i>✶</i><span>No two are ever the same</span><i>✶</i>
+  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Each piece is unique</span><i>✶</i>
+  <span>Handmade with love in the UAE</span><i>✶</i><span>Free UAE delivery over AED 250</span><i>✶</i><span>Each piece is unique</span><i>✶</i>
 </div></div>
 
 <!-- HEADER -->
@@ -42,21 +42,10 @@
     </a>
 
     <div class="header__actions">
-      <button class="icon-btn" id="searchToggle" aria-label="Search">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-      </button>
       <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
         <span class="cart-count" id="cartCount">0</span>
       </button>
-    </div>
-  </div>
-
-  <div class="searchbar" id="searchbar" hidden>
-    <div class="searchbar__inner">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="searchbar__icon"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-      <input type="search" id="searchInput" placeholder="Search the shop…" aria-label="Search products" />
-      <button class="searchbar__close" id="searchClose" aria-label="Close search">Close</button>
     </div>
   </div>
 </header>
@@ -64,13 +53,12 @@
 <!-- MENU OVERLAY -->
 <div class="menu" id="mobileNav" hidden>
   <nav aria-label="Main">
-    <a href="#shop" data-filter="all"><span>01</span> Shop all</a>
-    <a href="#shop" data-filter="Plushies"><span>02</span> Plushies</a>
-    <a href="#shop" data-filter="Bags"><span>03</span> Bags</a>
-    <a href="#shop" data-filter="Clothing"><span>04</span> Clothing</a>
-    <a href="#shop" data-filter="Accessories"><span>05</span> Accessories</a>
-    <a href="#shop" data-filter="sale"><span>06</span> Sale</a>
-    <a href="#story"><span>07</span> Our story</a>
+    <a href="index.html"><span>01</span> Home</a>
+    <a href="bags.html"><span>02</span> Bags</a>
+    <a href="clothing.html"><span>03</span> Clothing</a>
+    <a href="accessories.html"><span>04</span> Accessories</a>
+    <a href="about.html"><span>05</span> Our story</a>
+    <a href="contact.html"><span>06</span> Contact</a>
   </nav>
   <a class="menu__ig" href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram @craftingyarn ↗</a>
   <a class="menu__ig" href="https://www.tiktok.com/@craftingyarn" target="_blank" rel="noopener">TikTok @craftingyarn ↗</a>
@@ -83,35 +71,26 @@
     <img class="banner__img" src="assets/brand/hero.jpg" alt="Crocheted" />
     <div class="banner__inner">
       <h1 class="banner__title">Crocheted<br/>with love</h1>
-      <a href="#shop" class="shopnow" data-filter="all">Shop now</a>
+      <a href="#featured" class="shopnow">Shop now</a>
     </div>
   </section>
 
 <!-- COLLECTION BANNERS -->
-  <section class="banner banner--dark">
-    <img class="banner__img" src="assets/products/squishy-unicorn.jpeg" alt="The plushies" loading="lazy"/>
-    <div class="banner__inner banner__inner--bl">
-      <p class="banner__eyebrow">The plushies</p>
-      <h2 class="banner__title">Soft<br/>friends</h2>
-      <a href="#shop" class="shopnow" data-filter="Plushies">Shop now</a>
-    </div>
-  </section>
-
   <section class="banner banner--light">
-    <img class="banner__img" src="assets/products/sophie-basket.jpg" alt="The bags" loading="lazy"/>
+    <img class="banner__img" src="/assets/products/Photoroom_20260718_110753.jpeg" alt="The bags" loading="lazy"/>
     <div class="banner__inner banner__inner--bl">
       <p class="banner__eyebrow">The bags</p>
       <h2 class="banner__title">Carry<br/>colour</h2>
-      <a href="#shop" class="shopnow" data-filter="Bags">Shop now</a>
+      <a href="bags.html" class="shopnow">Shop now</a>
     </div>
   </section>
 
   <section class="banner banner--dark">
-    <img class="banner__img" src="assets/products/green-bolero-jacket-m-l.jpg" alt="The clothing" loading="lazy"/>
+    <img class="banner__img" src="/assets/products/Photoroom_20250801_054013.JPG" alt="The clothing" loading="lazy"/>
     <div class="banner__inner banner__inner--bl">
       <p class="banner__eyebrow">The clothing</p>
       <h2 class="banner__title">Wear<br/>the craft</h2>
-      <a href="#shop" class="shopnow" data-filter="Clothing">Shop now</a>
+      <a href="clothing.html" class="shopnow">Shop now</a>
     </div>
   </section>
 
@@ -125,32 +104,6 @@
       </div>
     </div>
     <div class="rail__track" id="railTrack"><!-- JS injects featured cards --></div>
-  </section>
-
-  <!-- SHOP -->
-  <section class="shop" id="shop">
-    <div class="shop__bar">
-      <div class="filters" id="filters" role="tablist" aria-label="Filter products">
-        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="chip" data-filter="Plushies" role="tab" aria-selected="false">Plushies</button>
-        <button class="chip" data-filter="Bags" role="tab" aria-selected="false">Bags</button>
-        <button class="chip" data-filter="Clothing" role="tab" aria-selected="false">Clothing</button>
-        <button class="chip" data-filter="Accessories" role="tab" aria-selected="false">Accessories</button>
-        <button class="chip chip--sale" data-filter="sale" role="tab" aria-selected="false">Sale</button>
-      </div>
-      <div class="shop__tools">
-        <span class="shop__count" id="gridCount">31 pieces</span>
-        <label for="sortSelect" class="sr-only">Sort products</label>
-        <select id="sortSelect">
-          <option value="featured">Featured</option>
-          <option value="price-asc">Price ↑</option>
-          <option value="price-desc">Price ↓</option>
-          <option value="name">A–Z</option>
-        </select>
-      </div>
-    </div>
-    <div class="grid" id="grid"><!-- JS injects product cards --></div>
-    <p class="grid__empty" id="gridEmpty" hidden>Nothing here yet — try another category.</p>
   </section>
 
   <!-- STORY -->
@@ -181,15 +134,13 @@
   <div class="footer__top">
     <div class="footer__brand">
       <img src="assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/>
-      <p>Handmade crochet, made with love in the UAE by Freda.</p>
+      <p>Handmade crochet.</p>
     </div>
     <nav class="footer__col" aria-label="Shop">
       <h4>Shop</h4>
-      <a href="#shop" data-filter="Plushies">Plushies</a>
-      <a href="#shop" data-filter="Bags">Bags</a>
-      <a href="#shop" data-filter="Clothing">Clothing</a>
-      <a href="#shop" data-filter="Accessories">Accessories</a>
-      <a href="#shop" data-filter="sale">Sale</a>
+      <a href="bags.html">Bags</a>
+      <a href="clothing.html">Clothing</a>
+      <a href="accessories.html">Accessories</a>
     </nav>
     <nav class="footer__col" aria-label="Help">
       <h4>Help</h4>
@@ -235,9 +186,7 @@
       <div class="modal__price" id="modalPrice"></div>
       <p class="modal__desc" id="modalDesc"></p>
       <ul class="modal__meta">
-        <li>Crocheted by hand, ready to ship</li>
-        <li>Hand-crocheted — no two are ever identical</li>
-        <li>Ships from the UAE · free local delivery over AED 250</li>
+        <li>Handmade with love, just for you!</li>
       </ul>
       <button class="btn btn--solid btn--block" id="modalAdd">Add to bag</button>
     </div>
