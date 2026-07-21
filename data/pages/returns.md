@@ -8,10 +8,10 @@ Every piece is crocheted by hand and **made especially for you**, each is  one-o
 
 ## If something's not right
 
-If your order arrives faulty or damaged, please reach out within **3 days** of delivery with your order number and a photo,  and we'll fix it right away.
+If your order arrives faulty or damaged, please reach out within **3 days** of delivery with your order number and a photo,  and we'll do our best to provide a solution.
 
 Thank you for choosing **Crafting Yarn** and supporting handmade craft. Your purchase means the world to us. 
 
 ## Get in touch
 
-Message us on [@craftingyarn](https://www.instagram.com/craftingyarn/) or via our [contact page](contact.html).
+Message us on via our [contact page](contact.html).
