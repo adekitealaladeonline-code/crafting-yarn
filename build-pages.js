@@ -100,7 +100,7 @@ const menu = (px) => `<div class="menu" id="mobileNav" hidden>
 </div>`;
 
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
-  <div class="footer__brand"><img src="${px}assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/><p>${esc(FOOTER_BLURB)}</p></div>
+  <div class="footer__brand"><p>${esc(FOOTER_BLURB)}</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
     <a href="${px}bags.html">Bags</a><a href="${px}clothing.html">Clothing</a><a href="${px}accessories.html">Accessories</a>
   </nav>
@@ -348,7 +348,6 @@ ${newsletterSection(news)}
 <footer class="site-footer">
   <div class="footer__top">
     <div class="footer__brand">
-      <img src="assets/brand/logo.png" alt="Crafting Yarn" class="footer__logo"/>
       <p>${esc(FOOTER_BLURB)}</p>
     </div>
     <nav class="footer__col" aria-label="Shop">

@@ -286,7 +286,7 @@ window.CATALOG = [
   },
   {
     "id": "purple-haze-mesh-small",
-    "name": "Ivy Purple haze mesh (small)",
+    "name": "Purple haze mesh (small)",
     "category": "Bags",
     "subcategory": "",
     "price": 100,
@@ -305,7 +305,7 @@ window.CATALOG = [
   },
   {
     "id": "ahoy-mesh-small",
-    "name": "Ivy Ahoy mesh (small)",
+    "name": "Ahoy mesh (small)",
     "category": "Bags",
     "subcategory": "",
     "price": 85,
@@ -324,7 +324,7 @@ window.CATALOG = [
   },
   {
     "id": "dana-tote-mustard",
-    "name": "Dana tote (mustard)",
+    "name": "Lotus Dana",
     "category": "Bags",
     "subcategory": "",
     "price": 70,
@@ -531,7 +531,7 @@ window.CATALOG = [
   },
   {
     "id": "lovey-bag",
-    "name": "Nola red",
+    "name": "Nola Red Velvet",
     "category": "Bags",
     "subcategory": "",
     "price": 100,
