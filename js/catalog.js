@@ -21,44 +21,6 @@ window.CATALOG = [
     "image2": "assets/products/Photoroom_20260719_084632.jpeg"
   },
   {
-    "id": "spring-hexagon-jacket-m-l",
-    "name": "Spring Hexagon jacket (M/L)",
-    "category": "Clothing",
-    "subcategory": "",
-    "price": 150,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/spring-hexagon-jacket-m-l.jpg",
-      "assets/products/spring-hexagon-jacket-m-l-2.jpg"
-    ],
-    "desc": "A granny-square jacket built from spring-bright hexagons. Heirloom energy to complete your look.",
-    "featured": true,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/spring-hexagon-jacket-m-l.jpg",
-    "image2": "assets/products/spring-hexagon-jacket-m-l-2.jpg"
-  },
-  {
-    "id": "green-bolero-jacket-m-l",
-    "name": "Green Cropped Jacket (M/L)",
-    "category": "Clothing",
-    "subcategory": "",
-    "price": 150,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/green-bolero-jacket-m-l.jpg",
-      "assets/products/green-bolero-jacket-m-l-2.jpg"
-    ],
-    "desc": "A cropped, open-front jacket in mossy greens — the throw-on layer for cool evenings.\nHandmade using 100% cotton yarn and a lot of love.",
-    "featured": true,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/green-bolero-jacket-m-l.jpg",
-    "image2": "assets/products/green-bolero-jacket-m-l-2.jpg"
-  },
-  {
     "id": "teal-velvet",
     "name": "Teal velvet",
     "category": "Accessories",
@@ -95,25 +57,6 @@ window.CATALOG = [
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/brown-picot-bandana.jpg",
     "image2": "assets/products/brown-picot-bandana-2.jpg"
-  },
-  {
-    "id": "sweet-hello-cardigan",
-    "name": "Daisy cardigan",
-    "category": "Clothing",
-    "subcategory": "",
-    "price": 200,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/sweet-hello-cardigan.jpg",
-      "assets/products/Screenshot 2026-06-19 at 06.02.05.png"
-    ],
-    "desc": "The Daisy cardigan — a soft, daisy coloured crochet that wears like a hug.\n\n55% Cotton, 45% Acrylic\nSize medium - (see picture for guide)\nMeasurements- A- 16.5”, B- 22”, C- 9”, D- 19”",
-    "featured": true,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/sweet-hello-cardigan.jpg",
-    "image2": "assets/products/Screenshot 2026-06-19 at 06.02.05.png"
   },
   {
     "id": "picot-bandana-black",
@@ -154,64 +97,6 @@ window.CATALOG = [
     "image2": "assets/products/pink-picot-bandana-2.jpg"
   },
   {
-    "id": "dana-tote-bag-multicolour",
-    "name": "Dana tote bag (Multicolour)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 70,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/dana-tote-bag-multicolour.jpg",
-      "assets/products/dana-tote-bag-multicolour-2.jpg"
-    ],
-    "desc": "The Dana tote in a full-spectrum multicolour — roomy, slouchy and impossible to buy twice the same.\n\n12.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
-    "featured": true,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/dana-tote-bag-multicolour.jpg",
-    "image2": "assets/products/dana-tote-bag-multicolour-2.jpg"
-  },
-  {
-    "id": "tao-tote-tropical-night",
-    "name": "Tao tote (tropical night)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 70,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/tao-tote-tropical-night.jpg",
-      "assets/products/tao-tote-tropical-night-2.jpg",
-      "assets/products/ahoy-mesh-small-2.jpg"
-    ],
-    "desc": "The Tao tote after dark — deep tropical tones woven through a generous, shoulder-friendly silhouette.\n100% cotton\n11” wide - does stretch\n8” deep - does stretch",
-    "featured": false,
-    "isNew": false,
-    "image": "assets/products/tao-tote-tropical-night.jpg",
-    "image2": "assets/products/tao-tote-tropical-night-2.jpg",
-    "created": "2026-06-18T18:50:38+01:00"
-  },
-  {
-    "id": "tao-tote",
-    "name": "Tao tote",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 70,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/Photoroom_20260718_132647.jpeg",
-      "assets/products/tao-tote.jpg"
-    ],
-    "desc": "A clean everyday tote. Carries the laptop, the lunch, the whole plan.\n100% cotton \n11” wide - does stretch\n8” deep - does stretch",
-    "featured": false,
-    "isNew": false,
-    "image": "assets/products/Photoroom_20260718_132647.jpeg",
-    "image2": "assets/products/tao-tote.jpg",
-    "created": "2026-06-18T18:50:38+01:00"
-  },
-  {
     "id": "kay-bucket-hat",
     "name": "Kay wavy bucket hat",
     "category": "Accessories",
@@ -250,25 +135,6 @@ window.CATALOG = [
     "image2": "assets/products/bandana-sunset-2.jpg"
   },
   {
-    "id": "nae-bag-peach",
-    "name": "Nae bag (peach)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 75,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/nae-bag-peach.jpg",
-      "assets/products/nae-bag-peach-2.jpg"
-    ],
-    "desc": "A little peach crescent bag with a hand-stitched grip. This cute bag that finishes everything.\n\n12” wide - does stretch\n15” deep - does stretch\n100% Cotton",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/nae-bag-peach.jpg",
-    "image2": "assets/products/nae-bag-peach-2.jpg"
-  },
-  {
     "id": "bandana-buttercream",
     "name": "Picot Bandana (buttercream)",
     "category": "Accessories",
@@ -285,101 +151,6 @@ window.CATALOG = [
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/bandana-buttercream.jpg",
     "image2": null
-  },
-  {
-    "id": "purple-haze-mesh-small",
-    "name": "Purple haze mesh (small)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 100,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/purple-haze-mesh-small.jpg",
-      "assets/products/purple-haze-mesh-small-2.jpg"
-    ],
-    "desc": "The perfect beach/market bag.  Purple, summer-bright and endlessly packable.\n\n16.5” wide - does stretch\n10.5” deep - does stretch\n100% Cotton",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/purple-haze-mesh-small.jpg",
-    "image2": "assets/products/purple-haze-mesh-small-2.jpg"
-  },
-  {
-    "id": "ahoy-mesh-small",
-    "name": "Ahoy mesh (small)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 85,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/ahoy-mesh-small.jpg",
-      "assets/products/ahoy-mesh-small-2.jpg"
-    ],
-    "desc": "An airy open-weave mesh bag — beach-ready, market-ready, throw-everything-in ready.\n\n16.5” wide - does stretch\n10.5” deep - does stretch\n100% Cotton",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/ahoy-mesh-small.jpg",
-    "image2": "assets/products/ahoy-mesh-small-2.jpg"
-  },
-  {
-    "id": "dana-tote-mustard",
-    "name": "Lotus Dana",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 70,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/dana-tote-mustard.jpg",
-      "assets/products/dana-tote-mustard-2.jpg"
-    ],
-    "desc": "The Dana in warm mustard — a single-tone take on our roomiest carry.\n\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/dana-tote-mustard.jpg",
-    "image2": "assets/products/dana-tote-mustard-2.jpg"
-  },
-  {
-    "id": "dana-tote-brown",
-    "name": "Dana tote (brown)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 70,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/dana-tote-brown.jpg",
-      "assets/products/dana-tote-brown-2.jpg"
-    ],
-    "desc": "The Dana in toasted brown. Neutral, handmade, and  quietly perfect.\n\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/dana-tote-brown.jpg",
-    "image2": "assets/products/dana-tote-brown-2.jpg"
-  },
-  {
-    "id": "dana-tote-bag-black",
-    "name": "Dana tote (black)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 70,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/dana-tote-bag-black.jpg",
-      "assets/products/dana-tote-bag-black-2.jpg"
-    ],
-    "desc": "The Dana in true black — the handmade tote that goes with everything you own.\n13.5” wide - does stretch\n12” deep - does stretch\n100% Cotton",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/dana-tote-bag-black.jpg",
-    "image2": "assets/products/dana-tote-bag-black-2.jpg"
   },
   {
     "id": "burgundy-velvet",
@@ -648,14 +419,13 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/Photoroom_20260719_083634.jpeg",
-      "assets/products/Photoroom_20260719_084205.jpeg"
+      "assets/products/Photoroom_20260719_083634.jpeg"
     ],
     "desc": "Soft, Bright and ultra stylish\nSize: 25cm Length, 7cm Width, 15cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
     "featured": false,
     "isNew": true,
     "image": "assets/products/Photoroom_20260719_083634.jpeg",
-    "image2": "assets/products/Photoroom_20260719_084205.jpeg",
+    "image2": null,
     "created": "2026-07-19T05:44:39+01:00"
   }
 ];

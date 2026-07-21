@@ -57,7 +57,7 @@ const PRODUCT_META = texts(S.productMeta, ["Crocheted by hand", "No two are ever
 const FORM_ID = S.formspree || "your-form-id";
 
 /* ---------- categories (each gets its own page; no all-products page) ---------- */
-const CATEGORIES = ["Bags", "Clothing", "Accessories"];
+const CATEGORIES = ["Bags", "Accessories"];
 const catSlug = (c) => String(c).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const catHref = (px, c) => (CATEGORIES.includes(c) ? `${px}${catSlug(c)}.html` : `${px}index.html#featured`);
 const catNav = (px, active) =>
@@ -91,10 +91,9 @@ const menu = (px) => `<div class="menu" id="mobileNav" hidden>
   <nav aria-label="Main">
     <a href="${px}index.html"><span>01</span> Home</a>
     <a href="${px}bags.html"><span>02</span> Bags</a>
-    <a href="${px}clothing.html"><span>03</span> Clothing</a>
-    <a href="${px}accessories.html"><span>04</span> Accessories</a>
-    <a href="${px}about.html"><span>05</span> Our story</a>
-    <a href="${px}contact.html"><span>06</span> Contact</a>
+    <a href="${px}accessories.html"><span>03</span> Accessories</a>
+    <a href="${px}about.html"><span>04</span> Our story</a>
+    <a href="${px}contact.html"><span>05</span> Contact</a>
   </nav>
   ${socialMenuLinks}
 </div>`;
@@ -102,7 +101,7 @@ const menu = (px) => `<div class="menu" id="mobileNav" hidden>
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
   <div class="footer__brand"><p>${esc(FOOTER_BLURB)}</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
-    <a href="${px}bags.html">Bags</a><a href="${px}clothing.html">Clothing</a><a href="${px}accessories.html">Accessories</a>
+    <a href="${px}bags.html">Bags</a><a href="${px}accessories.html">Accessories</a>
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
     <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
@@ -301,10 +300,9 @@ ${ticker}
   <nav aria-label="Main">
     <a href="index.html"><span>01</span> Home</a>
     <a href="bags.html"><span>02</span> Bags</a>
-    <a href="clothing.html"><span>03</span> Clothing</a>
-    <a href="accessories.html"><span>04</span> Accessories</a>
-    <a href="about.html"><span>05</span> Our story</a>
-    <a href="contact.html"><span>06</span> Contact</a>
+    <a href="accessories.html"><span>03</span> Accessories</a>
+    <a href="about.html"><span>04</span> Our story</a>
+    <a href="contact.html"><span>05</span> Contact</a>
   </nav>
   ${socialMenuLinks}
 </div>
@@ -353,7 +351,6 @@ ${newsletterSection(news)}
     <nav class="footer__col" aria-label="Shop">
       <h4>Shop</h4>
       <a href="bags.html">Bags</a>
-      <a href="clothing.html">Clothing</a>
       <a href="accessories.html">Accessories</a>
     </nav>
     <nav class="footer__col" aria-label="Help">

@@ -36,7 +36,7 @@ collections:
     sortable_fields: [order, name, price]
     fields:
       - { name: name, label: "Name", widget: string, hint: "Shown on the card and the product page." }
-      - { name: category, label: "Category", widget: select, options: ["Bags", "Clothing", "Accessories"] }
+      - { name: category, label: "Category", widget: select, options: ["Bags", "Accessories"] }
       - { name: subcategory, label: "Subcategory", widget: string, required: false }
       - { name: price, label: "Original price (AED)", widget: number, value_type: float, min: 0, step: 1 }
       - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Leave blank if the item is not on sale." }
@@ -149,7 +149,6 @@ collections:
                 default: "Bags"
                 options:
                   - { label: "Bags", value: "Bags" }
-                  - { label: "Clothing", value: "Clothing" }
                   - { label: "Accessories", value: "Accessories" }
                   - { label: "Newest carousel", value: "all" }
               - { name: button, label: "Button text", widget: string, default: "Shop now" }
