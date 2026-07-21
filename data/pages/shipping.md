@@ -14,8 +14,4 @@ Every piece we make is crocheted by hand just for you — Please allow a short t
 
 ## Shipping further afield
 
-Sending a piece outside the UAE? We'd love to help — message us at [@craftingyarn](https://www.instagram.com/craftingyarn/) and we'll arrange the best option for you.
-
-## Questions
-
-Reach out any time on Instagram or via our [contact page](contact.html) — we're always happy to help.
+Sending a piece outside the UAE? We'd love to help — contact us via  [contact page](contact.html) — we're always happy to help.
