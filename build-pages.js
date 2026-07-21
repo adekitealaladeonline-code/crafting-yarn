@@ -448,9 +448,10 @@ for (const cat of CATEGORIES) {
       <label for="sortSelect" class="sr-only">Sort products</label>
       <select id="sortSelect">
         <option value="featured">Featured</option>
+        <option value="oldest">Old to new</option>
+        <option value="newest">New to old</option>
         <option value="price-asc">Price ↑</option>
         <option value="price-desc">Price ↓</option>
-        <option value="name">A–Z</option>
       </select>
     </div>
     <div class="grid" id="grid" data-category="${esc(cat)}"><!-- app.js injects this category's cards --></div>

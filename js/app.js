@@ -166,7 +166,8 @@
     switch (activeSort) {
       case "price-asc": list.sort((a, b) => priceOf(a) - priceOf(b)); break;
       case "price-desc": list.sort((a, b) => priceOf(b) - priceOf(a)); break;
-      case "name": list.sort((a, b) => a.name.localeCompare(b.name)); break;
+      case "oldest": list.sort((a, b) => String(a.created || "").localeCompare(String(b.created || ""))); break;
+      case "newest": list.sort((a, b) => String(b.created || "9999").localeCompare(String(a.created || "9999"))); break;
       default: list.sort((a, b) => (b.featured === true) - (a.featured === true)); break;
     }
     return list;

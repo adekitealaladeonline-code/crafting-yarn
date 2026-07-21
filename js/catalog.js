@@ -189,7 +189,8 @@ window.CATALOG = [
     "featured": false,
     "isNew": false,
     "image": "assets/products/tao-tote-tropical-night.jpg",
-    "image2": "assets/products/tao-tote-tropical-night-2.jpg"
+    "image2": "assets/products/tao-tote-tropical-night-2.jpg",
+    "created": "2026-06-18T18:50:38+01:00"
   },
   {
     "id": "tao-tote",
@@ -207,7 +208,8 @@ window.CATALOG = [
     "featured": false,
     "isNew": false,
     "image": "assets/products/Photoroom_20260718_132647.jpeg",
-    "image2": "assets/products/tao-tote.jpg"
+    "image2": "assets/products/tao-tote.jpg",
+    "created": "2026-06-18T18:50:38+01:00"
   },
   {
     "id": "kay-bucket-hat",
@@ -562,7 +564,8 @@ window.CATALOG = [
     "featured": false,
     "isNew": true,
     "image": "assets/products/Photoroom_20260718_110314.jpeg",
-    "image2": null
+    "image2": null,
+    "created": "2026-07-18T09:35:46+01:00"
   },
   {
     "id": "zinnia-brown",
@@ -579,7 +582,8 @@ window.CATALOG = [
     "featured": false,
     "isNew": true,
     "image": "assets/products/Photoroom_20260718_110753.jpeg",
-    "image2": null
+    "image2": null,
+    "created": "2026-07-18T09:48:26+01:00"
   },
   {
     "id": "zinnia-coffee",
@@ -632,7 +636,8 @@ window.CATALOG = [
     "featured": false,
     "isNew": true,
     "image": "assets/products/Photoroom_20260718_110440.jpeg",
-    "image2": null
+    "image2": null,
+    "created": "2026-07-18T09:57:07+01:00"
   },
   {
     "id": "zuri-bright",
@@ -650,6 +655,7 @@ window.CATALOG = [
     "featured": false,
     "isNew": true,
     "image": "assets/products/Photoroom_20260719_083634.jpeg",
-    "image2": "assets/products/Photoroom_20260719_084205.jpeg"
+    "image2": "assets/products/Photoroom_20260719_084205.jpeg",
+    "created": "2026-07-19T05:44:39+01:00"
   }
 ];

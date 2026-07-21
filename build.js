@@ -22,6 +22,17 @@ const DIST = path.join(ROOT, "dist");
 //    One file per product (filename = id). The CMS (/admin) edits these.
 const PRODUCTS_DIR = path.join(ROOT, "data/products");
 const stripSlash = (s) => (typeof s === "string" ? s.replace(/^\/+/, "") : s); // CMS may store /assets/..; site uses relative paths
+// "date added" for a product, from git history (the commit that first added the file).
+// Robust: survives CMS saves that drop a `created` field. Needs full git history in CI.
+const gitCreated = (file) => {
+  try {
+    const out = execSync(`git log --diff-filter=A --format=%aI -- "data/products/${file}"`, {
+      cwd: ROOT, encoding: "utf8", stdio: ["pipe", "pipe", "ignore"],
+    }).trim();
+    const lines = out.split("\n").filter(Boolean);
+    return lines[lines.length - 1] || ""; // earliest = when it was first added
+  } catch { return ""; }
+};
 const products = fs
   .readdirSync(PRODUCTS_DIR)
   .filter((f) => f.endsWith(".json"))
@@ -33,6 +44,8 @@ const products = fs
     data.images = imgs;
     data.image = imgs[0] || "";       // card + cart + Stripe + first gallery photo
     data.image2 = imgs[1] || null;    // card hover
+    // date for newest/oldest sorting: CMS value if set, else derived from git, else a base date
+    data.created = data.created || gitCreated(f) || "2026-06-01T00:00:00Z";
     return { id: f.replace(/\.json$/, ""), ...data };
   })
   .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
