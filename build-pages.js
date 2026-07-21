@@ -125,6 +125,22 @@ const cartDrawer = `<div class="overlay" id="overlay" hidden></div>
 </aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>`;
 
+// Quick-view modal — shared so it works on category pages too (not just the homepage).
+const quickModal = `<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal__panel">
+    <button class="modal__close" id="modalClose" aria-label="Close">Close</button>
+    <div class="modal__media"><img id="modalImg" alt="" /></div>
+    <div class="modal__info">
+      <p class="modal__cat" id="modalCat"></p>
+      <h3 class="modal__name" id="modalName"></h3>
+      <div class="modal__price" id="modalPrice"></div>
+      <p class="modal__desc" id="modalDesc"></p>
+      <ul class="modal__meta">${PRODUCT_META.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+      <button class="btn btn--solid btn--block" id="modalAdd">Add to bag</button>
+    </div>
+  </div>
+</div>`;
+
 const scripts = (px) => `<script src="${px}js/catalog.js"></script>\n<script src="${px}js/app.js"></script>`;
 
 function shell({ px, title, description, canonical, headExtra = "", main }) {
@@ -152,6 +168,7 @@ ${menu(px)}
 ${main}
 ${footer(px)}
 ${cartDrawer}
+${quickModal}
 ${scripts(px)}
 </body>
 </html>
@@ -471,8 +488,10 @@ for (const p of CATALOG) {
   };
   const headExtra = `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
 
+  const backHref = CATEGORIES.includes(p.category) ? `${px}${catSlug(p.category)}.html` : `${px}index.html`;
+  const backLabel = CATEGORIES.includes(p.category) ? `← Back to ${p.category}` : "← Back home";
   const main = `<main class="pdp">
-    <a class="pdp__back" href="${px}index.html#shop">← Back to shop</a>
+    <a class="pdp__back" href="${backHref}">${backLabel}</a>
     <div class="pdp__grid">
       <div class="pdp__media">
         ${gallery}
