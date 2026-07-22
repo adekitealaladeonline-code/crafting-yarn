@@ -14,6 +14,7 @@
   --terra-d:#C8472C;
   --brown:#5E2816;         /* deep brown for display headings */
   --logo-pink:#C01860;     /* raspberry from the Crafting Yarn logo script */
+  --logo-pink-light:#D674A0;/* softer tint used for the wordmark + ticker */
   --logo-green:#90D878;    /* leaf green from the logo yarn ball */
   --line:rgba(23,21,19,.14);
   --line-2:rgba(23,21,19,.07);
@@ -62,7 +63,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 /* =================================================================
    ANNOUNCEMENT
    ================================================================= */
-.ticker{background:var(--logo-pink);color:#fff;overflow:hidden}
+.ticker{background:var(--logo-pink-light);color:#fff;overflow:hidden}
 .ticker__track{display:flex;align-items:center;gap:2.4rem;white-space:nowrap;padding:.6rem 0;
   width:max-content;animation:ticker 42s linear infinite}
 .ticker span{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
@@ -83,8 +84,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .header__menu[aria-expanded="true"] span:last-child{transform:translateY(-8px) rotate(-45deg)}
 .brand{justify-self:center}
 .brand__word{display:inline-flex;align-items:center;gap:.3em;font-weight:800;
-  letter-spacing:-.02em;line-height:.9;font-size:clamp(1.5rem,8vw,6.6rem);
-  color:color-mix(in srgb,var(--logo-pink) 60%,#fff);
+  letter-spacing:-.02em;line-height:.9;font-size:clamp(1.5rem,8vw,6.6rem);color:var(--logo-pink-light);
   white-space:nowrap;transition:font-size .3s}
 .is-scrolled .brand__word{font-size:clamp(1.3rem,5vw,3.4rem)}
 .header__actions{justify-self:end;display:flex;align-items:center;gap:.3rem}
