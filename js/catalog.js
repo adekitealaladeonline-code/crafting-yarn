@@ -307,7 +307,7 @@ window.CATALOG = [
     "name": "Nola Red Velvet",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 120,
     "sale": null,
     "stock": 1,
     "images": [
@@ -325,7 +325,7 @@ window.CATALOG = [
     "name": "Zinnia  Pink (mini)",
     "category": "Bags",
     "subcategory": "",
-    "price": 85,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -343,7 +343,7 @@ window.CATALOG = [
     "name": "Zuri Camo",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 120,
     "sale": null,
     "stock": 1,
     "images": [
@@ -361,7 +361,7 @@ window.CATALOG = [
     "name": "Zinnia Coffee",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 130,
     "sale": null,
     "stock": 1,
     "images": [
@@ -379,7 +379,7 @@ window.CATALOG = [
     "name": "Willa  Wine",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 120,
     "sale": null,
     "stock": 1,
     "images": [
@@ -397,7 +397,7 @@ window.CATALOG = [
     "name": "Zuri  yellow",
     "category": "Bags",
     "subcategory": "",
-    "price": 85,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -415,13 +415,13 @@ window.CATALOG = [
     "name": "Zuri Candy",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 120,
     "sale": null,
     "stock": 1,
     "images": [
       "assets/products/Photoroom_20260719_083634.jpeg"
     ],
-    "desc": "Soft, Bright and ultra stylish\nSize: 25cm Length, 7cm Width, 15cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
+    "desc": "Soft, Bright and ultra stylish.\nSize: 25cm Length, 7cm Width, 15cm Height \nLightweight and versatile for any occasion.\nComfortable handle for easy carry",
     "featured": false,
     "isNew": true,
     "image": "assets/products/Photoroom_20260719_083634.jpeg",

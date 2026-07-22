@@ -82,7 +82,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .header__menu[aria-expanded="true"] span:first-child{transform:translateY(8px) rotate(45deg)}
 .header__menu[aria-expanded="true"] span:last-child{transform:translateY(-8px) rotate(-45deg)}
 .brand{justify-self:center}
-.brand__word{display:inline-flex;align-items:center;gap:.3em;font-weight:800;text-transform:uppercase;
+.brand__word{display:inline-flex;align-items:center;gap:.3em;font-weight:800;
   letter-spacing:-.02em;line-height:.9;font-size:clamp(1.5rem,8vw,6.6rem);color:var(--logo-pink);
   white-space:nowrap;transition:font-size .3s}
 .is-scrolled .brand__word{font-size:clamp(1.3rem,5vw,3.4rem)}
