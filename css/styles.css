@@ -83,7 +83,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .header__menu[aria-expanded="true"] span:last-child{transform:translateY(-8px) rotate(-45deg)}
 .brand{justify-self:center}
 .brand__word{display:inline-flex;align-items:center;gap:.3em;font-weight:800;
-  letter-spacing:-.02em;line-height:.9;font-size:clamp(1.5rem,8vw,6.6rem);color:var(--logo-pink);
+  letter-spacing:-.02em;line-height:.9;font-size:clamp(1.5rem,8vw,6.6rem);
+  color:color-mix(in srgb,var(--logo-pink) 60%,#fff);
   white-space:nowrap;transition:font-size .3s}
 .is-scrolled .brand__word{font-size:clamp(1.3rem,5vw,3.4rem)}
 .header__actions{justify-self:end;display:flex;align-items:center;gap:.3rem}
