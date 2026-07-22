@@ -131,7 +131,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
    ================================================================= */
 .rail{max-width:var(--maxw);margin:0 auto;padding:clamp(48px,7vw,100px) 0 clamp(30px,4vw,56px)}
 .rail__head{padding:0 var(--gut);display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:2rem}
-.rail__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-.02em;line-height:1}
+.rail__title{color:var(--logo-pink-light);font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-.02em;line-height:1}
 .rail__nav{display:flex;gap:.7rem;flex-shrink:0}
 .rail__track{display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;
   padding:4px var(--gut) 22px;scrollbar-width:none}
@@ -217,7 +217,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .story__media img{width:100%;height:100%;object-fit:cover;min-height:420px}
 .story__copy{padding:clamp(40px,7vw,110px) var(--gut);display:flex;flex-direction:column;justify-content:center;max-width:600px}
 .story__eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:1.2rem}
-.story__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2.2rem,4.8vw,4rem);line-height:.98;letter-spacing:-.02em;margin-bottom:1.2rem}
+.story__title{color:var(--logo-pink-light);font-weight:800;font-size:clamp(2.2rem,4.8vw,4rem);line-height:.98;letter-spacing:-.02em;margin-bottom:1.2rem}
 .story__line{color:var(--ink-2);font-size:1.05rem;max-width:42ch;margin-bottom:2rem}
 
 /* =================================================================
@@ -225,13 +225,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
    ================================================================= */
 .tiktok{text-align:center;padding:clamp(48px,7vw,100px) var(--gut);background:var(--paper)}
 .tiktok--bare{padding-top:clamp(36px,5vw,72px)}
-.tiktok__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:1.8rem}
+.tiktok__title{color:var(--logo-pink-light);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:1.8rem}
 .tiktok__embed{display:flex;justify-content:center;min-height:320px}
 .tiktok__embed .tiktok-embed{margin:0 auto!important}
 
 .news{text-align:center;padding:clamp(60px,9vw,140px) var(--gut)}
 .news__inner{max-width:620px;margin:0 auto}
-.news__title{color:var(--logo-pink);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:.8rem}
+.news__title{color:var(--logo-pink-light);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:.8rem}
 .news__copy{color:var(--ink-2);font-size:1.02rem;margin-bottom:2rem}
 .news__form{display:flex;gap:.6rem;max-width:460px;margin:0 auto}
 .news__form input{flex:1;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);
