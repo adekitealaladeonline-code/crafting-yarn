@@ -62,11 +62,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 /* =================================================================
    ANNOUNCEMENT
    ================================================================= */
-.ticker{background:var(--terra);color:#fff;overflow:hidden}
+.ticker{background:var(--logo-pink);color:#fff;overflow:hidden}
 .ticker__track{display:flex;align-items:center;gap:2.4rem;white-space:nowrap;padding:.6rem 0;
   width:max-content;animation:ticker 42s linear infinite}
 .ticker span{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-.ticker i{font-style:normal;opacity:.7}
+.ticker i{font-style:normal;color:var(--logo-green);opacity:.95}
 @keyframes ticker{to{transform:translateX(-50%)}}
 
 /* =================================================================
@@ -374,15 +374,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 @media(max-width:768px){
   .pdp__grid{grid-template-columns:1fr;gap:1.6rem}
   .pdp__info{position:static}
-  .story{grid-template-columns:1fr}
-  .story__media img{min-height:340px}
-  .modal__panel{grid-template-columns:1fr;max-height:88vh}
-  .modal__media img{min-height:0;aspect-ratio:1/1}
-}
-  .grid{grid-template-columns:repeat(3,1fr)}
-  .footer__top{grid-template-columns:1fr 1fr;gap:2.6rem}
-}
-@media(max-width:768px){
   .story{grid-template-columns:1fr}
   .story__media img{min-height:340px}
   .modal__panel{grid-template-columns:1fr;max-height:88vh}
