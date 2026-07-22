@@ -1,7 +1,7 @@
 ---
 eyebrow: Our story
 heading: Made by hand, by Freda
-image: assets/products/spring-hexagon-jacket-m-l.jpg
+image: /assets/products/blue-daze-cardigan-medium.jpg
 signature: — Freda
 description: Crafting Yarn began with one scarf. Meet Freda, and the handmade crochet she makes with love in the UAE.
 ---
