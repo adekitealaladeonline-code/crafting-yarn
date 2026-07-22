@@ -291,7 +291,7 @@ window.CATALOG = [
     "subcategory": "",
     "price": 120,
     "sale": null,
-    "stock": 1,
+    "stock": 0,
     "images": [
       "assets/products/Photoroom_20260718_110624.jpeg"
     ],
