@@ -81,7 +81,7 @@ const socialMenuLinks = `<a class="menu__ig" href="${esc(IG_URL)}" target="_blan
 
 const header = (px) => `<header class="site-header" id="siteHeader"><div class="header__inner">
   <button class="header__menu" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-  <a href="${px}index.html" class="brand" aria-label="Crafting Yarn home"><span class="brand__word"><span class="brand__ball" aria-hidden="true"></span>Crafting Yarn</span></a>
+  <a href="${px}index.html" class="brand" aria-label="Crafting Yarn home"><span class="brand__word">Crafting Yarn</span></a>
   <div class="header__actions">
     <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span class="cart-count" id="cartCount">0</span></button>
   </div>
@@ -283,7 +283,7 @@ ${ticker}
     </button>
 
     <a href="#top" class="brand" aria-label="Crafting Yarn home">
-      <span class="brand__word"><span class="brand__ball" aria-hidden="true"></span>Crafting Yarn</span>
+      <span class="brand__word">Crafting Yarn</span>
     </a>
 
     <div class="header__actions">

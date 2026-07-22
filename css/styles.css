@@ -85,7 +85,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .brand__word{display:inline-flex;align-items:center;gap:.3em;font-weight:800;text-transform:uppercase;
   letter-spacing:-.02em;line-height:.9;font-size:clamp(1.5rem,8vw,6.6rem);color:var(--logo-pink);
   white-space:nowrap;transition:font-size .3s}
-.brand__ball{width:.5em;height:.5em;border-radius:50%;background:var(--logo-green);flex:0 0 auto}
 .is-scrolled .brand__word{font-size:clamp(1.3rem,5vw,3.4rem)}
 .header__actions{justify-self:end;display:flex;align-items:center;gap:.3rem}
 .cart-btn{position:relative}
