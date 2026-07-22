@@ -1,0 +1,18 @@
+{
+  "name": "Chocolate crossbody",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 120,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/tao-tote-tropical-night.jpg",
+    "/assets/products/tao-tote-tropical-night-2.jpg",
+    "/assets/products/teal-velvet.jpg"
+  ],
+  "desc": "Textured crossbody bag with a detachable chain. \nSturdy and stylish. 21cm Length, 18cm Height, 3cm Width",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-07-22T22:51"
+}
