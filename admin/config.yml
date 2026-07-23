@@ -39,7 +39,7 @@ collections:
       - { name: category, label: "Category", widget: select, options: ["Bags", "Accessories"] }
       - { name: subcategory, label: "Subcategory", widget: string, required: false }
       - { name: price, label: "Original price (AED)", widget: number, value_type: float, min: 0, step: 1 }
-      - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Leave blank if the item is not on sale." }
+      - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Set a lower price to put this item on sale — it shows a discount badge and appears on the Sale page automatically. Leave blank if it's not on sale." }
       - { name: stock, label: "Stock", widget: number, value_type: int, min: 0, step: 1, required: false, hint: "How many finished pieces you have. It counts down automatically as orders are paid, and shows 'Sold out' at zero. Leave blank for made-to-order (always available)." }
       - name: images
         label: "Photos"
@@ -150,6 +150,7 @@ collections:
                 options:
                   - { label: "Bags", value: "Bags" }
                   - { label: "Accessories", value: "Accessories" }
+                  - { label: "Sale", value: "sale" }
                   - { label: "Newest carousel", value: "all" }
               - { name: button, label: "Button text", widget: string, default: "Shop now" }
               - name: style
@@ -191,6 +192,20 @@ collections:
             collapsed: true
             fields:
               - { name: description, label: "Site description (shows under your link on Google/WhatsApp)", widget: text, required: false }
+
+  - name: salepage
+    label: "Sale page"
+    description: "The Sale page wording, plus a switch to show or hide it. To put an item in the sale, set its 'Sale price' over in Products — it appears here on its own."
+    editor: { preview: false }
+    files:
+      - name: sale
+        label: "Sale page"
+        file: "data/sale.json"
+        fields:
+          - { name: enabled, label: "Show the Sale page and menu link", widget: boolean, default: true, hint: "Turn off to hide the Sale tab everywhere — e.g. when nothing is on sale." }
+          - { name: eyebrow, label: "Small label above the title", widget: string, default: "Deals", required: false }
+          - { name: heading, label: "Title", widget: string, default: "Sale" }
+          - { name: intro, label: "Intro line under the title", widget: text, required: false }
 
   - name: settings
     label: "Site settings"

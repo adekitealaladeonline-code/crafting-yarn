@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Brown velvet — Crafting Yarn</title>
-<meta name="description" content="Velvet-yarn scrunchie in chocolate brown." />
+<title>Sale — Crafting Yarn</title>
+<meta name="description" content="A few handmade favourites, now at a special price. When they're gone, they're gone." />
 <meta name="theme-color" content="#E35D40" />
-<link rel="canonical" href="https://craftingyarn.com/product/brown-velvet.html" />
-<meta property="og:title" content="Brown velvet — Crafting Yarn" />
-<meta property="og:description" content="Velvet-yarn scrunchie in chocolate brown." />
+<link rel="canonical" href="https://craftingyarn.com/sale.html" />
+<meta property="og:title" content="Sale — Crafting Yarn" />
+<meta property="og:description" content="A few handmade favourites, now at a special price. When they're gone, they're gone." />
 <meta property="og:type" content="website" />
-<link rel="icon" type="image/png" href="../assets/brand/logo.png" />
+<link rel="icon" type="image/png" href="assets/brand/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../css/styles.css" />
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Brown velvet","image":["https://craftingyarn.com/assets/products/brown-velvet.jpg"],"description":"Velvet-yarn scrunchie in chocolate brown.","brand":{"@type":"Brand","name":"Crafting Yarn"},"offers":{"@type":"Offer","priceCurrency":"AED","price":"20","availability":"https://schema.org/InStock","url":"https://craftingyarn.com/product/brown-velvet.html"}}</script>
+<link rel="stylesheet" href="css/styles.css" />
+
 </head>
 <body>
 <div class="ticker" aria-hidden="true"><div class="ticker__track">
@@ -24,49 +24,51 @@
 </div></div>
 <header class="site-header" id="siteHeader"><div class="header__inner">
   <button class="header__menu" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-  <a href="../index.html" class="brand" aria-label="Crafting Yarn home"><span class="brand__word">Crafting Yarn</span></a>
+  <a href="index.html" class="brand" aria-label="Crafting Yarn home"><span class="brand__word">Crafting Yarn</span></a>
   <div class="header__actions">
     <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span class="cart-count" id="cartCount">0</span></button>
   </div>
 </div></header>
 <div class="menu" id="mobileNav" hidden>
   <nav aria-label="Main">
-    <a href="../index.html"><span>01</span> Home</a>
-    <a href="../bags.html"><span>02</span> Bags</a>
-    <a href="../accessories.html"><span>03</span> Accessories</a>
-    <a href="../sale.html"><span>04</span> Sale</a>
-    <a href="../about.html"><span>05</span> Our story</a>
-    <a href="../contact.html"><span>06</span> Contact</a>
+    <a href="index.html"><span>01</span> Home</a>
+    <a href="bags.html"><span>02</span> Bags</a>
+    <a href="accessories.html"><span>03</span> Accessories</a>
+    <a href="sale.html"><span>04</span> Sale</a>
+    <a href="about.html"><span>05</span> Our story</a>
+    <a href="contact.html"><span>06</span> Contact</a>
   </nav>
   <a class="menu__ig" href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram @craftingyarn ↗</a>
   <a class="menu__ig" href="https://www.tiktok.com/@craftingyarn" target="_blank" rel="noopener">TikTok @craftingyarn ↗</a>
 </div>
-<main class="pdp">
-    <a class="pdp__back" href="../accessories.html">← Back to Accessories</a>
-    <div class="pdp__grid">
-      <div class="pdp__media">
-        <figure><img src="../assets/products/brown-velvet.jpg" alt="Brown velvet" /></figure>
-        <figure><img src="../assets/products/brown-velvet-2.jpg" alt="Brown velvet — view 2" loading="lazy"/></figure>
+<main class="shop shop--cat" id="shop">
+    <div class="cat-head">
+      <div class="cat-headtext">
+        <p class="page__eyebrow">Deals</p>
+        <h1 class="cat-title">Sale</h1>
+        <p class="cat-intro">A few handmade favourites, now at a special price. When they're gone, they're gone.</p>
       </div>
-      <div class="pdp__info">
-        <p class="pdp__cat">Accessories · Scrunchies</p>
-        <h1 class="pdp__name">Brown velvet</h1>
-        <div class="pdp__price"><span class="now">AED 20</span></div>
-        <p class="pdp__desc">Velvet-yarn scrunchie in chocolate brown.</p>
-        <ul class="pdp__meta">
-          <li>Handmade with love, just for you!</li>
-        </ul>
-        <button class="btn btn--solid pdp__add" data-add="brown-velvet" aria-label="Add Brown velvet to bag">Add to bag — AED 20</button>
-      </div>
+      <nav class="catnav" aria-label="Shop categories"><a href="bags.html" class="chip">Bags</a><a href="accessories.html" class="chip">Accessories</a><a href="sale.html" class="chip chip--sale is-active">Sale</a></nav>
     </div>
+    <div class="shop__bar shop__bar--cat">
+      <span class="shop__count" id="gridCount">0 pieces</span>
+      <label for="sortSelect" class="sr-only">Sort products</label>
+      <select id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="oldest">Old to new</option>
+        <option value="newest">New to old</option>
+      </select>
+    </div>
+    <div class="grid" id="grid" data-category="sale"><!-- app.js injects on-sale items --></div>
+    <p class="grid__empty" id="gridEmpty" hidden>Nothing on sale right now — check back soon.</p>
   </main>
 <footer class="site-footer"><div class="footer__top">
   <div class="footer__brand"><p>Every stitch is intentionally handcrafted to make you stand out.</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
-    <a href="../bags.html">Bags</a><a href="../accessories.html">Accessories</a><a href="../sale.html">Sale</a>
+    <a href="bags.html">Bags</a><a href="accessories.html">Accessories</a><a href="sale.html">Sale</a>
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
-    <a href="../shipping.html">Shipping</a><a href="../returns.html">Returns</a><a href="../care.html">Care guide</a><a href="../about.html">Our story</a><a href="../contact.html">Contact</a>
+    <a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="care.html">Care guide</a><a href="about.html">Our story</a><a href="contact.html">Contact</a>
   </nav>
   <nav class="footer__col" aria-label="Social"><h4>Follow</h4>
     <a href="https://www.instagram.com/craftingyarn/" target="_blank" rel="noopener">Instagram ↗</a>
@@ -98,7 +100,7 @@
     </div>
   </div>
 </div>
-<script src="../js/catalog.js"></script>
-<script src="../js/app.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

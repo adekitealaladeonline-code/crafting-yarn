@@ -59,11 +59,23 @@ const FORM_ID = S.formspree || "your-form-id";
 /* ---------- categories (each gets its own page; no all-products page) ---------- */
 const CATEGORIES = ["Bags", "Accessories"];
 const catSlug = (c) => String(c).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-const catHref = (px, c) => (CATEGORIES.includes(c) ? `${px}${catSlug(c)}.html` : `${px}index.html#featured`);
-const catNav = (px, active) =>
-  `<nav class="catnav" aria-label="Shop categories">${CATEGORIES.map(
+
+// Sale section — a page listing every product with a sale price. Freda edits the
+// heading/intro (and can hide it) in data/sale.json via the CMS.
+const SALE = (() => { try { return readJSON("data/sale.json"); } catch { return {}; } })();
+const SALE_ENABLED = SALE.enabled !== false;
+
+const catHref = (px, c) =>
+  (c === "sale" || c === "Sale") ? `${px}sale.html`
+  : CATEGORIES.includes(c) ? `${px}${catSlug(c)}.html`
+  : `${px}index.html#featured`;
+const catNav = (px, active) => {
+  const chips = CATEGORIES.map(
     (c) => `<a href="${px}${catSlug(c)}.html" class="chip${c === active ? " is-active" : ""}">${esc(c)}</a>`
-  ).join("")}</nav>`;
+  );
+  if (SALE_ENABLED) chips.push(`<a href="${px}sale.html" class="chip chip--sale${active === "sale" ? " is-active" : ""}">Sale</a>`);
+  return `<nav class="catnav" aria-label="Shop categories">${chips.join("")}</nav>`;
+};
 
 /* ---------- shared chrome (prefix = "" for root, "../" for /product/) ---------- */
 const FONT = `<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -87,21 +99,30 @@ const header = (px) => `<header class="site-header" id="siteHeader"><div class="
   </div>
 </div></header>`;
 
-const menu = (px) => `<div class="menu" id="mobileNav" hidden>
+const menu = (px) => {
+  const items = [
+    ["index.html", "Home"],
+    ["bags.html", "Bags"],
+    ["accessories.html", "Accessories"],
+    ...(SALE_ENABLED ? [["sale.html", "Sale"]] : []),
+    ["about.html", "Our story"],
+    ["contact.html", "Contact"],
+  ];
+  const links = items
+    .map(([href, label], i) => `<a href="${px}${href}"><span>${String(i + 1).padStart(2, "0")}</span> ${label}</a>`)
+    .join("\n    ");
+  return `<div class="menu" id="mobileNav" hidden>
   <nav aria-label="Main">
-    <a href="${px}index.html"><span>01</span> Home</a>
-    <a href="${px}bags.html"><span>02</span> Bags</a>
-    <a href="${px}accessories.html"><span>03</span> Accessories</a>
-    <a href="${px}about.html"><span>04</span> Our story</a>
-    <a href="${px}contact.html"><span>05</span> Contact</a>
+    ${links}
   </nav>
   ${socialMenuLinks}
 </div>`;
+};
 
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
   <div class="footer__brand"><p>${esc(FOOTER_BLURB)}</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
-    <a href="${px}bags.html">Bags</a><a href="${px}accessories.html">Accessories</a>
+    <a href="${px}bags.html">Bags</a><a href="${px}accessories.html">Accessories</a>${SALE_ENABLED ? `<a href="${px}sale.html">Sale</a>` : ""}
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
     <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
@@ -296,16 +317,7 @@ ${ticker}
 </header>
 
 <!-- MENU OVERLAY -->
-<div class="menu" id="mobileNav" hidden>
-  <nav aria-label="Main">
-    <a href="index.html"><span>01</span> Home</a>
-    <a href="bags.html"><span>02</span> Bags</a>
-    <a href="accessories.html"><span>03</span> Accessories</a>
-    <a href="about.html"><span>04</span> Our story</a>
-    <a href="contact.html"><span>05</span> Contact</a>
-  </nav>
-  ${socialMenuLinks}
-</div>
+${menu("")}
 
 <main id="top">
 
@@ -343,35 +355,7 @@ ${newsletterSection(news)}
 </main>
 
 <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer__top">
-    <div class="footer__brand">
-      <p>${esc(FOOTER_BLURB)}</p>
-    </div>
-    <nav class="footer__col" aria-label="Shop">
-      <h4>Shop</h4>
-      <a href="bags.html">Bags</a>
-      <a href="accessories.html">Accessories</a>
-    </nav>
-    <nav class="footer__col" aria-label="Help">
-      <h4>Help</h4>
-      <a href="shipping.html">Shipping</a>
-      <a href="returns.html">Returns</a>
-      <a href="care.html">Care guide</a>
-      <a href="about.html">Our story</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <nav class="footer__col" aria-label="Social">
-      <h4>Follow</h4>
-      <a href="${esc(IG_URL)}" target="_blank" rel="noopener">Instagram ↗</a>
-      <a href="${esc(TT_URL)}" target="_blank" rel="noopener">TikTok ↗</a>
-    </nav>
-  </div>
-  <div class="footer__bottom">
-    <span>© <span id="year"></span> Crafting Yarn</span>
-    <span>${esc(FOOTER_TAGLINE)}</span>
-  </div>
-</footer>
+${footer("")}
 
 <!-- CART DRAWER -->
 ${cartDrawer}
@@ -456,6 +440,41 @@ for (const cat of CATEGORIES) {
     px: "", title: `${cat} — Crafting Yarn`,
     description: `Handmade crochet ${cat.toLowerCase()} by Crafting Yarn — made with love in the UAE.`,
     canonical: `${SITE}/${catSlug(cat)}.html`, main,
+  }));
+}
+
+/* ---------- SALE PAGE (sale.html) — lists every product with a sale price.
+   app.js reads #grid[data-category="sale"] and filters to on-sale items. ---------- */
+if (SALE_ENABLED) {
+  const n = CATALOG.filter((p) => p.sale != null).length;
+  const eyebrow = SALE.eyebrow != null ? SALE.eyebrow : "Deals";
+  const heading = SALE.heading || "Sale";
+  const intro = SALE.intro || "";
+  const main = `<main class="shop shop--cat" id="shop">
+    <div class="cat-head">
+      <div class="cat-headtext">
+        ${eyebrow ? `<p class="page__eyebrow">${esc(eyebrow)}</p>` : ""}
+        <h1 class="cat-title">${esc(heading)}</h1>
+        ${intro ? `<p class="cat-intro">${esc(intro)}</p>` : ""}
+      </div>
+      ${catNav("", "sale")}
+    </div>
+    <div class="shop__bar shop__bar--cat">
+      <span class="shop__count" id="gridCount">${n} ${n === 1 ? "piece" : "pieces"}</span>
+      <label for="sortSelect" class="sr-only">Sort products</label>
+      <select id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="oldest">Old to new</option>
+        <option value="newest">New to old</option>
+      </select>
+    </div>
+    <div class="grid" id="grid" data-category="sale"><!-- app.js injects on-sale items --></div>
+    <p class="grid__empty" id="gridEmpty" hidden>Nothing on sale right now — check back soon.</p>
+  </main>`;
+  fs.writeFileSync(path.join(ROOT, "sale.html"), shell({
+    px: "", title: "Sale — Crafting Yarn",
+    description: intro || "Handmade crochet on sale at Crafting Yarn — special prices, while stocks last.",
+    canonical: `${SITE}/sale.html`, main,
   }));
 }
 
