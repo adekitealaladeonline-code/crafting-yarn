@@ -10,6 +10,13 @@
 <meta property="og:title" content="Get in touch — Crafting Yarn" />
 <meta property="og:description" content="Crochet pieces in UAE. Get in touch with Crafting Yarn." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://craftingyarn.com/contact.html" />
+<meta property="og:image" content="https://craftingyarn.com/assets/brand/hero.jpg" />
+<meta property="og:image:alt" content="Get in touch — Crafting Yarn" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Get in touch — Crafting Yarn" />
+<meta name="twitter:description" content="Crochet pieces in UAE. Get in touch with Crafting Yarn." />
+<meta name="twitter:image" content="https://craftingyarn.com/assets/brand/hero.jpg" />
 <link rel="icon" type="image/png" href="assets/brand/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,11 +57,12 @@
     <p>Tiktok- <a class="inline" href="https://www.tiktok.com/@craftingyarn" target="_blank" rel="noopener">@craftingyarn</a></p>
     <p>Email- <a class="inline" href="mailto:craftingyarn@outlook.com">craftingyarn@outlook.com</a></p>
     <p>Whatsapp- <a class="inline" href="https://wa.me/971569413899" target="_blank" rel="noopener">+971569413899</a></p>
-    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" placeholder="Your message" required></textarea>
-      <button type="submit" class="btn btn--solid">Send message</button>
+    <form class="contact-form" id="contactForm" data-wa="971569413899">
+      <input type="text" name="name" id="cfName" placeholder="Your name" required />
+      <input type="email" name="email" id="cfEmail" placeholder="Your email" required />
+      <textarea name="message" id="cfMsg" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn btn--solid">Send via WhatsApp</button>
+      <p class="contact-form__note">Opens WhatsApp with your message ready to send.</p>
     </form>
   </main>
 <footer class="site-footer"><div class="footer__top">

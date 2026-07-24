@@ -441,6 +441,20 @@
       if (ok) $("#newsForm").reset();
     });
 
+    // Contact form -> open WhatsApp with the enquiry pre-filled
+    on("#contactForm", "submit", (e) => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const wa = (form.dataset.wa || "").replace(/[^0-9]/g, "");
+      const name = ($("#cfName") && $("#cfName").value.trim()) || "";
+      const email = ($("#cfEmail") && $("#cfEmail").value.trim()) || "";
+      const msg = ($("#cfMsg") && $("#cfMsg").value.trim()) || "";
+      if (!wa) { toast("Sorry, messaging is unavailable right now."); return; }
+      const text = `Hi Crafting Yarn! 🧶\n\nName: ${name}\nEmail: ${email}\n\n${msg}`;
+      window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+      toast("Opening WhatsApp — send your message to reach us ♥");
+    });
+
     $$("#year").forEach((el) => (el.textContent = new Date().getFullYear()));
   }
 

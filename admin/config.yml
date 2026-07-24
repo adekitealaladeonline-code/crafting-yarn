@@ -234,4 +234,4 @@ collections:
             hint: "The three little reassurance lines shown on every product page."
             fields:
               - { name: text, label: "Line", widget: string }
-          - { name: formspree, label: "Contact form ID (from formspree.io — ask your developer)", widget: string, required: false }
+          - { name: whatsapp, label: "WhatsApp number for enquiries", widget: string, hint: "The contact form opens WhatsApp to this number. Use the full international number, digits only (e.g. 971569413899)." }

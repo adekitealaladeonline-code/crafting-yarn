@@ -339,6 +339,25 @@ window.CATALOG = [
     "created": "2026-07-18T09:35:46+01:00"
   },
   {
+    "id": "velora-olive",
+    "name": "Velora Olive",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 100,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260722_224226.JPG",
+      "assets/products/Photoroom_20260722_224135.JPG"
+    ],
+    "desc": "Cute and stylish donut bag with removable brooch. \n17cm Height, 21 Length\nLight and durable",
+    "featured": false,
+    "isNew": true,
+    "created": "2026-07-23T07:33",
+    "image": "assets/products/Photoroom_20260722_224226.JPG",
+    "image2": "assets/products/Photoroom_20260722_224135.JPG"
+  },
+  {
     "id": "zinnia-brown",
     "name": "Zuri Camo",
     "category": "Bags",

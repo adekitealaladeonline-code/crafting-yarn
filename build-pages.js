@@ -54,7 +54,8 @@ const FOOTER_BLURB = S.footerBlurb || "Handmade crochet, made with love in the U
 const FOOTER_TAGLINE = S.footerTagline || "Every stitch tells a story";
 const CART_HINT = S.cartHint || "Shipping calculated at checkout";
 const PRODUCT_META = texts(S.productMeta, ["Crocheted by hand", "No two are ever identical", "Ships from the UAE"]);
-const FORM_ID = S.formspree || "your-form-id";
+// Contact form routes to WhatsApp — digits only, international format (no +). Editable in Site settings.
+const WA_NUMBER = String(S.whatsapp || "971569413899").replace(/[^0-9]/g, "");
 
 /* ---------- categories (each gets its own page; no all-products page) ---------- */
 const CATEGORIES = ["Bags", "Accessories"];
@@ -163,7 +164,11 @@ const quickModal = `<div class="modal" id="modal" aria-hidden="true" role="dialo
 
 const scripts = (px) => `<script src="${px}js/catalog.js"></script>\n<script src="${px}js/app.js"></script>`;
 
-function shell({ px, title, description, canonical, headExtra = "", main }) {
+const OG_DEFAULT = `${SITE}/assets/brand/hero.jpg`;
+const ogUrl = (img) => (img ? (/^https?:/.test(img) ? img : `${SITE}/${String(img).replace(/^\/+/, "")}`) : OG_DEFAULT);
+
+function shell({ px, title, description, canonical, headExtra = "", main, image }) {
+  const ogImage = ogUrl(image);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,6 +181,13 @@ function shell({ px, title, description, canonical, headExtra = "", main }) {
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="${canonical}" />
+<meta property="og:image" content="${esc(ogImage)}" />
+<meta property="og:image:alt" content="${esc(title)}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${esc(title)}" />
+<meta name="twitter:description" content="${esc(description)}" />
+<meta name="twitter:image" content="${esc(ogImage)}" />
 <link rel="icon" type="image/png" href="${px}assets/brand/logo.png" />
 ${FONT}
 <link rel="stylesheet" href="${px}css/styles.css" />
@@ -282,7 +294,13 @@ function buildHomepage() {
 <meta property="og:title" content="Crafting Yarn — Handmade crochet" />
 <meta property="og:description" content="${esc(seoDesc)}" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="${SITE}/" />
 <meta property="og:image" content="${SITE}/${esc(hero.image || "assets/brand/hero.jpg")}" />
+<meta property="og:image:alt" content="Crafting Yarn — Handmade crochet" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Crafting Yarn — Handmade crochet" />
+<meta name="twitter:description" content="${esc(seoDesc)}" />
+<meta name="twitter:image" content="${SITE}/${esc(hero.image || "assets/brand/hero.jpg")}" />
 
 <link rel="icon" type="image/png" href="assets/brand/logo.png" />
 <link rel="apple-touch-icon" href="assets/brand/logo.png" />
@@ -440,6 +458,7 @@ for (const cat of CATEGORIES) {
     px: "", title: `${cat} — Crafting Yarn`,
     description: `Handmade crochet ${cat.toLowerCase()} by Crafting Yarn — made with love in the UAE.`,
     canonical: `${SITE}/${catSlug(cat)}.html`, main,
+    image: (CATALOG.find((p) => p.category === cat) || {}).image,
   }));
 }
 
@@ -475,6 +494,7 @@ if (SALE_ENABLED) {
     px: "", title: "Sale — Crafting Yarn",
     description: intro || "Handmade crochet on sale at Crafting Yarn — special prices, while stocks last.",
     canonical: `${SITE}/sale.html`, main,
+    image: (CATALOG.find((p) => p.sale != null) || {}).image,
   }));
 }
 
@@ -526,6 +546,7 @@ for (const p of CATALOG) {
   fs.writeFileSync(path.join(ROOT, "product", `${p.id}.html`), shell({
     px, title: `${p.name} — Crafting Yarn`, description: p.desc,
     canonical: `${SITE}/product/${p.id}.html`, headExtra, main,
+    image: p.image,
   }));
   count++;
 }
@@ -573,11 +594,13 @@ function markdownLite(md) {
     .join("\n    ");
 }
 
-const CONTACT_FORM = `<form class="contact-form" action="https://formspree.io/f/${esc(FORM_ID)}" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" placeholder="Your message" required></textarea>
-      <button type="submit" class="btn btn--solid">Send message</button>
+// Contact form opens WhatsApp with the message pre-filled (app.js reads data-wa).
+const CONTACT_FORM = `<form class="contact-form" id="contactForm" data-wa="${WA_NUMBER}">
+      <input type="text" name="name" id="cfName" placeholder="Your name" required />
+      <input type="email" name="email" id="cfEmail" placeholder="Your email" required />
+      <textarea name="message" id="cfMsg" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn btn--solid">Send via WhatsApp</button>
+      <p class="contact-form__note">Opens WhatsApp with your message ready to send.</p>
     </form>`;
 
 const PAGES_DIR = path.join(ROOT, "data/pages");
@@ -595,7 +618,25 @@ for (const fileName of fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md")
   fs.writeFileSync(path.join(ROOT, `${slug}.html`), shell({
     px: "", title: `${data.heading || slug} — Crafting Yarn`,
     description: data.description || "", canonical: `${SITE}/${slug}.html`, main: out.join("\n"),
+    image: data.image,
   }));
 }
 
-console.log(`Generated homepage + thank-you + ${count} product pages + about/shipping/returns/contact.`);
+/* ---------- robots.txt + sitemap.xml (SEO discoverability) ---------- */
+const contentSlugs = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, ""));
+const sitemapUrls = [
+  `${SITE}/`,
+  ...CATEGORIES.map((c) => `${SITE}/${catSlug(c)}.html`),
+  ...(SALE_ENABLED ? [`${SITE}/sale.html`] : []),
+  ...contentSlugs.map((s) => `${SITE}/${s}.html`),
+  ...CATALOG.map((p) => `${SITE}/product/${p.id}.html`),
+];
+const today = new Date().toISOString().slice(0, 10);
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  sitemapUrls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n") +
+  `\n</urlset>\n`);
+fs.writeFileSync(path.join(ROOT, "robots.txt"),
+  `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+
+console.log(`Generated homepage + thank-you + ${count} product pages + content pages + sitemap.xml + robots.txt.`);
