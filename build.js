@@ -50,6 +50,48 @@ const products = fs
   })
   .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
 if (!products.length) throw new Error("no products found in data/products/");
+
+// 1b) guard: never ship a product photo that doesn't exist --------------------
+//     Deleting a photo from the CMS media library does NOT check whether a
+//     product still uses it, so a media cleanup can silently leave products
+//     pointing at deleted files. Those render as broken images on the live shop
+//     (and Cloudflare answers 200 with the fallback HTML, so they don't even
+//     look like 404s). Drop dead references; stop the build outright if that
+//     would leave a product with no photo at all.
+const imgExists = (rel) => !!rel && fs.existsSync(path.join(ROOT, rel));
+const photoWarn = [];
+const photoFatal = [];
+for (const p of products) {
+  if (!p.images.length) { // no photos listed at all
+    photoFatal.push(`  ✗ ${p.name}  [data/products/${p.id}.json]\n      (no photos added to this product)`);
+    continue;
+  }
+  const missing = p.images.filter((rel) => !imgExists(rel));
+  if (!missing.length) continue;
+  const kept = p.images.filter(imgExists);
+  const list = missing.map((m) => `      ${m}`).join("\n");
+  if (!kept.length) {
+    photoFatal.push(`  ✗ ${p.name}  [data/products/${p.id}.json]\n${list}`);
+    continue;
+  }
+  photoWarn.push(`  ! ${p.name}  [data/products/${p.id}.json] — ${kept.length} photo(s) still shown\n${list}`);
+  p.images = kept;
+  p.image = kept[0];
+  p.image2 = kept[1] || null;
+}
+if (photoWarn.length) {
+  console.warn("\n⚠ Missing product photos — these references were skipped:\n" + photoWarn.join("\n"));
+  console.warn("  Fix in /admin: re-upload the photo, or remove it from that product's Photos list.\n");
+}
+if (photoFatal.length) {
+  console.error("\n✗ BUILD STOPPED — product(s) left with no usable photo:\n" + photoFatal.join("\n"));
+  console.error("\n  These would appear blank/broken to customers, so the site was not rebuilt.");
+  console.error("  Fix in /admin (Products → the item → Photos): re-upload the photo(s),");
+  console.error("  or delete the product if it is no longer sold.");
+  console.error("  Note: deleting a photo from the media library does NOT remove it from products.\n");
+  process.exit(1);
+}
+
 const catalog = products.map(({ order, ...p }) => p); // 'order' is sort-only; keep it out of the catalogue
 const catalogJs =
   "/* AUTO-GENERATED from data/products/*.json by build.js — do not edit here; edit products in the CMS (/admin). */\n" +
