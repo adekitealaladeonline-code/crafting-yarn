@@ -339,6 +339,24 @@ window.CATALOG = [
     "created": "2026-07-18T09:35:46+01:00"
   },
   {
+    "id": "velora-brown-leather",
+    "name": "Velora Brown leather",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 100,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260722_140329.JPG"
+    ],
+    "desc": "Cute and stylish faux leather donut bag with detachable flower accessory\n\n\n15cm Height, 22 Length\n\n\nSturdy and lightweight",
+    "featured": false,
+    "isNew": true,
+    "created": "2026-07-25T08:36",
+    "image": "assets/products/Photoroom_20260722_140329.JPG",
+    "image2": null
+  },
+  {
     "id": "velora-olive",
     "name": "Velora Olive",
     "category": "Bags",
@@ -350,7 +368,7 @@ window.CATALOG = [
       "assets/products/Photoroom_20260722_224226.JPG",
       "assets/products/Photoroom_20260722_224135.JPG"
     ],
-    "desc": "Cute and stylish donut bag with removable brooch. \n17cm Height, 21 Length\nLight and durable",
+    "desc": "Cute and stylish donut bag with removable brooch. \n\n\n17cm Height, 21 Length\n\n\nLight and durable",
     "featured": false,
     "isNew": true,
     "created": "2026-07-23T07:33",

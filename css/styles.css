@@ -230,8 +230,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .tiktok{text-align:center;padding:clamp(48px,7vw,100px) var(--gut);background:var(--paper)}
 .tiktok--bare{padding-top:clamp(36px,5vw,72px)}
 .tiktok__title{color:var(--logo-pink-light);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em;line-height:1;margin-bottom:1.8rem}
-.tiktok__embed{display:flex;justify-content:center;min-height:320px}
-.tiktok__embed .tiktok-embed{margin:0 auto!important}
+/* TikTok injects its iframe with height:100%. With no resolvable height on the
+   blockquote the embed collapsed to the container's min-height (a 320px sliver)
+   and never initialised. Giving the iframe a min-height lets TikTok measure and
+   set its own height, while the blockquote stays auto so there's no empty gap. */
+.tiktok__embed{display:flex;justify-content:center;align-items:flex-start}
+.tiktok__embed .tiktok-embed{margin:0 auto!important;width:100%;max-width:780px}
+.tiktok__embed .tiktok-embed iframe{width:100%;min-height:clamp(460px,60vw,560px)}
 
 .news{text-align:center;padding:clamp(60px,9vw,140px) var(--gut)}
 .news__inner{max-width:620px;margin:0 auto}
