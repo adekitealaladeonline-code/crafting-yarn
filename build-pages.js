@@ -61,6 +61,24 @@ const WA_NUMBER = String(S.whatsapp || "971569413899").replace(/[^0-9]/g, "");
 const CATEGORIES = ["Bags", "Accessories"];
 const catSlug = (c) => String(c).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+/* Per-category SEO copy. People search "crochet bag Dubai", not "bags", so the
+   title/description/H1 carry the product word AND the location. Kept here (not
+   in the CMS) so the search wording stays deliberate. */
+const CAT_TITLE = {
+  Bags: "Handmade Crochet Bags in Dubai & UAE | Crafting Yarn",
+  Accessories: "Crochet Accessories in Dubai & UAE | Crafting Yarn",
+};
+const CAT_DESC = {
+  Bags: "Hand-crocheted bags made one at a time in the UAE — totes, baskets and shoulder bags in 100% cotton. Free delivery across Dubai and the UAE over AED 250.",
+  Accessories: "Handmade crochet accessories in the UAE — bandanas, scrunchies, bucket hats and more, crocheted by hand. Free Dubai and UAE delivery over AED 250.",
+};
+const CAT_H1 = { Bags: "Crochet Bags", Accessories: "Crochet Accessories" };
+const CAT_SINGULAR = { Bags: "Bag", Accessories: "Accessory" };
+const CAT_INTRO = {
+  Bags: "Hand-crocheted bags made one at a time here in the UAE — totes, baskets and shoulder bags in 100% cotton. No two are ever quite the same.",
+  Accessories: "Bandanas, scrunchies, bucket hats and little finishing touches — all crocheted by hand in the UAE.",
+};
+
 // Sale section — a page listing every product with a sale price. Freda edits the
 // heading/intro (and can hide it) in data/sale.json via the CMS.
 const SALE = (() => { try { return readJSON("data/sale.json"); } catch { return {}; } })();
@@ -162,15 +180,114 @@ const quickModal = `<div class="modal" id="modal" aria-hidden="true" role="dialo
   </div>
 </div>`;
 
+/* Build-time product card — mirrors cardHTML() in js/app.js. Without this the
+   grids ship as an empty <div> and JS fills them in, so crawlers (and anything
+   that doesn't run JS) saw ZERO product links and no internal linking to the
+   product pages. app.js re-renders identical markup on load, so this is purely
+   progressive enhancement: real links for crawlers + content on first paint. */
+const sellable = (p) => p.stock == null || p.stock > 0; // matches app.js's initial view
+function cardHTML(p, px = "") {
+  const off = p.sale != null ? Math.round((1 - p.sale / p.price) * 100) : 0;
+  const badges = [];
+  if (p.sale != null) badges.push(`<span class="tag tag--sale">Sale</span>`);
+  if (p.isNew) badges.push(`<span class="tag tag--new">New</span>`);
+  const price = p.sale != null
+    ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">−${off}%</span>`
+    : `<span class="now">${money(p.price)}</span>`;
+  const sub = p.subcategory ? `${p.category} · ${p.subcategory}` : p.category;
+  const hover = p.image2
+    ? `<img class="card__img card__img--hover" src="${px}${esc(p.image2)}" alt="" aria-hidden="true" loading="lazy"/>`
+    : "";
+  // descriptive alt text doubles as image-search fodder
+  const alt = `${p.name} — handmade crochet ${String(p.category || "").toLowerCase()} in the UAE`;
+  return `<article class="card${p.image2 ? " has-hover" : ""}" data-id="${esc(p.id)}">
+        <div class="card__media">
+          ${badges.length ? `<div class="card__badges">${badges.join("")}</div>` : ""}
+          <button class="card__wish" data-wish="${esc(p.id)}" aria-label="Save ${esc(p.name)} to wishlist" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.6-9.3-9C1 7.7 2.6 5 5.6 5c1.9 0 3.2 1.1 4.4 2.6C11.2 6.1 12.5 5 14.4 5c3 0 4.6 2.7 2.9 6-2.3 4.4-9.3 9-9.3 9Z"/></svg>
+          </button>
+          <img class="card__img" src="${px}${esc(p.image)}" alt="${esc(alt)}" loading="lazy"/>
+          ${hover}
+          <div class="card__actions">
+            <button class="card__quick" data-quick="${esc(p.id)}">Quick view</button>
+            <button class="card__addbar" data-add="${esc(p.id)}" aria-label="Add ${esc(p.name)} to basket">Add +</button>
+          </div>
+        </div>
+        <div class="card__info">
+          <span class="card__cat">${esc(sub)}</span>
+          <h3 class="card__name"><a href="${px}product/${esc(p.id)}.html">${esc(p.name)}</a></h3>
+          <div class="card__price">${price}</div>
+        </div>
+      </article>`;
+}
+// schema.org ItemList so Google understands a category page as a product listing
+const itemListLd = (items, listName) => `<script type="application/ld+json">${JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: listName,
+  numberOfItems: items.length,
+  itemListElement: items.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `${SITE}/product/${p.id}.html`,
+    name: p.name,
+  })),
+})}</script>`;
+// breadcrumbs -> the "Home > Bags > Item" trail Google can show under a result
+const breadcrumbLd = (trail) => `<script type="application/ld+json">${JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: trail.map((t, i) => ({
+    "@type": "ListItem", position: i + 1, name: t.name, item: t.url,
+  })),
+})}</script>`;
+
 const scripts = (px) => `<script src="${px}js/catalog.js"></script>\n<script src="${px}js/app.js"></script>`;
 
 const OG_DEFAULT = `${SITE}/assets/brand/hero.jpg`;
 const ogUrl = (img) => (img ? (/^https?:/.test(img) ? img : `${SITE}/${String(img).replace(/^\/+/, "")}`) : OG_DEFAULT);
 
+/* Brand entity for Google. Deliberately NO street address — Freda works from
+   home, so we declare the country served instead of publishing where she lives. */
+const ORG_LD = {
+  "@context": "https://schema.org",
+  "@type": "OnlineStore",
+  "@id": `${SITE}/#shop`,
+  name: "Crafting Yarn",
+  url: SITE,
+  logo: `${SITE}/assets/brand/logo.png`,
+  image: `${SITE}/assets/brand/logo.png`,
+  description: "Hand-crocheted bags and accessories, made by hand in the UAE.",
+  founder: { "@type": "Person", name: "Freda" },
+  address: { "@type": "PostalAddress", addressCountry: "AE" },
+  areaServed: { "@type": "Country", name: "United Arab Emirates" },
+  currenciesAccepted: "AED",
+  paymentAccepted: "Credit Card",
+  sameAs: [IG_URL, TT_URL],
+};
+const orgLd = `<script type="application/ld+json">${JSON.stringify(ORG_LD)}</script>`;
+const websiteLd = `<script type="application/ld+json">${JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Crafting Yarn",
+  url: SITE,
+  inLanguage: "en-AE",
+  publisher: { "@id": `${SITE}/#shop` },
+})}</script>`;
+
+// Titles carry the location, because people search "crochet bag Dubai" — not "bags".
+const HOME_TITLE = "Handmade Crochet Bags & Accessories in Dubai | Crafting Yarn";
+
+// Geo/locale signals so Google reads this as a UAE store (English, UAE audience).
+const GEO_META = `<meta property="og:locale" content="en_AE" />
+<meta property="og:site_name" content="Crafting Yarn" />
+<meta name="geo.region" content="AE" />
+<meta name="geo.placename" content="Dubai" />`;
+
 function shell({ px, title, description, canonical, headExtra = "", main, image }) {
   const ogImage = ogUrl(image);
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="en-AE">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -178,12 +295,15 @@ function shell({ px, title, description, canonical, headExtra = "", main, image 
 <meta name="description" content="${esc(description)}" />
 <meta name="theme-color" content="#E35D40" />
 <link rel="canonical" href="${canonical}" />
+<link rel="alternate" hreflang="en-ae" href="${canonical}" />
+<link rel="alternate" hreflang="x-default" href="${canonical}" />
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${canonical}" />
 <meta property="og:image" content="${esc(ogImage)}" />
 <meta property="og:image:alt" content="${esc(title)}" />
+${GEO_META}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${esc(title)}" />
 <meta name="twitter:description" content="${esc(description)}" />
@@ -191,6 +311,7 @@ function shell({ px, title, description, canonical, headExtra = "", main, image 
 <link rel="icon" type="image/png" href="${px}assets/brand/logo.png" />
 ${FONT}
 <link rel="stylesheet" href="${px}css/styles.css" />
+${orgLd}
 ${headExtra}
 </head>
 <body>
@@ -282,25 +403,30 @@ function buildHomepage() {
   const modalMeta = PRODUCT_META.map((t) => `<li>${esc(t)}</li>`).join("\n        ");
 
   const html = `<!DOCTYPE html>
-<html lang="en">
+<html lang="en-AE">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crafting Yarn — Handmade crochet, made with love</title>
+<title>${esc(HOME_TITLE)}</title>
 <meta name="description" content="${esc(seoDesc)}" />
 <meta name="theme-color" content="#E35D40" />
 <link rel="canonical" href="${SITE}/" />
+<link rel="alternate" hreflang="en-ae" href="${SITE}/" />
+<link rel="alternate" hreflang="x-default" href="${SITE}/" />
 
-<meta property="og:title" content="Crafting Yarn — Handmade crochet" />
+<meta property="og:title" content="${esc(HOME_TITLE)}" />
 <meta property="og:description" content="${esc(seoDesc)}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${SITE}/" />
 <meta property="og:image" content="${SITE}/${esc(hero.image || "assets/brand/hero.jpg")}" />
-<meta property="og:image:alt" content="Crafting Yarn — Handmade crochet" />
+<meta property="og:image:alt" content="${esc(HOME_TITLE)}" />
+${GEO_META}
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Crafting Yarn — Handmade crochet" />
+<meta name="twitter:title" content="${esc(HOME_TITLE)}" />
 <meta name="twitter:description" content="${esc(seoDesc)}" />
 <meta name="twitter:image" content="${SITE}/${esc(hero.image || "assets/brand/hero.jpg")}" />
+${orgLd}
+${websiteLd}
 
 <link rel="icon" type="image/png" href="assets/brand/logo.png" />
 <link rel="apple-touch-icon" href="assets/brand/logo.png" />
@@ -354,7 +480,14 @@ ${banners}
         <button class="round-btn" id="railNext" aria-label="Scroll right">→</button>
       </div>
     </div>
-    <div class="rail__track" id="railTrack"><!-- JS injects featured cards --></div>
+    <div class="rail__track" id="railTrack">
+      ${CATALOG.filter(sellable)
+        .slice()
+        .sort((a, b) => String(b.created || "9999").localeCompare(String(a.created || "9999")))
+        .slice(0, 10)
+        .map((p) => cardHTML(p))
+        .join("\n      ")}
+    </div>
   </section>
 
   <!-- STORY -->
@@ -436,10 +569,18 @@ buildSuccess();
    (which reads #grid[data-category]). No all-products page.
    ================================================================= */
 for (const cat of CATEGORIES) {
-  const n = CATALOG.filter((p) => p.category === cat).length;
+  // same set + order app.js shows first (in stock, featured first)
+  const items = CATALOG.filter((p) => p.category === cat && sellable(p))
+    .sort((a, b) => (b.featured === true) - (a.featured === true));
+  const n = items.length;
+  const cards = items.map((p) => cardHTML(p)).join("\n      ");
+  const intro = CAT_INTRO[cat] || "";
   const main = `<main class="shop shop--cat" id="shop">
     <div class="cat-head">
-      <h1 class="cat-title">${esc(cat)}</h1>
+      <div class="cat-headtext">
+        <h1 class="cat-title">${esc(CAT_H1[cat] || cat)}</h1>
+        ${intro ? `<p class="cat-intro">${esc(intro)}</p>` : ""}
+      </div>
       ${catNav("", cat)}
     </div>
     <div class="shop__bar shop__bar--cat">
@@ -451,21 +592,29 @@ for (const cat of CATEGORIES) {
         <option value="newest">New to old</option>
       </select>
     </div>
-    <div class="grid" id="grid" data-category="${esc(cat)}"><!-- app.js injects this category's cards --></div>
+    <div class="grid" id="grid" data-category="${esc(cat)}">
+      ${cards}
+    </div>
     <p class="grid__empty" id="gridEmpty" hidden>Nothing here right now — check back soon.</p>
   </main>`;
   fs.writeFileSync(path.join(ROOT, `${catSlug(cat)}.html`), shell({
-    px: "", title: `${cat} — Crafting Yarn`,
-    description: `Handmade crochet ${cat.toLowerCase()} by Crafting Yarn — made with love in the UAE.`,
+    px: "", title: CAT_TITLE[cat] || `${cat} — Crafting Yarn`,
+    description: CAT_DESC[cat] || `Handmade crochet ${cat.toLowerCase()} by Crafting Yarn — made with love in the UAE.`,
     canonical: `${SITE}/${catSlug(cat)}.html`, main,
-    image: (CATALOG.find((p) => p.category === cat) || {}).image,
+    image: (items[0] || {}).image,
+    headExtra: itemListLd(items, `${cat} — Crafting Yarn`) + "\n" + breadcrumbLd([
+      { name: "Home", url: `${SITE}/` },
+      { name: cat, url: `${SITE}/${catSlug(cat)}.html` },
+    ]),
   }));
 }
 
 /* ---------- SALE PAGE (sale.html) — lists every product with a sale price.
    app.js reads #grid[data-category="sale"] and filters to on-sale items. ---------- */
 if (SALE_ENABLED) {
-  const n = CATALOG.filter((p) => p.sale != null).length;
+  const saleItems = CATALOG.filter((p) => p.sale != null && sellable(p))
+    .sort((a, b) => (b.featured === true) - (a.featured === true));
+  const n = saleItems.length;
   const eyebrow = SALE.eyebrow != null ? SALE.eyebrow : "Deals";
   const heading = SALE.heading || "Sale";
   const intro = SALE.intro || "";
@@ -487,13 +636,19 @@ if (SALE_ENABLED) {
         <option value="newest">New to old</option>
       </select>
     </div>
-    <div class="grid" id="grid" data-category="sale"><!-- app.js injects on-sale items --></div>
+    <div class="grid" id="grid" data-category="sale">
+      ${saleItems.map((p) => cardHTML(p)).join("\n      ")}
+    </div>
     <p class="grid__empty" id="gridEmpty" hidden>Nothing on sale right now — check back soon.</p>
   </main>`;
   fs.writeFileSync(path.join(ROOT, "sale.html"), shell({
-    px: "", title: "Sale — Crafting Yarn",
-    description: intro || "Handmade crochet on sale at Crafting Yarn — special prices, while stocks last.",
+    px: "", title: "Crochet Sale in Dubai & UAE | Crafting Yarn",
+    description: intro || "Handmade crochet on sale in the UAE — special prices on bags and accessories, while stocks last.",
     canonical: `${SITE}/sale.html`, main,
+    headExtra: itemListLd(saleItems, "Sale — Crafting Yarn") + "\n" + breadcrumbLd([
+      { name: "Home", url: `${SITE}/` },
+      { name: "Sale", url: `${SITE}/sale.html` },
+    ]),
     image: (CATALOG.find((p) => p.sale != null) || {}).image,
   }));
 }
@@ -516,11 +671,40 @@ for (const p of CATALOG) {
 
   const ld = {
     "@context": "https://schema.org/", "@type": "Product",
-    name: p.name, image: [`${SITE}/${p.image}`], description: p.desc,
+    name: p.name,
+    image: imgs.map((src) => `${SITE}/${String(src).replace(/^\/+/, "")}`),
+    description: p.desc,
+    category: p.category,
     brand: { "@type": "Brand", name: "Crafting Yarn" },
-    offers: { "@type": "Offer", priceCurrency: "AED", price: String(priceOf(p)), availability: "https://schema.org/InStock", url: `${SITE}/product/${p.id}.html` },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "AED",
+      price: String(priceOf(p)),
+      // reflect real stock instead of always claiming InStock
+      availability: sellable(p) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      itemCondition: "https://schema.org/NewCondition",
+      url: `${SITE}/product/${p.id}.html`,
+      priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
+      seller: { "@id": `${SITE}/#shop` },
+      areaServed: { "@type": "Country", name: "United Arab Emirates" },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: { "@type": "DefinedRegion", addressCountry: "AE" },
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: priceOf(p) >= 250 ? "0" : "20",
+          currency: "AED",
+        },
+      },
+    },
   };
-  const headExtra = `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
+  const headExtra = `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` +
+    breadcrumbLd([
+      { name: "Home", url: `${SITE}/` },
+      ...(CATEGORIES.includes(p.category)
+        ? [{ name: p.category, url: `${SITE}/${catSlug(p.category)}.html` }] : []),
+      { name: p.name, url: `${SITE}/product/${p.id}.html` },
+    ]);
 
   const backHref = CATEGORIES.includes(p.category) ? `${px}${catSlug(p.category)}.html` : `${px}index.html`;
   const backLabel = CATEGORIES.includes(p.category) ? `← Back to ${p.category}` : "← Back home";
@@ -544,7 +728,12 @@ for (const p of CATALOG) {
   </main>`;
 
   fs.writeFileSync(path.join(ROOT, "product", `${p.id}.html`), shell({
-    px, title: `${p.name} — Crafting Yarn`, description: p.desc,
+    px,
+    title: `${p.name} — Handmade Crochet ${CAT_SINGULAR[p.category] || "Piece"} | Crafting Yarn UAE`,
+    // fall back to a location-bearing line if a description is short/empty
+    description: (p.desc && p.desc.trim().length > 40)
+      ? p.desc
+      : `${p.name} — hand-crocheted ${String(p.category || "piece").toLowerCase()} made in the UAE by Crafting Yarn. Free Dubai and UAE delivery over AED 250.`,
     canonical: `${SITE}/product/${p.id}.html`, headExtra, main,
     image: p.image,
   }));
