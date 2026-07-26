@@ -828,4 +828,60 @@ fs.writeFileSync(path.join(ROOT, "sitemap.xml"),
 fs.writeFileSync(path.join(ROOT, "robots.txt"),
   `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 
+/* ---------- product feed (feed.xml) ------------------------------------------
+   One file, three free discovery channels: Google Merchant Center (free Shopping
+   listings), Pinterest product pins, and Instagram/Facebook Shopping all read
+   this same RSS-2.0 + g: namespace format. Regenerated on every build, so it
+   stays in sync with whatever Freda edits in the CMS.
+   Handmade one-offs have no barcode, so identifier_exists=no (required, else
+   Merchant Center rejects the item for a missing GTIN).
+   ---------------------------------------------------------------------------- */
+const GOOGLE_CAT = {
+  Bags: "Apparel & Accessories > Handbags, Wallets & Cases > Handbags",
+  Accessories: "Apparel & Accessories > Clothing Accessories",
+};
+const xmlEsc = (s) => String(s == null ? "" : s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+const abs = (u) => `${SITE}/${String(u).replace(/^\/+/, "")}`;
+const feedItems = CATALOG.map((p) => {
+  const imgs = (p.images && p.images.length ? p.images : [p.image].filter(Boolean));
+  const extra = imgs.slice(1, 11)
+    .map((i) => `      <g:additional_image_link>${xmlEsc(abs(i))}</g:additional_image_link>`).join("\n");
+  // Merchant Center wants list price in <g:price> and the discount in <g:sale_price>
+  const onSale = p.sale != null;
+  const desc = (p.desc && p.desc.trim())
+    || `${p.name} — hand-crocheted ${String(p.category || "piece").toLowerCase()} made in the UAE by Crafting Yarn.`;
+  return `    <item>
+      <g:id>${xmlEsc(p.id)}</g:id>
+      <g:title>${xmlEsc(p.name)}</g:title>
+      <g:description>${xmlEsc(desc)}</g:description>
+      <g:link>${xmlEsc(`${SITE}/product/${p.id}.html`)}</g:link>
+      <g:image_link>${xmlEsc(abs(p.image))}</g:image_link>
+${extra}
+      <g:availability>${sellable(p) ? "in_stock" : "out_of_stock"}</g:availability>
+      <g:price>${Number(p.price).toFixed(2)} AED</g:price>
+${onSale ? `      <g:sale_price>${Number(p.sale).toFixed(2)} AED</g:sale_price>\n` : ""}      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>${xmlEsc(GOOGLE_CAT[p.category] || "Apparel &amp; Accessories")}</g:google_product_category>
+      <g:product_type>${xmlEsc(p.category || "")}</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>${priceOf(p) >= 250 ? "0.00" : "20.00"} AED</g:price>
+      </g:shipping>
+    </item>`;
+}).join("\n");
+fs.writeFileSync(path.join(ROOT, "feed.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Crafting Yarn — Handmade Crochet, UAE</title>
+    <link>${SITE}/</link>
+    <description>Hand-crocheted bags and accessories, made one at a time in the UAE.</description>
+${feedItems}
+  </channel>
+</rss>
+`);
+
 console.log(`Generated homepage + thank-you + ${count} product pages + content pages + sitemap.xml + robots.txt.`);
