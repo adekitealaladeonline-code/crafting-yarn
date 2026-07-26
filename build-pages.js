@@ -86,12 +86,16 @@ const SALE_ENABLED = SALE.enabled !== false;
 
 const catHref = (px, c) =>
   (c === "sale" || c === "Sale") ? `${px}sale.html`
+  : (c === "all" || c === "All") ? `${px}shop.html`
   : CATEGORIES.includes(c) ? `${px}${catSlug(c)}.html`
-  : `${px}index.html#featured`;
+  : `${px}shop.html`;
 const catNav = (px, active) => {
-  const chips = CATEGORIES.map(
-    (c) => `<a href="${px}${catSlug(c)}.html" class="chip${c === active ? " is-active" : ""}">${esc(c)}</a>`
-  );
+  const chips = [
+    `<a href="${px}shop.html" class="chip${active === "all" ? " is-active" : ""}">All</a>`,
+    ...CATEGORIES.map(
+      (c) => `<a href="${px}${catSlug(c)}.html" class="chip${c === active ? " is-active" : ""}">${esc(c)}</a>`
+    ),
+  ];
   if (SALE_ENABLED) chips.push(`<a href="${px}sale.html" class="chip chip--sale${active === "sale" ? " is-active" : ""}">Sale</a>`);
   return `<nav class="catnav" aria-label="Shop categories">${chips.join("")}</nav>`;
 };
@@ -121,6 +125,7 @@ const header = (px) => `<header class="site-header" id="siteHeader"><div class="
 const menu = (px) => {
   const items = [
     ["index.html", "Home"],
+    ["shop.html", "Shop all"],
     ["bags.html", "Bags"],
     ["accessories.html", "Accessories"],
     ...(SALE_ENABLED ? [["sale.html", "Sale"]] : []),
@@ -141,7 +146,7 @@ const menu = (px) => {
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
   <div class="footer__brand"><p>${esc(FOOTER_BLURB)}</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
-    <a href="${px}bags.html">Bags</a><a href="${px}accessories.html">Accessories</a>${SALE_ENABLED ? `<a href="${px}sale.html">Sale</a>` : ""}
+    <a href="${px}shop.html">Shop all</a><a href="${px}bags.html">Bags</a><a href="${px}accessories.html">Accessories</a>${SALE_ENABLED ? `<a href="${px}sale.html">Sale</a>` : ""}
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
     <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
@@ -338,7 +343,8 @@ function bannerSection(b, { hero = false } = {}) {
   const titleTag = hero ? "h1" : "h2";
   const alt = esc(b.eyebrow || String(b.title || "Crafting Yarn").split(/\r?\n/)[0]);
   const eyebrow = b.eyebrow ? `\n      <p class="banner__eyebrow">${esc(b.eyebrow)}</p>` : "";
-  const href = hero ? "#featured" : catHref("", b.category); // hero -> newest carousel; banners -> their category page
+  // hero "Shop now" -> the everything page; collection banners -> their category
+  const href = hero ? "shop.html" : catHref("", b.category);
   return `  <section class="banner${heroCls} ${tone}">
     <img class="banner__img" src="${esc(b.image)}" alt="${alt}" ${hero ? "" : 'loading="lazy"'}/>
     <div class="${inner}">${eyebrow}
@@ -577,6 +583,47 @@ buildSuccess();
    Each shows only its own products; the grid is filled by app.js
    (which reads #grid[data-category]). No all-products page.
    ================================================================= */
+/* ---------- SHOP ALL (shop.html) — every product, one page.
+   The hero "Shop now" button lands here. app.js already treats an activeFilter
+   of "all" as "no category filter", so data-category="all" needs no JS change. */
+{
+  const items = CATALOG.filter(sellable)
+    .sort((a, b) => (b.featured === true) - (a.featured === true));
+  const n = items.length;
+  const main = `<main class="shop shop--cat" id="shop">
+    <div class="cat-head">
+      <div class="cat-headtext">
+        <h1 class="cat-title">All Products</h1>
+        <p class="cat-intro">Every piece in the shop — hand-crocheted one at a time here in the UAE.</p>
+      </div>
+      ${catNav("", "all")}
+    </div>
+    <div class="shop__bar shop__bar--cat">
+      <span class="shop__count" id="gridCount">${n} ${n === 1 ? "piece" : "pieces"}</span>
+      <label for="sortSelect" class="sr-only">Sort products</label>
+      <select id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="oldest">Old to new</option>
+        <option value="newest">New to old</option>
+      </select>
+    </div>
+    <div class="grid" id="grid" data-category="all">
+      ${items.map((p) => cardHTML(p)).join("\n      ")}
+    </div>
+    <p class="grid__empty" id="gridEmpty" hidden>Nothing here right now — check back soon.</p>
+  </main>`;
+  fs.writeFileSync(path.join(ROOT, "shop.html"), shell({
+    px: "", title: "Shop All Handmade Crochet in Dubai & UAE | Crafting Yarn",
+    description: "Every hand-crocheted piece by Crafting Yarn — bags, baskets, bandanas, scrunchies and hats, made one at a time in the UAE. Free Dubai and UAE delivery over AED 250.",
+    canonical: `${SITE}/shop.html`, main,
+    image: (items[0] || {}).image,
+    headExtra: itemListLd(items, "All Products — Crafting Yarn") + "\n" + breadcrumbLd([
+      { name: "Home", url: `${SITE}/` },
+      { name: "All Products", url: `${SITE}/shop.html` },
+    ]),
+  }));
+}
+
 for (const cat of CATEGORIES) {
   // same set + order app.js shows first (in stock, featured first)
   const items = CATALOG.filter((p) => p.category === cat && sellable(p))
@@ -825,6 +872,7 @@ for (const fileName of fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md")
 const contentSlugs = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, ""));
 const sitemapUrls = [
   `${SITE}/`,
+  `${SITE}/shop.html`,
   ...CATEGORIES.map((c) => `${SITE}/${catSlug(c)}.html`),
   ...(SALE_ENABLED ? [`${SITE}/sale.html`] : []),
   ...contentSlugs.map((s) => `${SITE}/${s}.html`),
