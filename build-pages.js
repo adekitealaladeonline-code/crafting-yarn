@@ -191,6 +191,10 @@ const quickModal = `<div class="modal" id="modal" aria-hidden="true" role="dialo
    product pages. app.js re-renders identical markup on load, so this is purely
    progressive enhancement: real links for crawlers + content on first paint. */
 const sellable = (p) => p.stock == null || p.stock > 0; // matches app.js's initial view
+// Items filed under "Sale" live ONLY on the Sale page — deliberately kept out of
+// Bags/Accessories and Shop All so older/lesser pieces don't sit beside the
+// main collection.
+const isSaleCat = (p) => String(p.category || "").toLowerCase() === "sale";
 function cardHTML(p, px = "") {
   const off = p.sale != null ? Math.round((1 - p.sale / p.price) * 100) : 0;
   const badges = [];
@@ -496,7 +500,7 @@ ${banners}
       </div>
     </div>
     <div class="rail__track" id="railTrack">
-      ${CATALOG.filter(sellable)
+      ${CATALOG.filter((p) => sellable(p) && !isSaleCat(p))
         .slice()
         .sort((a, b) => String(b.created || "9999").localeCompare(String(a.created || "9999")))
         .slice(0, 10)
@@ -587,7 +591,8 @@ buildSuccess();
    The hero "Shop now" button lands here. app.js already treats an activeFilter
    of "all" as "no category filter", so data-category="all" needs no JS change. */
 {
-  const items = CATALOG.filter(sellable)
+  // Sale-category pieces are excluded here too — they belong only on /sale
+  const items = CATALOG.filter((p) => sellable(p) && !isSaleCat(p))
     .sort((a, b) => (b.featured === true) - (a.featured === true));
   const n = items.length;
   const main = `<main class="shop shop--cat" id="shop">
@@ -668,8 +673,9 @@ for (const cat of CATEGORIES) {
 /* ---------- SALE PAGE (sale.html) — lists every product with a sale price.
    app.js reads #grid[data-category="sale"] and filters to on-sale items. ---------- */
 if (SALE_ENABLED) {
-  // On the Sale page if it has a sale price OR Freda ticked "Also show in Sale"
-  const saleItems = CATALOG.filter((p) => (p.sale != null || p.onSale === true) && sellable(p))
+  // Sale page = anything filed under the "Sale" category, plus anything that's
+  // been given a discount price.
+  const saleItems = CATALOG.filter((p) => (isSaleCat(p) || p.sale != null) && sellable(p))
     .sort((a, b) => (b.featured === true) - (a.featured === true));
   const n = saleItems.length;
   const eyebrow = SALE.eyebrow != null ? SALE.eyebrow : "Deals";
@@ -763,8 +769,10 @@ for (const p of CATALOG) {
       { name: p.name, url: `${SITE}/product/${p.id}.html` },
     ]);
 
-  const backHref = CATEGORIES.includes(p.category) ? `${px}${catSlug(p.category)}.html` : `${px}index.html`;
-  const backLabel = CATEGORIES.includes(p.category) ? `← Back to ${p.category}` : "← Back home";
+  const backHref = isSaleCat(p) ? `${px}sale.html`
+    : CATEGORIES.includes(p.category) ? `${px}${catSlug(p.category)}.html` : `${px}shop.html`;
+  const backLabel = isSaleCat(p) ? "← Back to Sale"
+    : CATEGORIES.includes(p.category) ? `← Back to ${p.category}` : "← Back to shop";
   const main = `<main class="pdp">
     <a class="pdp__back" href="${backHref}">${backLabel}</a>
     <div class="pdp__grid">

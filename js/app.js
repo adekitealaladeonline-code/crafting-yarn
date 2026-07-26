@@ -156,9 +156,12 @@
 
   function visibleProducts() {
     let list = CATALOG.filter((p) => !soldOut(p)); // out-of-stock items drop out of the shop entirely
-    // Sale page: a discounted price, or Freda's "Also show in Sale" toggle
-    if (activeFilter === "sale") list = list.filter((p) => p.sale != null || p.onSale === true);
-    else if (activeFilter !== "all") list = list.filter((p) => p.category === activeFilter);
+    // "Sale" is its own category: those items show ONLY on the Sale page, never
+    // under Bags/Accessories or in Shop All.
+    const isSaleCat = (p) => String(p.category || "").toLowerCase() === "sale";
+    if (activeFilter === "sale") list = list.filter((p) => isSaleCat(p) || p.sale != null);
+    else if (activeFilter === "all") list = list.filter((p) => !isSaleCat(p));
+    else list = list.filter((p) => p.category === activeFilter);
     if (searchTerm) {
       const t = searchTerm.toLowerCase();
       list = list.filter((p) =>
@@ -202,7 +205,8 @@
     const track = $("#railTrack");
     if (!track) return;
     // "Fresh off the hook" = the newest products (by date added), in stock. Auto-updates.
-    const feat = CATALOG.filter((p) => !soldOut(p))
+    // Sale-category pieces are left out — they live only on the Sale page.
+    const feat = CATALOG.filter((p) => !soldOut(p) && String(p.category || "").toLowerCase() !== "sale")
       .slice()
       .sort((a, b) => String(b.created || "9999").localeCompare(String(a.created || "9999")))
       .slice(0, 10);
