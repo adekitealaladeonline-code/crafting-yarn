@@ -357,12 +357,21 @@ function tiktokSection() {
   if (t.enabled === false || !uid) return "";
   const heading = String(t.heading || "").trim();
   const h2 = heading ? `\n    <h2 class="tiktok__title">${esc(heading)}</h2>` : ""; // blank = no headline
+  // TikTok's embed needs cookie consent it can't obtain inside a third-party
+  // iframe; when that happens its script reports a 1px height and renders
+  // nothing, leaving a tall blank gap. app.js watches for that and swaps in the
+  // fallback card below, so visitors always get something clickable.
   return `  <!-- TIKTOK -->
   <section class="tiktok${heading ? "" : " tiktok--bare"}" id="tiktok">${h2}
-    <div class="tiktok__embed">
+    <div class="tiktok__embed" id="tiktokEmbed">
       <blockquote class="tiktok-embed" cite="${esc(TT_URL)}" data-unique-id="${esc(uid)}" data-embed-type="creator" style="max-width:780px; min-width:288px;">
         <section><a target="_blank" rel="noopener" href="${esc(TT_URL)}?refer=creator_embed">${esc(TT_HANDLE)}</a></section>
       </blockquote>
+    </div>
+    <div class="tiktok__fallback" id="tiktokFallback" hidden>
+      <svg class="tiktok__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12v-3.2a5.8 5.8 0 0 0-.77-.05A5.72 5.72 0 1 0 15.54 15V8.9a7.35 7.35 0 0 0 4.3 1.38V7.2a4.27 4.27 0 0 1-3.24-1.38Z"/></svg>
+      <p class="tiktok__fbtext">See the latest pieces come to life on TikTok</p>
+      <a class="btn btn--solid" href="${esc(TT_URL)}" target="_blank" rel="noopener">Watch ${esc(TT_HANDLE)} on TikTok ↗</a>
     </div>
     <script async src="https://www.tiktok.com/embed.js"></script>
   </section>`;

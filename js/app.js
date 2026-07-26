@@ -296,6 +296,43 @@
   }
 
   /* ----------------------------------------------------------------
+     TIKTOK EMBED WATCHDOG
+     TikTok's creator embed needs cookie consent it can't get inside a
+     third-party iframe. When that happens its script sets the iframe height to
+     ~1px and renders nothing, which left a tall blank gap on the homepage.
+     If the embed hasn't produced real content shortly after load, swap in the
+     "watch on TikTok" card instead.
+  ---------------------------------------------------------------- */
+  function watchTikTok() {
+    const wrap = $("#tiktokEmbed");
+    const fallback = $("#tiktokFallback");
+    if (!wrap || !fallback) return;
+    const COLLAPSED = 120; // a real creator feed is 400px+; 1px means it gave up
+    const rendered = () => {
+      const f = wrap.querySelector("iframe");
+      if (!f) return 0;
+      // trust the height TikTok's script set, not our CSS min-height
+      const inline = parseInt(f.style.height, 10);
+      return Number.isFinite(inline) ? inline : Math.round(f.getBoundingClientRect().height);
+    };
+    // Keep watching for a while rather than deciding once: a slow connection can
+    // deliver a perfectly good embed after the fallback has already shown, and
+    // in that case we put the real feed back.
+    let tries = 0;
+    const timer = setInterval(() => {
+      const good = rendered() > COLLAPSED;
+      if (good && wrap.hidden) {          // embed recovered — restore it
+        wrap.hidden = false;
+        fallback.hidden = true;
+      } else if (!good && !wrap.hidden && tries >= 4) { // ~3s with no content
+        wrap.hidden = true;
+        fallback.hidden = false;
+      }
+      if (++tries >= 27) clearInterval(timer); // stop after ~20s
+    }, 750);
+  }
+
+  /* ----------------------------------------------------------------
      TOAST
   ---------------------------------------------------------------- */
   let toastTimer;
@@ -517,6 +554,7 @@
     renderCart();
     wire();
     loadStock();
+    watchTikTok();
     // arriving from another page with ?cat=Bags -> preselect that filter
     const cat = new URLSearchParams(location.search).get("cat");
     if (cat && $(`#filters .chip[data-filter="${cat}"]`)) setFilter(cat);

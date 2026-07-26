@@ -234,9 +234,23 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
    blockquote the embed collapsed to the container's min-height (a 320px sliver)
    and never initialised. Giving the iframe a min-height lets TikTok measure and
    set its own height, while the blockquote stays auto so there's no empty gap. */
+/* Do NOT put a min-height on this iframe. TikTok's script sets an explicit
+   height once it initialises — a real feed is 400px+, and 1px means it rendered
+   nothing (it needs cookie consent it can't obtain in a third-party iframe).
+   Forcing a min-height held that empty 1px box open as a tall blank gap; with
+   no min-height the space collapses on its own and app.js swaps in the
+   .tiktok__fallback card. */
 .tiktok__embed{display:flex;justify-content:center;align-items:flex-start}
 .tiktok__embed .tiktok-embed{margin:0 auto!important;width:100%;max-width:780px}
-.tiktok__embed .tiktok-embed iframe{width:100%;min-height:clamp(460px,60vw,560px)}
+.tiktok__embed .tiktok-embed iframe{width:100%}
+/* shown by app.js when TikTok's embed fails to render (cookie consent inside a
+   third-party iframe) — better than leaving a tall blank gap */
+.tiktok__fallback{display:flex;flex-direction:column;align-items:center;gap:1.1rem;
+  max-width:520px;margin:0 auto;padding:clamp(28px,5vw,48px) var(--gut);
+  border:1px solid var(--line);border-radius:var(--r);background:var(--bg)}
+.tiktok__fallback[hidden]{display:none}
+.tiktok__icon{width:40px;height:40px;fill:var(--logo-pink-light)}
+.tiktok__fbtext{color:var(--ink-2);font-size:1.02rem;line-height:1.5;margin:0}
 
 .news{text-align:center;padding:clamp(60px,9vw,140px) var(--gut)}
 .news__inner{max-width:620px;margin:0 auto}
