@@ -156,7 +156,8 @@
 
   function visibleProducts() {
     let list = CATALOG.filter((p) => !soldOut(p)); // out-of-stock items drop out of the shop entirely
-    if (activeFilter === "sale") list = list.filter((p) => p.sale != null);
+    // Sale page: a discounted price, or Freda's "Also show in Sale" toggle
+    if (activeFilter === "sale") list = list.filter((p) => p.sale != null || p.onSale === true);
     else if (activeFilter !== "all") list = list.filter((p) => p.category === activeFilter);
     if (searchTerm) {
       const t = searchTerm.toLowerCase();

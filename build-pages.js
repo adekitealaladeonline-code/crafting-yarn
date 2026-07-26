@@ -621,7 +621,8 @@ for (const cat of CATEGORIES) {
 /* ---------- SALE PAGE (sale.html) — lists every product with a sale price.
    app.js reads #grid[data-category="sale"] and filters to on-sale items. ---------- */
 if (SALE_ENABLED) {
-  const saleItems = CATALOG.filter((p) => p.sale != null && sellable(p))
+  // On the Sale page if it has a sale price OR Freda ticked "Also show in Sale"
+  const saleItems = CATALOG.filter((p) => (p.sale != null || p.onSale === true) && sellable(p))
     .sort((a, b) => (b.featured === true) - (a.featured === true));
   const n = saleItems.length;
   const eyebrow = SALE.eyebrow != null ? SALE.eyebrow : "Deals";

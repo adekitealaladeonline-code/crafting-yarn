@@ -37,6 +37,10 @@ collections:
     fields:
       - { name: name, label: "Name", widget: string, hint: "Shown on the card and the product page." }
       - { name: category, label: "Category", widget: select, options: ["Bags", "Accessories"] }
+      # Sale is deliberately NOT a Category option: Category is single-choice, so
+      # picking "Sale" would pull the item out of Bags/Accessories. This toggle
+      # adds it to the Sale page while it stays in its real category.
+      - { name: onSale, label: "Also show in the Sale section", widget: boolean, default: false, required: false, hint: "Turn on to put this item on the Sale page. It stays in its normal category too. Tip: also fill in 'Sale price' below so shoppers see the discount." }
       - { name: subcategory, label: "Subcategory", widget: string, required: false }
       - { name: price, label: "Original price (AED)", widget: number, value_type: float, min: 0, step: 1 }
       - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Set a lower price to put this item on sale — it shows a discount badge and appears on the Sale page automatically. Leave blank if it's not on sale." }
