@@ -347,14 +347,15 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/Photoroom_20260722_140329.JPG"
+      "assets/products/Photoroom_20260722_140329.JPG",
+      "assets/products/Photoroom_20260726_123327.jpeg"
     ],
     "desc": "Cute and stylish faux leather donut bag with detachable flower accessory\n\n\n15cm Height, 22 Length\n\n\nSturdy and lightweight",
     "featured": false,
     "isNew": true,
     "created": "2026-07-25T08:36",
     "image": "assets/products/Photoroom_20260722_140329.JPG",
-    "image2": null
+    "image2": "assets/products/Photoroom_20260726_123327.jpeg"
   },
   {
     "id": "velora-olive",

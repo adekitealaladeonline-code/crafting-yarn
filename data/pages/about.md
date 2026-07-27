@@ -16,4 +16,4 @@ Now, Crafting Yarn is my small corner of the world where I share these handmade 
 
 Thank you, truly, for being here and for letting a bit of my story become part of yours.
 
-[Explore the shop →](index.html)
+[Explore the shop →](shop.html)

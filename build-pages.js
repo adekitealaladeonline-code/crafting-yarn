@@ -854,7 +854,6 @@ const CONTACT_FORM = `<form class="contact-form" id="contactForm" data-wa="${WA_
       <input type="email" name="email" id="cfEmail" placeholder="Your email" required />
       <textarea name="message" id="cfMsg" placeholder="Your message" required></textarea>
       <button type="submit" class="btn btn--solid">Send via WhatsApp</button>
-      <p class="contact-form__note">Opens WhatsApp with your message ready to send.</p>
     </form>`;
 
 const PAGES_DIR = path.join(ROOT, "data/pages");

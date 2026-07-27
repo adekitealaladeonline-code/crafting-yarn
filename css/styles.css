@@ -352,12 +352,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .page__back{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:1.6rem}
 .page__back:hover{color:var(--terra)}
 .page__eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:.9rem}
-.page h1{font-weight:800;font-size:clamp(2.4rem,6vw,4rem);line-height:.98;letter-spacing:-.02em;color:var(--brown);text-transform:uppercase;margin-bottom:1.6rem}
+.page h1{font-weight:800;font-size:clamp(2.4rem,6vw,4rem);line-height:.98;letter-spacing:-.02em;color:var(--logo-pink-light);text-transform:uppercase;margin-bottom:1.6rem}
 .page h2{font-weight:700;font-size:1.4rem;color:var(--ink);margin:2rem 0 .6rem}
 .page p{color:var(--ink-2);line-height:1.7;margin-bottom:1.1rem;font-size:1.02rem}
 .page p strong{color:var(--ink)}
-.page a.inline{color:var(--terra);font-weight:600}
-.page__sign{font-weight:700;font-size:1.3rem;color:var(--brown);margin-top:1.6rem}
+.page a.inline{color:var(--logo-pink-light);font-weight:600}
+.page__sign{font-weight:700;font-size:1.3rem;color:var(--logo-pink-light);margin-top:1.6rem}
 .page ul{list-style:none;margin:0 0 1.2rem;padding:0}
 .page li{color:var(--ink-2);line-height:1.6;padding-left:1.3em;position:relative;margin-bottom:.5rem}
 .page li::before{content:"✶";position:absolute;left:0;color:var(--terra)}
@@ -367,7 +367,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .contact-form input,.contact-form textarea{font-family:var(--font);font-size:1rem;padding:.9em 1em;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink)}
 .contact-form textarea{min-height:130px;resize:vertical}
 .contact-form .btn{align-self:flex-start}
-.contact-form__note{font-size:.82rem;color:var(--ink-2);margin-top:-.2rem}
 
 /* =================================================================
    PRODUCT DETAIL PAGE
