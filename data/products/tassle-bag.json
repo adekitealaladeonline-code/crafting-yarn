@@ -1,0 +1,17 @@
+{
+  "name": "Tassle bag",
+  "category": "Sale",
+  "subcategory": "",
+  "price": 100,
+  "sale": 50,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260726_133445.jpeg",
+    "/assets/products/Photoroom_20260726_133533.jpeg"
+  ],
+  "desc": "One of a kind sample piece",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-07-27T07:05"
+}
