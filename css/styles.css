@@ -367,6 +367,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .contact-form input,.contact-form textarea{font-family:var(--font);font-size:1rem;padding:.9em 1em;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink)}
 .contact-form textarea{min-height:130px;resize:vertical}
 .contact-form .btn{align-self:flex-start}
+/* Send via WhatsApp in the brand pink. Scoped to the contact form on purpose —
+   .btn--solid is shared with Add to bag / Checkout / Shop now site-wide. */
+.contact-form .btn--solid{background:var(--logo-pink-light);border-color:var(--logo-pink-light)}
+.contact-form .btn--solid:hover{background:var(--logo-pink);border-color:var(--logo-pink)}
 
 /* =================================================================
    PRODUCT DETAIL PAGE

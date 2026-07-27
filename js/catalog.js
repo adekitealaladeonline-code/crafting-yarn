@@ -285,6 +285,61 @@ window.CATALOG = [
     "image2": "assets/products/brook-sun-hat-2.jpg"
   },
   {
+    "id": "candy-floss-bag",
+    "name": "Candy floss bag",
+    "category": "Sale",
+    "subcategory": "",
+    "price": 110,
+    "sale": 65,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260726_133726.jpeg"
+    ],
+    "desc": "Sample bag",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-07-27T10:37",
+    "image": "assets/products/Photoroom_20260726_133726.jpeg",
+    "image2": null
+  },
+  {
+    "id": "clutch-colour-block",
+    "name": "Clutch (colour block)",
+    "category": "Sale",
+    "subcategory": "",
+    "price": 100,
+    "sale": 60,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260726_132933.jpeg",
+      "assets/products/Photoroom_20260726_133102.jpeg"
+    ],
+    "desc": "Sample bag",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-07-27T06:50",
+    "image": "assets/products/Photoroom_20260726_132933.jpeg",
+    "image2": "assets/products/Photoroom_20260726_133102.jpeg"
+  },
+  {
+    "id": "clutch-large",
+    "name": "Clutch large",
+    "category": "Sale",
+    "subcategory": "",
+    "price": 110,
+    "sale": 60,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260726_132616.jpeg"
+    ],
+    "desc": "Clutch bag sample, large size",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-07-27T07:07",
+    "image": "assets/products/Photoroom_20260726_132616.jpeg",
+    "image2": null
+  },
+  {
     "id": "coral",
     "name": "Coral",
     "category": "Bags",
@@ -321,6 +376,24 @@ window.CATALOG = [
     "image2": null
   },
   {
+    "id": "pink-yellow-bag",
+    "name": "Pink/yellow bag",
+    "category": "Sale",
+    "subcategory": "",
+    "price": 85,
+    "sale": 40,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260726_133316.jpeg"
+    ],
+    "desc": "Sample bag",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-07-27T07:01",
+    "image": "assets/products/Photoroom_20260726_133316.jpeg",
+    "image2": null
+  },
+  {
     "id": "pinky",
     "name": "Zinnia  Pink (mini)",
     "category": "Bags",
@@ -337,6 +410,63 @@ window.CATALOG = [
     "image": "assets/products/Photoroom_20260718_110314.jpeg",
     "image2": null,
     "created": "2026-07-18T09:35:46+01:00"
+  },
+  {
+    "id": "sample-tote-1",
+    "name": "Sample tote",
+    "category": "Sale",
+    "subcategory": "",
+    "price": 85,
+    "sale": 50,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260718_132647.jpeg",
+      "assets/products/tao-tote.jpg"
+    ],
+    "desc": "Sample tote bag",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-07-27T07:00",
+    "image": "assets/products/Photoroom_20260718_132647.jpeg",
+    "image2": "assets/products/tao-tote.jpg"
+  },
+  {
+    "id": "sample-tote",
+    "name": "Sample tote",
+    "category": "Sale",
+    "subcategory": "",
+    "price": 85,
+    "sale": 50,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260718_132617.jpeg",
+      "assets/products/tao-tote-tropical-night-2.jpg"
+    ],
+    "desc": "Sample bag",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-07-27T06:58",
+    "image": "assets/products/Photoroom_20260718_132617.jpeg",
+    "image2": "assets/products/tao-tote-tropical-night-2.jpg"
+  },
+  {
+    "id": "tassle-bag",
+    "name": "Tassle bag",
+    "category": "Sale",
+    "subcategory": "",
+    "price": 100,
+    "sale": 50,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260726_133445.jpeg",
+      "assets/products/Photoroom_20260726_133533.jpeg"
+    ],
+    "desc": "One of a kind sample piece",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-07-27T07:05",
+    "image": "assets/products/Photoroom_20260726_133445.jpeg",
+    "image2": "assets/products/Photoroom_20260726_133533.jpeg"
   },
   {
     "id": "velora-brown-leather",

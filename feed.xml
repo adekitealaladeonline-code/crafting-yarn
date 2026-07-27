@@ -311,6 +311,66 @@ Handmade-100% cotton
       </g:shipping>
     </item>
     <item>
+      <g:id>candy-floss-bag</g:id>
+      <g:title>Candy floss bag</g:title>
+      <g:description>Sample bag</g:description>
+      <g:link>https://craftingyarn.com/product/candy-floss-bag.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133726.jpeg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
+      <g:sale_price>65.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>clutch-colour-block</g:id>
+      <g:title>Clutch (colour block)</g:title>
+      <g:description>Sample bag</g:description>
+      <g:link>https://craftingyarn.com/product/clutch-colour-block.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_132933.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133102.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
+      <g:sale_price>60.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>clutch-large</g:id>
+      <g:title>Clutch large</g:title>
+      <g:description>Clutch bag sample, large size</g:description>
+      <g:link>https://craftingyarn.com/product/clutch-large.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_132616.jpeg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
+      <g:sale_price>60.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>coral</g:id>
       <g:title>Coral</g:title>
       <g:description>Soft, durable and stylish
@@ -355,6 +415,26 @@ Comfortable handle for easy carry</g:description>
       </g:shipping>
     </item>
     <item>
+      <g:id>pink-yellow-bag</g:id>
+      <g:title>Pink/yellow bag</g:title>
+      <g:description>Sample bag</g:description>
+      <g:link>https://craftingyarn.com/product/pink-yellow-bag.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133316.jpeg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>85.00 AED</g:price>
+      <g:sale_price>40.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>pinky</g:id>
       <g:title>Zinnia  Pink (mini)</g:title>
       <g:description>Soft, durable and stylish
@@ -371,6 +451,66 @@ Comfortable handle for easy carry</g:description>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
       <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>sample-tote-1</g:id>
+      <g:title>Sample tote</g:title>
+      <g:description>Sample tote bag</g:description>
+      <g:link>https://craftingyarn.com/product/sample-tote-1.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_132647.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/tao-tote.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>85.00 AED</g:price>
+      <g:sale_price>50.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>sample-tote</g:id>
+      <g:title>Sample tote</g:title>
+      <g:description>Sample bag</g:description>
+      <g:link>https://craftingyarn.com/product/sample-tote.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_132617.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/tao-tote-tropical-night-2.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>85.00 AED</g:price>
+      <g:sale_price>50.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>tassle-bag</g:id>
+      <g:title>Tassle bag</g:title>
+      <g:description>One of a kind sample piece</g:description>
+      <g:link>https://craftingyarn.com/product/tassle-bag.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133445.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133533.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
+      <g:sale_price>50.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>
