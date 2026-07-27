@@ -1,0 +1,17 @@
+{
+  "name": "Sample tote",
+  "category": "Sale",
+  "subcategory": "",
+  "price": 85,
+  "sale": 50,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260718_132647.jpeg",
+    "/assets/products/tao-tote.jpg"
+  ],
+  "desc": "Sample tote bag",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-07-27T07:00"
+}
