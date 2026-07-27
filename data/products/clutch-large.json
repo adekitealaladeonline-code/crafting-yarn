@@ -1,0 +1,16 @@
+{
+  "name": "Clutch large",
+  "category": "Sale",
+  "subcategory": "",
+  "price": 110,
+  "sale": 60,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260726_132616.jpeg"
+  ],
+  "desc": "Clutch bag sample, large size",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-07-27T07:07"
+}
