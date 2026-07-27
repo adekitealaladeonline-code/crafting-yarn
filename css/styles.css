@@ -10,8 +10,11 @@
   --bg:#FAF7F3;            /* faint warm white for alt blocks */
   --ink:#171513;           /* near-black */
   --ink-2:#6E665C;
-  --terra:#E35D40;         /* signature terracotta */
-  --terra-d:#C8472C;
+  /* Primary accent. Was terracotta (#E35D40 / dark #C8472C) — retired in favour
+     of the logo pink, so buttons, hovers, badges and selection all match the
+     brand. Kept the variable names so the 30+ rules using them didn't change. */
+  --terra:#D674A0;         /* = --logo-pink-light */
+  --terra-d:#C01860;       /* = --logo-pink, for hover/pressed */
   --brown:#5E2816;         /* deep brown for display headings */
   --logo-pink:#C01860;     /* raspberry from the Crafting Yarn logo script */
   --logo-pink-light:#D674A0;/* softer tint used for the wordmark + ticker */
@@ -44,7 +47,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   border:1.5px solid var(--ink);color:var(--ink);transition:.35s var(--ease)}
 .btn:hover{background:var(--ink);color:#fff}
 .btn--solid{background:var(--terra);border-color:var(--terra);color:#fff}
-.btn--solid:hover{background:var(--brown);border-color:var(--brown);color:#fff}
+.btn--solid:hover{background:var(--terra-d);border-color:var(--terra-d);color:#fff}
 .btn--block{width:100%}
 
 .shopnow{display:inline-block;background:#fff;color:var(--ink);font-weight:700;font-size:.78rem;
@@ -367,10 +370,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .contact-form input,.contact-form textarea{font-family:var(--font);font-size:1rem;padding:.9em 1em;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink)}
 .contact-form textarea{min-height:130px;resize:vertical}
 .contact-form .btn{align-self:flex-start}
-/* Send via WhatsApp in the brand pink. Scoped to the contact form on purpose —
-   .btn--solid is shared with Add to bag / Checkout / Shop now site-wide. */
-.contact-form .btn--solid{background:var(--logo-pink-light);border-color:var(--logo-pink-light)}
-.contact-form .btn--solid:hover{background:var(--logo-pink);border-color:var(--logo-pink)}
 
 /* =================================================================
    PRODUCT DETAIL PAGE

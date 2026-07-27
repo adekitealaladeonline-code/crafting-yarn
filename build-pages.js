@@ -302,7 +302,7 @@ function shell({ px, title, description, canonical, headExtra = "", main, image 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}" />
-<meta name="theme-color" content="#E35D40" />
+<meta name="theme-color" content="#D674A0" />
 <link rel="canonical" href="${canonical}" />
 <link rel="alternate" hreflang="en-ae" href="${canonical}" />
 <link rel="alternate" hreflang="x-default" href="${canonical}" />
@@ -428,7 +428,7 @@ function buildHomepage() {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${esc(HOME_TITLE)}</title>
 <meta name="description" content="${esc(seoDesc)}" />
-<meta name="theme-color" content="#E35D40" />
+<meta name="theme-color" content="#D674A0" />
 <link rel="canonical" href="${SITE}/" />
 <link rel="alternate" hreflang="en-ae" href="${SITE}/" />
 <link rel="alternate" hreflang="x-default" href="${SITE}/" />
