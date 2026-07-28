@@ -2,8 +2,8 @@
   "name": "Sample tote",
   "category": "Sale",
   "subcategory": "",
-  "price": 85,
-  "sale": 50,
+  "price": 100,
+  "sale": 70,
   "stock": 1,
   "images": [
     "/assets/products/Photoroom_20260718_132617.jpeg",
