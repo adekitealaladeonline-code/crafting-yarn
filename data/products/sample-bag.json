@@ -2,8 +2,8 @@
   "name": "Sample bag",
   "category": "Sale",
   "subcategory": "",
-  "price": 100,
-  "sale": 60,
+  "price": 120,
+  "sale": 90,
   "stock": 1,
   "images": [
     "/assets/products/Photoroom_20260727_150520.jpeg"
