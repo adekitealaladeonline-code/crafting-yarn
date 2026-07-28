@@ -1,0 +1,17 @@
+{
+  "name": "Luna knot bag",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 120,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260728_180249.jpeg",
+    "/assets/products/IMG_7063.jpeg"
+  ],
+  "desc": "Beautiful faux leather bag with a knotted handle. \nSize: 20cm Length, 19cm Height \nLightweight, stylish  and versatile for any occasion.",
+  "featured": false,
+  "isNew": true,
+  "order": 999,
+  "created": "2026-07-28T22:43"
+}
