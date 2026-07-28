@@ -1,0 +1,17 @@
+{
+  "name": "Zuri Midnight",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 120,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260728_133634.jpeg",
+    "/assets/products/Photoroom_20260728_133656.jpeg"
+  ],
+  "desc": "Soft, durable and stylish\nSize: 21cm Length, 16cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
+  "featured": false,
+  "isNew": true,
+  "order": 999,
+  "created": "2026-07-28T22:39"
+}
