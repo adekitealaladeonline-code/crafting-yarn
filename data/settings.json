@@ -1,7 +1,7 @@
 {
   "ticker": [
     {
-      "text": "Carefully handcrafted in Dubai"
+      "text": "Carefully handmade in Dubai"
     },
     {
       "text": "Free UAE delivery over AED 250"
@@ -12,7 +12,6 @@
   ],
   "instagram": "https://www.instagram.com/craftingyarn/",
   "tiktok": "https://www.tiktok.com/@craftingyarn",
-  "whatsapp": "971569413899",
   "footerBlurb": "Every stitch is intentionally handcrafted to make you stand out.",
   "footerTagline": "Every stitch tells a story",
   "cartHint": "Shipping calculated at checkout · Ready to ship",
@@ -21,5 +20,6 @@
       "text": "Handmade with love, just for you!"
     }
   ],
+  "whatsapp": "971569413899",
   "formspree": "your-form-id"
 }
