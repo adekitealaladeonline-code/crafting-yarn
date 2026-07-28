@@ -10,6 +10,7 @@
   ],
   "desc": "Soft, Bright and ultra stylish.\nSize: 25cm Length, 7cm Width, 15cm Height \nLightweight and versatile for any occasion.\nComfortable handle for easy carry",
   "featured": false,
-  "isNew": true,
-  "order": 999
+  "isNew": false,
+  "order": 999,
+  "created": ""
 }
