@@ -1,0 +1,17 @@
+{
+  "name": "Velora (Dark Red)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 120,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/IMG_7110.jpeg",
+    "/assets/products/IMG_7108.jpeg"
+  ],
+  "desc": "Cute and stylish faux leather donut bag with detachable flower accessory\n\n\n15cm Height, 20cm Length\n\n\nSturdy and lightweight",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-07-30T09:53"
+}
