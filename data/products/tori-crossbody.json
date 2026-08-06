@@ -1,0 +1,19 @@
+{
+  "name": "Tori crossbody",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 130,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260720_111040.JPG",
+    "/assets/products/Photoroom_20260720_110938.JPG",
+    "/assets/products/Photoroom_20260720_111200.JPG",
+    "/assets/products/Photoroom_20260720_111116.JPG"
+  ],
+  "desc": "Sturdy cotton crossbody bag with a detachable chain. Strap length 85cm. Length 20cm. Height 17cm.",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-08-06T09:01"
+}
