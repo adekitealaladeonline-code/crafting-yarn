@@ -1,0 +1,18 @@
+{
+  "name": "Livvy clutch (blue)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 145,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260809_145045.jpeg",
+    "/assets/products/IMG_7403.jpeg",
+    "/assets/products/Photoroom_20260809_145154.jpeg"
+  ],
+  "desc": "Stylish clutch bag with detachable brooch. Length 26cm.",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-08-09T15:22"
+}
