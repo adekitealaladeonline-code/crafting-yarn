@@ -1,0 +1,18 @@
+{
+  "name": "Livvy clutch (green)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 145,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260809_144847.jpeg",
+    "/assets/products/IMG_7409.jpeg",
+    "/assets/products/Photoroom_20260809_145427.jpeg"
+  ],
+  "desc": "Stylish clutch with detachable brooch. Length 26cm.",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-08-09T15:28"
+}
