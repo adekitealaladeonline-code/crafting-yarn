@@ -5,30 +5,6 @@
     <link>https://craftingyarn.com/</link>
     <description>Hand-crocheted bags and accessories, made one at a time in the UAE.</description>
     <item>
-      <g:id>sophie-basket</g:id>
-      <g:title>Sophie Basket</g:title>
-      <g:description>A hand-crocheted multipurpose basket in a painterly garden melange. 
-100% cotton 
-Width- 16”
-Base- 9”
-Depth- 9”</g:description>
-      <g:link>https://craftingyarn.com/product/sophie-basket.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260719_084909.jpeg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260719_084632.jpeg</g:additional_image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260719_084714.jpeg</g:additional_image_link>
-      <g:availability>out_of_stock</g:availability>
-      <g:price>95.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
-      <g:product_type>Bags</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
       <g:id>teal-velvet</g:id>
       <g:title>Teal velvet</g:title>
       <g:description>A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.</g:description>
@@ -56,7 +32,7 @@ Made with cotton yarn. It measures 14&quot; x 9&quot;.</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/brown-picot-bandana.jpg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/brown-picot-bandana-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>35.00 AED</g:price>
+      <g:price>30.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -78,7 +54,7 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/picot-bandana-black.jpg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/picot-bandana-black-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>35.00 AED</g:price>
+      <g:price>30.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -100,7 +76,7 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/pink-picot-bandana.jpg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/pink-picot-bandana-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>35.00 AED</g:price>
+      <g:price>30.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -119,7 +95,7 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/kay-bucket-hat.jpg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/kay-bucket-hat-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>45.00 AED</g:price>
+      <g:price>40.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -141,7 +117,7 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/bandana-sunset.jpg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/bandana-sunset-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>35.00 AED</g:price>
+      <g:price>30.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -162,7 +138,7 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/bandana-buttercream.jpg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>35.00 AED</g:price>
+      <g:price>30.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -280,7 +256,7 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/scallop-bandana.jpg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>35.00 AED</g:price>
+      <g:price>30.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -299,7 +275,7 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/brook-sun-hat.jpg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/brook-sun-hat-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>45.00 AED</g:price>
+      <g:price>40.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -318,8 +294,8 @@ Handmade-100% cotton
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133726.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>110.00 AED</g:price>
-      <g:sale_price>65.00 AED</g:sale_price>
+      <g:price>100.00 AED</g:price>
+      <g:sale_price>70.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -359,6 +335,26 @@ Handmade-100% cotton
 
       <g:availability>in_stock</g:availability>
       <g:price>110.00 AED</g:price>
+      <g:sale_price>70.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>cotton-basket</g:id>
+      <g:title>Sophie basket</g:title>
+      <g:description>Sample basket</g:description>
+      <g:link>https://craftingyarn.com/product/cotton-basket.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/IMG_5797.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_5796.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>120.00 AED</g:price>
       <g:sale_price>60.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -371,17 +367,35 @@ Handmade-100% cotton
       </g:shipping>
     </item>
     <item>
-      <g:id>coral</g:id>
-      <g:title>Coral</g:title>
-      <g:description>Soft, durable and stylish
-Size: 23cm Length, 10cm Width, 26cm Height 
-Lightweight and versatile for any occasion 
-Comfortable handle for easy carry</g:description>
-      <g:link>https://craftingyarn.com/product/coral.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110624.jpeg</g:image_link>
+      <g:id>grey-black-bag</g:id>
+      <g:title>Grey/black bag</g:title>
+      <g:description>Sample bag</g:description>
+      <g:link>https://craftingyarn.com/product/grey-black-bag.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260727_150450.jpeg</g:image_link>
 
-      <g:availability>out_of_stock</g:availability>
-      <g:price>120.00 AED</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
+      <g:sale_price>60.00 AED</g:sale_price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>livvy-clutch-blue</g:id>
+      <g:title>Livvy clutch (blue)</g:title>
+      <g:description>Stylish clutch bag with detachable brooch. Length 26cm.</g:description>
+      <g:link>https://craftingyarn.com/product/livvy-clutch-blue.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_145045.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7403.jpeg</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_145154.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>130.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -393,17 +407,36 @@ Comfortable handle for easy carry</g:description>
       </g:shipping>
     </item>
     <item>
-      <g:id>lovey-bag</g:id>
-      <g:title>Nola Red Velvet</g:title>
-      <g:description>Soft, durable and stylish
-Size: 24cm Length, 6.5cm Width,  13.5cm Height.
-Lightweight and versatile for any occasion 
-Comfortable handle for easy carry</g:description>
-      <g:link>https://craftingyarn.com/product/lovey-bag.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_101448.jpeg</g:image_link>
-
+      <g:id>livvy-clutch-green</g:id>
+      <g:title>Livvy clutch (green)</g:title>
+      <g:description>Stylish clutch with detachable brooch. Length 26cm.</g:description>
+      <g:link>https://craftingyarn.com/product/livvy-clutch-green.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_144847.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7409.jpeg</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_145427.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>120.00 AED</g:price>
+      <g:price>130.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>luna-knot-bag</g:id>
+      <g:title>Luna knot bag</g:title>
+      <g:description>Beautiful faux leather bag with a knotted handle. 
+Size: 20cm Length, 19cm Height 
+Lightweight, stylish  and versatile for any occasion.</g:description>
+      <g:link>https://craftingyarn.com/product/luna-knot-bag.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260728_180249.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7063.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -422,8 +455,8 @@ Comfortable handle for easy carry</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133316.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>85.00 AED</g:price>
-      <g:sale_price>40.00 AED</g:sale_price>
+      <g:price>90.00 AED</g:price>
+      <g:sale_price>45.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -435,22 +468,20 @@ Comfortable handle for easy carry</g:description>
       </g:shipping>
     </item>
     <item>
-      <g:id>pinky</g:id>
-      <g:title>Zinnia  Pink (mini)</g:title>
-      <g:description>Soft, durable and stylish
-Size: 22cm Length, 3cm Width, 11 Height
-Lightweight and versatile for any occasion 
-Comfortable handle for easy carry</g:description>
-      <g:link>https://craftingyarn.com/product/pinky.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110314.jpeg</g:image_link>
+      <g:id>sample-bag</g:id>
+      <g:title>Sample bag</g:title>
+      <g:description>Sample bag</g:description>
+      <g:link>https://craftingyarn.com/product/sample-bag.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260727_150520.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:sale_price>65.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
-      <g:product_type>Bags</g:product_type>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>
@@ -464,7 +495,7 @@ Comfortable handle for easy carry</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_132647.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/tao-tote.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>85.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:sale_price>50.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -484,7 +515,7 @@ Comfortable handle for easy carry</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_132617.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/tao-tote-tropical-night-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>85.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:sale_price>50.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -505,7 +536,7 @@ Comfortable handle for easy carry</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133533.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
-      <g:sale_price>50.00 AED</g:sale_price>
+      <g:sale_price>65.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -517,12 +548,33 @@ Comfortable handle for easy carry</g:description>
       </g:shipping>
     </item>
     <item>
+      <g:id>tori-crossbody</g:id>
+      <g:title>Tori crossbody</g:title>
+      <g:description>Sturdy cotton crossbody bag with a detachable chain. Strap length 85cm. Length 20cm. Height 17cm.</g:description>
+      <g:link>https://craftingyarn.com/product/tori-crossbody.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_111040.JPG</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_110938.JPG</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_111200.JPG</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_111116.JPG</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>velora-brown-leather</g:id>
       <g:title>Velora Brown leather</g:title>
       <g:description>Cute and stylish faux leather donut bag with detachable flower accessory
 
 
-15cm Height, 22 Length
+15cm Height, 22cm Length
 
 
 Sturdy and lightweight</g:description>
@@ -531,6 +583,31 @@ Sturdy and lightweight</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_123327.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>velora-dark-red</g:id>
+      <g:title>Velora (Dark Red)</g:title>
+      <g:description>Cute and stylish faux leather donut bag with detachable flower accessory
+
+
+15cm Height, 20cm Length
+
+
+Sturdy and lightweight</g:description>
+      <g:link>https://craftingyarn.com/product/velora-dark-red.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/IMG_7110.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7108.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>85.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -555,6 +632,31 @@ Light and durable</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260722_224226.JPG</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260722_224135.JPG</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:price>90.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>velora-rose-pink</g:id>
+      <g:title>Velora (Rose pink)</g:title>
+      <g:description>Cute and stylish faux leather donut bag with detachable flower accessory 
+
+
+16cm Height, 24cm Length
+
+
+Sturdy and lightweight</g:description>
+      <g:link>https://craftingyarn.com/product/velora-rose-pink.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260730_110949.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260730_084712.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -570,14 +672,14 @@ Light and durable</g:description>
       <g:id>zinnia-brown</g:id>
       <g:title>Zuri Camo</g:title>
       <g:description>Soft, durable and stylish
-Size: 23cm Length, 5cm Width, 15cm Height 
+Size: 23cm Length, 15cm Height 
 Lightweight and versatile for any occasion 
 Comfortable handle for easy carry</g:description>
       <g:link>https://craftingyarn.com/product/zinnia-brown.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110753.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>120.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -592,14 +694,14 @@ Comfortable handle for easy carry</g:description>
       <g:id>zinnia-coffee</g:id>
       <g:title>Zinnia Coffee</g:title>
       <g:description>Soft, durable and stylish
-Size: 25cm Length, 3cm Width, 15cm Height 
+Size: 25cm Length, 15cm Height 
 Lightweight and versatile for any occasion 
 Comfortable handle for easy carry</g:description>
       <g:link>https://craftingyarn.com/product/zinnia-coffee.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110152.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>130.00 AED</g:price>
+      <g:price>110.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -614,14 +716,14 @@ Comfortable handle for easy carry</g:description>
       <g:id>zinnia-wine</g:id>
       <g:title>Willa  Wine</g:title>
       <g:description>Soft, durable and stylish
-Size: 22cm Length, 7cm Width, 15cm Height 
+Size: 22cm Length, 15cm Height 
 Lightweight and versatile for any occasion 
 Comfortable handle for easy carry</g:description>
       <g:link>https://craftingyarn.com/product/zinnia-wine.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110535.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>120.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -636,7 +738,7 @@ Comfortable handle for easy carry</g:description>
       <g:id>zinnia-yellow</g:id>
       <g:title>Zuri  yellow</g:title>
       <g:description>Soft, durable and stylish
-Size: 23cm Length, 4.5cm Width, 13cm Height 
+Size: 23cm Length, 13cm Height 
 Lightweight and versatile for any occasion 
 Comfortable handle for easy carry</g:description>
       <g:link>https://craftingyarn.com/product/zinnia-yellow.html</g:link>
@@ -658,14 +760,102 @@ Comfortable handle for easy carry</g:description>
       <g:id>zuri-bright</g:id>
       <g:title>Zuri Candy</g:title>
       <g:description>Soft, Bright and ultra stylish.
-Size: 25cm Length, 7cm Width, 15cm Height 
+Size: 25cm Length, 15cm Height 
 Lightweight and versatile for any occasion.
 Comfortable handle for easy carry</g:description>
       <g:link>https://craftingyarn.com/product/zuri-bright.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260719_083634.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>zuri-love</g:id>
+      <g:title>Zuri (love)</g:title>
+      <g:description>Soft, Bright and ultra stylish.
+Size: 20cm Length, 14cm Height 
+Lightweight and versatile for any occasion.
+Comfortable handle for easy carry</g:description>
+      <g:link>https://craftingyarn.com/product/zuri-love.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260805_145818.jpeg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>zuri-midnight</g:id>
+      <g:title>Zuri Midnight</g:title>
+      <g:description>Soft, durable and stylish
+Size: 21cm Length, 16cm Height 
+Lightweight and versatile for any occasion 
+Comfortable handle for easy carry</g:description>
+      <g:link>https://craftingyarn.com/product/zuri-midnight.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260728_133634.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260728_133656.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>zuri-olive-camo</g:id>
+      <g:title>Zuri (Olive camo)</g:title>
+      <g:description>Soft, Bright and ultra stylish.
+Size: 23cm Length, 14cm Height 
+Lightweight and versatile for any occasion.
+Comfortable handle for easy carry</g:description>
+      <g:link>https://craftingyarn.com/product/zuri-olive-camo.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260730_093730.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7191.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
       <g:price>120.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>zuri-strawberry-matcha</g:id>
+      <g:title>Zuri (strawberry matcha)</g:title>
+      <g:description>Soft, Bright and ultra stylish.
+Size: 20cm Length, 14cm Height 
+Lightweight and versatile for any occasion.
+Comfortable handle for easy carry</g:description>
+      <g:link>https://craftingyarn.com/product/zuri-strawberry-matcha.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260805_170326.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260805_170447.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>

@@ -92,6 +92,29 @@ if (photoFatal.length) {
   process.exit(1);
 }
 
+// 1c) nudge: photos straight off a phone are 1-7 MB, which makes the shop crawl
+//     on mobile (and page speed is a ranking factor). Warn, don't block.
+const HEAVY = 500 * 1024;
+const heavy = [];
+for (const p of products) {
+  for (const rel of p.images) {
+    try {
+      const bytes = fs.statSync(path.join(ROOT, rel)).size;
+      if (bytes > HEAVY) heavy.push({ rel, kb: Math.round(bytes / 1024), name: p.name });
+    } catch {}
+  }
+}
+if (heavy.length) {
+  const totalKb = heavy.reduce((a, h) => a + h.kb, 0);
+  console.warn(`\n⚠ ${heavy.length} photo(s) over 500 KB (${(totalKb / 1024).toFixed(1)} MB total) — these slow the shop down:`);
+  for (const h of heavy.sort((a, b) => b.kb - a.kb).slice(0, 8)) {
+    console.warn(`    ${String(h.kb).padStart(5)} KB  ${h.rel}  (${h.name})`);
+  }
+  if (heavy.length > 8) console.warn(`    …and ${heavy.length - 8} more`);
+  console.warn("  Fix: resize to ~1600px before uploading, e.g.");
+  console.warn("    sips -Z 1600 -s format jpeg -s formatOptions 70 <file> --out <file>\n");
+}
+
 const catalog = products.map(({ order, ...p }) => p); // 'order' is sort-only; keep it out of the catalogue
 const catalogJs =
   "/* AUTO-GENERATED from data/products/*.json by build.js — do not edit here; edit products in the CMS (/admin). */\n" +

@@ -74,9 +74,11 @@ const CAT_DESC = {
 };
 const CAT_H1 = { Bags: "Crochet Bags", Accessories: "Crochet Accessories" };
 const CAT_SINGULAR = { Bags: "Bag", Accessories: "Accessory" };
+// Visible intro copy — Freda's own wording (she marked these up directly).
+// The UAE keywords live in CAT_DESC/<title> above, so search targeting is unaffected.
 const CAT_INTRO = {
-  Bags: "Hand-crocheted bags made one at a time here in the UAE — totes, baskets and shoulder bags in 100% cotton. No two are ever quite the same.",
-  Accessories: "Bandanas, scrunchies, bucket hats and little finishing touches — all crocheted by hand in the UAE.",
+  Bags: "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same.",
+  Accessories: "Bandanas, scrunchies, bucket hats and more — all crocheted by hand.",
 };
 
 // Sale section — a page listing every product with a sale price. Freda edits the
@@ -599,7 +601,7 @@ buildSuccess();
     <div class="cat-head">
       <div class="cat-headtext">
         <h1 class="cat-title">All Products</h1>
-        <p class="cat-intro">Every piece in the shop — hand-crocheted one at a time here in the UAE.</p>
+        <p class="cat-intro">All items are hand stitched one step at a time.</p>
       </div>
       ${catNav("", "all")}
     </div>
