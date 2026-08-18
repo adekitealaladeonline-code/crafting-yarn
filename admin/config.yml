@@ -196,6 +196,34 @@ collections:
             fields:
               - { name: description, label: "Site description (shows under your link on Google/WhatsApp)", widget: text, required: false }
 
+  - name: shopcopy
+    label: "Shop page wording"
+    description: "The title and the line underneath it on the All Products, Bags and Accessories pages. (The Sale page has its own section below.)"
+    editor: { preview: false }
+    files:
+      - name: categories
+        label: "Shop page wording"
+        file: "data/categories.json"
+        fields:
+          - name: shop
+            label: "All Products page"
+            widget: object
+            fields:
+              - { name: heading, label: "Title", widget: string }
+              - { name: intro, label: "Line under the title", widget: text, required: false, hint: "Leave empty for no line." }
+          - name: bags
+            label: "Bags page"
+            widget: object
+            fields:
+              - { name: heading, label: "Title", widget: string }
+              - { name: intro, label: "Line under the title", widget: text, required: false }
+          - name: accessories
+            label: "Accessories page"
+            widget: object
+            fields:
+              - { name: heading, label: "Title", widget: string }
+              - { name: intro, label: "Line under the title", widget: text, required: false }
+
   - name: salepage
     label: "Sale page"
     description: "The Sale page wording, plus a switch to show or hide it. To put an item in the sale, set its 'Sale price' over in Products — it appears here on its own."

@@ -72,13 +72,22 @@ const CAT_DESC = {
   Bags: "Hand-crocheted bags made one at a time in the UAE — totes, baskets and shoulder bags in 100% cotton. Free delivery across Dubai and the UAE over AED 250.",
   Accessories: "Handmade crochet accessories in the UAE — bandanas, scrunchies, bucket hats and more, crocheted by hand. Free Dubai and UAE delivery over AED 250.",
 };
-const CAT_H1 = { Bags: "Crochet Bags", Accessories: "Crochet Accessories" };
+/* Visible heading + intro for the shop pages — editable by Freda in the CMS
+   ("Shop page wording"), because she rewords these often. The <title> and meta
+   description above stay developer-controlled so the UAE search targeting can't
+   be lost by a copy edit. Falls back to these defaults if the file is missing. */
+const CATCOPY = readJSON("data/categories.json", {});
+const copyFor = (key, field, fallback) =>
+  (CATCOPY[key] && String(CATCOPY[key][field] || "").trim()) || fallback;
+
+const CAT_H1 = {
+  Bags: copyFor("bags", "heading", "Crochet Bags"),
+  Accessories: copyFor("accessories", "heading", "Crochet Accessories"),
+};
 const CAT_SINGULAR = { Bags: "Bag", Accessories: "Accessory" };
-// Visible intro copy — Freda's own wording (she marked these up directly).
-// The UAE keywords live in CAT_DESC/<title> above, so search targeting is unaffected.
 const CAT_INTRO = {
-  Bags: "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same.",
-  Accessories: "Bandanas, scrunchies, bucket hats and more — all crocheted by hand.",
+  Bags: copyFor("bags", "intro", "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same."),
+  Accessories: copyFor("accessories", "intro", "Bandanas, scrunchies, bucket hats and more — all crocheted by hand."),
 };
 
 // Sale section — a page listing every product with a sale price. Freda edits the
@@ -600,8 +609,8 @@ buildSuccess();
   const main = `<main class="shop shop--cat" id="shop">
     <div class="cat-head">
       <div class="cat-headtext">
-        <h1 class="cat-title">All Products</h1>
-        <p class="cat-intro">All items are hand stitched one step at a time.</p>
+        <h1 class="cat-title">${esc(copyFor("shop", "heading", "All Products"))}</h1>
+        ${(() => { const t = copyFor("shop", "intro", ""); return t ? `<p class="cat-intro">${esc(t)}</p>` : ""; })()}
       </div>
       ${catNav("", "all")}
     </div>

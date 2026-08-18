@@ -1,0 +1,14 @@
+{
+  "shop": {
+    "heading": "All Products",
+    "intro": "All items are hand stitched one step at a time."
+  },
+  "bags": {
+    "heading": "Crochet Bags",
+    "intro": "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same."
+  },
+  "accessories": {
+    "heading": "Crochet Accessories",
+    "intro": "Bandanas, scrunchies, bucket hats and more — all crocheted by hand."
+  }
+}

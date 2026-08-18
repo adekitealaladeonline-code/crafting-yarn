@@ -21,7 +21,7 @@ window.CATALOG = [
   },
   {
     "id": "brown-picot-bandana",
-    "name": "Brown Picot Bandana",
+    "name": "Bandana (brown)",
     "category": "Accessories",
     "subcategory": "Bandanas",
     "price": 30,
@@ -40,7 +40,7 @@ window.CATALOG = [
   },
   {
     "id": "picot-bandana-black",
-    "name": "Picot bandana (Black)",
+    "name": "Bandana (Black)",
     "category": "Accessories",
     "subcategory": "Bandanas",
     "price": 30,
@@ -59,7 +59,7 @@ window.CATALOG = [
   },
   {
     "id": "pink-picot-bandana",
-    "name": "Pink Picot Bandana",
+    "name": "Bandana (pink)",
     "category": "Accessories",
     "subcategory": "Bandanas",
     "price": 30,
@@ -97,7 +97,7 @@ window.CATALOG = [
   },
   {
     "id": "bandana-sunset",
-    "name": "Picot Bandana (sunset)",
+    "name": "Bandana (sunset)",
     "category": "Accessories",
     "subcategory": "Bandanas",
     "price": 30,
@@ -116,7 +116,7 @@ window.CATALOG = [
   },
   {
     "id": "bandana-buttercream",
-    "name": "Picot Bandana (buttercream)",
+    "name": "Bandana (buttercream)",
     "category": "Accessories",
     "subcategory": "Bandanas",
     "price": 30,
@@ -229,7 +229,7 @@ window.CATALOG = [
   },
   {
     "id": "scallop-bandana",
-    "name": "Scallop bandana (blue)",
+    "name": "Bandana (blue)",
     "category": "Accessories",
     "subcategory": "Bandanas",
     "price": 30,
