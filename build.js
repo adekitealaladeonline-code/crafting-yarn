@@ -92,29 +92,6 @@ if (photoFatal.length) {
   process.exit(1);
 }
 
-// 1c) nudge: photos straight off a phone are 1-7 MB, which makes the shop crawl
-//     on mobile (and page speed is a ranking factor). Warn, don't block.
-const HEAVY = 500 * 1024;
-const heavy = [];
-for (const p of products) {
-  for (const rel of p.images) {
-    try {
-      const bytes = fs.statSync(path.join(ROOT, rel)).size;
-      if (bytes > HEAVY) heavy.push({ rel, kb: Math.round(bytes / 1024), name: p.name });
-    } catch {}
-  }
-}
-if (heavy.length) {
-  const totalKb = heavy.reduce((a, h) => a + h.kb, 0);
-  console.warn(`\n⚠ ${heavy.length} photo(s) over 500 KB (${(totalKb / 1024).toFixed(1)} MB total) — these slow the shop down:`);
-  for (const h of heavy.sort((a, b) => b.kb - a.kb).slice(0, 8)) {
-    console.warn(`    ${String(h.kb).padStart(5)} KB  ${h.rel}  (${h.name})`);
-  }
-  if (heavy.length > 8) console.warn(`    …and ${heavy.length - 8} more`);
-  console.warn("  Fix: resize to ~1600px before uploading, e.g.");
-  console.warn("    sips -Z 1600 -s format jpeg -s formatOptions 70 <file> --out <file>\n");
-}
-
 const catalog = products.map(({ order, ...p }) => p); // 'order' is sort-only; keep it out of the catalogue
 const catalogJs =
   "/* AUTO-GENERATED from data/products/*.json by build.js — do not edit here; edit products in the CMS (/admin). */\n" +
@@ -150,6 +127,73 @@ for (const d of dirs) {
 
 // strip macOS cruft that can sneak into dist
 execSync(`find "${DIST}" -name '.DS_Store' -delete`, { stdio: "ignore" });
+
+/* 3b) shrink photos for the web — automatically, every build ------------------
+   Freda shoots and uploads straight from her phone, so the originals are ~4000px
+   and several MB each. Rather than asking her to resize anything (she won't, and
+   shouldn't have to), we optimise on the way out: the ORIGINALS stay untouched in
+   assets/ as the archive, and only the copies inside dist/ (what visitors
+   download) get resized. Fully non-destructive and idempotent.
+   sharp is optional — if it's ever unavailable the build still succeeds, it just
+   ships the photos as-is. */
+(function optimiseDistImages() {
+  let sharp;
+  try { sharp = require("sharp"); }
+  catch { console.warn("⚠ sharp not installed — shipping photos uncompressed (run: npm install)"); return; }
+
+  const MAXW = 1600;      // plenty for a 2x retina product page
+  const QUALITY = 72;
+  const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+    const p = path.join(dir, e.name);
+    return e.isDirectory() ? walk(p) : [p];
+  });
+
+  const assetsDir = path.join(DIST, "assets");
+  if (!fs.existsSync(assetsDir)) return;
+  const pics = walk(assetsDir).filter((f) => /\.(jpe?g|png)$/i.test(f));
+
+  if (!pics.length) return;
+  // sharp's API is promise-based; run it in a short child process so this build
+  // script stays a simple top-to-bottom sequential file.
+  const { execFileSync } = require("child_process");
+  const script = `
+    const sharp=require(${JSON.stringify(require.resolve("sharp"))});
+    const fs=require("fs");
+    const files=JSON.parse(process.argv[1]);
+    const MAXW=${MAXW}, Q=${QUALITY};
+    (async()=>{
+      let before=0, after=0, changed=0;
+      for(const f of files){
+        const o=fs.statSync(f).size; before+=o;
+        try{
+          const im=sharp(f,{failOn:"none"});
+          const m=await im.metadata();
+          const isPng=/png$/i.test(m.format||"");
+          let pipe=im;
+          if(m.width>MAXW) pipe=pipe.resize({width:MAXW,withoutEnlargement:true});
+          pipe = isPng ? pipe.png({compressionLevel:9,palette:true})
+                       : pipe.jpeg({quality:Q,mozjpeg:true});
+          const buf=await pipe.toBuffer();
+          if(buf.length < o){ fs.writeFileSync(f,buf); after+=buf.length; changed++; }
+          else after+=o;
+        }catch(e){ after+=o; }
+      }
+      console.log(JSON.stringify({before,after,changed,total:files.length}));
+    })();
+  `;
+  try {
+    const out = execFileSync(process.execPath, ["-e", script, JSON.stringify(pics)], { encoding: "utf8" });
+    const r = JSON.parse(out.trim().split("\n").pop());
+    const savedMb = (r.before - r.after) / 1048576;
+    console.log(
+      `✓ photos optimised for the web — ${r.changed}/${r.total} shrunk, ` +
+      `${(r.before / 1048576).toFixed(1)} MB → ${(r.after / 1048576).toFixed(1)} MB ` +
+      `(saved ${savedMb.toFixed(1)} MB). Originals in assets/ untouched.`
+    );
+  } catch (e) {
+    console.warn("⚠ photo optimisation skipped:", String(e.message || e).slice(0, 120));
+  }
+})();
 
 // generated advanced-mode worker at the dist root (serves assets + /api/*)
 execSync(`node build-worker.js "${path.join(DIST, "_worker.js")}"`, { cwd: ROOT, stdio: "inherit" });

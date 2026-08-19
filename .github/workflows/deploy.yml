@@ -19,7 +19,12 @@ jobs:
         with:
           node-version: 20
 
-      # No npm dependencies — the build is plain Node. Just run it.
+      # sharp (image optimisation) is the only dependency — everything else is
+      # plain Node. Freda uploads full-size phone photos, so the build shrinks
+      # them for the web automatically; without this step they'd ship at ~4000px.
+      - name: Install dependencies
+        run: npm ci
+
       - name: Build site (data/products -> dist/)
         run: npm run build
 
