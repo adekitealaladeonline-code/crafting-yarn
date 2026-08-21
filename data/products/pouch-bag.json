@@ -1,0 +1,16 @@
+{
+  "name": "Pouch bag",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 110,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260816_124439.jpeg"
+  ],
+  "desc": "Cute and stylish faux leather pouch bag with drawstring closure and wooden beads. \nHeight-16cm, Length-24cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-08-21T13:39"
+}
