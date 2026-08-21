@@ -1,0 +1,17 @@
+{
+  "name": "Gaia clutch (golden)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 100,
+  "sale": null,
+  "stock": null,
+  "images": [
+    "/assets/products/Photoroom_20260819_175918.jpeg",
+    "/assets/products/Photoroom_20260819_175752.jpeg"
+  ],
+  "desc": "Stylish clutch bag. Length 22cm Height 15cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-08-21T14:23"
+}
