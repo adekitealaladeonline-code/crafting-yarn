@@ -173,6 +173,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .card__addbar{background:var(--terra);color:#fff}
 .card__addbar:hover{background:var(--brown)}
 .card__addbar[disabled],.card__addbar:disabled{background:#9a9a9a;cursor:not-allowed}
+/* Sold out: the piece stays on the page at full photo quality (it still shows
+   Freda's work) — it simply can't be added to the basket. */
+.card__addbar--out{display:flex;align-items:center;justify-content:center;background:#9a9a9a;color:#fff;cursor:default}
+.card.is-out .card__addbar--out{pointer-events:none}
+.btn--solid[disabled],.btn--solid:disabled{background:#9a9a9a;border-color:#9a9a9a;cursor:not-allowed}
 .card.is-soldout .card__img,.card.is-soldout .card__img--hover{opacity:.5;filter:grayscale(.5)}
 .card__info{padding:.9rem .15rem 0}
 .card__cat{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}

@@ -208,9 +208,11 @@ const sellable = (p) => p.stock == null || p.stock > 0; // matches app.js's init
 const isSaleCat = (p) => String(p.category || "").toLowerCase() === "sale";
 function cardHTML(p, px = "") {
   const off = p.sale != null ? Math.round((1 - p.sale / p.price) * 100) : 0;
+  const out = !sellable(p);           // sold out: still shown, just not buyable
   const badges = [];
-  if (p.sale != null) badges.push(`<span class="tag tag--sale">Sale</span>`);
-  if (p.isNew) badges.push(`<span class="tag tag--new">New</span>`);
+  if (out) badges.push(`<span class="tag tag--out">Sold out</span>`);
+  else if (p.sale != null) badges.push(`<span class="tag tag--sale">Sale</span>`);
+  if (p.isNew && !out) badges.push(`<span class="tag tag--new">New</span>`);
   const price = p.sale != null
     ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">−${off}%</span>`
     : `<span class="now">${money(p.price)}</span>`;
@@ -220,7 +222,17 @@ function cardHTML(p, px = "") {
     : "";
   // descriptive alt text doubles as image-search fodder
   const alt = `${p.name} — handmade crochet ${String(p.category || "").toLowerCase()} in the UAE`;
-  return `<article class="card${p.image2 ? " has-hover" : ""}" data-id="${esc(p.id)}">
+  // sold out -> photo stays full quality, but no Add button (browse-only)
+  const actions = out
+    ? `<div class="card__actions">
+            <button class="card__quick" data-quick="${esc(p.id)}">Quick view</button>
+            <span class="card__addbar card__addbar--out" aria-hidden="true">Sold out</span>
+          </div>`
+    : `<div class="card__actions">
+            <button class="card__quick" data-quick="${esc(p.id)}">Quick view</button>
+            <button class="card__addbar" data-add="${esc(p.id)}" aria-label="Add ${esc(p.name)} to basket">Add +</button>
+          </div>`;
+  return `<article class="card${p.image2 ? " has-hover" : ""}${out ? " is-out" : ""}" data-id="${esc(p.id)}">
         <div class="card__media">
           ${badges.length ? `<div class="card__badges">${badges.join("")}</div>` : ""}
           <button class="card__wish" data-wish="${esc(p.id)}" aria-label="Save ${esc(p.name)} to wishlist" aria-pressed="false">
@@ -228,10 +240,7 @@ function cardHTML(p, px = "") {
           </button>
           <img class="card__img" src="${px}${esc(p.image)}" alt="${esc(alt)}" loading="lazy"/>
           ${hover}
-          <div class="card__actions">
-            <button class="card__quick" data-quick="${esc(p.id)}">Quick view</button>
-            <button class="card__addbar" data-add="${esc(p.id)}" aria-label="Add ${esc(p.name)} to basket">Add +</button>
-          </div>
+          ${actions}
         </div>
         <div class="card__info">
           <span class="card__cat">${esc(sub)}</span>
@@ -511,7 +520,7 @@ ${banners}
       </div>
     </div>
     <div class="rail__track" id="railTrack">
-      ${CATALOG.filter((p) => sellable(p) && !isSaleCat(p))
+      ${CATALOG.filter((p) => !isSaleCat(p))
         .slice()
         .sort((a, b) => String(b.created || "9999").localeCompare(String(a.created || "9999")))
         .slice(0, 10)
@@ -603,8 +612,8 @@ buildSuccess();
    of "all" as "no category filter", so data-category="all" needs no JS change. */
 {
   // Sale-category pieces are excluded here too — they belong only on /sale
-  const items = CATALOG.filter((p) => sellable(p) && !isSaleCat(p))
-    .sort((a, b) => (b.featured === true) - (a.featured === true));
+  const items = CATALOG.filter((p) => !isSaleCat(p))
+    .sort((a, b) => (sellable(b) - sellable(a)) || ((b.featured === true) - (a.featured === true)));
   const n = items.length;
   const main = `<main class="shop shop--cat" id="shop">
     <div class="cat-head">
@@ -642,8 +651,8 @@ buildSuccess();
 
 for (const cat of CATEGORIES) {
   // same set + order app.js shows first (in stock, featured first)
-  const items = CATALOG.filter((p) => p.category === cat && sellable(p))
-    .sort((a, b) => (b.featured === true) - (a.featured === true));
+  const items = CATALOG.filter((p) => p.category === cat)
+    .sort((a, b) => (sellable(b) - sellable(a)) || ((b.featured === true) - (a.featured === true)));
   const n = items.length;
   const cards = items.map((p) => cardHTML(p)).join("\n      ");
   const intro = CAT_INTRO[cat] || "";
@@ -686,8 +695,8 @@ for (const cat of CATEGORIES) {
 if (SALE_ENABLED) {
   // Sale page = anything filed under the "Sale" category, plus anything that's
   // been given a discount price.
-  const saleItems = CATALOG.filter((p) => (isSaleCat(p) || p.sale != null) && sellable(p))
-    .sort((a, b) => (b.featured === true) - (a.featured === true));
+  const saleItems = CATALOG.filter((p) => isSaleCat(p) || p.sale != null)
+    .sort((a, b) => (sellable(b) - sellable(a)) || ((b.featured === true) - (a.featured === true)));
   const n = saleItems.length;
   const eyebrow = SALE.eyebrow != null ? SALE.eyebrow : "Deals";
   const heading = SALE.heading || "Sale";
@@ -798,7 +807,9 @@ for (const p of CATALOG) {
         <ul class="pdp__meta">
           ${metaBullets}
         </ul>
-        <button class="btn btn--solid pdp__add" data-add="${p.id}" aria-label="Add ${esc(p.name)} to bag">Add to bag — ${money(priceOf(p))}</button>
+        ${sellable(p)
+          ? `<button class="btn btn--solid pdp__add" data-add="${p.id}" aria-label="Add ${esc(p.name)} to bag">Add to bag — ${money(priceOf(p))}</button>`
+          : `<button class="btn btn--solid pdp__add" disabled aria-disabled="true">Sold out</button>`}
       </div>
     </div>
   </main>`;

@@ -115,9 +115,11 @@
   ---------------------------------------------------------------- */
   function cardHTML(p) {
     const off = p.sale != null ? Math.round((1 - p.sale / p.price) * 100) : 0;
+    const out = soldOut(p);            // still shown, just not buyable
     const badges = [];
-    if (p.sale != null) badges.push(`<span class="tag tag--sale">Sale</span>`);
-    if (p.isNew) badges.push(`<span class="tag tag--new">New</span>`);
+    if (out) badges.push(`<span class="tag tag--out">Sold out</span>`);
+    else if (p.sale != null) badges.push(`<span class="tag tag--sale">Sale</span>`);
+    if (p.isNew && !out) badges.push(`<span class="tag tag--new">New</span>`);
     const price = p.sale != null
       ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">−${off}%</span>`
       : `<span class="now">${money(p.price)}</span>`;
@@ -126,7 +128,10 @@
       ? `<img class="card__img card__img--hover" src="${p.image2}" alt="" aria-hidden="true" loading="lazy"/>`
       : "";
     const wished = wishlist.has(p.id) ? " is-wished" : "";
-    return `<article class="card${p.image2 ? " has-hover" : ""}" data-id="${p.id}">
+    const addBtn = out
+      ? `<span class="card__addbar card__addbar--out" aria-hidden="true">Sold out</span>`
+      : `<button class="card__addbar" data-add="${p.id}" aria-label="Add ${p.name} to basket">Add +</button>`;
+    return `<article class="card${p.image2 ? " has-hover" : ""}${out ? " is-out" : ""}" data-id="${p.id}">
       <div class="card__media">
         ${badges.length ? `<div class="card__badges">${badges.join("")}</div>` : ""}
         <button class="card__wish${wished}" data-wish="${p.id}" aria-label="Save ${p.name} to wishlist" aria-pressed="${wishlist.has(p.id)}">
@@ -136,7 +141,7 @@
         ${hover}
         <div class="card__actions">
           <button class="card__quick" data-quick="${p.id}">Quick view</button>
-          <button class="card__addbar" data-add="${p.id}" aria-label="Add ${p.name} to basket">Add +</button>
+          ${addBtn}
         </div>
       </div>
       <div class="card__info">
@@ -155,7 +160,9 @@
   let searchTerm = "";
 
   function visibleProducts() {
-    let list = CATALOG.filter((p) => !soldOut(p)); // out-of-stock items drop out of the shop entirely
+    // Sold-out pieces stay on the page (browse-only, no Add button) — they show
+    // the range of Freda's work. They just sort to the end.
+    let list = CATALOG.slice();
     // "Sale" is its own category: those items show ONLY on the Sale page, never
     // under Bags/Accessories or in Shop All.
     const isSaleCat = (p) => String(p.category || "").toLowerCase() === "sale";
@@ -174,6 +181,8 @@
       case "newest": list.sort((a, b) => String(b.created || "9999").localeCompare(String(a.created || "9999"))); break;
       default: list.sort((a, b) => (b.featured === true) - (a.featured === true)); break;
     }
+    // whatever the sort, what you can actually buy comes first
+    list.sort((a, b) => (soldOut(a) ? 1 : 0) - (soldOut(b) ? 1 : 0));
     return list;
   }
 
@@ -264,6 +273,14 @@
       ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">Save ${off}%</span>`
       : `<span class="now">${money(p.price)}</span>`;
     $("#modalDesc").textContent = p.desc;
+    // sold out -> browse-only, so the modal's Add button is disabled too
+    const mAdd = $("#modalAdd");
+    if (mAdd) {
+      const out = soldOut(p);
+      mAdd.disabled = out;
+      mAdd.setAttribute("aria-disabled", String(out));
+      mAdd.textContent = out ? "Sold out" : "Add to bag";
+    }
     const m = $("#modal");
     m.classList.add("is-open");
     m.setAttribute("aria-hidden", "false");
