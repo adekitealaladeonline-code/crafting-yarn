@@ -454,7 +454,7 @@ window.CATALOG = [
   },
   {
     "id": "pouch-bag",
-    "name": "Yasmine Pouch bag (medium)",
+    "name": "Yasmine (medium)",
     "category": "Bags",
     "subcategory": "",
     "price": 110,
@@ -643,6 +643,24 @@ window.CATALOG = [
     "image2": "assets/products/Photoroom_20260730_084712.jpeg"
   },
   {
+    "id": "yasmine-small-grey",
+    "name": "Yasmine (small- grey)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 90,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260903_104649.jpg"
+    ],
+    "desc": "Cute and stylish faux leather bag with drawstrings and beads. \n100cm detachable chain strap. \nHeight 13cm\nLength 19cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-03T18:10:00",
+    "image": "assets/products/Photoroom_20260903_104649.jpg",
+    "image2": null
+  },
+  {
     "id": "zinnia-brown",
     "name": "Zuri Camo",
     "category": "Bags",
@@ -703,7 +721,7 @@ window.CATALOG = [
     "subcategory": "",
     "price": 100,
     "sale": null,
-    "stock": 1,
+    "stock": 0,
     "images": [
       "assets/products/Photoroom_20260718_110440.jpeg"
     ],
@@ -719,7 +737,7 @@ window.CATALOG = [
     "name": "Zuri Candy",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 110,
     "sale": null,
     "stock": 1,
     "images": [
@@ -776,7 +794,7 @@ window.CATALOG = [
     "subcategory": "",
     "price": 100,
     "sale": null,
-    "stock": 1,
+    "stock": 0,
     "images": [
       "assets/products/Photoroom_20260730_093730.jpeg",
       "assets/products/IMG_7191.jpeg"

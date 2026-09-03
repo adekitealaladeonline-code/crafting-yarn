@@ -488,7 +488,7 @@ Lightweight, stylish  and versatile for any occasion.</g:description>
     </item>
     <item>
       <g:id>pouch-bag</g:id>
-      <g:title>Yasmine Pouch bag (medium)</g:title>
+      <g:title>Yasmine (medium)</g:title>
       <g:description>Cute and stylish faux leather pouch bag with drawstring closure and wooden beads. 
 Height-16cm, Length-24cm</g:description>
       <g:link>https://craftingyarn.com/product/pouch-bag.html</g:link>
@@ -708,6 +708,28 @@ Sturdy and lightweight</g:description>
       </g:shipping>
     </item>
     <item>
+      <g:id>yasmine-small-grey</g:id>
+      <g:title>Yasmine (small- grey)</g:title>
+      <g:description>Cute and stylish faux leather bag with drawstrings and beads. 
+100cm detachable chain strap. 
+Height 13cm
+Length 19cm</g:description>
+      <g:link>https://craftingyarn.com/product/yasmine-small-grey.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260903_104649.jpg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>90.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>zinnia-brown</g:id>
       <g:title>Zuri Camo</g:title>
       <g:description>Soft, durable and stylish
@@ -783,7 +805,7 @@ Comfortable handle for easy carry</g:description>
       <g:link>https://craftingyarn.com/product/zinnia-yellow.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110440.jpeg</g:image_link>
 
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -806,7 +828,7 @@ Comfortable handle for easy carry</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260719_083634.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 AED</g:price>
+      <g:price>110.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -871,7 +893,7 @@ Comfortable handle for easy carry</g:description>
       <g:link>https://craftingyarn.com/product/zuri-olive-camo.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260730_093730.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7191.jpeg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
