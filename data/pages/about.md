@@ -1,12 +1,12 @@
 ---
 eyebrow: Our story
-heading: Handmade crafts by Freda
+heading: Handmade crafts by Seun
 image: /assets/products/blue-daze-cardigan-medium.jpg
-signature: — Freda
-description: Crafting Yarn began with one scarf. Meet Freda, and the handmade crochet she makes with love in the UAE.
+signature: — Seun
+description: Crafting Yarn began with one scarf. Meet Seun, and the handmade crochet she makes with love in the UAE.
 ---
 
-**Hello friend, welcome to Crafting Yarn!** I'm Freda, and I love crocheting and collecting yarn. 
+**Hello friend, welcome to Crafting Yarn!** I'm Seun, and I love crocheting and collecting yarn. 
 
 Pull up a chair, grab a warm cup of tea, and let me share a little story.
 
