@@ -2,7 +2,7 @@
 window.CATALOG = [
   {
     "id": "teal-velvet",
-    "name": "Teal velvet",
+    "name": "Velvet scrunchie (Teal)",
     "category": "Accessories",
     "subcategory": "Scrunchies",
     "price": 20,
@@ -134,7 +134,7 @@ window.CATALOG = [
   },
   {
     "id": "burgundy-velvet",
-    "name": "Burgundy velvet",
+    "name": "Velvet scrunchie (Burgundy)",
     "category": "Accessories",
     "subcategory": "Scrunchies",
     "price": 20,
@@ -153,7 +153,7 @@ window.CATALOG = [
   },
   {
     "id": "navy-velvet",
-    "name": "Navy velvet",
+    "name": "Velvet scrunchie (Navy)",
     "category": "Accessories",
     "subcategory": "Scrunchies",
     "price": 20,
@@ -172,7 +172,7 @@ window.CATALOG = [
   },
   {
     "id": "white-velvet",
-    "name": "White velvet",
+    "name": "Velvet scrunchie (White)",
     "category": "Accessories",
     "subcategory": "Scrunchies",
     "price": 20,
@@ -191,7 +191,7 @@ window.CATALOG = [
   },
   {
     "id": "brown-velvet",
-    "name": "Brown velvet",
+    "name": "Velvet scrunchie (brown)",
     "category": "Accessories",
     "subcategory": "Scrunchies",
     "price": 20,
@@ -210,7 +210,7 @@ window.CATALOG = [
   },
   {
     "id": "grey-mix-velvet",
-    "name": "Grey mix velvet",
+    "name": "Velvet scrunchie (Grey mix)",
     "category": "Accessories",
     "subcategory": "Scrunchies",
     "price": 20,
@@ -339,6 +339,25 @@ window.CATALOG = [
     "image2": "assets/products/IMG_5796.jpeg"
   },
   {
+    "id": "gaia-clutch-golden",
+    "name": "Gaia clutch (golden)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 100,
+    "sale": null,
+    "stock": null,
+    "images": [
+      "assets/products/Photoroom_20260819_175918.jpeg",
+      "assets/products/Photoroom_20260819_175752.jpeg"
+    ],
+    "desc": "Stylish clutch bag. Length 22cm Height 15cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-08-21T14:23",
+    "image": "assets/products/Photoroom_20260819_175918.jpeg",
+    "image2": "assets/products/Photoroom_20260819_175752.jpeg"
+  },
+  {
     "id": "grey-black-bag",
     "name": "Grey/black bag",
     "category": "Sale",
@@ -434,6 +453,24 @@ window.CATALOG = [
     "image2": null
   },
   {
+    "id": "pouch-bag",
+    "name": "Yasmine Pouch bag (medium)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 110,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260816_124439.jpeg"
+    ],
+    "desc": "Cute and stylish faux leather pouch bag with drawstring closure and wooden beads. \nHeight-16cm, Length-24cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-08-21T13:39",
+    "image": "assets/products/Photoroom_20260816_124439.jpeg",
+    "image2": null
+  },
+  {
     "id": "sample-bag",
     "name": "Sample bag",
     "category": "Sale",
@@ -513,7 +550,7 @@ window.CATALOG = [
     "name": "Tori crossbody",
     "category": "Bags",
     "subcategory": "",
-    "price": 110,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -534,7 +571,7 @@ window.CATALOG = [
     "name": "Velora Brown leather",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 90,
     "sale": null,
     "stock": 1,
     "images": [
@@ -553,7 +590,7 @@ window.CATALOG = [
     "name": "Velora (Dark Red)",
     "category": "Bags",
     "subcategory": "",
-    "price": 85,
+    "price": 80,
     "sale": null,
     "stock": 1,
     "images": [
@@ -572,7 +609,7 @@ window.CATALOG = [
     "name": "Velora Olive",
     "category": "Bags",
     "subcategory": "",
-    "price": 90,
+    "price": 85,
     "sale": null,
     "stock": 1,
     "images": [
@@ -591,7 +628,7 @@ window.CATALOG = [
     "name": "Velora (Rose pink)",
     "category": "Bags",
     "subcategory": "",
-    "price": 100,
+    "price": 90,
     "sale": null,
     "stock": 1,
     "images": [
@@ -628,7 +665,7 @@ window.CATALOG = [
     "name": "Zinnia Coffee",
     "category": "Bags",
     "subcategory": "",
-    "price": 110,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -682,7 +719,7 @@ window.CATALOG = [
     "name": "Zuri Candy",
     "category": "Bags",
     "subcategory": "",
-    "price": 110,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -737,7 +774,7 @@ window.CATALOG = [
     "name": "Zuri (Olive camo)",
     "category": "Bags",
     "subcategory": "",
-    "price": 120,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [

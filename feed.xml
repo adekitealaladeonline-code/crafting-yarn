@@ -6,7 +6,7 @@
     <description>Hand-crocheted bags and accessories, made one at a time in the UAE.</description>
     <item>
       <g:id>teal-velvet</g:id>
-      <g:title>Teal velvet</g:title>
+      <g:title>Velvet scrunchie (Teal)</g:title>
       <g:description>A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.</g:description>
       <g:link>https://craftingyarn.com/product/teal-velvet.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/teal-velvet.jpg</g:image_link>
@@ -151,7 +151,7 @@ Handmade-100% cotton
     </item>
     <item>
       <g:id>burgundy-velvet</g:id>
-      <g:title>Burgundy velvet</g:title>
+      <g:title>Velvet scrunchie (Burgundy)</g:title>
       <g:description>Velvet scrunchie in rich burgundy.</g:description>
       <g:link>https://craftingyarn.com/product/burgundy-velvet.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/burgundy-velvet.jpg</g:image_link>
@@ -170,7 +170,7 @@ Handmade-100% cotton
     </item>
     <item>
       <g:id>navy-velvet</g:id>
-      <g:title>Navy velvet</g:title>
+      <g:title>Velvet scrunchie (Navy)</g:title>
       <g:description>Velvet-yarn scrunchie in navy — the everyday neutral.</g:description>
       <g:link>https://craftingyarn.com/product/navy-velvet.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/navy-velvet.jpg</g:image_link>
@@ -189,7 +189,7 @@ Handmade-100% cotton
     </item>
     <item>
       <g:id>white-velvet</g:id>
-      <g:title>White velvet</g:title>
+      <g:title>Velvet scrunchie (White)</g:title>
       <g:description>Velvet-yarn scrunchie in soft white.</g:description>
       <g:link>https://craftingyarn.com/product/white-velvet.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/white-velvet.jpg</g:image_link>
@@ -208,7 +208,7 @@ Handmade-100% cotton
     </item>
     <item>
       <g:id>brown-velvet</g:id>
-      <g:title>Brown velvet</g:title>
+      <g:title>Velvet scrunchie (brown)</g:title>
       <g:description>Velvet-yarn scrunchie in chocolate brown.</g:description>
       <g:link>https://craftingyarn.com/product/brown-velvet.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/brown-velvet.jpg</g:image_link>
@@ -227,7 +227,7 @@ Handmade-100% cotton
     </item>
     <item>
       <g:id>grey-mix-velvet</g:id>
-      <g:title>Grey mix velvet</g:title>
+      <g:title>Velvet scrunchie (Grey mix)</g:title>
       <g:description>Velvet-yarn scrunchie in a heathered grey mix.</g:description>
       <g:link>https://craftingyarn.com/product/grey-mix-velvet.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/grey-mix-velvet.jpg</g:image_link>
@@ -367,6 +367,25 @@ Handmade-100% cotton
       </g:shipping>
     </item>
     <item>
+      <g:id>gaia-clutch-golden</g:id>
+      <g:title>Gaia clutch (golden)</g:title>
+      <g:description>Stylish clutch bag. Length 22cm Height 15cm</g:description>
+      <g:link>https://craftingyarn.com/product/gaia-clutch-golden.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260819_175918.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260819_175752.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>grey-black-bag</g:id>
       <g:title>Grey/black bag</g:title>
       <g:description>Sample bag</g:description>
@@ -468,6 +487,26 @@ Lightweight, stylish  and versatile for any occasion.</g:description>
       </g:shipping>
     </item>
     <item>
+      <g:id>pouch-bag</g:id>
+      <g:title>Yasmine Pouch bag (medium)</g:title>
+      <g:description>Cute and stylish faux leather pouch bag with drawstring closure and wooden beads. 
+Height-16cm, Length-24cm</g:description>
+      <g:link>https://craftingyarn.com/product/pouch-bag.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260816_124439.jpeg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>sample-bag</g:id>
       <g:title>Sample bag</g:title>
       <g:description>Sample bag</g:description>
@@ -557,7 +596,7 @@ Lightweight, stylish  and versatile for any occasion.</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_111200.JPG</g:additional_image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_111116.JPG</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>110.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -582,7 +621,7 @@ Sturdy and lightweight</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260722_140329.JPG</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_123327.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 AED</g:price>
+      <g:price>90.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -607,7 +646,7 @@ Sturdy and lightweight</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/IMG_7110.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7108.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>85.00 AED</g:price>
+      <g:price>80.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -632,7 +671,7 @@ Light and durable</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260722_224226.JPG</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260722_224135.JPG</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>90.00 AED</g:price>
+      <g:price>85.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -657,7 +696,7 @@ Sturdy and lightweight</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260730_110949.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260730_084712.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 AED</g:price>
+      <g:price>90.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -701,7 +740,7 @@ Comfortable handle for easy carry</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110152.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>110.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -767,7 +806,7 @@ Comfortable handle for easy carry</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260719_083634.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>110.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -833,7 +872,7 @@ Comfortable handle for easy carry</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260730_093730.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7191.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>120.00 AED</g:price>
+      <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>

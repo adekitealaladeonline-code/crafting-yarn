@@ -1,4 +1,5 @@
 ---
+enabled: false
 eyebrow: Our story
 heading: Handmade crafts by Seun
 image: /assets/products/blue-daze-cardigan-medium.jpg

@@ -140,7 +140,6 @@ const menu = (px) => {
     ["bags.html", "Bags"],
     ["accessories.html", "Accessories"],
     ...(SALE_ENABLED ? [["sale.html", "Sale"]] : []),
-    ["about.html", "Our story"],
     ["contact.html", "Contact"],
   ];
   const links = items
@@ -160,7 +159,7 @@ const footer = (px) => `<footer class="site-footer"><div class="footer__top">
     <a href="${px}shop.html">Shop all</a><a href="${px}bags.html">Bags</a><a href="${px}accessories.html">Accessories</a>${SALE_ENABLED ? `<a href="${px}sale.html">Sale</a>` : ""}
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
-    <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}about.html">Our story</a><a href="${px}contact.html">Contact</a>
+    <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}contact.html">Contact</a>
   </nav>
   <nav class="footer__col" aria-label="Social"><h4>Follow</h4>
     <a href="${esc(IG_URL)}" target="_blank" rel="noopener">Instagram ↗</a>
@@ -535,7 +534,7 @@ ${banners}
       <p class="story__eyebrow">${esc(story.eyebrow || "Hello friend")}</p>
       <h2 class="story__title">${lines(story.title || "Made by hand.")}</h2>
       <p class="story__line">${esc(story.text || "")}</p>
-      <a href="about.html" class="btn">${esc(story.button || "Read my full story")}</a>
+      <a href="shop.html" class="btn">${esc(story.button || "Read my full story")}</a>
     </div>
   </section>
 
@@ -879,7 +878,13 @@ const CONTACT_FORM = `<form class="contact-form" id="contactForm" data-wa="${WA_
     </form>`;
 
 const PAGES_DIR = path.join(ROOT, "data/pages");
-for (const fileName of fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md"))) {
+/* A page with `enabled: false` in its frontmatter is switched off: no HTML is
+   generated, it drops out of the nav and the sitemap, but the copy is kept in
+   data/pages/ so it can be switched back on any time. */
+const pageEnabled = (file) =>
+  parseFrontmatter(fs.readFileSync(path.join(PAGES_DIR, file), "utf8")).data.enabled !== false;
+
+for (const fileName of fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md") && pageEnabled(f))) {
   const slug = fileName.replace(/\.md$/, "");
   const { data, body } = parseFrontmatter(fs.readFileSync(path.join(PAGES_DIR, fileName), "utf8"));
   const out = ['<main class="page">', '    <a class="page__back" href="index.html">← Back home</a>'];
@@ -898,7 +903,7 @@ for (const fileName of fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md")
 }
 
 /* ---------- robots.txt + sitemap.xml (SEO discoverability) ---------- */
-const contentSlugs = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, ""));
+const contentSlugs = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".md") && pageEnabled(f)).map((f) => f.replace(/\.md$/, ""));
 const sitemapUrls = [
   `${SITE}/`,
   `${SITE}/shop.html`,
