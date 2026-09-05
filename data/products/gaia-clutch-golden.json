@@ -4,7 +4,7 @@
   "subcategory": "",
   "price": 100,
   "sale": null,
-  "stock": null,
+  "stock": 0,
   "images": [
     "/assets/products/Photoroom_20260819_175918.jpeg",
     "/assets/products/Photoroom_20260819_175752.jpeg"
