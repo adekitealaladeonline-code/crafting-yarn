@@ -1,9 +1,9 @@
 {
   "name": "Willa  Wine",
-  "category": "Bags",
+  "category": "Sale",
   "subcategory": "",
   "price": 100,
-  "sale": null,
+  "sale": 50,
   "stock": 0,
   "images": [
     "/assets/products/Photoroom_20260718_110535.jpeg"
