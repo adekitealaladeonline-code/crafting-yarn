@@ -1,16 +1,16 @@
 {
-  "name": "Velvet scrunchie (Teal)",
+  "name": "Velvet scrunchie (Gold)",
   "category": "Accessories",
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": null,
   "stock": 1,
   "images": [
-    "/assets/products/teal-velvet.jpg"
+    "/assets/products/Photoroom_20260908_085422.jpeg"
   ],
-  "desc": "A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.",
+  "desc": "A plush velvet-yarn scrunchie in Gold. Gentle on hair, loud on style.",
   "featured": false,
   "isNew": false,
   "order": 50,
-  "created": "2026-06-18T18:50:38+01:00"
+  "created": "2026-06-18T21:50:00"
 }
