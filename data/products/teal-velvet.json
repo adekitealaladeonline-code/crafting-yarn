@@ -3,8 +3,8 @@
   "category": "Accessories",
   "subcategory": "Scrunchies",
   "price": 20,
-  "sale": 1,
-  "stock": null,
+  "sale": null,
+  "stock": 1,
   "images": [
     "/assets/products/Photoroom_20260908_085422.jpeg"
   ],
