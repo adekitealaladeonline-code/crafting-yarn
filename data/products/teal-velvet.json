@@ -6,8 +6,7 @@
   "sale": null,
   "stock": 1,
   "images": [
-    "assets/products/teal-velvet.jpg",
-    "assets/products/teal-velvet-2.jpg"
+    "/assets/products/teal-velvet.jpg"
   ],
   "desc": "A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.",
   "featured": false,
