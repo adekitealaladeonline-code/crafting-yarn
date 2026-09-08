@@ -2,134 +2,20 @@
 window.CATALOG = [
   {
     "id": "teal-velvet",
-    "name": "Velvet scrunchie (Teal)",
+    "name": "Velvet scrunchie (Gold)",
     "category": "Accessories",
     "subcategory": "Scrunchies",
     "price": 20,
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/teal-velvet.jpg",
-      "assets/products/teal-velvet-2.jpg"
+      "assets/products/Photoroom_20260908_085422.jpeg"
     ],
-    "desc": "A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.",
+    "desc": "Velvet yarn scrunchie in Gold. Gentle on hair.",
     "featured": false,
     "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/teal-velvet.jpg",
-    "image2": "assets/products/teal-velvet-2.jpg"
-  },
-  {
-    "id": "brown-picot-bandana",
-    "name": "Bandana (brown)",
-    "category": "Accessories",
-    "subcategory": "Bandanas",
-    "price": 30,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/brown-picot-bandana.jpg",
-      "assets/products/brown-picot-bandana-2.jpg"
-    ],
-    "desc": "A picot-edged hair bandana in cocoa brown. Ties at the nape, finishes any look. \nMade with cotton yarn. It measures 14\" x 9\".",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/brown-picot-bandana.jpg",
-    "image2": "assets/products/brown-picot-bandana-2.jpg"
-  },
-  {
-    "id": "picot-bandana-black",
-    "name": "Bandana (Black)",
-    "category": "Accessories",
-    "subcategory": "Bandanas",
-    "price": 30,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/picot-bandana-black.jpg",
-      "assets/products/picot-bandana-black-2.jpg"
-    ],
-    "desc": "The picot bandana in black — the most-worn thing you'll own.\nHandmade-100% cotton\n14” wide\n9” long",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/picot-bandana-black.jpg",
-    "image2": "assets/products/picot-bandana-black-2.jpg"
-  },
-  {
-    "id": "pink-picot-bandana",
-    "name": "Bandana (pink)",
-    "category": "Accessories",
-    "subcategory": "Bandanas",
-    "price": 30,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/pink-picot-bandana.jpg",
-      "assets/products/pink-picot-bandana-2.jpg"
-    ],
-    "desc": "A sweet handmade  bandana in candy pink.\n100% cotton- \n13.5” wide\n8.5” long",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/pink-picot-bandana.jpg",
-    "image2": "assets/products/pink-picot-bandana-2.jpg"
-  },
-  {
-    "id": "kay-bucket-hat",
-    "name": "Kay wavy bucket hat",
-    "category": "Accessories",
-    "subcategory": "Hats",
-    "price": 40,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/kay-bucket-hat.jpg",
-      "assets/products/kay-bucket-hat-2.jpg"
-    ],
-    "desc": "The Kay bucket hat with a wavy, hand-shaped brim. Sun cover with personality. 100% cotton with a 22\" ciruumference fit.",
-    "featured": true,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/kay-bucket-hat.jpg",
-    "image2": "assets/products/kay-bucket-hat-2.jpg"
-  },
-  {
-    "id": "bandana-sunset",
-    "name": "Bandana (sunset)",
-    "category": "Accessories",
-    "subcategory": "Bandanas",
-    "price": 30,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/bandana-sunset.jpg",
-      "assets/products/bandana-sunset-2.jpg"
-    ],
-    "desc": "Sunset-striped bandana — warm ombré tones for golden hour, all day.\n100% acrylic yarn\n14” wide\n9” long",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/bandana-sunset.jpg",
-    "image2": "assets/products/bandana-sunset-2.jpg"
-  },
-  {
-    "id": "bandana-buttercream",
-    "name": "Bandana (buttercream)",
-    "category": "Accessories",
-    "subcategory": "Bandanas",
-    "price": 30,
-    "sale": null,
-    "stock": 2,
-    "images": [
-      "assets/products/bandana-buttercream.jpg"
-    ],
-    "desc": "Handmade buttercream coloured bandana with a picot trim, made with a 100% cotton yarn.\n13.5” wide\n9” long",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/bandana-buttercream.jpg",
+    "created": "2026-06-18T21:50:00",
+    "image": "assets/products/Photoroom_20260908_085422.jpeg",
     "image2": null
   },
   {
@@ -141,15 +27,14 @@ window.CATALOG = [
     "sale": null,
     "stock": 3,
     "images": [
-      "assets/products/burgundy-velvet.jpg",
       "assets/products/burgundy-velvet-2.jpg"
     ],
     "desc": "Velvet scrunchie in rich burgundy.",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/burgundy-velvet.jpg",
-    "image2": "assets/products/burgundy-velvet-2.jpg"
+    "image": "assets/products/burgundy-velvet-2.jpg",
+    "image2": null
   },
   {
     "id": "navy-velvet",
@@ -160,15 +45,14 @@ window.CATALOG = [
     "sale": null,
     "stock": 3,
     "images": [
-      "assets/products/navy-velvet.jpg",
       "assets/products/navy-velvet-2.jpg"
     ],
     "desc": "Velvet-yarn scrunchie in navy — the everyday neutral.",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/navy-velvet.jpg",
-    "image2": "assets/products/navy-velvet-2.jpg"
+    "image": "assets/products/navy-velvet-2.jpg",
+    "image2": null
   },
   {
     "id": "white-velvet",
@@ -179,15 +63,14 @@ window.CATALOG = [
     "sale": null,
     "stock": 3,
     "images": [
-      "assets/products/white-velvet.jpg",
       "assets/products/white-velvet-2.jpg"
     ],
     "desc": "Velvet-yarn scrunchie in soft white.",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/white-velvet.jpg",
-    "image2": "assets/products/white-velvet-2.jpg"
+    "image": "assets/products/white-velvet-2.jpg",
+    "image2": null
   },
   {
     "id": "brown-velvet",
@@ -198,15 +81,14 @@ window.CATALOG = [
     "sale": null,
     "stock": 3,
     "images": [
-      "assets/products/brown-velvet.jpg",
       "assets/products/brown-velvet-2.jpg"
     ],
     "desc": "Velvet-yarn scrunchie in chocolate brown.",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/brown-velvet.jpg",
-    "image2": "assets/products/brown-velvet-2.jpg"
+    "image": "assets/products/brown-velvet-2.jpg",
+    "image2": null
   },
   {
     "id": "grey-mix-velvet",
@@ -217,52 +99,14 @@ window.CATALOG = [
     "sale": null,
     "stock": 3,
     "images": [
-      "assets/products/grey-mix-velvet.jpg",
       "assets/products/grey-mix-velvet-2.jpg"
     ],
     "desc": "Velvet-yarn scrunchie in a heathered grey mix.",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/grey-mix-velvet.jpg",
-    "image2": "assets/products/grey-mix-velvet-2.jpg"
-  },
-  {
-    "id": "scallop-bandana",
-    "name": "Bandana (blue)",
-    "category": "Accessories",
-    "subcategory": "Bandanas",
-    "price": 30,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/scallop-bandana.jpg"
-    ],
-    "desc": "A scalloped-edge bandana in cool blue — a little more drama at the hairline.\n\n100% cotton\n14” wide\n9” long",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/scallop-bandana.jpg",
+    "image": "assets/products/grey-mix-velvet-2.jpg",
     "image2": null
-  },
-  {
-    "id": "brook-sun-hat",
-    "name": "Brook sun hat",
-    "category": "Accessories",
-    "subcategory": "Hats",
-    "price": 40,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/brook-sun-hat.jpg",
-      "assets/products/brook-sun-hat-2.jpg"
-    ],
-    "desc": "A wide-brim cotton sun hat for slow, bright days. suitable for 22\" circumference fit.",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T18:50:38+01:00",
-    "image": "assets/products/brook-sun-hat.jpg",
-    "image2": "assets/products/brook-sun-hat-2.jpg"
   },
   {
     "id": "candy-floss-bag",
@@ -320,32 +164,13 @@ window.CATALOG = [
     "image2": null
   },
   {
-    "id": "cotton-basket",
-    "name": "Sophie basket",
-    "category": "Sale",
-    "subcategory": "",
-    "price": 120,
-    "sale": 60,
-    "stock": 1,
-    "images": [
-      "assets/products/IMG_5797.jpeg",
-      "assets/products/IMG_5796.jpeg"
-    ],
-    "desc": "Sample basket",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-27T17:58",
-    "image": "assets/products/IMG_5797.jpeg",
-    "image2": "assets/products/IMG_5796.jpeg"
-  },
-  {
     "id": "gaia-clutch-golden",
     "name": "Gaia clutch (golden)",
     "category": "Bags",
     "subcategory": "",
     "price": 100,
     "sale": null,
-    "stock": null,
+    "stock": 0,
     "images": [
       "assets/products/Photoroom_20260819_175918.jpeg",
       "assets/products/Photoroom_20260819_175752.jpeg"
@@ -417,7 +242,7 @@ window.CATALOG = [
   },
   {
     "id": "luna-knot-bag",
-    "name": "Luna knot bag",
+    "name": "Velora knot bag",
     "category": "Bags",
     "subcategory": "",
     "price": 100,
@@ -435,24 +260,6 @@ window.CATALOG = [
     "image2": "assets/products/IMG_7063.jpeg"
   },
   {
-    "id": "pink-yellow-bag",
-    "name": "Pink/yellow bag",
-    "category": "Sale",
-    "subcategory": "",
-    "price": 90,
-    "sale": 45,
-    "stock": 1,
-    "images": [
-      "assets/products/Photoroom_20260726_133316.jpeg"
-    ],
-    "desc": "Sample bag",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-27T07:01",
-    "image": "assets/products/Photoroom_20260726_133316.jpeg",
-    "image2": null
-  },
-  {
     "id": "pouch-bag",
     "name": "Yasmine (medium)",
     "category": "Bags",
@@ -468,24 +275,6 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-08-21T13:39",
     "image": "assets/products/Photoroom_20260816_124439.jpeg",
-    "image2": null
-  },
-  {
-    "id": "sample-bag",
-    "name": "Sample bag",
-    "category": "Sale",
-    "subcategory": "",
-    "price": 100,
-    "sale": 65,
-    "stock": 1,
-    "images": [
-      "assets/products/Photoroom_20260727_150520.jpeg"
-    ],
-    "desc": "Sample bag",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-27T17:59",
-    "image": "assets/products/Photoroom_20260727_150520.jpeg",
     "image2": null
   },
   {
@@ -552,7 +341,7 @@ window.CATALOG = [
     "subcategory": "",
     "price": 100,
     "sale": null,
-    "stock": 1,
+    "stock": 0,
     "images": [
       "assets/products/Photoroom_20260720_111040.JPG",
       "assets/products/Photoroom_20260720_110938.JPG",
@@ -611,7 +400,7 @@ window.CATALOG = [
     "subcategory": "",
     "price": 85,
     "sale": null,
-    "stock": 1,
+    "stock": 0,
     "images": [
       "assets/products/Photoroom_20260722_224226.JPG",
       "assets/products/Photoroom_20260722_224135.JPG"
@@ -663,10 +452,10 @@ window.CATALOG = [
   {
     "id": "zinnia-brown",
     "name": "Zuri Camo",
-    "category": "Bags",
+    "category": "Sale",
     "subcategory": "",
     "price": 100,
-    "sale": null,
+    "sale": 50,
     "stock": 1,
     "images": [
       "assets/products/Photoroom_20260718_110753.jpeg"
@@ -699,10 +488,10 @@ window.CATALOG = [
   {
     "id": "zinnia-wine",
     "name": "Willa  Wine",
-    "category": "Bags",
+    "category": "Sale",
     "subcategory": "",
     "price": 100,
-    "sale": null,
+    "sale": 50,
     "stock": 1,
     "images": [
       "assets/products/Photoroom_20260718_110535.jpeg"
@@ -712,24 +501,6 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-18T12:42",
     "image": "assets/products/Photoroom_20260718_110535.jpeg",
-    "image2": null
-  },
-  {
-    "id": "zinnia-yellow",
-    "name": "Zuri  yellow",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 100,
-    "sale": null,
-    "stock": 0,
-    "images": [
-      "assets/products/Photoroom_20260718_110440.jpeg"
-    ],
-    "desc": "Soft, durable and stylish\nSize: 23cm Length, 13cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-18T09:57:07+01:00",
-    "image": "assets/products/Photoroom_20260718_110440.jpeg",
     "image2": null
   },
   {
@@ -809,10 +580,10 @@ window.CATALOG = [
   {
     "id": "zuri-strawberry-matcha",
     "name": "Zuri (strawberry matcha)",
-    "category": "Bags",
+    "category": "Sale",
     "subcategory": "",
     "price": 100,
-    "sale": null,
+    "sale": 60,
     "stock": 1,
     "images": [
       "assets/products/Photoroom_20260805_170326.jpeg",

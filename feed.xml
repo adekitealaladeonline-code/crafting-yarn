@@ -6,139 +6,13 @@
     <description>Hand-crocheted bags and accessories, made one at a time in the UAE.</description>
     <item>
       <g:id>teal-velvet</g:id>
-      <g:title>Velvet scrunchie (Teal)</g:title>
-      <g:description>A plush velvet-yarn scrunchie in deep teal. Gentle on hair, loud on charm.</g:description>
+      <g:title>Velvet scrunchie (Gold)</g:title>
+      <g:description>Velvet yarn scrunchie in Gold. Gentle on hair.</g:description>
       <g:link>https://craftingyarn.com/product/teal-velvet.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/teal-velvet.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/teal-velvet-2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>20.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>brown-picot-bandana</g:id>
-      <g:title>Bandana (brown)</g:title>
-      <g:description>A picot-edged hair bandana in cocoa brown. Ties at the nape, finishes any look. 
-Made with cotton yarn. It measures 14&quot; x 9&quot;.</g:description>
-      <g:link>https://craftingyarn.com/product/brown-picot-bandana.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/brown-picot-bandana.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/brown-picot-bandana-2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>30.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>picot-bandana-black</g:id>
-      <g:title>Bandana (Black)</g:title>
-      <g:description>The picot bandana in black — the most-worn thing you&apos;ll own.
-Handmade-100% cotton
-14” wide
-9” long</g:description>
-      <g:link>https://craftingyarn.com/product/picot-bandana-black.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/picot-bandana-black.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/picot-bandana-black-2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>30.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>pink-picot-bandana</g:id>
-      <g:title>Bandana (pink)</g:title>
-      <g:description>A sweet handmade  bandana in candy pink.
-100% cotton- 
-13.5” wide
-8.5” long</g:description>
-      <g:link>https://craftingyarn.com/product/pink-picot-bandana.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/pink-picot-bandana.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/pink-picot-bandana-2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>30.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>kay-bucket-hat</g:id>
-      <g:title>Kay wavy bucket hat</g:title>
-      <g:description>The Kay bucket hat with a wavy, hand-shaped brim. Sun cover with personality. 100% cotton with a 22&quot; ciruumference fit.</g:description>
-      <g:link>https://craftingyarn.com/product/kay-bucket-hat.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/kay-bucket-hat.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/kay-bucket-hat-2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>40.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>bandana-sunset</g:id>
-      <g:title>Bandana (sunset)</g:title>
-      <g:description>Sunset-striped bandana — warm ombré tones for golden hour, all day.
-100% acrylic yarn
-14” wide
-9” long</g:description>
-      <g:link>https://craftingyarn.com/product/bandana-sunset.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/bandana-sunset.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/bandana-sunset-2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>30.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>bandana-buttercream</g:id>
-      <g:title>Bandana (buttercream)</g:title>
-      <g:description>Handmade buttercream coloured bandana with a picot trim, made with a 100% cotton yarn.
-13.5” wide
-9” long</g:description>
-      <g:link>https://craftingyarn.com/product/bandana-buttercream.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/bandana-buttercream.jpg</g:image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260908_085422.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>30.00 AED</g:price>
+      <g:price>20.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -154,8 +28,8 @@ Handmade-100% cotton
       <g:title>Velvet scrunchie (Burgundy)</g:title>
       <g:description>Velvet scrunchie in rich burgundy.</g:description>
       <g:link>https://craftingyarn.com/product/burgundy-velvet.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/burgundy-velvet.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/burgundy-velvet-2.jpg</g:additional_image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/burgundy-velvet-2.jpg</g:image_link>
+
       <g:availability>in_stock</g:availability>
       <g:price>20.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
@@ -173,8 +47,8 @@ Handmade-100% cotton
       <g:title>Velvet scrunchie (Navy)</g:title>
       <g:description>Velvet-yarn scrunchie in navy — the everyday neutral.</g:description>
       <g:link>https://craftingyarn.com/product/navy-velvet.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/navy-velvet.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/navy-velvet-2.jpg</g:additional_image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/navy-velvet-2.jpg</g:image_link>
+
       <g:availability>in_stock</g:availability>
       <g:price>20.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
@@ -192,8 +66,8 @@ Handmade-100% cotton
       <g:title>Velvet scrunchie (White)</g:title>
       <g:description>Velvet-yarn scrunchie in soft white.</g:description>
       <g:link>https://craftingyarn.com/product/white-velvet.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/white-velvet.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/white-velvet-2.jpg</g:additional_image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/white-velvet-2.jpg</g:image_link>
+
       <g:availability>in_stock</g:availability>
       <g:price>20.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
@@ -211,8 +85,8 @@ Handmade-100% cotton
       <g:title>Velvet scrunchie (brown)</g:title>
       <g:description>Velvet-yarn scrunchie in chocolate brown.</g:description>
       <g:link>https://craftingyarn.com/product/brown-velvet.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/brown-velvet.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/brown-velvet-2.jpg</g:additional_image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/brown-velvet-2.jpg</g:image_link>
+
       <g:availability>in_stock</g:availability>
       <g:price>20.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
@@ -230,52 +104,10 @@ Handmade-100% cotton
       <g:title>Velvet scrunchie (Grey mix)</g:title>
       <g:description>Velvet-yarn scrunchie in a heathered grey mix.</g:description>
       <g:link>https://craftingyarn.com/product/grey-mix-velvet.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/grey-mix-velvet.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/grey-mix-velvet-2.jpg</g:additional_image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/grey-mix-velvet-2.jpg</g:image_link>
+
       <g:availability>in_stock</g:availability>
       <g:price>20.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>scallop-bandana</g:id>
-      <g:title>Bandana (blue)</g:title>
-      <g:description>A scalloped-edge bandana in cool blue — a little more drama at the hairline.
-
-100% cotton
-14” wide
-9” long</g:description>
-      <g:link>https://craftingyarn.com/product/scallop-bandana.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/scallop-bandana.jpg</g:image_link>
-
-      <g:availability>in_stock</g:availability>
-      <g:price>30.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
-      <g:product_type>Accessories</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>brook-sun-hat</g:id>
-      <g:title>Brook sun hat</g:title>
-      <g:description>A wide-brim cotton sun hat for slow, bright days. suitable for 22&quot; circumference fit.</g:description>
-      <g:link>https://craftingyarn.com/product/brook-sun-hat.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/brook-sun-hat.jpg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/brook-sun-hat-2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>40.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -347,33 +179,13 @@ Handmade-100% cotton
       </g:shipping>
     </item>
     <item>
-      <g:id>cotton-basket</g:id>
-      <g:title>Sophie basket</g:title>
-      <g:description>Sample basket</g:description>
-      <g:link>https://craftingyarn.com/product/cotton-basket.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/IMG_5797.jpeg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_5796.jpeg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>120.00 AED</g:price>
-      <g:sale_price>60.00 AED</g:sale_price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
-      <g:product_type>Sale</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
       <g:id>gaia-clutch-golden</g:id>
       <g:title>Gaia clutch (golden)</g:title>
       <g:description>Stylish clutch bag. Length 22cm Height 15cm</g:description>
       <g:link>https://craftingyarn.com/product/gaia-clutch-golden.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260819_175918.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260819_175752.jpeg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -447,7 +259,7 @@ Handmade-100% cotton
     </item>
     <item>
       <g:id>luna-knot-bag</g:id>
-      <g:title>Luna knot bag</g:title>
+      <g:title>Velora knot bag</g:title>
       <g:description>Beautiful faux leather bag with a knotted handle. 
 Size: 20cm Length, 19cm Height 
 Lightweight, stylish  and versatile for any occasion.</g:description>
@@ -461,26 +273,6 @@ Lightweight, stylish  and versatile for any occasion.</g:description>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
       <g:product_type>Bags</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>pink-yellow-bag</g:id>
-      <g:title>Pink/yellow bag</g:title>
-      <g:description>Sample bag</g:description>
-      <g:link>https://craftingyarn.com/product/pink-yellow-bag.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133316.jpeg</g:image_link>
-
-      <g:availability>in_stock</g:availability>
-      <g:price>90.00 AED</g:price>
-      <g:sale_price>45.00 AED</g:sale_price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
-      <g:product_type>Sale</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>
@@ -501,26 +293,6 @@ Height-16cm, Length-24cm</g:description>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
       <g:product_type>Bags</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>sample-bag</g:id>
-      <g:title>Sample bag</g:title>
-      <g:description>Sample bag</g:description>
-      <g:link>https://craftingyarn.com/product/sample-bag.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260727_150520.jpeg</g:image_link>
-
-      <g:availability>in_stock</g:availability>
-      <g:price>100.00 AED</g:price>
-      <g:sale_price>65.00 AED</g:sale_price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
-      <g:product_type>Sale</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>
@@ -595,7 +367,7 @@ Height-16cm, Length-24cm</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_110938.JPG</g:additional_image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_111200.JPG</g:additional_image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260720_111116.JPG</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -670,7 +442,7 @@ Light and durable</g:description>
       <g:link>https://craftingyarn.com/product/velora-olive.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260722_224226.JPG</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260722_224135.JPG</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:price>85.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
@@ -741,11 +513,12 @@ Comfortable handle for easy carry</g:description>
 
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:sale_price>50.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
-      <g:product_type>Bags</g:product_type>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>
@@ -785,33 +558,12 @@ Comfortable handle for easy carry</g:description>
 
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:sale_price>50.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
-      <g:product_type>Bags</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>zinnia-yellow</g:id>
-      <g:title>Zuri  yellow</g:title>
-      <g:description>Soft, durable and stylish
-Size: 23cm Length, 13cm Height 
-Lightweight and versatile for any occasion 
-Comfortable handle for easy carry</g:description>
-      <g:link>https://craftingyarn.com/product/zinnia-yellow.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260718_110440.jpeg</g:image_link>
-
-      <g:availability>out_of_stock</g:availability>
-      <g:price>100.00 AED</g:price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
-      <g:product_type>Bags</g:product_type>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>
@@ -917,11 +669,12 @@ Comfortable handle for easy carry</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260805_170447.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:sale_price>60.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
-      <g:product_type>Bags</g:product_type>
+      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
+      <g:product_type>Sale</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>

@@ -1,0 +1,45 @@
+name: Optimise uploaded photos
+
+# Freda uploads photos straight from her phone (4000px, several MB). Those files
+# are what the CMS media library loads as thumbnails, so big originals make the
+# picture picker slow and unreliable for her.
+#
+# This shrinks any oversized photo IN THE REPO right after she publishes, and
+# commits the smaller version back. Commits made with GITHUB_TOKEN don't
+# re-trigger workflows, so this can't loop.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/**"
+
+permissions:
+  contents: write
+
+jobs:
+  optimise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Shrink oversized photos
+        run: node scripts/optimise-assets.js
+
+      - name: Commit if anything changed
+        run: |
+          if [[ -n "$(git status --porcelain assets)" ]]; then
+            git config user.name  "crafting-yarn bot"
+            git config user.email "actions@github.com"
+            git add assets
+            git commit -m "Auto-optimise uploaded photos for the web"
+            git push
+          else
+            echo "nothing to optimise"
+          fi
