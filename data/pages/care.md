@@ -1,6 +1,6 @@
 ---
-eyebrow: Good to know
-heading: Caring for your crochet bags
+eyebrow: Care guide
+heading: Caring for your bags
 description: How to wash, dry and store your handmade crochet pieces.
 ---
 
