@@ -4,9 +4,10 @@
     "intro": "All items are hand stitched one step at a time."
   },
   "bags": {
-    "heading": "May bags",
+    "heading": "Crochet Bags",
     "intro": "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same.",
     "lines": [
+      { "label": "May", "match": "may" },
       { "label": "Zuri", "match": "zuri" },
       { "label": "Velora", "match": "velora" },
       { "label": "Yasmine", "match": "yasmine" },

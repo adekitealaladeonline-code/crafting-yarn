@@ -1,24 +1,6 @@
 /* AUTO-GENERATED from data/products/*.json by build.js — do not edit here; edit products in the CMS (/admin). */
 window.CATALOG = [
   {
-    "id": "teal-velvet",
-    "name": "Velvet scrunchie (Gold)",
-    "category": "Accessories",
-    "subcategory": "Scrunchies",
-    "price": 20,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/Photoroom_20260908_085422.jpeg"
-    ],
-    "desc": "Velvet yarn scrunchie in Gold. Gentle on hair.",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-06-18T21:50:00",
-    "image": "assets/products/Photoroom_20260908_085422.jpeg",
-    "image2": null
-  },
-  {
     "id": "burgundy-velvet",
     "name": "Velvet scrunchie (Burgundy)",
     "category": "Accessories",
@@ -47,7 +29,7 @@ window.CATALOG = [
     "images": [
       "assets/products/navy-velvet-2.jpg"
     ],
-    "desc": "Velvet-yarn scrunchie in navy — the everyday neutral.",
+    "desc": "Velvet-yarn scrunchie in navy",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
@@ -335,27 +317,6 @@ window.CATALOG = [
     "image2": "assets/products/Photoroom_20260726_133533.jpeg"
   },
   {
-    "id": "tori-crossbody",
-    "name": "Tori crossbody",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 100,
-    "sale": null,
-    "stock": 0,
-    "images": [
-      "assets/products/Photoroom_20260720_111040.JPG",
-      "assets/products/Photoroom_20260720_110938.JPG",
-      "assets/products/Photoroom_20260720_111200.JPG",
-      "assets/products/Photoroom_20260720_111116.JPG"
-    ],
-    "desc": "Sturdy cotton crossbody bag with a detachable chain. Strap length 85cm. Length 20cm. Height 17cm.",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-08-06T09:01",
-    "image": "assets/products/Photoroom_20260720_111040.JPG",
-    "image2": "assets/products/Photoroom_20260720_110938.JPG"
-  },
-  {
     "id": "velora-brown-leather",
     "name": "Velora Brown leather",
     "category": "Bags",
@@ -394,25 +355,6 @@ window.CATALOG = [
     "image2": "assets/products/IMG_7108.jpeg"
   },
   {
-    "id": "velora-olive",
-    "name": "Velora Olive",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 85,
-    "sale": null,
-    "stock": 0,
-    "images": [
-      "assets/products/Photoroom_20260722_224226.JPG",
-      "assets/products/Photoroom_20260722_224135.JPG"
-    ],
-    "desc": "Cute and stylish donut bag with removable brooch. \n\n\n17cm Height, 21 Length\n\n\nLight and durable",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-23T07:33",
-    "image": "assets/products/Photoroom_20260722_224226.JPG",
-    "image2": "assets/products/Photoroom_20260722_224135.JPG"
-  },
-  {
     "id": "velora-rose-pink",
     "name": "Velora (Rose pink)",
     "category": "Bags",
@@ -432,6 +374,42 @@ window.CATALOG = [
     "image2": "assets/products/Photoroom_20260730_084712.jpeg"
   },
   {
+    "id": "velvet-scrunchie-gold",
+    "name": "Velvet scrunchie (Gold)",
+    "category": "Accessories",
+    "subcategory": "",
+    "price": 20,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260908_085449.jpeg"
+    ],
+    "desc": "Velvet scrunchie in gold",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-09T10:56:00",
+    "image": "assets/products/Photoroom_20260908_085449.jpeg",
+    "image2": null
+  },
+  {
+    "id": "velvet-scrunchie-light-pink",
+    "name": "Velvet scrunchie (light pink)",
+    "category": "Accessories",
+    "subcategory": "",
+    "price": 20,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260908_085541.jpeg"
+    ],
+    "desc": "Velvet scrunchie in light pink",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-09T11:05:00",
+    "image": "assets/products/Photoroom_20260908_085541.jpeg",
+    "image2": null
+  },
+  {
     "id": "yasmine-small-grey",
     "name": "Yasmine (small- grey)",
     "category": "Bags",
@@ -447,24 +425,6 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-03T18:10:00",
     "image": "assets/products/Photoroom_20260903_104649.jpg",
-    "image2": null
-  },
-  {
-    "id": "zinnia-brown",
-    "name": "Zuri Camo",
-    "category": "Sale",
-    "subcategory": "",
-    "price": 100,
-    "sale": 50,
-    "stock": 1,
-    "images": [
-      "assets/products/Photoroom_20260718_110753.jpeg"
-    ],
-    "desc": "Soft, durable and stylish\nSize: 23cm Length, 15cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-18T09:48:26+01:00",
-    "image": "assets/products/Photoroom_20260718_110753.jpeg",
     "image2": null
   },
   {
@@ -491,7 +451,7 @@ window.CATALOG = [
     "category": "Sale",
     "subcategory": "",
     "price": 100,
-    "sale": 50,
+    "sale": 65,
     "stock": 1,
     "images": [
       "assets/products/Photoroom_20260718_110535.jpeg"
@@ -501,24 +461,6 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-18T12:42",
     "image": "assets/products/Photoroom_20260718_110535.jpeg",
-    "image2": null
-  },
-  {
-    "id": "zuri-bright",
-    "name": "Zuri Candy",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 110,
-    "sale": null,
-    "stock": 1,
-    "images": [
-      "assets/products/Photoroom_20260719_083634.jpeg"
-    ],
-    "desc": "Soft, Bright and ultra stylish.\nSize: 25cm Length, 15cm Height \nLightweight and versatile for any occasion.\nComfortable handle for easy carry",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-19T05:44:39+01:00",
-    "image": "assets/products/Photoroom_20260719_083634.jpeg",
     "image2": null
   },
   {
@@ -559,31 +501,12 @@ window.CATALOG = [
     "image2": "assets/products/Photoroom_20260728_133656.jpeg"
   },
   {
-    "id": "zuri-olive-camo",
-    "name": "Zuri (Olive camo)",
-    "category": "Bags",
-    "subcategory": "",
-    "price": 100,
-    "sale": null,
-    "stock": 0,
-    "images": [
-      "assets/products/Photoroom_20260730_093730.jpeg",
-      "assets/products/IMG_7191.jpeg"
-    ],
-    "desc": "Soft, Bright and ultra stylish.\nSize: 23cm Length, 14cm Height \nLightweight and versatile for any occasion.\nComfortable handle for easy carry",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-30T09:40",
-    "image": "assets/products/Photoroom_20260730_093730.jpeg",
-    "image2": "assets/products/IMG_7191.jpeg"
-  },
-  {
     "id": "zuri-strawberry-matcha",
     "name": "Zuri (strawberry matcha)",
     "category": "Sale",
     "subcategory": "",
     "price": 100,
-    "sale": 60,
+    "sale": 55,
     "stock": 1,
     "images": [
       "assets/products/Photoroom_20260805_170326.jpeg",
