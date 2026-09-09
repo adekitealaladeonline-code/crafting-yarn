@@ -85,6 +85,30 @@ const CAT_H1 = {
   Accessories: copyFor("accessories", "heading", "Crochet Accessories"),
 };
 const CAT_SINGULAR = { Bags: "Bag", Accessories: "Accessory" };
+
+/* Sub-filters WITHIN a category page — the bag lines (Zuri, Velora, Yasmine,
+   Clutch) and accessory types. Editable in data/categories.json so Freda can
+   add a line when she starts one. Each entry matches on the product NAME, so
+   nothing needs re-tagging and new "Zuri …" bags join their line automatically.
+   Filtering happens client-side in app.js; lines with no products are dropped. */
+const linesFor = (cat) => {
+  const key = String(cat).toLowerCase();
+  const defs = (CATCOPY[key] && CATCOPY[key].lines) || [];
+  return Array.isArray(defs) ? defs.filter((l) => l && l.label && l.match) : [];
+};
+const lineNav = (cat, items) => {
+  const defs = linesFor(cat).filter((l) =>
+    items.some((p) => String(p.name || "").toLowerCase().includes(String(l.match).toLowerCase()))
+  );
+  // one line that covers everything is just noise — only show real choices
+  if (defs.length < 2) return "";
+  const chips = defs.map(
+    (l) => `<button class="chip" data-line="${esc(String(l.match).toLowerCase())}">${esc(l.label)}</button>`
+  ).join("");
+  return `<nav class="linenav" id="lineNav" aria-label="${esc(cat)} lines">
+      <button class="chip is-active" data-line="">All</button>${chips}
+    </nav>`;
+};
 const CAT_INTRO = {
   Bags: copyFor("bags", "intro", "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same."),
   Accessories: copyFor("accessories", "intro", "Bandanas, scrunchies, bucket hats and more — all crocheted by hand."),
@@ -663,6 +687,7 @@ for (const cat of CATEGORIES) {
       </div>
       ${catNav("", cat)}
     </div>
+    ${lineNav(cat, items)}
     <div class="shop__bar shop__bar--cat">
       <span class="shop__count" id="gridCount">${n} ${n === 1 ? "piece" : "pieces"}</span>
       <label for="sortSelect" class="sr-only">Sort products</label>

@@ -425,3 +425,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto}
 }
+
+/* Line sub-filters inside a category page (Zuri / Velora / Yasmine / Clutch) */
+.linenav{display:flex;flex-wrap:wrap;gap:.5rem;max-width:var(--maxw);margin:0 auto 1.6rem;padding:0 var(--gut)}
+.linenav .chip{cursor:pointer;font-family:var(--font)}
+@media(max-width:560px){
+  .linenav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+  .linenav .chip{white-space:nowrap}
+}

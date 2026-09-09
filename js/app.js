@@ -156,6 +156,9 @@
      SHOP GRID — filter + sort
   ---------------------------------------------------------------- */
   let activeFilter = "all";
+  // Sub-filter within a category page (bag lines: zuri / velora / …). Matches on
+  // the product name, so new pieces in a line are picked up with no re-tagging.
+  let activeLine = "";
   let activeSort = "featured";
   let searchTerm = "";
 
@@ -169,6 +172,7 @@
     if (activeFilter === "sale") list = list.filter((p) => isSaleCat(p) || p.sale != null);
     else if (activeFilter === "all") list = list.filter((p) => !isSaleCat(p));
     else list = list.filter((p) => p.category === activeFilter);
+    if (activeLine) list = list.filter((p) => String(p.name || "").toLowerCase().includes(activeLine));
     if (searchTerm) {
       const t = searchTerm.toLowerCase();
       list = list.filter((p) =>
@@ -428,6 +432,15 @@
     });
 
     on("#sortSelect", "change", (e) => { activeSort = e.target.value; renderGrid(); });
+
+    // bag/accessory line chips (Zuri, Velora, …) inside a category page
+    on("#lineNav", "click", (e) => {
+      const chip = e.target.closest(".chip");
+      if (!chip) return;
+      activeLine = chip.dataset.line || "";
+      $$("#lineNav .chip").forEach((c) => c.classList.toggle("is-active", c === chip));
+      renderGrid();
+    });
 
     on("#cartBody", "click", (e) => {
       const inc = e.target.closest("[data-inc]");

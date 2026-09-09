@@ -4,11 +4,22 @@
     "intro": "All items are hand stitched one step at a time."
   },
   "bags": {
-    "heading": "Crochet Bags",
-    "intro": "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same."
+    "heading": "May bags",
+    "intro": "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same.",
+    "lines": [
+      { "label": "Zuri", "match": "zuri" },
+      { "label": "Velora", "match": "velora" },
+      { "label": "Yasmine", "match": "yasmine" },
+      { "label": "Clutch", "match": "clutch" }
+    ]
   },
   "accessories": {
     "heading": "Crochet Accessories",
-    "intro": "Head ties/bandanas, scrunchies, bucket hats and more — all crocheted by hand."
+    "intro": "Head ties/bandanas, scrunchies, bucket hats and more — all crocheted by hand.",
+    "lines": [
+      { "label": "Bandanas", "match": "bandana" },
+      { "label": "Scrunchies", "match": "scrunchie" },
+      { "label": "Hats", "match": "hat" }
+    ]
   }
 }
