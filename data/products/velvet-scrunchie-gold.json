@@ -1,0 +1,17 @@
+{
+  "name": "Velvet scrunchie (Gold)",
+  "category": "Accessories",
+  "subcategory": "",
+  "price": 20,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260908_085449.jpeg",
+    "/assets/products/Photoroom_20260908_085422.jpeg"
+  ],
+  "desc": "Velvet scrunchie in gold",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-09T10:56:00"
+}
