@@ -1,0 +1,17 @@
+{
+  "name": "May (Whimsical)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 150,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260907_152159.jpeg",
+    "/assets/products/Photoroom_20260907_152122.jpeg"
+  ],
+  "desc": "A statement bag to best compliment your style. \n\n\nLength 24cm\nHeight 17cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-10T18:10:00"
+}
