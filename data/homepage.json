@@ -1,14 +1,14 @@
 {
   "hero": {
     "image": "assets/brand/hero.jpg",
-    "title": "Crocheted\nwith love",
+    "title": "Handmade\nwith love",
     "button": "Shop now",
     "style": "light"
   },
   "banners": [
     {
       "image": "/assets/products/Photoroom_20260905_161128.JPG",
-      "eyebrow": "The bags",
+      "eyebrow": "Nué bags",
       "title": "Carry\ncolour",
       "category": "Bags",
       "button": "Shop now",
@@ -23,7 +23,7 @@
   "story": {
     "image": "",
     "eyebrow": "Hello friend",
-    "title": "Handmade with love",
+    "title": "Crocheted with love",
     "text": "My small business started off as a little hobby to make hats and scarfs for my family holiday. Little did I know it would turn into a daily joyous need to create beautiful unique items for you. All items are handmade by me with lots of love and I hope you enjoy shopping with me as much as I have loved crocheting for you. <3 xx",
     "button": "Shop all pieces"
   },
