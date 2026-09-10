@@ -1,0 +1,17 @@
+{
+  "name": "May (Blues)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 110,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260905_161128.JPG",
+    "/assets/products/Photoroom_20260907_152234.jpeg"
+  ],
+  "desc": "A stunning versatile bag to perfectly enhance your style. \n\nLength 22cm\nHeight 16cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-10T18:08:00"
+}
