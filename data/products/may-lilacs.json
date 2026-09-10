@@ -1,0 +1,17 @@
+{
+  "name": "May (Lilacs)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 150,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260910_182844.jpg",
+    "/assets/products/Photoroom_20260910_182807.jpg"
+  ],
+  "desc": "A burst of subtle colours\n\n\nLength 24cm\nHeight 15cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-10T18:38:00"
+}
