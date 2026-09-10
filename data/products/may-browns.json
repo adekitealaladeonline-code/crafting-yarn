@@ -1,0 +1,16 @@
+{
+  "name": "May (browns)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 150,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/IMG_7866.jpg"
+  ],
+  "desc": "A neutral everyday bag. \n\nLength 24cm\nHeight 16cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-10T18:16:00"
+}
