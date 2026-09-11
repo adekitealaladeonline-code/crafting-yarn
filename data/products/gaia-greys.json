@@ -1,0 +1,17 @@
+{
+  "name": "Gaia (greys)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 110,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260907_152556.jpeg",
+    "/assets/products/Photoroom_20260907_152422.jpeg"
+  ],
+  "desc": "A neutral grey clutch with metallic clasp. \n\nLength 21cm\nHeight 14cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-11T08:23:00"
+}
