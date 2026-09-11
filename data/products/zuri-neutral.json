@@ -1,0 +1,16 @@
+{
+  "name": "Zuri (neutral)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 110,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/IMG_7787.jpeg"
+  ],
+  "desc": "Everyday staple made with detachable accessory. \n\nLength 23cm\nHeight 15cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-11T08:55:00"
+}
