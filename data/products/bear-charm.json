@@ -1,0 +1,16 @@
+{
+  "name": "Bear charm",
+  "category": "Accessories",
+  "subcategory": "Bag Charms",
+  "price": 40,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20260908_074617.jpeg"
+  ],
+  "desc": "A cute bear bag charm.",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-11T14:56:00"
+}
