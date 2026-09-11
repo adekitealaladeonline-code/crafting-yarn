@@ -172,7 +172,11 @@
     if (activeFilter === "sale") list = list.filter((p) => isSaleCat(p) || p.sale != null);
     else if (activeFilter === "all") list = list.filter((p) => !isSaleCat(p));
     else list = list.filter((p) => p.category === activeFilter);
-    if (activeLine) list = list.filter((p) => String(p.name || "").toLowerCase().includes(activeLine));
+    // Subcategory is the deliberate control; product name is the fallback.
+    if (activeLine) list = list.filter((p) => {
+      const sub = String(p.subcategory || "").toLowerCase().trim();
+      return sub ? sub.includes(activeLine) : String(p.name || "").toLowerCase().includes(activeLine);
+    });
     if (searchTerm) {
       const t = searchTerm.toLowerCase();
       list = list.filter((p) =>
@@ -276,7 +280,10 @@
     $("#modalPrice").innerHTML = p.sale != null
       ? `<span class="now">${money(p.sale)}</span><span class="was">${money(p.price)}</span><span class="off">Save ${off}%</span>`
       : `<span class="now">${money(p.price)}</span>`;
-    $("#modalDesc").textContent = p.desc;
+    // keep the line breaks Freda typed (blurb, then Length/Height on their own lines)
+    $("#modalDesc").innerHTML = String(p.desc || "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/\r?\n/g, "<br/>");
     // sold out -> browse-only, so the modal's Add button is disabled too
     const mAdd = $("#modalAdd");
     if (mAdd) {

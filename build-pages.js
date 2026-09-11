@@ -28,6 +28,15 @@ const priceOf = (p) => (p.sale != null ? p.sale : p.price);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 // editable multi-line headline -> safe HTML with <br/>
 const lines = (s) => esc(String(s || "").trim()).replace(/\r?\n/g, "<br/>");
+/* Product descriptions: Freda writes them with real line breaks (e.g. the blurb,
+   then "Length 24cm" / "Height 17cm" on their own lines). Keep that shape —
+   a blank line becomes a paragraph gap, a single newline a line break. */
+const descHTML = (s) =>
+  esc(String(s || "").trim())
+    .replace(/\r\n/g, "\n")
+    .split(/\n{2,}/)
+    .map((block) => block.replace(/\n/g, "<br/>"))
+    .join('</p><p class="pdp__desc">');
 const readJSON = (rel, fallback = {}) => {
   try { return JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8")); } catch { return fallback; }
 };
@@ -96,10 +105,17 @@ const linesFor = (cat) => {
   const defs = (CATCOPY[key] && CATCOPY[key].lines) || [];
   return Array.isArray(defs) ? defs.filter((l) => l && l.label && l.match) : [];
 };
+// A product joins a line if its Subcategory OR its Name matches. Subcategory
+// wins as the deliberate control (Freda types e.g. "May"); the name match is the
+// fallback so existing pieces work with nothing to re-tag.
+const inLine = (p, match) => {
+  const m = String(match).toLowerCase();
+  const sub = String(p.subcategory || "").toLowerCase().trim();
+  if (sub) return sub.includes(m);
+  return String(p.name || "").toLowerCase().includes(m);
+};
 const lineNav = (cat, items) => {
-  const defs = linesFor(cat).filter((l) =>
-    items.some((p) => String(p.name || "").toLowerCase().includes(String(l.match).toLowerCase()))
-  );
+  const defs = linesFor(cat).filter((l) => items.some((p) => inLine(p, l.match)));
   // one line that covers everything is just noise — only show real choices
   if (defs.length < 2) return "";
   const chips = defs.map(
@@ -827,7 +843,7 @@ for (const p of CATALOG) {
         <p class="pdp__cat">${esc(sub)}</p>
         <h1 class="pdp__name">${esc(p.name)}</h1>
         <div class="pdp__price">${priceHTML}</div>
-        <p class="pdp__desc">${esc(p.desc)}</p>
+        <p class="pdp__desc">${descHTML(p.desc)}</p>
         <ul class="pdp__meta">
           ${metaBullets}
         </ul>

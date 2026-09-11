@@ -155,14 +155,33 @@ window.CATALOG = [
     "stock": 0,
     "images": [
       "assets/products/Photoroom_20260819_175918.jpeg",
-      "assets/products/Photoroom_20260819_175752.jpeg"
+      "assets/products/IMG_4252.jpeg"
     ],
     "desc": "Stylish clutch bag. Length 22cm Height 15cm",
     "featured": false,
     "isNew": false,
     "created": "2026-08-21T14:23",
     "image": "assets/products/Photoroom_20260819_175918.jpeg",
-    "image2": "assets/products/Photoroom_20260819_175752.jpeg"
+    "image2": "assets/products/IMG_4252.jpeg"
+  },
+  {
+    "id": "gaia-greys",
+    "name": "Gaia (greys)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 110,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260907_152556.jpeg",
+      "assets/products/Photoroom_20260907_152422.jpeg"
+    ],
+    "desc": "A neutral grey clutch with metallic clasp. \n\nLength 21cm\nHeight 14cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-11T08:23:00",
+    "image": "assets/products/Photoroom_20260907_152556.jpeg",
+    "image2": "assets/products/Photoroom_20260907_152422.jpeg"
   },
   {
     "id": "grey-black-bag",
@@ -195,7 +214,7 @@ window.CATALOG = [
       "assets/products/IMG_7403.jpeg",
       "assets/products/Photoroom_20260809_145154.jpeg"
     ],
-    "desc": "Stylish clutch bag with detachable brooch. Length 26cm.",
+    "desc": "Stylish clutch bag with detachable brooch. \n\nLength 26cm\nHeight 15cm",
     "featured": false,
     "isNew": false,
     "created": "2026-08-09T15:22",
@@ -215,12 +234,31 @@ window.CATALOG = [
       "assets/products/IMG_7409.jpeg",
       "assets/products/Photoroom_20260809_145427.jpeg"
     ],
-    "desc": "Stylish clutch with detachable brooch. Length 26cm.",
+    "desc": "Stylish clutch with detachable brooch. \n\nLength 26cm\nHeight 15cm",
     "featured": false,
     "isNew": false,
     "created": "2026-08-09T15:28",
     "image": "assets/products/Photoroom_20260809_144847.jpeg",
     "image2": "assets/products/IMG_7409.jpeg"
+  },
+  {
+    "id": "livvy-wine",
+    "name": "Livvy (wine)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 135,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/IMG_7724.JPG",
+      "assets/products/Photoroom_20260824_151209.JPG"
+    ],
+    "desc": "A stunning wine clutch with metallic clasp and a hint of colour. \nLength 26cm\nHeight 16cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-11T08:27:00",
+    "image": "assets/products/IMG_7724.JPG",
+    "image2": "assets/products/Photoroom_20260824_151209.JPG"
   },
   {
     "id": "luna-knot-bag",
@@ -240,6 +278,101 @@ window.CATALOG = [
     "created": "2026-07-28T22:43",
     "image": "assets/products/Photoroom_20260728_180249.jpeg",
     "image2": "assets/products/IMG_7063.jpeg"
+  },
+  {
+    "id": "may-blues",
+    "name": "May (Blues)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 150,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260905_161128.JPG",
+      "assets/products/Photoroom_20260907_152234.jpeg"
+    ],
+    "desc": "A stunning versatile bag to perfectly enhance your style. \n\nLength 22cm\nHeight 16cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-10T18:08:00",
+    "image": "assets/products/Photoroom_20260905_161128.JPG",
+    "image2": "assets/products/Photoroom_20260907_152234.jpeg"
+  },
+  {
+    "id": "may-browns",
+    "name": "May (browns)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 150,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260911_081112.jpeg",
+      "assets/products/IMG_7866.jpg"
+    ],
+    "desc": "A neutral everyday bag. \n\nLength 24cm\nHeight 16cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-10T18:16:00",
+    "image": "assets/products/Photoroom_20260911_081112.jpeg",
+    "image2": "assets/products/IMG_7866.jpg"
+  },
+  {
+    "id": "may-greens",
+    "name": "May (camo)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 150,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260911_081220.jpeg",
+      "assets/products/Photoroom_20260909_161616.JPG"
+    ],
+    "desc": "A must have for your wardrobe \n\nLength 23cm\nHeight 17cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-10T18:19:00",
+    "image": "assets/products/Photoroom_20260911_081220.jpeg",
+    "image2": "assets/products/Photoroom_20260909_161616.JPG"
+  },
+  {
+    "id": "may-lilacs",
+    "name": "May (Lilacs)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 150,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260911_081043.jpeg",
+      "assets/products/Photoroom_20260910_182807.jpg"
+    ],
+    "desc": "A burst of subtle colours\n\n\nLength 24cm\nHeight 15cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-10T18:38:00",
+    "image": "assets/products/Photoroom_20260911_081043.jpeg",
+    "image2": "assets/products/Photoroom_20260910_182807.jpg"
+  },
+  {
+    "id": "may-whimsical",
+    "name": "May (Whimsical)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 150,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260907_152159.jpeg",
+      "assets/products/Photoroom_20260907_152122.jpeg"
+    ],
+    "desc": "A statement bag to best compliment your style. \n\n\nLength 24cm\nHeight 17cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-10T18:10:00",
+    "image": "assets/products/Photoroom_20260907_152159.jpeg",
+    "image2": "assets/products/Photoroom_20260907_152122.jpeg"
   },
   {
     "id": "pouch-bag",
@@ -499,6 +632,24 @@ window.CATALOG = [
     "created": "2026-07-28T22:39",
     "image": "assets/products/Photoroom_20260728_133634.jpeg",
     "image2": "assets/products/Photoroom_20260728_133656.jpeg"
+  },
+  {
+    "id": "zuri-neutral",
+    "name": "Zuri (neutral)",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 110,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/IMG_7787.jpeg"
+    ],
+    "desc": "Everyday staple made with detachable accessory. \n\nLength 23cm\nHeight 15cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-11T08:55:00",
+    "image": "assets/products/IMG_7787.jpeg",
+    "image2": null
   },
   {
     "id": "zuri-strawberry-matcha",

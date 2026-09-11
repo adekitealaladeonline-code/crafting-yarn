@@ -165,9 +165,31 @@
       <g:description>Stylish clutch bag. Length 22cm Height 15cm</g:description>
       <g:link>https://craftingyarn.com/product/gaia-clutch-golden.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260819_175918.jpeg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260819_175752.jpeg</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_4252.jpeg</g:additional_image_link>
       <g:availability>out_of_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>gaia-greys</g:id>
+      <g:title>Gaia (greys)</g:title>
+      <g:description>A neutral grey clutch with metallic clasp. 
+
+Length 21cm
+Height 14cm</g:description>
+      <g:link>https://craftingyarn.com/product/gaia-greys.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260907_152556.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260907_152422.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -201,7 +223,10 @@
     <item>
       <g:id>livvy-clutch-blue</g:id>
       <g:title>Livvy clutch (blue)</g:title>
-      <g:description>Stylish clutch bag with detachable brooch. Length 26cm.</g:description>
+      <g:description>Stylish clutch bag with detachable brooch. 
+
+Length 26cm
+Height 15cm</g:description>
       <g:link>https://craftingyarn.com/product/livvy-clutch-blue.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_145045.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7403.jpeg</g:additional_image_link>
@@ -221,13 +246,37 @@
     <item>
       <g:id>livvy-clutch-green</g:id>
       <g:title>Livvy clutch (green)</g:title>
-      <g:description>Stylish clutch with detachable brooch. Length 26cm.</g:description>
+      <g:description>Stylish clutch with detachable brooch. 
+
+Length 26cm
+Height 15cm</g:description>
       <g:link>https://craftingyarn.com/product/livvy-clutch-green.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_144847.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7409.jpeg</g:additional_image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_145427.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>130.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>livvy-wine</g:id>
+      <g:title>Livvy (wine)</g:title>
+      <g:description>A stunning wine clutch with metallic clasp and a hint of colour. 
+Length 26cm
+Height 16cm</g:description>
+      <g:link>https://craftingyarn.com/product/livvy-wine.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/IMG_7724.JPG</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260824_151209.JPG</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>135.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -249,6 +298,118 @@ Lightweight, stylish  and versatile for any occasion.</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7063.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>may-blues</g:id>
+      <g:title>May (Blues)</g:title>
+      <g:description>A stunning versatile bag to perfectly enhance your style. 
+
+Length 22cm
+Height 16cm</g:description>
+      <g:link>https://craftingyarn.com/product/may-blues.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260905_161128.JPG</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260907_152234.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>150.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>may-browns</g:id>
+      <g:title>May (browns)</g:title>
+      <g:description>A neutral everyday bag. 
+
+Length 24cm
+Height 16cm</g:description>
+      <g:link>https://craftingyarn.com/product/may-browns.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260911_081112.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7866.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>150.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>may-greens</g:id>
+      <g:title>May (camo)</g:title>
+      <g:description>A must have for your wardrobe 
+
+Length 23cm
+Height 17cm</g:description>
+      <g:link>https://craftingyarn.com/product/may-greens.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260911_081220.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260909_161616.JPG</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>150.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>may-lilacs</g:id>
+      <g:title>May (Lilacs)</g:title>
+      <g:description>A burst of subtle colours
+
+
+Length 24cm
+Height 15cm</g:description>
+      <g:link>https://craftingyarn.com/product/may-lilacs.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260911_081043.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260910_182807.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>150.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>may-whimsical</g:id>
+      <g:title>May (Whimsical)</g:title>
+      <g:description>A statement bag to best compliment your style. 
+
+
+Length 24cm
+Height 17cm</g:description>
+      <g:link>https://craftingyarn.com/product/may-whimsical.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260907_152159.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260907_152122.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>150.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -553,6 +714,28 @@ Comfortable handle for easy carry</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260728_133656.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>zuri-neutral</g:id>
+      <g:title>Zuri (neutral)</g:title>
+      <g:description>Everyday staple made with detachable accessory. 
+
+Length 23cm
+Height 15cm</g:description>
+      <g:link>https://craftingyarn.com/product/zuri-neutral.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/IMG_7787.jpeg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>

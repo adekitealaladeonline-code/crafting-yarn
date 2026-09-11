@@ -40,7 +40,7 @@ collections:
       # Bags/Accessories so it shows ONLY on the Sale page (Freda keeps lower-
       # quality/older pieces away from the main collection).
       - { name: category, label: "Category", widget: select, options: ["Bags", "Accessories", "Sale"], hint: "Pick Sale to move an item into the Sale section only — it will no longer appear under Bags or Accessories." }
-      - { name: subcategory, label: "Subcategory", widget: string, required: false }
+      - { name: subcategory, label: "Subcategory (which line it belongs to)", widget: string, required: false, hint: "Type the line name to file this piece under it — e.g. May, Zuri, Velora, Yasmine, Clutch (or Bandanas, Scrunchies, Hats). It then shows under that filter on the Bags/Accessories page. Leave blank and we'll work it out from the product name." }
       - { name: price, label: "Original price (AED)", widget: number, value_type: float, min: 0, step: 1 }
       - { name: sale, label: "Sale price (AED)", widget: number, value_type: float, min: 0, step: 1, required: false, hint: "Set a lower price to put this item on sale — it shows a discount badge and appears on the Sale page automatically. Leave blank if it's not on sale." }
       - { name: stock, label: "Stock", widget: number, value_type: int, min: 0, step: 1, required: false, hint: "How many finished pieces you have. It counts down automatically as orders are paid, and shows 'Sold out' at zero. Leave blank for made-to-order (always available)." }

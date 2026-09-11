@@ -126,8 +126,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   background:linear-gradient(to top right,rgba(20,16,12,.55),rgba(20,16,12,.1) 42%,transparent 70%)}
 .banner__inner{position:absolute;left:0;bottom:0;z-index:2;padding:clamp(28px,5vw,72px);max-width:760px;color:#fff}
 .banner__eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.8rem;opacity:.95}
+/* Same treatment as the "Crafting Yarn" wordmark: weight 800, tight tracking,
+   title case (NOT uppercase) — so the hero reads as part of the same brand. */
 .banner__title{font-weight:800;font-size:clamp(2.8rem,8vw,6.6rem);line-height:.92;letter-spacing:-.02em;
-  text-transform:uppercase;margin-bottom:1.6rem;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+  margin-bottom:1.6rem;text-shadow:0 2px 30px rgba(0,0,0,.25)}
 
 /* =================================================================
    CAROUSEL
