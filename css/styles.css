@@ -438,4 +438,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 /* Product clip. Sits above the photos; shows only its poster frame until tapped. */
 .pdp__video{margin:0 0 1rem}
-.pdp__video video{display:block;width:100%;height:auto;border-radius:var(--r);background:var(--bg)}
+/* Phones shoot portrait, so an unconstrained clip renders taller than the
+   screen and pushes the actual product photos below the fold. Bound it by
+   both edges and let the browser keep the aspect ratio: portrait clips end
+   up a sensible column, landscape ones still fill the width. */
+.pdp__video video{display:block;max-width:100%;max-height:min(70vh,560px);width:auto;height:auto;margin:0 auto;border-radius:var(--r);background:var(--bg)}
