@@ -106,10 +106,13 @@ const catLabel = (c) => copyFor(String(c).toLowerCase(), "menuLabel", c);
 function videoBlock(p, px = "") {
   if (!p.video) return "";
   const poster = p.videoPoster ? ` poster="${px}${esc(p.videoPoster)}"` : "";
+  // normally .mp4 by the time it ships, but don't mislabel it if CI couldn't convert
+  const ext = (String(p.video).match(/\.([^.]+)$/) || [, "mp4"])[1].toLowerCase();
+  const type = ext === "webm" ? "video/webm" : ext === "mov" ? "video/quicktime" : "video/mp4";
   return `<figure class="pdp__video">
           <video controls preload="none"${poster} playsinline muted
                  aria-label="${esc(p.name)} in motion">
-            <source src="${px}${esc(p.video)}" type="video/mp4" />
+            <source src="${px}${esc(p.video)}" type="${type}" />
           </video>
         </figure>
         `;

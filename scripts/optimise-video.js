@@ -51,12 +51,40 @@ if (!FF) { console.warn("⚠ ffmpeg not available — skipping video optimisatio
 const FP = ffprobeBin(FF);
 
 const heightOf = (f) => {
-  if (!FP) return null;
+  if (FP) {
+    try {
+      return parseInt(execFileSync(FP, ["-v", "error", "-select_streams", "v:0",
+        "-show_entries", "stream=height", "-of", "csv=p=0", f], { encoding: "utf8" }).trim(), 10);
+    } catch {}
+  }
+  // no ffprobe (imageio's ffmpeg ships without one): read it off ffmpeg's own
+  // stderr instead, so the size check still knows the real resolution.
   try {
-    return parseInt(execFileSync(FP, ["-v", "error", "-select_streams", "v:0",
-      "-show_entries", "stream=height", "-of", "csv=p=0", f], { encoding: "utf8" }).trim(), 10);
-  } catch { return null; }
+    execFileSync(FF, ["-i", f], { stdio: ["ignore", "ignore", "pipe"] });
+  } catch (e) {
+    const m = String(e.stderr || "").match(/Video:.*?[ ,](\d{2,5})x(\d{2,5})[ ,]/);
+    if (m) return parseInt(m[2], 10);
+  }
+  return null;
 };
+
+/* When a .mov becomes a .mp4, every product JSON pointing at the old name has
+   to follow it. The CMS writes the path with or without a leading slash, so
+   match both. */
+const PRODUCTS_DIR = path.join(ROOT, "data/products");
+function repoint(fromRel, toRel) {
+  if (!fs.existsSync(PRODUCTS_DIR)) return;
+  for (const file of fs.readdirSync(PRODUCTS_DIR).filter((f) => f.endsWith(".json"))) {
+    const full = path.join(PRODUCTS_DIR, file);
+    const txt = fs.readFileSync(full, "utf8");
+    const next = txt.split('"/' + fromRel + '"').join('"/' + toRel + '"')
+                    .split('"' + fromRel + '"').join('"' + toRel + '"');
+    if (next !== txt) {
+      fs.writeFileSync(full, next);
+      console.log(`  repointed ${file}: ${fromRel} -> ${toRel}`);
+    }
+  }
+}
 
 const vids = walk(DIR).filter((f) => /\.(mp4|mov|m4v|webm)$/i.test(f));
 if (!vids.length) { console.log("no videos to optimise"); process.exit(0); }
@@ -67,7 +95,9 @@ for (const f of vids) {
   const orig = fs.statSync(f).size;
   before += orig;
   const h = heightOf(f);
-  const alreadySmall = orig <= SKIP_BYTES && (h === null || h <= MAXH);
+  // A .mov always gets converted even when it is small: phones record QuickTime,
+  // which plays unevenly across browsers, and the poster frame is named off .mp4.
+  const alreadySmall = /\.mp4$/i.test(f) && orig <= SKIP_BYTES && (h === null || h <= MAXH);
 
   if (!alreadySmall) {
     const tmp = f.replace(/\.[^.]+$/, "") + ".tmp.mp4";
@@ -83,8 +113,15 @@ for (const f of vids) {
       ], { stdio: "ignore" });
       const size = fs.statSync(tmp).size;
       if (size < orig) {
-        fs.renameSync(tmp, f.replace(/\.[^.]+$/, ".mp4"));
-        if (!/\.mp4$/i.test(f)) fs.unlinkSync(f); // .mov became .mp4
+        const dest = f.replace(/\.[^.]+$/, ".mp4");
+        fs.renameSync(tmp, dest);
+        if (!/\.mp4$/i.test(f)) {
+          // Phones record .mov, so the file the CMS saved just became .mp4.
+          // Repoint the product(s) at it before deleting the original,
+          // otherwise the page links to a file that no longer exists.
+          repoint(path.relative(ROOT, f), path.relative(ROOT, dest));
+          fs.unlinkSync(f);
+        }
         after += size; changed++;
         console.log(`  ${(orig / 1048576).toFixed(1)}MB -> ${(size / 1048576).toFixed(2)}MB  ${path.relative(ROOT, f)}`);
       } else { fs.unlinkSync(tmp); after += orig; }
@@ -94,8 +131,9 @@ for (const f of vids) {
   }
 
   // poster frame: this is what makes the video free until it is tapped
-  const final = f.replace(/\.[^.]+$/, ".mp4");
-  const poster = final.replace(/\.mp4$/i, "-poster.jpg");
+  const converted = f.replace(/\.[^.]+$/, ".mp4");
+  const final = fs.existsSync(converted) ? converted : f;   // conversion may have failed
+  const poster = final.replace(/\.[^.]+$/, "-poster.jpg");
   if (fs.existsSync(final) && !fs.existsSync(poster)) {
     try {
       execFileSync(FF, ["-y", "-i", final, "-ss", "00:00:00.5", "-vframes", "1",
