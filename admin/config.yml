@@ -50,6 +50,10 @@ collections:
         field: { name: image, label: "Photo", widget: image }
         min: 1
         hint: "Add as many photos as you like — drag to reorder. The first is the main photo; the second shows when someone hovers the card."
+      # 100 MB is GitHub's hard ceiling for a file committed through its API,
+      # which is how the CMS saves uploads. A 10s phone clip is well under it
+      # (~20 MB at 1080p, ~75 MB at 4K). CI shrinks it to a few hundred KB after.
+      - { name: video, label: "Short video (optional)", widget: file, required: false, media_library: { config: { max_file_size: 104857600 } }, hint: "A 5 to 10 second clip of the piece. Upload it straight from your phone, we shrink it automatically. It shows on the product page as a still image and only plays when someone taps it, so it never slows the site down." }
       - { name: desc, label: "Description", widget: text }
       - { name: featured, label: "Highlight in the shop", widget: boolean, default: false, hint: "Bumps this item toward the top of the shop's default 'Featured' view." }
       - { name: isNew, label: "Show a 'New' badge", widget: boolean, default: false }

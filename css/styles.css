@@ -435,3 +435,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .linenav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
   .linenav .chip{white-space:nowrap}
 }
+
+/* Product clip. Sits above the photos; shows only its poster frame until tapped. */
+.pdp__video{margin:0 0 1rem}
+.pdp__video video{display:block;width:100%;height:auto;border-radius:var(--r);background:var(--bg)}

@@ -99,6 +99,22 @@ const CAT_SINGULAR = { Bags: "Bag", Accessories: "Accessory" };
    renaming the section can't break links or lose search ranking. */
 const catLabel = (c) => copyFor(String(c).toLowerCase(), "menuLabel", c);
 
+/* Optional product clip. preload="none" + a poster frame means the browser
+   downloads ZERO bytes of the video until someone actually presses play, so
+   adding video costs nothing for the visitors who never watch it. muted +
+   playsinline keep it well behaved on phones. */
+function videoBlock(p, px = "") {
+  if (!p.video) return "";
+  const poster = p.videoPoster ? ` poster="${px}${esc(p.videoPoster)}"` : "";
+  return `<figure class="pdp__video">
+          <video controls preload="none"${poster} playsinline muted
+                 aria-label="${esc(p.name)} in motion">
+            <source src="${px}${esc(p.video)}" type="video/mp4" />
+          </video>
+        </figure>
+        `;
+}
+
 /* Sub-filters WITHIN a category page — the bag lines (Zuri, Velora, Yasmine,
    Clutch) and accessory types. Editable in data/categories.json so Freda can
    add a line when she starts one. Each entry matches on the product NAME, so
@@ -841,7 +857,7 @@ for (const p of CATALOG) {
     <a class="pdp__back" href="${backHref}">${backLabel}</a>
     <div class="pdp__grid">
       <div class="pdp__media">
-        ${gallery}
+        ${videoBlock(p, px)}${gallery}
       </div>
       <div class="pdp__info">
         <p class="pdp__cat">${esc(sub)}</p>

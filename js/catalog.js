@@ -16,7 +16,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/burgundy-velvet-2.jpg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "navy-velvet",
@@ -34,7 +36,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/navy-velvet-2.jpg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "white-velvet",
@@ -52,7 +56,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/white-velvet-2.jpg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "brown-velvet",
@@ -70,7 +76,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/brown-velvet-2.jpg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "grey-mix-velvet",
@@ -88,7 +96,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/grey-mix-velvet-2.jpg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "bear-charm",
@@ -106,7 +116,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-11T14:56:00",
     "image": "assets/products/Photoroom_20260908_074617.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "candy-floss-bag",
@@ -124,7 +136,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-27T10:37",
     "image": "assets/products/Photoroom_20260726_133726.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "clutch-colour-block",
@@ -143,7 +157,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-27T06:50",
     "image": "assets/products/Photoroom_20260726_132933.jpeg",
-    "image2": "assets/products/Photoroom_20260726_133102.jpeg"
+    "image2": "assets/products/Photoroom_20260726_133102.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "clutch-large",
@@ -161,7 +177,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-27T07:07",
     "image": "assets/products/Photoroom_20260726_132616.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "gaia-clutch-golden",
@@ -180,7 +198,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-08-21T14:23",
     "image": "assets/products/Photoroom_20260819_175918.jpeg",
-    "image2": "assets/products/IMG_4252.jpeg"
+    "image2": "assets/products/IMG_4252.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "gaia-greys",
@@ -199,7 +219,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-11T08:23:00",
     "image": "assets/products/Photoroom_20260907_152556.jpeg",
-    "image2": "assets/products/Photoroom_20260907_152422.jpeg"
+    "image2": "assets/products/Photoroom_20260907_152422.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "grey-black-bag",
@@ -217,7 +239,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-27T17:56",
     "image": "assets/products/Photoroom_20260727_150450.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "livvy-clutch-blue",
@@ -237,7 +261,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-08-09T15:22",
     "image": "assets/products/Photoroom_20260809_145045.jpeg",
-    "image2": "assets/products/IMG_7403.jpeg"
+    "image2": "assets/products/IMG_7403.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "livvy-clutch-green",
@@ -257,7 +283,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-08-09T15:28",
     "image": "assets/products/Photoroom_20260809_144847.jpeg",
-    "image2": "assets/products/IMG_7409.jpeg"
+    "image2": "assets/products/IMG_7409.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "livvy-wine",
@@ -276,7 +304,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-11T08:27:00",
     "image": "assets/products/IMG_7724.JPG",
-    "image2": "assets/products/Photoroom_20260824_151209.JPG"
+    "image2": "assets/products/Photoroom_20260824_151209.JPG",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "luna-knot-bag",
@@ -295,7 +325,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-28T22:43",
     "image": "assets/products/Photoroom_20260728_180249.jpeg",
-    "image2": "assets/products/IMG_7063.jpeg"
+    "image2": "assets/products/IMG_7063.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "may-blues",
@@ -314,7 +346,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-10T18:08:00",
     "image": "assets/products/Photoroom_20260905_161128.JPG",
-    "image2": "assets/products/Photoroom_20260907_152234.jpeg"
+    "image2": "assets/products/Photoroom_20260907_152234.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "may-browns",
@@ -333,7 +367,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-10T18:16:00",
     "image": "assets/products/Photoroom_20260911_081112.jpeg",
-    "image2": "assets/products/IMG_7866.jpg"
+    "image2": "assets/products/IMG_7866.jpg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "may-greens",
@@ -352,7 +388,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-10T18:19:00",
     "image": "assets/products/Photoroom_20260911_081220.jpeg",
-    "image2": "assets/products/Photoroom_20260909_161616.JPG"
+    "image2": "assets/products/Photoroom_20260909_161616.JPG",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "may-lilacs",
@@ -371,7 +409,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-10T18:38:00",
     "image": "assets/products/Photoroom_20260911_081043.jpeg",
-    "image2": "assets/products/Photoroom_20260910_182807.jpg"
+    "image2": "assets/products/Photoroom_20260910_182807.jpg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "may-whimsical",
@@ -390,7 +430,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-10T18:10:00",
     "image": "assets/products/Photoroom_20260907_152159.jpeg",
-    "image2": "assets/products/Photoroom_20260907_152122.jpeg"
+    "image2": "assets/products/Photoroom_20260907_152122.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "pouch-bag",
@@ -408,7 +450,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-08-21T13:39",
     "image": "assets/products/Photoroom_20260816_124439.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "sample-tote-1",
@@ -427,7 +471,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-27T07:00",
     "image": "assets/products/Photoroom_20260718_132647.jpeg",
-    "image2": "assets/products/tao-tote.jpg"
+    "image2": "assets/products/tao-tote.jpg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "sample-tote",
@@ -446,14 +492,16 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-27T06:58",
     "image": "assets/products/Photoroom_20260718_132617.jpeg",
-    "image2": "assets/products/tao-tote-tropical-night-2.jpg"
+    "image2": "assets/products/tao-tote-tropical-night-2.jpg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "velora-brown-leather",
     "name": "Velora Brown leather",
     "category": "Bags",
     "subcategory": "",
-    "price": 90,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -465,14 +513,16 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-25T08:36",
     "image": "assets/products/Photoroom_20260722_140329.JPG",
-    "image2": "assets/products/Photoroom_20260726_123327.jpeg"
+    "image2": "assets/products/Photoroom_20260726_123327.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "velora-dark-red",
     "name": "Velora (Dark Red)",
     "category": "Bags",
     "subcategory": "",
-    "price": 80,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -484,14 +534,37 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-30T09:53",
     "image": "assets/products/IMG_7110.jpeg",
-    "image2": "assets/products/IMG_7108.jpeg"
+    "image2": "assets/products/IMG_7108.jpeg",
+    "video": null,
+    "videoPoster": null
+  },
+  {
+    "id": "velora-olive",
+    "name": "Velora (Olive)",
+    "category": "Bags",
+    "subcategory": "Velora",
+    "price": 100,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/IMG_8062.jpeg",
+      "assets/products/Photoroom_20260914_105841.jpeg"
+    ],
+    "desc": "Chic and stylish bag with a detachable heart accessory\n\nHeight 16cm \nLength 18cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-14T13:23:00",
+    "image": "assets/products/IMG_8062.jpeg",
+    "image2": "assets/products/Photoroom_20260914_105841.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "velora-rose-pink",
     "name": "Velora (Rose pink)",
     "category": "Bags",
     "subcategory": "",
-    "price": 90,
+    "price": 100,
     "sale": null,
     "stock": 1,
     "images": [
@@ -503,7 +576,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-30T09:51",
     "image": "assets/products/Photoroom_20260730_110949.jpeg",
-    "image2": "assets/products/Photoroom_20260730_084712.jpeg"
+    "image2": "assets/products/Photoroom_20260730_084712.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "velvet-scrunchie-gold",
@@ -521,7 +596,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-09T10:56:00",
     "image": "assets/products/Photoroom_20260908_085449.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "velvet-scrunchie-light-pink",
@@ -539,7 +616,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-09T11:05:00",
     "image": "assets/products/Photoroom_20260908_085541.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "yasmine-pink",
@@ -558,7 +637,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-14T11:15:00",
     "image": "assets/products/Photoroom_20260912_172723.jpeg",
-    "image2": "assets/products/Photoroom_20260912_172754.jpeg"
+    "image2": "assets/products/Photoroom_20260912_172754.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "yasmine-small-grey",
@@ -576,7 +657,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-03T18:10:00",
     "image": "assets/products/Photoroom_20260903_104649.jpg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "zinnia-coffee",
@@ -594,7 +677,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-18T12:59",
     "image": "assets/products/Photoroom_20260718_110152.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "zinnia-wine",
@@ -612,7 +697,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-18T12:42",
     "image": "assets/products/Photoroom_20260718_110535.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "zuri-love",
@@ -630,7 +717,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-08-05T14:58",
     "image": "assets/products/Photoroom_20260805_145818.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "zuri-midnight",
@@ -649,7 +738,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-07-28T22:39",
     "image": "assets/products/Photoroom_20260728_133634.jpeg",
-    "image2": "assets/products/Photoroom_20260728_133656.jpeg"
+    "image2": "assets/products/Photoroom_20260728_133656.jpeg",
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "zuri-neutral",
@@ -667,7 +758,9 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-11T08:55:00",
     "image": "assets/products/IMG_7787.jpeg",
-    "image2": null
+    "image2": null,
+    "video": null,
+    "videoPoster": null
   },
   {
     "id": "zuri-strawberry-matcha",
@@ -686,6 +779,8 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-08-06T08:59",
     "image": "assets/products/Photoroom_20260805_170326.jpeg",
-    "image2": "assets/products/Photoroom_20260805_170447.jpeg"
+    "image2": "assets/products/Photoroom_20260805_170447.jpeg",
+    "video": null,
+    "videoPoster": null
   }
 ];

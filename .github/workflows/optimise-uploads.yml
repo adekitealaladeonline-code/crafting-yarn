@@ -32,6 +32,19 @@ jobs:
       - name: Shrink oversized photos
         run: node scripts/optimise-assets.js
 
+      # optimise-video.js skips silently without ffmpeg, which would ship a phone
+      # sized clip. Make sure it is there rather than relying on the runner image.
+      - name: Ensure ffmpeg
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
+          ffmpeg -version | head -1
+
+      - name: Shrink uploaded videos and make poster frames
+        run: node scripts/optimise-video.js
+
       - name: Commit if anything changed
         run: |
           if [[ -n "$(git status --porcelain assets)" ]]; then

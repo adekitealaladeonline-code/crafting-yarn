@@ -46,6 +46,16 @@ const products = fs
     data.image2 = imgs[1] || null;    // card hover
     // date for newest/oldest sorting: CMS value if set, else derived from git, else a base date
     data.created = data.created || gitCreated(f) || "2026-06-01T00:00:00Z";
+    /* Optional short clip. The poster frame sits next to it as <name>-poster.jpg
+       (made by scripts/optimise-video.js) and is what lets the product page show
+       the video without downloading any of it until someone taps play. */
+    data.video = stripSlash(data.video) || null;
+    data.videoPoster = null;
+    if (data.video) {
+      const poster = data.video.replace(/\.[^.]+$/, "-poster.jpg");
+      if (fs.existsSync(path.join(ROOT, poster))) data.videoPoster = poster;
+      else data.videoPoster = data.image || null;   // fall back to the main photo
+    }
     return { id: f.replace(/\.json$/, ""), ...data };
   })
   .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
