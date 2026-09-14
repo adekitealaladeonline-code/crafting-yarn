@@ -94,6 +94,10 @@ const CAT_H1 = {
   Accessories: copyFor("accessories", "heading", "Crochet Accessories"),
 };
 const CAT_SINGULAR = { Bags: "Bag", Accessories: "Accessory" };
+/* What a category is CALLED in the menu and nav chips. Editable by Freda, and
+   separate from the URL (still /bags.html) and from the SEO <title>, so
+   renaming the section can't break links or lose search ranking. */
+const catLabel = (c) => copyFor(String(c).toLowerCase(), "menuLabel", c);
 
 /* Sub-filters WITHIN a category page — the bag lines (Zuri, Velora, Yasmine,
    Clutch) and accessory types. Editable in data/categories.json so Freda can
@@ -144,7 +148,7 @@ const catNav = (px, active) => {
   const chips = [
     `<a href="${px}shop.html" class="chip${active === "all" ? " is-active" : ""}">All</a>`,
     ...CATEGORIES.map(
-      (c) => `<a href="${px}${catSlug(c)}.html" class="chip${c === active ? " is-active" : ""}">${esc(c)}</a>`
+      (c) => `<a href="${px}${catSlug(c)}.html" class="chip${c === active ? " is-active" : ""}">${esc(catLabel(c))}</a>`
     ),
   ];
   if (SALE_ENABLED) chips.push(`<a href="${px}sale.html" class="chip chip--sale${active === "sale" ? " is-active" : ""}">Sale</a>`);
@@ -177,8 +181,8 @@ const menu = (px) => {
   const items = [
     ["index.html", "Home"],
     ["shop.html", "Shop all"],
-    ["bags.html", "Bags"],
-    ["accessories.html", "Accessories"],
+    ["bags.html", catLabel("Bags")],
+    ["accessories.html", catLabel("Accessories")],
     ...(SALE_ENABLED ? [["sale.html", "Sale"]] : []),
     ["contact.html", "Contact"],
   ];
@@ -196,7 +200,7 @@ const menu = (px) => {
 const footer = (px) => `<footer class="site-footer"><div class="footer__top">
   <div class="footer__brand"><p>${esc(FOOTER_BLURB)}</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
-    <a href="${px}shop.html">Shop all</a><a href="${px}bags.html">Bags</a><a href="${px}accessories.html">Accessories</a>${SALE_ENABLED ? `<a href="${px}sale.html">Sale</a>` : ""}
+    <a href="${px}shop.html">Shop all</a><a href="${px}bags.html">${esc(catLabel("Bags"))}</a><a href="${px}accessories.html">${esc(catLabel("Accessories"))}</a>${SALE_ENABLED ? `<a href="${px}sale.html">Sale</a>` : ""}
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
     <a href="${px}shipping.html">Shipping</a><a href="${px}returns.html">Returns</a><a href="${px}care.html">Care guide</a><a href="${px}contact.html">Contact</a>

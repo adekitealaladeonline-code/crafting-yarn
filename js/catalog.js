@@ -91,6 +91,24 @@ window.CATALOG = [
     "image2": null
   },
   {
+    "id": "bear-charm",
+    "name": "Bear charm",
+    "category": "Accessories",
+    "subcategory": "Bag Charms",
+    "price": 40,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260908_074617.jpeg"
+    ],
+    "desc": "A cute bear bag charm.",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-11T14:56:00",
+    "image": "assets/products/Photoroom_20260908_074617.jpeg",
+    "image2": null
+  },
+  {
     "id": "candy-floss-bag",
     "name": "Candy floss bag",
     "category": "Sale",
@@ -168,7 +186,7 @@ window.CATALOG = [
     "id": "gaia-greys",
     "name": "Gaia (greys)",
     "category": "Bags",
-    "subcategory": "",
+    "subcategory": "Clutch",
     "price": 110,
     "sale": null,
     "stock": 1,
@@ -206,7 +224,7 @@ window.CATALOG = [
     "name": "Livvy clutch (blue)",
     "category": "Bags",
     "subcategory": "",
-    "price": 130,
+    "price": 135,
     "sale": null,
     "stock": 1,
     "images": [
@@ -226,7 +244,7 @@ window.CATALOG = [
     "name": "Livvy clutch (green)",
     "category": "Bags",
     "subcategory": "",
-    "price": 130,
+    "price": 135,
     "sale": null,
     "stock": 1,
     "images": [
@@ -245,7 +263,7 @@ window.CATALOG = [
     "id": "livvy-wine",
     "name": "Livvy (wine)",
     "category": "Bags",
-    "subcategory": "",
+    "subcategory": "Clutch",
     "price": 135,
     "sale": null,
     "stock": 1,
@@ -379,7 +397,7 @@ window.CATALOG = [
     "name": "Yasmine (medium)",
     "category": "Bags",
     "subcategory": "",
-    "price": 110,
+    "price": 150,
     "sale": null,
     "stock": 1,
     "images": [
@@ -429,25 +447,6 @@ window.CATALOG = [
     "created": "2026-07-27T06:58",
     "image": "assets/products/Photoroom_20260718_132617.jpeg",
     "image2": "assets/products/tao-tote-tropical-night-2.jpg"
-  },
-  {
-    "id": "tassle-bag",
-    "name": "Tassle bag",
-    "category": "Sale",
-    "subcategory": "",
-    "price": 100,
-    "sale": 65,
-    "stock": 1,
-    "images": [
-      "assets/products/Photoroom_20260726_133445.jpeg",
-      "assets/products/Photoroom_20260726_133533.jpeg"
-    ],
-    "desc": "One of a kind sample piece",
-    "featured": false,
-    "isNew": false,
-    "created": "2026-07-27T07:05",
-    "image": "assets/products/Photoroom_20260726_133445.jpeg",
-    "image2": "assets/products/Photoroom_20260726_133533.jpeg"
   },
   {
     "id": "velora-brown-leather",
@@ -543,11 +542,30 @@ window.CATALOG = [
     "image2": null
   },
   {
+    "id": "yasmine-pink",
+    "name": "Yasmine (pink)",
+    "category": "Bags",
+    "subcategory": "Yasmine",
+    "price": 110,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20260912_172723.jpeg",
+      "assets/products/Photoroom_20260912_172754.jpeg"
+    ],
+    "desc": "Cute and stylish faux leather bag with drawstrings.\nHeight 14cm\nLength 18cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-14T11:15:00",
+    "image": "assets/products/Photoroom_20260912_172723.jpeg",
+    "image2": "assets/products/Photoroom_20260912_172754.jpeg"
+  },
+  {
     "id": "yasmine-small-grey",
-    "name": "Yasmine (small- grey)",
+    "name": "Yasmine (grey)",
     "category": "Bags",
     "subcategory": "",
-    "price": 90,
+    "price": 110,
     "sale": null,
     "stock": 1,
     "images": [

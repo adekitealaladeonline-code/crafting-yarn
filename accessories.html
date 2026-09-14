@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/styles.css" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"OnlineStore","@id":"https://craftingyarn.com/#shop","name":"Crafting Yarn","url":"https://craftingyarn.com","logo":"https://craftingyarn.com/assets/brand/logo.png","image":"https://craftingyarn.com/assets/brand/logo.png","description":"Hand-crocheted bags and accessories, made by hand in the UAE.","founder":{"@type":"Person","name":"Freda"},"address":{"@type":"PostalAddress","addressCountry":"AE"},"areaServed":{"@type":"Country","name":"United Arab Emirates"},"currenciesAccepted":"AED","paymentAccepted":"Credit Card","sameAs":["https://www.instagram.com/craftingyarn/","https://www.tiktok.com/@craftingyarn"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Accessories — Crafting Yarn","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://craftingyarn.com/product/burgundy-velvet.html","name":"Velvet scrunchie (Burgundy)"},{"@type":"ListItem","position":2,"url":"https://craftingyarn.com/product/navy-velvet.html","name":"Velvet scrunchie (Navy)"},{"@type":"ListItem","position":3,"url":"https://craftingyarn.com/product/white-velvet.html","name":"Velvet scrunchie (White)"},{"@type":"ListItem","position":4,"url":"https://craftingyarn.com/product/brown-velvet.html","name":"Velvet scrunchie (brown)"},{"@type":"ListItem","position":5,"url":"https://craftingyarn.com/product/grey-mix-velvet.html","name":"Velvet scrunchie (Grey mix)"},{"@type":"ListItem","position":6,"url":"https://craftingyarn.com/product/velvet-scrunchie-gold.html","name":"Velvet scrunchie (Gold)"},{"@type":"ListItem","position":7,"url":"https://craftingyarn.com/product/velvet-scrunchie-light-pink.html","name":"Velvet scrunchie (light pink)"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Accessories — Crafting Yarn","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://craftingyarn.com/product/burgundy-velvet.html","name":"Velvet scrunchie (Burgundy)"},{"@type":"ListItem","position":2,"url":"https://craftingyarn.com/product/navy-velvet.html","name":"Velvet scrunchie (Navy)"},{"@type":"ListItem","position":3,"url":"https://craftingyarn.com/product/white-velvet.html","name":"Velvet scrunchie (White)"},{"@type":"ListItem","position":4,"url":"https://craftingyarn.com/product/brown-velvet.html","name":"Velvet scrunchie (brown)"},{"@type":"ListItem","position":5,"url":"https://craftingyarn.com/product/grey-mix-velvet.html","name":"Velvet scrunchie (Grey mix)"},{"@type":"ListItem","position":6,"url":"https://craftingyarn.com/product/bear-charm.html","name":"Bear charm"},{"@type":"ListItem","position":7,"url":"https://craftingyarn.com/product/velvet-scrunchie-gold.html","name":"Velvet scrunchie (Gold)"},{"@type":"ListItem","position":8,"url":"https://craftingyarn.com/product/velvet-scrunchie-light-pink.html","name":"Velvet scrunchie (light pink)"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://craftingyarn.com/"},{"@type":"ListItem","position":2,"name":"Accessories","item":"https://craftingyarn.com/accessories.html"}]}</script>
 </head>
 <body>
@@ -48,7 +48,7 @@
   <nav aria-label="Main">
     <a href="index.html"><span>01</span> Home</a>
     <a href="shop.html"><span>02</span> Shop all</a>
-    <a href="bags.html"><span>03</span> Bags</a>
+    <a href="bags.html"><span>03</span> Nué bags</a>
     <a href="accessories.html"><span>04</span> Accessories</a>
     <a href="sale.html"><span>05</span> Sale</a>
     <a href="contact.html"><span>06</span> Contact</a>
@@ -62,11 +62,13 @@
         <h1 class="cat-title">Crochet Accessories</h1>
         <p class="cat-intro">Head ties/bandanas, scrunchies, bucket hats and more — all crocheted by hand.</p>
       </div>
-      <nav class="catnav" aria-label="Shop categories"><a href="shop.html" class="chip">All</a><a href="bags.html" class="chip">Bags</a><a href="accessories.html" class="chip is-active">Accessories</a><a href="sale.html" class="chip chip--sale">Sale</a></nav>
+      <nav class="catnav" aria-label="Shop categories"><a href="shop.html" class="chip">All</a><a href="bags.html" class="chip">Nué bags</a><a href="accessories.html" class="chip is-active">Accessories</a><a href="sale.html" class="chip chip--sale">Sale</a></nav>
     </div>
-    
+    <nav class="linenav" id="lineNav" aria-label="Accessories lines">
+      <button class="chip is-active" data-line="">All</button><button class="chip" data-line="scrunchie">Scrunchies</button><button class="chip" data-line="charm">Bag charms</button>
+    </nav>
     <div class="shop__bar shop__bar--cat">
-      <span class="shop__count" id="gridCount">7 pieces</span>
+      <span class="shop__count" id="gridCount">8 pieces</span>
       <label for="sortSelect" class="sr-only">Sort products</label>
       <select id="sortSelect">
         <option value="featured">Featured</option>
@@ -170,6 +172,25 @@
           <div class="card__price"><span class="now">AED 20</span></div>
         </div>
       </article>
+      <article class="card" data-id="bear-charm">
+        <div class="card__media">
+          
+          <button class="card__wish" data-wish="bear-charm" aria-label="Save Bear charm to wishlist" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.6-9.3-9C1 7.7 2.6 5 5.6 5c1.9 0 3.2 1.1 4.4 2.6C11.2 6.1 12.5 5 14.4 5c3 0 4.6 2.7 2.9 6-2.3 4.4-9.3 9-9.3 9Z"/></svg>
+          </button>
+          <img class="card__img" src="assets/products/Photoroom_20260908_074617.jpeg" alt="Bear charm — handmade crochet accessories in the UAE" loading="lazy"/>
+          
+          <div class="card__actions">
+            <button class="card__quick" data-quick="bear-charm">Quick view</button>
+            <button class="card__addbar" data-add="bear-charm" aria-label="Add Bear charm to basket">Add +</button>
+          </div>
+        </div>
+        <div class="card__info">
+          <span class="card__cat">Accessories · Bag Charms</span>
+          <h3 class="card__name"><a href="product/bear-charm.html">Bear charm</a></h3>
+          <div class="card__price"><span class="now">AED 40</span></div>
+        </div>
+      </article>
       <article class="card" data-id="velvet-scrunchie-gold">
         <div class="card__media">
           
@@ -214,7 +235,7 @@
 <footer class="site-footer"><div class="footer__top">
   <div class="footer__brand"><p>Every stitch is intentionally handcrafted to make you stand out.</p></div>
   <nav class="footer__col" aria-label="Shop"><h4>Shop</h4>
-    <a href="shop.html">Shop all</a><a href="bags.html">Bags</a><a href="accessories.html">Accessories</a><a href="sale.html">Sale</a>
+    <a href="shop.html">Shop all</a><a href="bags.html">Nué bags</a><a href="accessories.html">Accessories</a><a href="sale.html">Sale</a>
   </nav>
   <nav class="footer__col" aria-label="Help"><h4>Help</h4>
     <a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="care.html">Care guide</a><a href="contact.html">Contact</a>

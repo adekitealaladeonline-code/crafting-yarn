@@ -100,6 +100,25 @@
       </g:shipping>
     </item>
     <item>
+      <g:id>bear-charm</g:id>
+      <g:title>Bear charm</g:title>
+      <g:description>A cute bear bag charm.</g:description>
+      <g:link>https://craftingyarn.com/product/bear-charm.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260908_074617.jpeg</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>40.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing Accessories</g:google_product_category>
+      <g:product_type>Accessories</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>candy-floss-bag</g:id>
       <g:title>Candy floss bag</g:title>
       <g:description>Sample bag</g:description>
@@ -232,7 +251,7 @@ Height 15cm</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7403.jpeg</g:additional_image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_145154.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>130.00 AED</g:price>
+      <g:price>135.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -255,7 +274,7 @@ Height 15cm</g:description>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7409.jpeg</g:additional_image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260809_145427.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>130.00 AED</g:price>
+      <g:price>135.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -429,7 +448,7 @@ Height-16cm, Length-24cm</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260816_124439.jpeg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>110.00 AED</g:price>
+      <g:price>150.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -470,26 +489,6 @@ Height-16cm, Length-24cm</g:description>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
       <g:sale_price>50.00 AED</g:sale_price>
-      <g:brand>Crafting Yarn</g:brand>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
-      <g:product_type>Sale</g:product_type>
-      <g:shipping>
-        <g:country>AE</g:country>
-        <g:price>20.00 AED</g:price>
-      </g:shipping>
-    </item>
-    <item>
-      <g:id>tassle-bag</g:id>
-      <g:title>Tassle bag</g:title>
-      <g:description>One of a kind sample piece</g:description>
-      <g:link>https://craftingyarn.com/product/tassle-bag.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133445.jpeg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260726_133533.jpeg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>100.00 AED</g:price>
-      <g:sale_price>65.00 AED</g:sale_price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
@@ -614,8 +613,29 @@ Sturdy and lightweight</g:description>
       </g:shipping>
     </item>
     <item>
+      <g:id>yasmine-pink</g:id>
+      <g:title>Yasmine (pink)</g:title>
+      <g:description>Cute and stylish faux leather bag with drawstrings.
+Height 14cm
+Length 18cm</g:description>
+      <g:link>https://craftingyarn.com/product/yasmine-pink.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260912_172723.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260912_172754.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>110.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>yasmine-small-grey</g:id>
-      <g:title>Yasmine (small- grey)</g:title>
+      <g:title>Yasmine (grey)</g:title>
       <g:description>Cute and stylish faux leather bag with drawstrings and beads. 
 100cm detachable chain strap. 
 Height 13cm
@@ -624,7 +644,7 @@ Length 19cm</g:description>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260903_104649.jpg</g:image_link>
 
       <g:availability>in_stock</g:availability>
-      <g:price>90.00 AED</g:price>
+      <g:price>110.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
