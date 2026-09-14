@@ -33,6 +33,7 @@ const gitCreated = (file) => {
     return lines[lines.length - 1] || ""; // earliest = when it was first added
   } catch { return ""; }
 };
+const videoFix = [], videoWarn = [];
 const products = fs
   .readdirSync(PRODUCTS_DIR)
   .filter((f) => f.endsWith(".json"))
@@ -51,6 +52,20 @@ const products = fs
        the video without downloading any of it until someone taps play. */
     data.video = stripSlash(data.video) || null;
     data.videoPoster = null;
+    if (data.video && !fs.existsSync(path.join(ROOT, data.video))) {
+      /* The optimiser converts phone .mov uploads to .mp4. The CMS can still be
+         holding the pre-conversion name — she may attach a clip hours after
+         uploading it — so follow it to the .mp4 rather than shipping a <source>
+         that points at nothing. */
+      const mp4 = data.video.replace(/\.[^.]+$/, ".mp4");
+      if (fs.existsSync(path.join(ROOT, mp4))) {
+        videoFix.push(`  ${data.name}: ${data.video} -> ${mp4}`);
+        data.video = mp4;
+      } else {
+        videoWarn.push(`  ${data.name}  [data/products/${f}] — ${data.video}`);
+        data.video = null;   // better no player than a broken one
+      }
+    }
     if (data.video) {
       const poster = data.video.replace(/\.[^.]+$/, "-poster.jpg");
       if (fs.existsSync(path.join(ROOT, poster))) data.videoPoster = poster;
@@ -60,6 +75,12 @@ const products = fs
   })
   .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
 if (!products.length) throw new Error("no products found in data/products/");
+if (videoFix.length)
+  console.log("\u2713 video links followed to their converted .mp4:\n" + videoFix.join("\n"));
+if (videoWarn.length) {
+  console.warn("\n\u26a0 Video file missing — no player will be shown for:\n" + videoWarn.join("\n"));
+  console.warn("  Fix in /admin: re-pick the clip on that product, or clear the video field.\n");
+}
 
 // 1b) guard: never ship a product photo that doesn't exist --------------------
 //     Deleting a photo from the CMS media library does NOT check whether a

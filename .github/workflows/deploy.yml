@@ -6,10 +6,19 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # The optimiser commits its work with GITHUB_TOKEN, and GitHub deliberately
+  # refuses to start a new workflow run from such a commit. Without this trigger
+  # a photo it shrank, or a video path it repointed after converting a .mov,
+  # would sit in the repo undeployed until Freda happened to save something else.
+  workflow_run:
+    workflows: ["Optimise uploaded photos"]
+    types: [completed]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # don't redeploy off the back of an optimiser run that failed
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     steps:
       - uses: actions/checkout@v4
         with:

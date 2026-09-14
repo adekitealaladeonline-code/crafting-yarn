@@ -550,14 +550,14 @@ window.CATALOG = [
       "assets/products/IMG_8062.jpeg",
       "assets/products/Photoroom_20260914_105841.jpeg"
     ],
+    "video": "assets/products/IMG_8063.mp4",
     "desc": "Chic and stylish bag with a detachable heart accessory\n\nHeight 16cm \nLength 18cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-14T13:23:00",
     "image": "assets/products/IMG_8062.jpeg",
     "image2": "assets/products/Photoroom_20260914_105841.jpeg",
-    "video": null,
-    "videoPoster": null
+    "videoPoster": "assets/products/IMG_8063-poster.jpg"
   },
   {
     "id": "velora-rose-pink",
