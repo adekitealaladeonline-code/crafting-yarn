@@ -2,13 +2,14 @@
   "name": "Yasmine (pink)",
   "category": "Bags",
   "subcategory": "Yasmine",
-  "price": 110,
+  "price": 130,
   "sale": null,
   "stock": 1,
   "images": [
     "/assets/products/Photoroom_20260912_172723.jpeg",
     "/assets/products/Photoroom_20260912_172754.jpeg"
   ],
+  "video": "",
   "desc": "Cute and stylish faux leather bag with drawstrings.\nHeight 14cm\nLength 18cm",
   "featured": false,
   "isNew": false,
