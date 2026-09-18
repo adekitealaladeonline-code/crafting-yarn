@@ -8,6 +8,11 @@
 </head>
 <body>
   <!-- Sveltia CMS: a modern, drop-in Decap CMS. Reads ./config.yml automatically. -->
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  <!-- PINNED ON PURPOSE. Unpinned, this URL serves whatever Sveltia released last:
+       it shipped 10 versions in the 4 days to 2026-09-18, including two minor bumps.
+       An unattended upgrade on a client's only way to edit her shop is not acceptable,
+       so we move deliberately. 0.213.0 is the last version Freda demonstrably saved
+       with (2026-09-16 04:02). To upgrade: bump here, test a real save, then deploy. -->
+  <script src="https://unpkg.com/@sveltia/cms@0.213.0/dist/sveltia-cms.js"></script>
 </body>
 </html>
