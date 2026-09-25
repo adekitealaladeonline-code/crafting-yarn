@@ -1,0 +1,17 @@
+{
+  "name": "May (brown)",
+  "category": "Bags",
+  "subcategory": "May",
+  "price": 150,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/May (brown).JPG"
+  ],
+  "video": "/assets/products/May brown....mov",
+  "desc": "A neutral everyday bag. \n\nLength 20cm\nHeight 17cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-09-25T14:15:00"
+}
