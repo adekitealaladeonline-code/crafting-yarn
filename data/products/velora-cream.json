@@ -1,0 +1,18 @@
+{
+  "name": "Velora (cream)",
+  "category": "Bags",
+  "subcategory": "Velora",
+  "price": 100,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Velora (cream.).JPG",
+    "/assets/products/Velora (cream).JPG"
+  ],
+  "video": "",
+  "desc": "Chic and stylish bag with a detachable heart accessory\n\nHeight 16cm\nLength 18cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-10-08T08:49:00"
+}
