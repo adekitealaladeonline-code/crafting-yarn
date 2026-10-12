@@ -4,10 +4,11 @@
   "subcategory": "",
   "price": 20,
   "sale": null,
-  "stock": 1,
+  "stock": null,
   "images": [
     "/assets/products/Photoroom_20260908_085541.jpeg"
   ],
+  "video": "",
   "desc": "Velvet scrunchie in light pink",
   "featured": false,
   "isNew": false,
