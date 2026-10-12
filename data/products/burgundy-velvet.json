@@ -4,10 +4,11 @@
   "subcategory": "Scrunchies",
   "price": 20,
   "sale": null,
-  "stock": 3,
+  "stock": 2,
   "images": [
     "assets/products/burgundy-velvet-2.jpg"
   ],
+  "video": "",
   "desc": "Velvet scrunchie in rich burgundy.",
   "featured": false,
   "isNew": false,
