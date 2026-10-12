@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-AE">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Orders — Crafting Yarn</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#D674A0" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  /* Freda runs this from her phone while packing, so everything is sized for a
+     thumb and the delivery address is the most prominent thing on each card. */
+  .ord{max-width:760px;margin:0 auto;padding:1.2rem 1rem 4rem}
+  .ord__head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}
+  .ord__title{font-weight:800;font-size:clamp(1.8rem,6vw,2.6rem);letter-spacing:-.02em;color:var(--logo-pink-light);line-height:1}
+  .ord__count{font-size:.85rem;color:var(--muted,#8a7f79)}
+  .ord__login{display:flex;flex-direction:column;gap:.7rem;max-width:340px;margin:3rem auto}
+  .ord__login input{font-family:var(--font);font-size:1rem;padding:.9em 1em;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink)}
+  .card2{border:1.5px solid var(--line);border-radius:var(--r);padding:1rem 1.05rem;margin-bottom:.9rem;background:var(--paper)}
+  .card2.is-done{opacity:.5}
+  .card2__top{display:flex;justify-content:space-between;gap:.8rem;align-items:baseline}
+  .card2__who{font-weight:700;font-size:1.05rem;color:var(--ink)}
+  .card2__amt{font-weight:800;color:var(--logo-pink-light);white-space:nowrap}
+  .card2__when{font-size:.75rem;color:#9a8f88;margin-top:.1rem}
+  .card2__items{margin:.6rem 0;font-size:.95rem;color:var(--ink)}
+  .card2__addr{background:#faf7f5;border-radius:10px;padding:.7rem .8rem;font-size:.9rem;line-height:1.45;margin:.5rem 0}
+  .card2__addr b{display:block;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:#9a8f88;margin-bottom:.25rem;font-weight:600}
+  .row{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.6rem}
+  .mini{font-family:var(--font);font-size:.78rem;font-weight:600;padding:.55em .9em;border-radius:999px;border:1.5px solid var(--line);background:none;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+  .mini--go{border-color:var(--logo-pink-light);color:var(--logo-pink-light)}
+  .mini--done{background:var(--logo-pink-light);border-color:var(--logo-pink-light);color:#fff}
+  .note{font-size:.85rem;color:#9a8f88;text-align:center;margin:2rem 0}
+  .err{color:#C01860;font-size:.9rem;text-align:center;margin-top:.6rem}
+</style>
+</head>
+<body>
+<main class="ord">
+  <div class="ord__head">
+    <div>
+      <div class="ord__title">Orders</div>
+      <div class="ord__count" id="count"></div>
+    </div>
+    <button class="mini" id="refresh" hidden>Refresh</button>
+  </div>
+
+  <form class="ord__login" id="login">
+    <input type="password" id="pw" placeholder="Password" autocomplete="current-password" />
+    <button class="btn btn--solid" type="submit">See orders</button>
+    <div class="err" id="err"></div>
+  </form>
+
+  <div id="list"></div>
+</main>
+
+<script>
+(function () {
+  var KEY = "cy_orders_key", DONE = "cy_orders_done";
+  var $ = function (id) { return document.getElementById(id); };
+  var doneSet = {};
+  try { doneSet = JSON.parse(localStorage.getItem(DONE) || "{}"); } catch (e) {}
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function money(a, c) { return (c || "AED") + " " + (a / 100).toFixed(0); }
+  function when(ts) {
+    var d = new Date(ts * 1000);
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" }) + ", " +
+           d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+  }
+  // wa.me needs digits only; UAE numbers are often stored with +971 or 00971
+  function waLink(phone, name) {
+    var n = String(phone || "").replace(/\D/g, "");
+    if (!n) return null;
+    if (n.indexOf("00") === 0) n = n.slice(2);
+    var msg = "Hi " + (name ? name.split(" ")[0] : "") + ", thank you for your Crafting Yarn order! " +
+              "I'm making it now and will message you when it's on the way.";
+    return "https://wa.me/" + n + "?text=" + encodeURIComponent(msg);
+  }
+
+  function render(orders) {
+    var open = orders.filter(function (o) { return !doneSet[o.id]; }).length;
+    $("count").textContent = orders.length + " order" + (orders.length === 1 ? "" : "s") +
+                             " · " + open + " still to send";
+    $("list").innerHTML = orders.map(function (o) {
+      var wa = waLink(o.phone, o.name);
+      var done = !!doneSet[o.id];
+      return '<div class="card2' + (done ? " is-done" : "") + '" data-id="' + esc(o.id) + '">' +
+        '<div class="card2__top">' +
+          '<div><div class="card2__who">' + (esc(o.name) || "No name given") + '</div>' +
+          '<div class="card2__when">' + when(o.created) + '</div></div>' +
+          '<div class="card2__amt">' + money(o.amount, o.currency) + '</div>' +
+        '</div>' +
+        '<div class="card2__items">' + (esc(o.items) || "—") + '</div>' +
+        (o.address ? '<div class="card2__addr"><b>Deliver to</b>' + esc(o.address) + '</div>' : "") +
+        (o.phone ? '<div class="card2__addr"><b>Phone</b>' + esc(o.phone) + '</div>' : "") +
+        (o.email ? '<div class="card2__addr"><b>Email</b>' + esc(o.email) + '</div>' : "") +
+        '<div class="row">' +
+          (o.address ? '<button class="mini" data-copy="' + esc(o.address) + '">Copy address</button>' : "") +
+          (wa ? '<a class="mini mini--go" target="_blank" rel="noopener" href="' + esc(wa) + '">WhatsApp</a>' : "") +
+          '<button class="mini' + (done ? " mini--done" : "") + '" data-done="' + esc(o.id) + '">' +
+            (done ? "Sent ✓" : "Mark sent") + '</button>' +
+        '</div>' +
+      '</div>';
+    }).join("") || '<div class="note">No paid orders yet.</div>';
+  }
+
+  function load(pw) {
+    $("err").textContent = "";
+    fetch("/api/orders", { headers: { "x-admin-key": pw }, cache: "no-store" })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!res.ok) {
+          localStorage.removeItem(KEY);
+          $("login").hidden = false; $("refresh").hidden = true;
+          $("err").textContent = res.d.error || "Could not load orders.";
+          return;
+        }
+        localStorage.setItem(KEY, pw);
+        $("login").hidden = true; $("refresh").hidden = false;
+        render(res.d.orders || []);
+      })
+      .catch(function () { $("err").textContent = "Network problem — try again."; });
+  }
+
+  $("login").addEventListener("submit", function (e) { e.preventDefault(); load($("pw").value); });
+  $("refresh").addEventListener("click", function () { load(localStorage.getItem(KEY) || ""); });
+
+  document.addEventListener("click", function (e) {
+    var c = e.target.closest("[data-copy]");
+    if (c) {
+      navigator.clipboard.writeText(c.getAttribute("data-copy")).then(function () {
+        var t = c.textContent; c.textContent = "Copied ✓";
+        setTimeout(function () { c.textContent = t; }, 1400);
+      });
+      return;
+    }
+    var d = e.target.closest("[data-done]");
+    if (d) {
+      var id = d.getAttribute("data-done");
+      if (doneSet[id]) { delete doneSet[id]; } else { doneSet[id] = 1; }
+      localStorage.setItem(DONE, JSON.stringify(doneSet));
+      load(localStorage.getItem(KEY) || "");
+    }
+  });
+
+  var saved = localStorage.getItem(KEY);
+  if (saved) load(saved);
+})();
+</script>
+</body>
+</html>
