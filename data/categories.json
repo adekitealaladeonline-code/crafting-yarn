@@ -27,13 +27,12 @@
       {
         "label": "Clutch",
         "match": "clutch"
+      },
+      {
+        "label": "Cece",
+        "match": "cece"
       }
     ]
-  },
-  "cece-bags": {
-    "menuLabel": "Cece bags",
-    "heading": "Cece bags",
-    "intro": "The Cece line — handmade one stitch at a time."
   },
   "accessories": {
     "menuLabel": "Accessories",

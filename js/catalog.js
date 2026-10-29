@@ -7,17 +7,17 @@ window.CATALOG = [
     "subcategory": "Scrunchies",
     "price": 20,
     "sale": null,
-    "stock": 3,
+    "stock": 2,
     "images": [
       "assets/products/burgundy-velvet-2.jpg"
     ],
+    "video": null,
     "desc": "Velvet scrunchie in rich burgundy.",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/burgundy-velvet-2.jpg",
     "image2": null,
-    "video": null,
     "videoPoster": null
   },
   {
@@ -47,17 +47,17 @@ window.CATALOG = [
     "subcategory": "Scrunchies",
     "price": 20,
     "sale": null,
-    "stock": 3,
+    "stock": 2,
     "images": [
       "assets/products/white-velvet-2.jpg"
     ],
+    "video": null,
     "desc": "Velvet-yarn scrunchie in soft white.",
     "featured": false,
     "isNew": false,
     "created": "2026-06-18T18:50:38+01:00",
     "image": "assets/products/white-velvet-2.jpg",
     "image2": null,
-    "video": null,
     "videoPoster": null
   },
   {
@@ -138,6 +138,72 @@ window.CATALOG = [
     "image": "assets/products/Photoroom_20260726_133726.jpeg",
     "image2": null,
     "video": null,
+    "videoPoster": null
+  },
+  {
+    "id": "cece-browns",
+    "name": "Cece (Brown)",
+    "category": "Bags",
+    "subcategory": "Cece",
+    "price": 180,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/IMG_8588.jpeg",
+      "assets/products/IMG_8601.JPG",
+      "assets/products/IMG_8599.jpeg"
+    ],
+    "video": null,
+    "desc": "A definite statement piece to carry all your essentials. \nL-36cm\nH-25cm\nW-9cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-10-29T12:47:00",
+    "image": "assets/products/IMG_8588.jpeg",
+    "image2": "assets/products/IMG_8601.JPG",
+    "videoPoster": null
+  },
+  {
+    "id": "cece-greens",
+    "name": "Cece (Green)",
+    "category": "Bags",
+    "subcategory": "Cece",
+    "price": 180,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/IMG_8584.jpeg",
+      "assets/products/Photoroom_20261029_120225.JPG",
+      "assets/products/IMG_8611.jpeg"
+    ],
+    "video": null,
+    "desc": "A definite statement piece to carry all your essentials. \nL-38cm\nH-25cm\nW-9cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-10-29T12:41:00",
+    "image": "assets/products/IMG_8584.jpeg",
+    "image2": "assets/products/Photoroom_20261029_120225.JPG",
+    "videoPoster": null
+  },
+  {
+    "id": "cece-style-3",
+    "name": "Cece (Purple)",
+    "category": "Bags",
+    "subcategory": "Cece",
+    "price": 180,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/IMG_8585.jpeg",
+      "assets/products/IMG_8606.jpeg",
+      "assets/products/IMG_8607.jpeg"
+    ],
+    "video": null,
+    "desc": "A definite statement piece to carry all your essentials. \nL-38cm\nH-25cm\nW-9cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-10-29T12:49:00",
+    "image": "assets/products/IMG_8585.jpeg",
+    "image2": "assets/products/IMG_8606.jpeg",
     "videoPoster": null
   },
   {
@@ -241,6 +307,27 @@ window.CATALOG = [
     "image": "assets/products/Photoroom_20260727_150450.jpeg",
     "image2": null,
     "video": null,
+    "videoPoster": null
+  },
+  {
+    "id": "jill",
+    "name": "Jill",
+    "category": "Bags",
+    "subcategory": "",
+    "price": 150,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/Photoroom_20261008_093310.jpeg",
+      "assets/products/Photoroom_20261008_093413.jpeg"
+    ],
+    "video": null,
+    "desc": "Everyday clutch",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-10-12T10:17:00",
+    "image": "assets/products/Photoroom_20261008_093310.jpeg",
+    "image2": "assets/products/Photoroom_20261008_093413.jpeg",
     "videoPoster": null
   },
   {
@@ -351,15 +438,35 @@ window.CATALOG = [
     "videoPoster": null
   },
   {
-    "id": "may-browns",
-    "name": "May (browns)",
+    "id": "may-brown",
+    "name": "May (brown)",
     "category": "Bags",
     "subcategory": "May",
     "price": 150,
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/Photoroom_20260911_081112.jpeg",
+      "assets/products/May (brown).JPG"
+    ],
+    "video": "assets/products/May brown....mp4",
+    "desc": "A neutral everyday cotton bag. \n\nLength 20cm\nHeight 17cm",
+    "featured": false,
+    "isNew": false,
+    "created": "2026-09-25T14:15:00",
+    "image": "assets/products/May (brown).JPG",
+    "image2": null,
+    "videoPoster": "assets/products/May brown...-poster.jpg"
+  },
+  {
+    "id": "may-browns",
+    "name": "May (brown mix)",
+    "category": "Bags",
+    "subcategory": "May",
+    "price": 150,
+    "sale": null,
+    "stock": 1,
+    "images": [
+      "assets/products/May browns.jpeg",
       "assets/products/IMG_7866.jpg"
     ],
     "video": "assets/products/IMG_7830.mp4",
@@ -367,7 +474,7 @@ window.CATALOG = [
     "featured": false,
     "isNew": false,
     "created": "2026-09-10T18:16:00",
-    "image": "assets/products/Photoroom_20260911_081112.jpeg",
+    "image": "assets/products/May browns.jpeg",
     "image2": "assets/products/IMG_7866.jpg",
     "videoPoster": "assets/products/IMG_7830-poster.jpg"
   },
@@ -380,7 +487,7 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/Photoroom_20260911_081220.jpeg",
+      "assets/products/May (camo).jpeg",
       "assets/products/Photoroom_20260909_161616.JPG"
     ],
     "video": "assets/products/IMG_7953.mp4",
@@ -388,7 +495,7 @@ window.CATALOG = [
     "featured": false,
     "isNew": false,
     "created": "2026-09-10T18:19:00",
-    "image": "assets/products/Photoroom_20260911_081220.jpeg",
+    "image": "assets/products/May (camo).jpeg",
     "image2": "assets/products/Photoroom_20260909_161616.JPG",
     "videoPoster": "assets/products/IMG_7953-poster.jpg"
   },
@@ -401,7 +508,7 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/Photoroom_20260911_081043.jpeg",
+      "assets/products/May lilac.jpeg",
       "assets/products/Photoroom_20260910_182807.jpg"
     ],
     "video": null,
@@ -409,7 +516,7 @@ window.CATALOG = [
     "featured": false,
     "isNew": false,
     "created": "2026-09-10T18:38:00",
-    "image": "assets/products/Photoroom_20260911_081043.jpeg",
+    "image": "assets/products/May lilac.jpeg",
     "image2": "assets/products/Photoroom_20260910_182807.jpg",
     "videoPoster": null
   },
@@ -548,7 +655,7 @@ window.CATALOG = [
     "stock": 1,
     "images": [
       "assets/products/IMG_8062.jpeg",
-      "assets/products/Photoroom_20260914_105841.jpeg"
+      "assets/products/Veluto (olive) .jpeg"
     ],
     "video": "assets/products/IMG_8063.mp4",
     "desc": "Chic and stylish bag with a detachable heart accessory\n\nHeight 16cm \nLength 18cm",
@@ -556,7 +663,7 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-14T13:23:00",
     "image": "assets/products/IMG_8062.jpeg",
-    "image2": "assets/products/Photoroom_20260914_105841.jpeg",
+    "image2": "assets/products/Veluto (olive) .jpeg",
     "videoPoster": "assets/products/IMG_8063-poster.jpg"
   },
   {
@@ -607,17 +714,17 @@ window.CATALOG = [
     "subcategory": "",
     "price": 20,
     "sale": null,
-    "stock": 1,
+    "stock": null,
     "images": [
       "assets/products/Photoroom_20260908_085541.jpeg"
     ],
+    "video": null,
     "desc": "Velvet scrunchie in light pink",
     "featured": false,
     "isNew": false,
     "created": "2026-09-09T11:05:00",
     "image": "assets/products/Photoroom_20260908_085541.jpeg",
     "image2": null,
-    "video": null,
     "videoPoster": null
   },
   {
@@ -630,7 +737,7 @@ window.CATALOG = [
     "stock": 1,
     "images": [
       "assets/products/Photoroom_20260912_172723.jpeg",
-      "assets/products/Photoroom_20260912_172754.jpeg"
+      "assets/products/Yasmine (pink).jpeg"
     ],
     "video": null,
     "desc": "Cute and stylish faux leather bag with drawstrings.\nHeight 14cm\nLength 18cm",
@@ -638,7 +745,7 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-09-14T11:15:00",
     "image": "assets/products/Photoroom_20260912_172723.jpeg",
-    "image2": "assets/products/Photoroom_20260912_172754.jpeg",
+    "image2": "assets/products/Yasmine (pink).jpeg",
     "videoPoster": null
   },
   {

@@ -139,6 +139,75 @@
       </g:shipping>
     </item>
     <item>
+      <g:id>cece-browns</g:id>
+      <g:title>Cece (Brown)</g:title>
+      <g:description>A definite statement piece to carry all your essentials. 
+L-36cm
+H-25cm
+W-9cm</g:description>
+      <g:link>https://craftingyarn.com/product/cece-browns.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/IMG_8588.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_8601.JPG</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_8599.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>180.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>cece-greens</g:id>
+      <g:title>Cece (Green)</g:title>
+      <g:description>A definite statement piece to carry all your essentials. 
+L-38cm
+H-25cm
+W-9cm</g:description>
+      <g:link>https://craftingyarn.com/product/cece-greens.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/IMG_8584.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20261029_120225.JPG</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_8611.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>180.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>cece-style-3</g:id>
+      <g:title>Cece (Purple)</g:title>
+      <g:description>A definite statement piece to carry all your essentials. 
+L-38cm
+H-25cm
+W-9cm</g:description>
+      <g:link>https://craftingyarn.com/product/cece-style-3.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/IMG_8585.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_8606.jpeg</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_8607.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>180.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>clutch-colour-block</g:id>
       <g:title>Clutch (colour block)</g:title>
       <g:description>Sample bag</g:description>
@@ -234,6 +303,25 @@ Height 14cm</g:description>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Apparel &amp;amp; Accessories</g:google_product_category>
       <g:product_type>Sale</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>jill</g:id>
+      <g:title>Jill</g:title>
+      <g:description>Everyday clutch</g:description>
+      <g:link>https://craftingyarn.com/product/jill.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20261008_093310.jpeg</g:image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20261008_093413.jpeg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>150.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
       <g:shipping>
         <g:country>AE</g:country>
         <g:price>20.00 AED</g:price>
@@ -350,14 +438,36 @@ Height 16cm</g:description>
       </g:shipping>
     </item>
     <item>
+      <g:id>may-brown</g:id>
+      <g:title>May (brown)</g:title>
+      <g:description>A neutral everyday cotton bag. 
+
+Length 20cm
+Height 17cm</g:description>
+      <g:link>https://craftingyarn.com/product/may-brown.html</g:link>
+      <g:image_link>https://craftingyarn.com/assets/products/May (brown).JPG</g:image_link>
+
+      <g:availability>in_stock</g:availability>
+      <g:price>150.00 AED</g:price>
+      <g:brand>Crafting Yarn</g:brand>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Handbags</g:google_product_category>
+      <g:product_type>Bags</g:product_type>
+      <g:shipping>
+        <g:country>AE</g:country>
+        <g:price>20.00 AED</g:price>
+      </g:shipping>
+    </item>
+    <item>
       <g:id>may-browns</g:id>
-      <g:title>May (browns)</g:title>
+      <g:title>May (brown mix)</g:title>
       <g:description>A neutral everyday bag. 
 
 Length 24cm
 Height 16cm</g:description>
       <g:link>https://craftingyarn.com/product/may-browns.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260911_081112.jpeg</g:image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/May browns.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/IMG_7866.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>150.00 AED</g:price>
@@ -379,7 +489,7 @@ Height 16cm</g:description>
 Length 23cm
 Height 17cm</g:description>
       <g:link>https://craftingyarn.com/product/may-greens.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260911_081220.jpeg</g:image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/May (camo).jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260909_161616.JPG</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>150.00 AED</g:price>
@@ -402,7 +512,7 @@ Height 17cm</g:description>
 Length 24cm
 Height 15cm</g:description>
       <g:link>https://craftingyarn.com/product/may-lilacs.html</g:link>
-      <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260911_081043.jpeg</g:image_link>
+      <g:image_link>https://craftingyarn.com/assets/products/May lilac.jpeg</g:image_link>
       <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260910_182807.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>150.00 AED</g:price>
@@ -558,7 +668,7 @@ Height 16cm
 Length 18cm</g:description>
       <g:link>https://craftingyarn.com/product/velora-olive.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/IMG_8062.jpeg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260914_105841.jpeg</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Veluto (olive) .jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
@@ -642,7 +752,7 @@ Height 14cm
 Length 18cm</g:description>
       <g:link>https://craftingyarn.com/product/yasmine-pink.html</g:link>
       <g:image_link>https://craftingyarn.com/assets/products/Photoroom_20260912_172723.jpeg</g:image_link>
-      <g:additional_image_link>https://craftingyarn.com/assets/products/Photoroom_20260912_172754.jpeg</g:additional_image_link>
+      <g:additional_image_link>https://craftingyarn.com/assets/products/Yasmine (pink).jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>130.00 AED</g:price>
       <g:brand>Crafting Yarn</g:brand>
