@@ -1,0 +1,19 @@
+{
+  "name": "Cece (Greens)",
+  "category": "Bags",
+  "subcategory": "",
+  "price": 180,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/Photoroom_20261029_121147.JPG",
+    "/assets/products/Photoroom_20261029_121109.JPG",
+    "/assets/products/Photoroom_20261029_120225.JPG"
+  ],
+  "video": "",
+  "desc": "A definite statement piece to carry all your essentials. \nL-38cm\nH-25cm\nW-9cm",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-10-29T12:41:00"
+}
