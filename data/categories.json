@@ -8,22 +8,54 @@
     "heading": "Nué bags",
     "intro": "Handmade, unique and carefully created one stitch at a time. No 2 are ever the same.",
     "lines": [
-      { "label": "May", "match": "may" },
-      { "label": "Zuri", "match": "zuri" },
-      { "label": "Velora", "match": "velora" },
-      { "label": "Yasmine", "match": "yasmine" },
-      { "label": "Clutch", "match": "clutch" }
+      {
+        "label": "May",
+        "match": "may"
+      },
+      {
+        "label": "Zuri",
+        "match": "zuri"
+      },
+      {
+        "label": "Velora",
+        "match": "velora"
+      },
+      {
+        "label": "Yasmine",
+        "match": "yasmine"
+      },
+      {
+        "label": "Clutch",
+        "match": "clutch"
+      }
     ]
+  },
+  "cece-bags": {
+    "menuLabel": "Cece bags",
+    "heading": "Cece bags",
+    "intro": "The Cece line — handmade one stitch at a time."
   },
   "accessories": {
     "menuLabel": "Accessories",
     "heading": "Crochet Accessories",
     "intro": "Head ties/bandanas, scrunchies, bucket hats and more — all crocheted by hand.",
     "lines": [
-      { "label": "Scrunchies", "match": "scrunchie" },
-      { "label": "Bag charms", "match": "charm" },
-      { "label": "Bandanas", "match": "bandana" },
-      { "label": "Hats", "match": "hat" }
+      {
+        "label": "Scrunchies",
+        "match": "scrunchie"
+      },
+      {
+        "label": "Bag charms",
+        "match": "charm"
+      },
+      {
+        "label": "Bandanas",
+        "match": "bandana"
+      },
+      {
+        "label": "Hats",
+        "match": "hat"
+      }
     ]
   }
 }

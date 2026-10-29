@@ -67,17 +67,19 @@ const PRODUCT_META = texts(S.productMeta, ["Crocheted by hand", "No two are ever
 const WA_NUMBER = String(S.whatsapp || "971569413899").replace(/[^0-9]/g, "");
 
 /* ---------- categories (each gets its own page; no all-products page) ---------- */
-const CATEGORIES = ["Bags", "Accessories"];
+const CATEGORIES = ["Bags", "Cece bags", "Accessories"];
 const catSlug = (c) => String(c).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 /* Per-category SEO copy. People search "crochet bag Dubai", not "bags", so the
    title/description/H1 carry the product word AND the location. Kept here (not
    in the CMS) so the search wording stays deliberate. */
 const CAT_TITLE = {
+  "Cece bags": "Cece Handmade Crochet Bags in Dubai & UAE | Crafting Yarn",
   Bags: "Handmade Crochet Bags in Dubai & UAE | Crafting Yarn",
   Accessories: "Crochet Accessories in Dubai & UAE | Crafting Yarn",
 };
 const CAT_DESC = {
+  "Cece bags": "The Cece line — hand-crocheted bags made one at a time in the UAE. Free delivery across Dubai and the UAE over AED 250.",
   Bags: "Hand-crocheted bags made one at a time in the UAE — totes, baskets and shoulder bags in 100% cotton. Free delivery across Dubai and the UAE over AED 250.",
   Accessories: "Handmade crochet accessories in the UAE — bandanas, scrunchies, bucket hats and more, crocheted by hand. Free Dubai and UAE delivery over AED 250.",
 };
@@ -90,10 +92,11 @@ const copyFor = (key, field, fallback) =>
   (CATCOPY[key] && String(CATCOPY[key][field] || "").trim()) || fallback;
 
 const CAT_H1 = {
+  "Cece bags": copyFor("cece-bags", "heading", "Cece bags"),
   Bags: copyFor("bags", "heading", "Crochet Bags"),
   Accessories: copyFor("accessories", "heading", "Crochet Accessories"),
 };
-const CAT_SINGULAR = { Bags: "Bag", Accessories: "Accessory" };
+const CAT_SINGULAR = { Bags: "Bag", "Cece bags": "Bag", Accessories: "Accessory" };
 /* What a category is CALLED in the menu and nav chips. Editable by Freda, and
    separate from the URL (still /bags.html) and from the SEO <title>, so
    renaming the section can't break links or lose search ranking. */
