@@ -7,13 +7,13 @@
   "stock": 1,
   "images": [
     "/assets/products/cece (browns).jpeg",
-    "/assets/products/IMG_8601.JPG",
-    "/assets/products/IMG_8599.jpeg"
+    "/assets/products/Cece (browns 2).JPG",
+    "/assets/products/Cece (browns 3).JPG"
   ],
   "video": "",
   "desc": "A definite statement piece to carry all your essentials. \nL-36cm\nH-25cm\nW-9cm",
   "featured": false,
-  "isNew": false,
+  "isNew": true,
   "order": 999,
   "created": "2026-10-29T12:47:00"
 }
