@@ -41,10 +41,17 @@ const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => {
     before += orig;
     try {
       const meta = await sharp(f).metadata();
+      /* Phones store a portrait shot as landscape pixels plus an EXIF
+         "Orientation" tag. sharp drops that tag on output, so without
+         .rotate() the photo ships sideways even though it looks upright in
+         her gallery. .rotate() with no argument bakes the rotation into the
+         pixels, after which the tag no longer matters. */
+      const turned = (meta.orientation || 1) >= 5;      // 5-8 swap width/height
+      const dispW = turned ? meta.height : meta.width;
       if (meta.width <= MAXW && orig <= SKIP_BYTES) { after += orig; continue; }
 
-      let pipe = sharp(f, { failOn: "none" });
-      if (meta.width > MAXW) pipe = pipe.resize({ width: MAXW, withoutEnlargement: true });
+      let pipe = sharp(f, { failOn: "none" }).rotate();
+      if (dispW > MAXW) pipe = pipe.resize({ width: MAXW, withoutEnlargement: true });
       pipe = /png/i.test(meta.format)
         ? pipe.png({ compressionLevel: 9, palette: true })
         : pipe.jpeg({ quality: QUALITY, mozjpeg: true });

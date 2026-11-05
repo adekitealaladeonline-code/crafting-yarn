@@ -1,0 +1,37 @@
+# Cloudflare Pages cache rules.
+#
+# The problem this solves: everything was being served with max-age=14400, so a
+# browser held CSS, JS and photos for FOUR HOURS. The worst of it was
+# js/catalog.js — that file IS the product data, and app.js re-renders every
+# grid from it. So the page HTML would arrive fresh, then the script would
+# repaint it from a four hour old catalogue and a newly added product would
+# vanish again. That is why clearing the cache or opening a private tab
+# "fixed" it, and why Freda could publish and see nothing.
+#
+# Rule of thumb below: anything that carries content revalidates every time
+# (a 304 is a few bytes, so this is cheap); only genuinely static things get
+# held, and even then not for long.
+
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# The catalogue is live data. It must never be stale, ever.
+/js/catalog.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Code: revalidates each load, so a deploy reaches everyone immediately.
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Photos: held briefly so repeat views stay quick, but a replaced photo shows
+# up within a minute. The optimiser rewrites files under their original name,
+# so these cannot be cached hard.
+/assets/*
+  Cache-Control: public, max-age=60, must-revalidate
+
+# Admin must never be cached — a stale CMS shell is how logins break.
+/admin/*
+  Cache-Control: no-cache, no-store, must-revalidate

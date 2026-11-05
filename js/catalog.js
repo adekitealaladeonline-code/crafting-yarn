@@ -149,17 +149,16 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/IMG_8588.jpeg",
-      "assets/products/IMG_8601.JPG",
-      "assets/products/IMG_8599.jpeg"
+      "assets/products/cece (browns).jpeg",
+      "assets/products/IMG_8599.JPG"
     ],
     "video": null,
     "desc": "A definite statement piece to carry all your essentials. \nL-36cm\nH-25cm\nW-9cm",
     "featured": false,
-    "isNew": false,
+    "isNew": true,
     "created": "2026-10-29T12:47:00",
-    "image": "assets/products/IMG_8588.jpeg",
-    "image2": "assets/products/IMG_8601.JPG",
+    "image": "assets/products/cece (browns).jpeg",
+    "image2": "assets/products/IMG_8599.JPG",
     "videoPoster": null
   },
   {
@@ -172,7 +171,6 @@ window.CATALOG = [
     "stock": 1,
     "images": [
       "assets/products/IMG_8584.jpeg",
-      "assets/products/Photoroom_20261029_120225.JPG",
       "assets/products/IMG_8611.jpeg"
     ],
     "video": null,
@@ -181,7 +179,7 @@ window.CATALOG = [
     "isNew": false,
     "created": "2026-10-29T12:41:00",
     "image": "assets/products/IMG_8584.jpeg",
-    "image2": "assets/products/Photoroom_20261029_120225.JPG",
+    "image2": "assets/products/IMG_8611.jpeg",
     "videoPoster": null
   },
   {
@@ -193,17 +191,16 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/IMG_8585.jpeg",
-      "assets/products/IMG_8606.jpeg",
-      "assets/products/IMG_8607.jpeg"
+      "assets/products/Cece (purple).jpeg",
+      "assets/products/IMG_8740.jpeg"
     ],
     "video": null,
     "desc": "A definite statement piece to carry all your essentials. \nL-38cm\nH-25cm\nW-9cm",
     "featured": false,
-    "isNew": false,
+    "isNew": true,
     "created": "2026-10-29T12:49:00",
-    "image": "assets/products/IMG_8585.jpeg",
-    "image2": "assets/products/IMG_8606.jpeg",
+    "image": "assets/products/Cece (purple).jpeg",
+    "image2": "assets/products/IMG_8740.jpeg",
     "videoPoster": null
   },
   {
@@ -280,14 +277,14 @@ window.CATALOG = [
       "assets/products/Photoroom_20260907_152556.jpeg",
       "assets/products/Photoroom_20260907_152422.jpeg"
     ],
-    "video": "assets/products/IMG_7896.mp4",
+    "video": null,
     "desc": "A neutral grey clutch with metallic clasp. \n\nLength 21cm\nHeight 14cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-11T08:23:00",
     "image": "assets/products/Photoroom_20260907_152556.jpeg",
     "image2": "assets/products/Photoroom_20260907_152422.jpeg",
-    "videoPoster": "assets/products/IMG_7896-poster.jpg"
+    "videoPoster": null
   },
   {
     "id": "grey-black-bag",
@@ -361,8 +358,8 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
+      "assets/products/IMG_8686.jpeg",
       "assets/products/Photoroom_20260809_144847.jpeg",
-      "assets/products/IMG_7409.jpeg",
       "assets/products/Photoroom_20260809_145427.jpeg"
     ],
     "video": null,
@@ -370,8 +367,8 @@ window.CATALOG = [
     "featured": false,
     "isNew": false,
     "created": "2026-08-09T15:28",
-    "image": "assets/products/Photoroom_20260809_144847.jpeg",
-    "image2": "assets/products/IMG_7409.jpeg",
+    "image": "assets/products/IMG_8686.jpeg",
+    "image2": "assets/products/Photoroom_20260809_144847.jpeg",
     "videoPoster": null
   },
   {
@@ -448,14 +445,14 @@ window.CATALOG = [
     "images": [
       "assets/products/May (brown).JPG"
     ],
-    "video": "assets/products/May brown....mp4",
+    "video": null,
     "desc": "A neutral everyday cotton bag. \n\nLength 20cm\nHeight 17cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-25T14:15:00",
     "image": "assets/products/May (brown).JPG",
     "image2": null,
-    "videoPoster": "assets/products/May brown...-poster.jpg"
+    "videoPoster": null
   },
   {
     "id": "may-browns",
@@ -466,17 +463,17 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/May browns.jpeg",
-      "assets/products/IMG_7866.jpg"
+      "assets/products/IMG_8616.JPG",
+      "assets/products/IMG_8675.JPG"
     ],
-    "video": "assets/products/IMG_7830.mp4",
+    "video": null,
     "desc": "A neutral everyday bag. \n\nLength 24cm\nHeight 16cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-10T18:16:00",
-    "image": "assets/products/May browns.jpeg",
-    "image2": "assets/products/IMG_7866.jpg",
-    "videoPoster": "assets/products/IMG_7830-poster.jpg"
+    "image": "assets/products/IMG_8616.JPG",
+    "image2": "assets/products/IMG_8675.JPG",
+    "videoPoster": null
   },
   {
     "id": "may-greens",
@@ -487,17 +484,16 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/May (camo).jpeg",
       "assets/products/Photoroom_20260909_161616.JPG"
     ],
-    "video": "assets/products/IMG_7953.mp4",
+    "video": null,
     "desc": "A must have for your wardrobe \n\nLength 23cm\nHeight 17cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-10T18:19:00",
-    "image": "assets/products/May (camo).jpeg",
-    "image2": "assets/products/Photoroom_20260909_161616.JPG",
-    "videoPoster": "assets/products/IMG_7953-poster.jpg"
+    "image": "assets/products/Photoroom_20260909_161616.JPG",
+    "image2": null,
+    "videoPoster": null
   },
   {
     "id": "may-lilacs",
@@ -529,16 +525,16 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/Photoroom_20260907_152159.jpeg",
-      "assets/products/Photoroom_20260907_152122.jpeg"
+      "assets/products/IMG_8615.jpg",
+      "assets/products/IMG_8706.jpeg"
     ],
     "video": null,
     "desc": "A statement bag to best compliment your style. \n\n\nLength 24cm\nHeight 17cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-10T18:10:00",
-    "image": "assets/products/Photoroom_20260907_152159.jpeg",
-    "image2": "assets/products/Photoroom_20260907_152122.jpeg",
+    "image": "assets/products/IMG_8615.jpg",
+    "image2": "assets/products/IMG_8706.jpeg",
     "videoPoster": null
   },
   {
@@ -657,14 +653,14 @@ window.CATALOG = [
       "assets/products/IMG_8062.jpeg",
       "assets/products/Veluto (olive) .jpeg"
     ],
-    "video": "assets/products/IMG_8063.mp4",
+    "video": null,
     "desc": "Chic and stylish bag with a detachable heart accessory\n\nHeight 16cm \nLength 18cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-14T13:23:00",
     "image": "assets/products/IMG_8062.jpeg",
     "image2": "assets/products/Veluto (olive) .jpeg",
-    "videoPoster": "assets/products/IMG_8063-poster.jpg"
+    "videoPoster": null
   },
   {
     "id": "velora-rose-pink",
@@ -858,15 +854,16 @@ window.CATALOG = [
     "sale": null,
     "stock": 1,
     "images": [
-      "assets/products/IMG_7787.jpeg"
+      "assets/products/IMG_8699.jpeg",
+      "assets/products/IMG_8701.jpeg"
     ],
     "video": null,
     "desc": "Everyday staple made with detachable accessory. \n\nLength 23cm\nHeight 15cm",
     "featured": false,
     "isNew": false,
     "created": "2026-09-11T08:55:00",
-    "image": "assets/products/IMG_7787.jpeg",
-    "image2": null,
+    "image": "assets/products/IMG_8699.jpeg",
+    "image2": "assets/products/IMG_8701.jpeg",
     "videoPoster": null
   },
   {
