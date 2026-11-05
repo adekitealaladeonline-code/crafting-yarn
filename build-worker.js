@@ -36,9 +36,28 @@ export default {
       return request.method === "POST" ? handleWebhook(request, env) : new Response("Method not allowed", { status: 405 });
     if (url.pathname === "/api/orders")
       return handleOrders(request, env);
-    return env.ASSETS.fetch(request);
+    return withCache(url, await env.ASSETS.fetch(request));
   },
 };
+
+/* Cache rules, set here rather than in _headers.
+   This site runs in Pages "advanced mode" (a _worker.js at the root), and in
+   that mode env.ASSETS.fetch() hands back Cloudflare's own defaults, which
+   were max-age=14400. Four hours of browser cache on js/catalog.js — the file
+   that holds the product data and that app.js re-renders every grid from —
+   is why Freda could publish and customers had to clear their cache or open a
+   private tab before a new product appeared. */
+function withCache(url, res) {
+  const p = url.pathname;
+  let rule = "public, max-age=0, must-revalidate";        // html and everything else
+  if (p === "/js/catalog.js" || p.startsWith("/admin"))
+    rule = "no-cache, no-store, must-revalidate";          // live data; never hold
+  else if (p.startsWith("/assets/"))
+    rule = "public, max-age=60, must-revalidate";          // photos are rewritten in place
+  const h = new Headers(res.headers);
+  h.set("Cache-Control", rule);
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers: h });
+}
 
 const J = (data, status = 200) =>
   new Response(JSON.stringify(data), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
