@@ -280,7 +280,7 @@ function cardHTML(p, px = "") {
     : `<span class="now">${money(p.price)}</span>`;
   const sub = p.subcategory ? `${p.category} · ${p.subcategory}` : p.category;
   const hover = p.image2
-    ? `<img class="card__img card__img--hover" src="${px}${esc(p.image2)}" alt="" aria-hidden="true" loading="lazy"/>`
+    ? `<img class="card__img card__img--hover" src="${px}${esc(p.image2)}${imgV(p.image2)}" alt="" aria-hidden="true" loading="lazy"/>`
     : "";
   // descriptive alt text doubles as image-search fodder
   const alt = `${p.name} — handmade crochet ${String(p.category || "").toLowerCase()} in the UAE`;
@@ -300,7 +300,7 @@ function cardHTML(p, px = "") {
           <button class="card__wish" data-wish="${esc(p.id)}" aria-label="Save ${esc(p.name)} to wishlist" aria-pressed="false">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.6-9.3-9C1 7.7 2.6 5 5.6 5c1.9 0 3.2 1.1 4.4 2.6C11.2 6.1 12.5 5 14.4 5c3 0 4.6 2.7 2.9 6-2.3 4.4-9.3 9-9.3 9Z"/></svg>
           </button>
-          <img class="card__img" src="${px}${esc(p.image)}" alt="${esc(alt)}" loading="lazy"/>
+          <img class="card__img" src="${px}${esc(p.image)}${imgV(p.image)}" alt="${esc(alt)}" loading="lazy"/>
           ${hover}
           ${actions}
         </div>
@@ -333,7 +333,40 @@ const breadcrumbLd = (trail) => `<script type="application/ld+json">${JSON.strin
   })),
 })}</script>`;
 
-const scripts = (px) => `<script src="${px}js/catalog.js"></script>\n<script src="${px}js/app.js"></script>`;
+/* Cache-busting stamps.
+   Cloudflare Pages serves existing static files straight from its CDN with
+   max-age=14400, before the worker sees them, and the _headers wildcards do
+   not reliably override that. Rather than fight it, we version the URLs: the
+   stamp changes whenever the file's contents change, so a new URL is fetched
+   immediately and the long cache becomes harmless instead of harmful. */
+const assetStamp = (rel) => {
+  try {
+    const buf = fs.readFileSync(path.join(__dirname, rel));
+    return "?v=" + require("crypto").createHash("sha1").update(buf).digest("hex").slice(0, 8);
+  } catch { return ""; }
+};
+const V_CSS = assetStamp("css/styles.css");
+const V_APP = assetStamp("js/app.js");
+const V_CAT = assetStamp("js/catalog.js");
+
+/* Same idea for photos. The optimiser rewrites an uploaded file under its
+   ORIGINAL name, so the URL alone cannot tell a browser the picture changed.
+   Stamping by content means a corrected or replaced photo appears at once
+   instead of up to four hours later. */
+const _stampCache = new Map();
+const imgV = (rel) => {
+  if (!rel) return "";
+  if (_stampCache.has(rel)) return _stampCache.get(rel);
+  let v = "";
+  try {
+    const buf = fs.readFileSync(path.join(__dirname, String(rel).replace(/^\/+/, "")));
+    v = "?v=" + require("crypto").createHash("sha1").update(buf).digest("hex").slice(0, 8);
+  } catch {}
+  _stampCache.set(rel, v);
+  return v;
+};
+
+const scripts = (px) => `<script src="${px}js/catalog.js${V_CAT}"></script>\n<script src="${px}js/app.js${V_APP}"></script>`;
 
 const OG_DEFAULT = `${SITE}/assets/brand/hero.jpg`;
 const ogUrl = (img) => (img ? (/^https?:/.test(img) ? img : `${SITE}/${String(img).replace(/^\/+/, "")}`) : OG_DEFAULT);
@@ -401,7 +434,7 @@ ${GEO_META}
 <meta name="twitter:image" content="${esc(ogImage)}" />
 <link rel="icon" type="image/png" href="${px}assets/brand/logo.png" />
 ${FONT}
-<link rel="stylesheet" href="${px}css/styles.css" />
+<link rel="stylesheet" href="${px}css/styles.css${V_CSS}" />
 ${orgLd}
 ${headExtra}
 </head>
@@ -534,7 +567,7 @@ ${websiteLd}
 
 ${FONT}
 
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/styles.css${V_CSS}" />
 </head>
 <body>
 
@@ -630,8 +663,8 @@ ${cartDrawer}
   </div>
 </div>
 
-<script src="js/catalog.js"></script>
-<script src="js/app.js"></script>
+<script src="js/catalog.js${V_CAT}"></script>
+<script src="js/app.js${V_APP}"></script>
 </body>
 </html>
 `;
@@ -813,7 +846,7 @@ for (const p of CATALOG) {
     : `<span class="now">${money(p.price)}</span>`;
   const imgs = (p.images && p.images.length ? p.images : [p.image, p.image2].filter(Boolean));
   const gallery = imgs
-    .map((src, i) => `<figure><img src="${px}${src}" alt="${esc(p.name)}${i ? " — view " + (i + 1) : ""}" ${i ? 'loading="lazy"' : ""}/></figure>`).join("\n        ");
+    .map((src, i) => `<figure><img src="${px}${src}${imgV(src)}" alt="${esc(p.name)}${i ? " — view " + (i + 1) : ""}" ${i ? 'loading="lazy"' : ""}/></figure>`).join("\n        ");
 
   const ld = {
     "@context": "https://schema.org/", "@type": "Product",
