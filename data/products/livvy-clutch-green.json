@@ -3,7 +3,7 @@
   "category": "Bags",
   "subcategory": "Clutch",
   "price": 150,
-  "sale": null,
+  "sale": 0,
   "stock": 1,
   "images": [
     "/assets/products/IMG_8686.jpeg",
