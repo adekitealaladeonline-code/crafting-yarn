@@ -1,0 +1,19 @@
+{
+  "name": "Lucy (Black)",
+  "category": "Bags",
+  "subcategory": "Lucy",
+  "price": 150,
+  "sale": null,
+  "stock": 1,
+  "images": [
+    "/assets/products/IMG_9352.jpeg",
+    "/assets/products/IMG_9353.jpeg",
+    "/assets/products/IMG_9351.jpeg"
+  ],
+  "video": "",
+  "desc": "A standout black bag wth a hint of shimmer. Achieve different looks with the handle and chain.",
+  "featured": false,
+  "isNew": false,
+  "order": 999,
+  "created": "2026-11-20T16:31:00"
+}
