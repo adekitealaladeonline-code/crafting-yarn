@@ -3,12 +3,13 @@
   "category": "Sale",
   "subcategory": "",
   "price": 100,
-  "sale": 55,
+  "sale": 70,
   "stock": 1,
   "images": [
     "/assets/products/Photoroom_20260805_170326.jpeg",
     "/assets/products/Photoroom_20260805_170447.jpeg"
   ],
+  "video": "",
   "desc": "Soft, Bright and ultra stylish.\nSize: 20cm Length, 14cm Height \nLightweight and versatile for any occasion.\nComfortable handle for easy carry",
   "featured": false,
   "isNew": false,
