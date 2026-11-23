@@ -2,12 +2,13 @@
   "name": "Willa  Wine",
   "category": "Sale",
   "subcategory": "",
-  "price": 100,
-  "sale": 65,
+  "price": 120,
+  "sale": 95,
   "stock": 1,
   "images": [
     "/assets/products/Photoroom_20260718_110535.jpeg"
   ],
+  "video": "",
   "desc": "Soft, durable and stylish\nSize: 22cm Length, 15cm Height \nLightweight and versatile for any occasion \nComfortable handle for easy carry",
   "featured": false,
   "isNew": false,
